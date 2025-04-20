@@ -1,0 +1,45 @@
+A general method for searching for an element in an array is to use a for loop that iterates through the elements of the array. For example, the following code searches for an element x in an array:
+
+
+for (int i = 0; i < n; i++) {
+    if (array[i] == x) {
+        // x found at index i
+    }
+}
+
+The time complexity of this approach is O(n), because in the worst case, it is necessary to check all elements of the array. If the order of the elements is arbitrary, this is also the best possible approach, because there is no additional information available about where in the array we should search for the element x. However, if the array is sorted, the situation is different. In this case it is possible to perform the search much faster, because the order of the elements in the array guides the search. The following binary search algorithm efficiently searches for an element x in an array in O(log n) time.
+
+Method 1
+
+The usual way to implement binary search resembles looking for a word in a dictionary. The search maintains an active region in the array, which initially contains all array elements. Then, a number of steps is performed, each of which halves the size of the region. For example, the code snippet:
+
+int a = 0, b = n - 1;
+while(a <= b) {
+    int m = (a + b) / 2;
+    if(array[m] == x) {
+        // x found
+    }
+    else if(array[m] < x) {
+        a = m + 1;
+    }
+    else {
+        b = m - 1;
+    }
+}
+
+In this implementation, the active region is from index a to index b, and initially the region is 0 ... n-1. The algorithm halves the size of the region at each step, so the time complexity is O(log n).
+
+Method 2
+
+The usual way to implement a binary search approach also resembles looking for a word in a dictionary. The code snippet is:
+
+
+int k = 1;
+int b = k;
+for (k = 1; b < n && array[b] < x; b = k) {
+    if (array[b] == x) {
+        ...
+    }
+}
+
+During the search, the variable b contains the current jump length. The time complexity of the algorithm is O(log n), because the code in the loop is executed at most twice for each jump length.

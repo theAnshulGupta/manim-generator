@@ -1,0 +1,74 @@
+
+\\documentclass{article}
+\\usepackage{amsmath}
+
+\\begin{document}
+
+\\section*{Vector Semantics and Embeddings - Equations and Explanations}
+
+\\subsection*{1. Dot Product}
+The dot product is a basic operation in linear algebra, representing a similarity measure between two vectors. It is defined as the sum of the products of corresponding entries of two sequences of numbers. The formula is:
+\\[
+\\text{dot product}(v, w) = v \\cdot w = \\sum_{i=1}^{N} v_i w_i = v_1 w_1 + v_2 w_2 + \\cdots + v_N w_N
+\\]
+
+\\subsection*{2. Cosine Similarity}
+Cosine similarity is a metric used to measure how similar two vectors are. It is computed by taking the cosine of the angle between two vectors, which is equivalent to the normalized dot product:
+\\[
+\\text{cosine}(v, w) = \\frac{v \\cdot w}{|v| |w|}
+\\]
+Where the lengths of the vectors, \( |v| \) and \( |w| \), are calculated as:
+\\[
+|v| = \\sqrt{\\sum_{i=1}^{N} v_i^2}
+\\]
+\\[
+|w| = \\sqrt{\\sum_{i=1}^{N} w_i^2}
+\\]
+
+\\subsection*{3. Term Frequency (tf)}
+Term Frequency is a measure of how frequently a term occurs in a document. It is usually used as part of the TF-IDF model. The formula is:
+\\[
+t_{f,t,d} = \\text{count}(t,d)
+\\]
+A common variation uses logarithmic scaling for term frequency to avoid bias for very frequent terms:
+\\[
+t_{f,t,d} = 
+\\begin{cases} 
+1 + \\log_{10} (\\text{count}(t,d)) & \\text{if } \\text{count}(t,d) > 0 \\\\
+0 & \\text{otherwise}
+\\end{cases}
+\\]
+
+\\subsection*{4. Inverse Document Frequency (idf)}
+Inverse Document Frequency is a measure that helps to reduce the weight of common terms that appear in many documents and emphasize rare terms that carry more meaning. It is calculated as:
+\\[
+\\text{idf}_t = \\log_{10} \\left( \\frac{N}{dft_t} \\right)
+\\]
+Where \( N \) is the total number of documents and \( dft_t \) is the number of documents that contain term \( t \).
+
+\\subsection*{5. TF-IDF}
+TF-IDF is the product of Term Frequency and Inverse Document Frequency. It is used to measure the importance of a term within a document relative to a collection of documents. The formula is:
+\\[
+w_{t,d} = t_{f,t,d} \\times \\text{idf}_t
+\\]
+
+\\subsection*{6. Pointwise Mutual Information (PMI)}
+PMI is a measure of association between two terms based on their co-occurrence. It compares the observed probability of the terms co-occurring with the expected probability under independence:
+\\[
+PMI(w,c) = \\log_2 \\left( \\frac{P(w,c)}{P(w)P(c)} \\right)
+\\]
+Where \( P(w,c) \) is the joint probability, and \( P(w) \) and \( P(c) \) are the marginal probabilities.
+
+\\subsection*{7. PPMI (Positive PMI)}
+PPMI is a variation of PMI, where negative PMI values are replaced with zero. It is useful when we want to focus on positive associations and discard unlikely or less useful associations:
+\\[
+\\text{PPMI}(w,c) = \\max \\left( \\log_2 \\left( \\frac{P(w,c)}{P(w)P(c)} \\right), 0 \\right)
+\\]
+
+\\subsection*{8. Skip-Gram Loss Function}
+The Skip-Gram model in Word2Vec uses a classifier to predict context words given a target word. The loss function is designed to maximize the probability of context words appearing near the target word, while minimizing the probability of non-context words. The formula for the loss function is:
+\\[
+L = -\\log P(+|w,c_{\\text{pos}}) - \\sum_{i=1}^{k} \\log P(-|w,c_{\\text{neg}_i})
+\\]
+
+\\end{document}

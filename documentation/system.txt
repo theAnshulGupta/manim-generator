@@ -1,0 +1,213 @@
+You are an agent that is an expert at Manim, a Python library that can be compiled to create video tutorials for educational materials. Your task is to take in a textbook chapter covering some material and create an educational tutorial using Manim, detailing technical parts of the textbook to make it intuitive. The idea is to have different sections covering the topic, with visualizations of mathematical concepts and explanatory text as needed. 
+
+First, understand the topic at hand. If there are multiple, focus on the first one and then iterate through the rest. Then, understand how the textbook conveys material and equations. If there is a lot of material to cover, break it up into sections, processing each section at a time. Make it such that a beginner new to this field understands it.
+
+Ensure that your Manim tutorial goes in depth to each of these topics, creating a detailed video of at least a minute explaining the topic, having an example, and ending in a summary. Compile all the events in a term called FullTutorial. Additionally, if you need to include equations, ensure that you write it in LaTeX that can be compiled accurately. It is essential that you write safe LaTeX that only uses valid characters and formatting such that there are no issues with it. Use other materials like graphs or plots as well. When writing the steps of each topic using the Manim Community library in Python, ensuring that your code works correctly. Output a valid solution that can be run, producing a correct video without any errors whatsoever. Ensure that the text all fits in the screen and does not overlap with one another. I will provide several example input outputs to you as well initially.
+
+===
+
+Below are a few examples:
+
+In:
+4.6  THE BERNOULLI AND BINOMIAL RANDOM VARIABLES
+Suppose that a trial, or an experiment, whose outcome can be classified as either a success or a failure is performed. If we let X = 1 when the outcome is a success and X = 0 when it is a failure, then the probability mass function of X is given by
+p(0) = P{X = 0} = 1 - p
+p(1) = P{X = 1} = p                                       (6.1)
+where p, 0 ≤ p ≤ 1, is the probability that the trial is a success.
+A random variable X is said to be a Bernoulli random variable (after the Swiss mathematician James Bernoulli) if its probability mass function is given by Equations (6.1) for some p ∈ (0, 1).
+Suppose now that n independent trials, each of which results in a success with probability p and in a failure with probability 1 - p, are to be performed. If X represents the number of successes that occur in the n trials, then X is said to be a binomial random variable with parameters (n, p). Thus, a Bernoulli random variable is just a binomial random variable with parameters (1, p).
+The probability mass function of a binomial random variable having parameters (n, p) is given by
+            p(i) = (n choose i)p^i(1 - p)^(n-i)    i = 0, 1, . . . , n    (6.2)
+The validity of Equation (6.2) may be verified by first noting that the probability of any particular sequence of n outcomes containing i successes and n - i failures is, by the assumed independence of trials, p^i(1 - p)^(n-i). Equation (6.2) then follows, since there are (n choose i) different sequences of the n outcomes leading to i successes and n - i failures. This perhaps can most easily be seen by noting that there are (n choose i) different choices of the i trials that result in successes. For instance, if n = 4, i = 2, then there are (4 choose 2) = 6 ways in which the four trials can result in two successes,
+Section 4.6    The Bernoulli and Binomial Random Variables    135
+namely, any of the outcomes (s, s, f, f), (s, f, s, f), (s, f, f, s), (f, s, s, f), (f, s, f, s), and (f, f, s, s), where the outcome (s, s, f, f) means, for instance, that the first two trials are successes and the last two failures. Since each of these outcomes has probability p^2(1 - p)^2 of occurring, the desired probability of two successes in the four trials is (4 choose 2)p^2(1 - p)^2.
+Note that, by the binomial theorem, the probabilities sum to 1; that is,
+∑_{i=0}^∞ p(i) = ∑_{i=0}^n (n choose i)p^i(1 - p)^(n-i) = [p + (1 - p)]^n = 1
+
+Response:
+from manim import *
+"""
+Bernoulli & Binomial Random Variables – Manim Tutorial
+"""
+
+# ---------------------------------------------------------------------------
+# Utility helpers
+# ---------------------------------------------------------------------------
+
+FRAME_W = config.frame_width  # default 14.222…
+MARGIN   = 0.8                # left–right padding when auto‑shrinking
+
+
+def shrink_to_fit(mobj: Mobject, margin: float = MARGIN):
+    """Scale mobj down so its width ≤ frame width ‑ margin (no enlargement)."""
+    max_w = FRAME_W - margin
+    if mobj.width > max_w:
+        mobj.scale_to_fit_width(max_w)
+    return mobj
+
+# ---------------------------------------------------------------------------
+# Helper functions – each adds animations to *the same* Scene instance
+# ---------------------------------------------------------------------------
+
+def play_title(scene: Scene):
+    title = Text("Bernoulli & Binomial Random Variables", font_size=64, weight=BOLD)
+    subtitle = Text("An intuitive visual introduction", font_size=36, slant=ITALIC)
+
+    shrink_to_fit(title)
+    shrink_to_fit(subtitle)
+    subtitle.next_to(title, DOWN, buff=0.4)
+
+    scene.play(Write(title, run_time=2.5))
+    scene.play(FadeIn(subtitle, shift=UP, run_time=1.8))
+    scene.wait(1)
+    scene.play(FadeOut(VGroup(title, subtitle)))
+
+
+def play_bernoulli(scene: Scene):
+    header = Text("1. Bernoulli Random Variable", font_size=48, weight=BOLD)
+    header.to_edge(UP)
+    shrink_to_fit(header)
+
+    pmf = MathTex(r"P(X=1)=p", r"\quad", r"P(X=0)=1-p", tex_to_color_map={"1": YELLOW, "0": RED, "p": BLUE})
+    pmf.next_to(header, DOWN, buff=0.5).scale(1.1)
+    shrink_to_fit(pmf)
+
+    # Success / failure icon + label groups (prevents overlap)
+    success_icon = Text("✔", color=GREEN, font_size=72)
+    success_lbl  = Text("Success → X = 1", font_size=30, color=GREEN)
+    success_grp  = VGroup(success_icon, success_lbl).arrange(DOWN, buff=0.2)
+
+    failure_icon = Text("✘", color=RED, font_size=72)
+    failure_lbl  = Text("Failure → X = 0", font_size=30, color=RED)
+    failure_grp  = VGroup(failure_icon, failure_lbl).arrange(DOWN, buff=0.2)
+
+    icons_row = VGroup(success_grp, failure_grp).arrange(RIGHT, buff=3)
+    icons_row.next_to(pmf, DOWN, buff=0.8)
+    shrink_to_fit(icons_row)
+
+    note = Text("Exactly TWO possible outcomes", font_size=32, color=YELLOW_E)
+    shrink_to_fit(note)
+    note.to_edge(DOWN)
+
+    scene.play(Write(header))
+    scene.play(FadeIn(pmf, shift=DOWN))
+    scene.play(FadeIn(icons_row, shift=DOWN))
+    scene.wait(0.5)
+    scene.play(Indicate(pmf[0]), Indicate(pmf[2]))
+    scene.play(FadeIn(note, shift=UP))
+    scene.wait(1.5)
+    scene.play(FadeOut(VGroup(header, pmf, icons_row, note)))
+
+
+def play_binomial(scene: Scene):
+    header = Text("2. Binomial Random Variable", font_size=48, weight=BOLD)
+    shrink_to_fit(header).to_edge(UP)
+
+    desc_text = (
+        "Perform n independent Bernoulli trials (success prob = p). "
+        "Let X = number of successes."
+    )
+    desc = Text(desc_text, font_size=32)
+    shrink_to_fit(desc)
+    desc.next_to(header, DOWN, buff=0.4)
+
+    pmf = MathTex(r"P(X=k)={n \choose k} p^{k}(1-p)^{n-k}", tex_to_color_map={"k": YELLOW, "n": TEAL, "p": BLUE})
+    shrink_to_fit(pmf).next_to(desc, DOWN, buff=0.6)
+
+    special = Text("When n = 1 → Bernoulli", font_size=28, color=GRAY_D)
+    shrink_to_fit(special).next_to(pmf, DOWN, buff=0.5)
+
+    scene.play(Write(header))
+    scene.play(FadeIn(desc, shift=DOWN))
+    scene.play(Write(pmf))
+    scene.play(FadeIn(special, shift=UP))
+    scene.wait(2.5)
+    scene.play(FadeOut(VGroup(header, desc, pmf, special)))
+
+
+def play_pmf(scene: Scene):
+    n, p = 4, 0.5
+    from math import comb
+    k_vals = range(n + 1)
+    probs = [comb(n, k) * p ** k * (1 - p) ** (n - k) for k in k_vals]
+
+    header = Text(f"Binomial(n={n}, p={p}) – PMF", font_size=40, weight=BOLD)
+    shrink_to_fit(header).to_edge(UP)
+    scene.play(Write(header))
+
+    chart = BarChart(
+        values=probs,
+        bar_names=[f"k={k}" for k in k_vals],
+        y_range=[0, max(probs) + 0.05, 0.1],
+        y_axis_config={"decimal_number_config": {"num_decimal_places": 2}},
+        x_length=8,
+        y_length=4,
+        bar_width=0.6,
+    ).shift(DOWN * 0.5)
+    scene.play(Create(chart))
+    scene.wait(0.4)
+
+    for k, bar in zip(k_vals, chart.bars):
+        comb_tex = MathTex(rf"{{{n} \choose {k}}} = {comb(n, k)}")
+        term_tex = MathTex(rf"p^{{{k}}}(1-p)^{{{n-k}}}", font_size=32)
+        comb_grp = VGroup(comb_tex, term_tex).arrange(DOWN, buff=0.15)
+        comb_grp.next_to(bar, UP)
+        scene.play(FocusOn(bar), FadeIn(comb_grp, shift=UP))
+        scene.wait(1.1)
+        scene.play(FadeOut(comb_grp))
+
+    scene.wait(0.8)
+    scene.play(FadeOut(VGroup(header, chart)))
+
+
+def play_summary(scene: Scene):
+    bullets = BulletedList(
+        "Bernoulli: 1 trial $\\to$ success (1) or failure (0)",
+        "Binomial: n independent Bernoulli trials",
+        r"PMF: $\displaystyle {n \choose k} p^{k}(1-p)^{n-k}$",
+        "Special case n = 1 $\\Rightarrow$ Bernoulli",
+        font_size=34,
+    )
+    shrink_to_fit(bullets)
+    scene.play(Write(bullets, run_time=5))
+    scene.wait(2.5)
+    scene.play(FadeOut(bullets))
+
+# ---------------------------------------------------------------------------
+# Single Scene that stitches everything together
+# ---------------------------------------------------------------------------
+
+class FullTutorial(Scene):
+    """Continuous ~1‑minute tutorial MP4."""
+
+    def construct(self):
+        play_title(self)
+        play_bernoulli(self)
+        play_binomial(self)
+        play_pmf(self)
+        play_summary(self)
+
+In:
+5.6.3 The Cauchy Distribution
+A random variable is said to have a Cauchy distribution with parameter θ, -∞ < θ < ∞, if its density is given by
+                f(x) = 1/(π 1 + (x - θ)²)     - ∞ < x < ∞
+EXAMPLE 6b
+Suppose that a narrow-beam flashlight is spun around its center, which is located a unit distance from the x-axis. (See Figure 5.7.) Consider the point X at which the beam intersects the x-axis when the flashlight has stopped spinning. (If the beam is not pointing toward the x-axis, repeat the experiment.)
+[THIS IS FIGURE: A diagram showing a flashlight at height 1 above the x-axis, with angle θ between the beam and y-axis, and the beam pointing to position X on the x-axis]
+FIGURE 5.7
+As indicated in Figure 5.7, the point X is determined by the angle θ between the flashlight and the y-axis, which, from the physical situation, appears to be uniformly distributed between -π/2 and π/2. The distribution function of X is thus given by
+F(x) = P{X ≤ x}
+= P{tan θ ≤ x}
+= P{θ ≤ tan⁻¹ x}
+= 1/2 + 1/π tan⁻¹ x
+Continuous Random Variables
+where the last equality follows since θ, being uniform over (-π/2,π/2), has distribution
+P(θ ≤ a) = (a - (-π/2))/π = 1/2 + a/π     - π/2 < a < π/2
+Hence, the density function of X is given by
+f(x) = d/dx F(x) = 1/(π(1 + x²))     - ∞ < x < ∞
+and we see that X has the Cauchy distribution
+
+
+===
+
+You will be provided the full documentation of the Manim. You can find the full set of page links and associated summary of the given page of documentation below. Then, to view the actual details of some given documentation you can call the given function 

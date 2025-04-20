@@ -1,0 +1,82 @@
+\section*{7.1 DISCRETE-TIME MARKOV CHAINS}
+
+We will first consider \emph{discrete-time Markov chains}, in which the state changes at certain discrete time instants, indexed by an integer variable \(n\). At each time step \(n\), the state of the chain is denoted by \(X_n\) and belongs to a finite set \(S\) of possible states, called the \emph{state space}. Without loss of generality, and unless there is a statement to the contrary, we will assume that
+\[
+    S = \{ 1, \ldots, m \},
+\]
+for some positive integer \(m\). The Markov chain is described in terms of its \emph{transition probabilities} \(p_{ij}\): whenever the state happens to be \(i\), there is probability \(p_{ij}\) that the next state is equal to \(j\). Mathematically,
+\[
+    p_{ij} \;=\; P\bigl(X_{n+1} = j \mid X_n = i\bigr),
+    \quad i, j \in S.
+\]
+
+The key assumption underlying Markov chains is that the transition probabilities \(p_{ij}\) apply whenever state \(i\) is visited, no matter what happened in the past, and no matter how state \(i\) was reached. Mathematically, we assume the \emph{Markov property}, which requires that
+\[
+    P\bigl(X_{n+1} = j \,\big\vert\, X_n = i,\; X_{n-1} = i_{n-1}, \;\ldots,\; X_0 = i_0\bigr)
+    \;=\;
+    P\bigl(X_{n+1} = j \,\big\vert\, X_n = i\bigr)
+    \;=\;
+    p_{ij},
+\]
+for all times \(n\), all states \(i, j \in S\), and all possible sequences \(i_0, \ldots, i_{n-1}\) of earlier states. Thus, the probability law of the next state \(X_{n+1}\) depends on the past only through the value of the present state \(X_n\).
+
+The transition probabilities \(p_{ij}\) must of course be nonnegative, and sum to one:
+\[
+    \sum_{j=1}^{m} p_{ij} \;=\; 1,
+    \quad \text{for all } i.
+\]
+We will generally allow the probabilities \(p_{ii}\) to be positive, in which case it is possible for the next state to be the same as the current one. Even though the state does not change, we still view this as a state transition of a special type (a “self-transition”).
+
+\medskip
+
+\noindent \textbf{Specification of Markov Models.}
+
+A Markov chain model is specified by identifying:
+\begin{enumerate}
+\item The set of states \( S = \{\,1, \ldots, m\} \).
+\item The set of possible transitions, namely, those pairs \((i, j)\) for which \(p_{ij} > 0\).
+\item The numerical values of those \(p_{ij}\) that are positive.
+\end{enumerate}
+
+The Markov chain specified by this model is a sequence of random variables \(X_0, X_1, X_2, \ldots\) that take values in \(S\), and which satisfy
+\[
+    P\bigl(X_{n+1} = j \,\big\vert\, X_n = i,\; X_{n-1} = i_{n-1}, \ldots, X_0 = i_0\bigr)
+    \;=\;
+    p_{ij},
+\]
+for all times \(n\), all states \(i, j \in S\), and all possible sequences \(i_0, \ldots, i_{n-1}\) of earlier states.
+
+All of the elements of a Markov chain model can be encoded in a \emph{transition probability matrix}, which is simply a two-dimensional array whose element at the \(i\)th row and \(j\)th column is \(p_{ij}\):
+\[
+    \begin{pmatrix}
+        p_{11} & p_{12} & \cdots & p_{1m} \\
+        p_{21} & p_{22} & \cdots & p_{2m} \\
+        \vdots & \vdots & \ddots & \vdots \\
+        p_{m1} & p_{m2} & \cdots & p_{mm}
+    \end{pmatrix}.
+\]
+It is also helpful to lay out the model in the so-called \emph{transition probability graph}, whose nodes are the states and whose arcs are the possible transitions. By recording the numerical values of \(p_{ij}\) near the corresponding arcs, one can visualize the entire model in a way that can make some of its major properties readily apparent.
+
+\medskip
+
+\noindent \textbf{Example 7.1.} Alice is taking a probability class and in each week, she can be either up-to-date or she may have fallen behind. If she is up-to-date in a given week, the probability that she will be up-to-date (or behind) in the next week is \(0.8\) (or \(0.2\), respectively). If she is behind in the given week, the probability that she will be up-to-date (or behind) in the next week is \(0.6\) (or \(0.4\), respectively). We assume that these probabilities do not depend on whether she was up-to-date or behind in previous weeks, so the problem has the typical Markov chain character (the future depends on the past only through the present).
+
+Let us introduce states \(1\) and \(2\), and identify them with being up-to-date and behind, respectively. Then, the transition probabilities are
+\[
+    p_{11} = 0.8,
+    \quad
+    p_{12} = 0.2,
+    \quad
+    p_{21} = 0.6,
+    \quad
+    p_{22} = 0.4,
+\]
+and the transition probability matrix is
+\[
+    \begin{pmatrix}
+        0.8 & 0.2 \\
+        0.6 & 0.4
+    \end{pmatrix}.
+\]
+
+\noindent (If visualized as a graph, there are two nodes labeled “1 (up-to-date)” and “2 (behind),” with arrows showing transitions \(1 \to 1\) with probability \(0.8\), \(1 \to 2\) with probability \(0.2\), \(2 \to 1\) with probability \(0.6\), and \(2 \to 2\) with probability \(0.4\).)

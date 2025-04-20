@@ -1,0 +1,198 @@
+from manim import *
+import math
+
+# ---------------------------------------------------------------------------
+# Utility Helpers
+# ---------------------------------------------------------------------------
+def shrink_to_fit(mobj: Mobject, margin: float = 0.8):
+    """Scale mobj down so its width ≤ (frame width - margin)."""
+    max_width = config.frame_width - margin
+    if mobj.width > max_width:
+        mobj.scale_to_fit_width(max_width)
+    return mobj
+
+# ---------------------------------------------------------------------------
+# Title & Introduction
+# ---------------------------------------------------------------------------
+def play_title(scene: Scene):
+    title = Text("Binary Search", font_size=64, weight=BOLD)
+    subtitle = Text("Efficient Searching on Sorted Arrays", font_size=36, slant=ITALIC)
+    shrink_to_fit(title)
+    shrink_to_fit(subtitle)
+    subtitle.next_to(title, DOWN, buff=0.4)
+    
+    scene.play(Write(title), run_time=2)
+    scene.play(FadeIn(subtitle, shift=UP, run_time=1.8))
+    scene.wait(1)
+    scene.play(FadeOut(VGroup(title, subtitle)))
+
+def play_introduction(scene: Scene):
+    intro_text = Text(
+        "Searching an unsorted array may require checking each element (O(n) time).\n\n"
+        "If the array is sorted, Binary Search can locate an element in O(log n) time!",
+        font_size=32,
+        line_spacing=1.2,
+    )
+    shrink_to_fit(intro_text)
+    intro_text.to_edge(UP)
+    scene.play(Write(intro_text), run_time=3)
+    scene.wait(2)
+    scene.play(FadeOut(intro_text))
+
+# ---------------------------------------------------------------------------
+# Binary Search Algorithm Explanation
+# ---------------------------------------------------------------------------
+def play_algorithm(scene: Scene):
+    header = Text("Binary Search Algorithm", font_size=48, weight=BOLD)
+    header.to_edge(UP)
+    shrink_to_fit(header)
+    scene.play(Write(header))
+    
+    algorithm_lines = [
+        r"\textbf{Input:} Sorted array, target $x$",
+        r"\textbf{Initialize:} $a=0,\quad b=n-1$",
+        r"\textbf{While } $a \le b$:",
+        r"\quad $m = \left\lfloor \frac{a+b}{2} \right\rfloor$",
+        r"\quad \textbf{If } $A[m] = x$, \quad \textbf{return } $m$",
+        r"\quad \textbf{Else if } $A[m] < x$, \quad set $a = m+1$",
+        r"\quad \textbf{Else } set $b = m-1$",
+        r"\textbf{Return:} Element not found",
+    ]
+    
+    # Create a group of Tex objects for each line.
+    algorithm = VGroup(*[Tex(line, font_size=32) for line in algorithm_lines])
+    algorithm.arrange(DOWN, aligned_edge=LEFT, buff=0.3)
+    algorithm.next_to(header, DOWN, buff=0.5)
+    shrink_to_fit(algorithm)
+    scene.play(Write(algorithm), run_time=4)
+    scene.wait(3)
+    scene.play(FadeOut(VGroup(header, algorithm)))
+
+# ---------------------------------------------------------------------------
+# Array Visualization for Binary Search
+# ---------------------------------------------------------------------------
+def create_array(values, box_size=1.0, buff=0.2):
+    """Creates a horizontal row of squares with values displayed inside."""
+    squares = VGroup()
+    texts = VGroup()
+    for value in values:
+        square = Square(side_length=box_size)
+        text = Text(str(value), font_size=32)
+        text.move_to(square.get_center())
+        squares.add(square)
+        texts.add(text)
+    group = VGroup(*[VGroup(s, t) for s, t in zip(squares, texts)])
+    group.arrange(RIGHT, buff=buff)
+    return squares, texts
+
+def play_visualization(scene: Scene):
+    header = Text("Binary Search Visualization", font_size=48, weight=BOLD)
+    header.to_edge(UP)
+    scene.play(Write(header))
+    
+    # Create a sorted array.
+    values = [1, 3, 5, 7, 9, 11, 13, 15]
+    squares, texts = create_array(values, box_size=1.0, buff=0.3)
+    # Pair each square with its text and arrange correctly
+    array_group = VGroup(*[VGroup(s, t) for s, t in zip(squares, texts)])
+    array_group.arrange(RIGHT, buff=0.3)
+    array_group.to_edge(LEFT, buff=1).shift(DOWN * 0.5)
+    scene.play(Create(array_group))
+    scene.wait(1)
+    
+    # Display the search target.
+    target = 9
+    target_text = Text(f"Target = {target}", font_size=36, color=YELLOW)
+    target_text.to_edge(RIGHT, buff=1)
+    scene.play(FadeIn(target_text, shift=LEFT))
+    scene.wait(1)
+    
+    # ----- Step 1: Initial Active Region -----
+    # low = 0, high = 7, mid = (0 + 7) // 2 = 3
+    low_index = 0
+    high_index = len(values) - 1
+    mid_index = (low_index + high_index) // 2  # 3
+    mid_rect = SurroundingRectangle(squares[mid_index], color=ORANGE, buff=0.1)
+    scene.play(Create(mid_rect))
+    scene.wait(2)
+    
+    step1_explanation = Text("Step 1: mid = index 3; Value = 7", font_size=28)
+    step1_explanation.next_to(mid_rect, DOWN, buff=0.5)
+    scene.play(Write(step1_explanation))
+    scene.wait(2)
+    
+    # Since 7 < 9, update low = mid_index + 1.
+    update1 = Text("7 < 9, so search the RIGHT half", font_size=28)
+    update1.next_to(step1_explanation, DOWN, buff=0.3)
+    scene.play(Write(update1))
+    scene.wait(2)
+    
+    scene.play(FadeOut(VGroup(mid_rect, step1_explanation, update1)))
+    active_rect1 = SurroundingRectangle(VGroup(*squares[4:]), color=GREEN, buff=0.1)
+    scene.play(Create(active_rect1))
+    scene.wait(1)
+    
+    # ----- Step 2: Next Iteration -----
+    # Now, low = 4, high = 7, mid = (4 + 7) // 2 = 5
+    mid_index = (4 + 7) // 2  # 5
+    mid_rect2 = SurroundingRectangle(squares[mid_index], color=ORANGE, buff=0.1)
+    scene.play(Create(mid_rect2))
+    scene.wait(2)
+    
+    step2_explanation = Text("Step 2: mid = index 5; Value = 11", font_size=28)
+    step2_explanation.next_to(mid_rect2, DOWN, buff=0.5)
+    scene.play(Write(step2_explanation))
+    scene.wait(2)
+    
+    update2 = Text("11 > 9, so search the LEFT half", font_size=28)
+    update2.next_to(step2_explanation, DOWN, buff=0.3)
+    scene.play(Write(update2))
+    scene.wait(2)
+    
+    scene.play(FadeOut(VGroup(mid_rect2, step2_explanation, update2, active_rect1)))
+    
+    # ----- Step 3: Final Iteration -----
+    # New active region is just index 4.
+    final_rect = SurroundingRectangle(squares[4], color=GREEN, buff=0.1)
+    scene.play(Create(final_rect))
+    scene.wait(1.5)
+    
+    step3_explanation = Text("Step 3: mid = index 4; Value = 9", font_size=28)
+    step3_explanation.next_to(final_rect, DOWN, buff=0.5)
+    scene.play(Write(step3_explanation))
+    scene.wait(1.5)
+    
+    found_text = Text("Target Found!", font_size=36, color=GREEN)
+    found_text.next_to(final_rect, DOWN, buff=0.7)
+    scene.play(Write(found_text))
+    scene.wait(2)
+    
+    scene.play(FadeOut(VGroup(header, array_group, target_text, final_rect, step3_explanation, found_text)))
+
+# ---------------------------------------------------------------------------
+# Summary
+# ---------------------------------------------------------------------------
+def play_summary(scene: Scene):
+    summary = BulletedList(
+        "Binary Search requires a sorted array",
+        "It repeatedly halves the search interval",
+        "Time Complexity: O(log n)",
+        "Much faster than linear search (O(n))",
+        font_size=34,
+    )
+    shrink_to_fit(summary)
+    summary.to_edge(UP)
+    scene.play(Write(summary, run_time=4))
+    scene.wait(3)
+    scene.play(FadeOut(summary))
+
+# ---------------------------------------------------------------------------
+# Full Tutorial Scene
+# ---------------------------------------------------------------------------
+class FullTutorial(Scene):
+    def construct(self):
+        play_title(self)
+        play_introduction(self)
+        play_algorithm(self)
+        play_visualization(self)
+        play_summary(self)
