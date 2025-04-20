@@ -1,0 +1,20 @@
+The `Underline` class in Manim is used to create an underline for a given mobject (typically a text object). Here's a concise summary:
+
+Purpose:
+- Creates an underline beneath a text or mobject
+- Inherits from the `Line` class
+
+Key Parameters:
+- `mobject`: The object to be underlined
+- `buff`: Buffer space between the mobject and underline (default 0.1)
+
+Example Usage:
+```python
+class UnderLine(Scene):
+    def construct(self):
+        man = Tex("Manim")  # Create text
+        ul = Underline(man)  # Create underline for text
+        self.add(man, ul)  # Display text and underline
+```
+
+The example demonstrates creating a simple underline for the word "Manim", which can be useful for emphasizing or drawing attention to text in Manim animations.

@@ -1,0 +1,19 @@
+The `manim.utils.hashing` module provides utility functions for generating consistent hash values for Manim objects during scene rendering. The key components are:
+
+1. `get_json(obj)`: Recursively serializes a dictionary/object into a JSON string using a custom JSON encoder that:
+   - Handles functions, methods, numpy arrays
+   - Prevents circular references
+   - Filters out specific keys
+   - Converts complex objects to their types or representations
+
+2. `get_hash_from_play_call()`: Generates a unique hash for a scene by:
+   - Converting camera, animations, and mobjects to JSON
+   - Generating CRC32 hashes for each component
+   - Combining these hashes into a single string
+
+The module uses a `_Memoizer` class to optimize hashing by:
+- Preventing duplicate processing of objects
+- Warning about large scenes
+- Handling different object types
+
+The primary purpose is to enable scene caching and ensure consistent rendering across different runs.

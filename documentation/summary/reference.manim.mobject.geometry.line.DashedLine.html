@@ -1,0 +1,21 @@
+A DashedLine is a Line with configurable dashed properties:
+
+Parameters:
+- `dash_length`: Length of each dash (default 0.05)
+- `dashed_ratio`: Ratio of dash space to empty space (0-1, default 0.5)
+
+Example usage:
+```python
+# Three different dashed lines
+dashed_1 = DashedLine(config.left_side, config.right_side, dash_length=2.0)  # Long dashes
+dashed_2 = DashedLine(config.left_side, config.right_side)  # Default dashes
+dashed_3 = DashedLine(config.left_side, config.right_side, dashed_ratio=0.1)  # More empty space
+```
+
+Key methods:
+- `get_start()`: Returns start point
+- `get_end()`: Returns end point
+- `get_first_handle()`: Returns first handle point
+- `get_last_handle()`: Returns last handle point
+
+Inherits from `Line`, so supports standard Line positioning and styling.

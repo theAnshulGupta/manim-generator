@@ -1,0 +1,32 @@
+The `manim.mobject.svg.brace` module provides several classes for creating braces (curved or angular brackets) in Manim:
+
+1. `Brace`: Creates a brace adjacent to a mobject
+   - Key parameters: `mobject`, `direction`, `buff`, `sharpness`
+   - Methods like `put_at_tip()`, `get_text()`, `get_tex()` help position text/tex near the brace
+
+2. `BraceLabel`: Creates a brace with an attached label
+   - Combines a brace and a text label
+   - Allows customization of label constructor, font size, etc.
+
+3. `BraceBetweenPoints`: Creates a brace between two points
+   - Automatically computes brace direction based on point positions
+
+4. `ArcBrace`: Creates a brace that wraps around an arc
+   - Handles scaling and positioning for different arc radii
+
+Example usage:
+```python
+# Basic brace
+brace = Brace(square, direction=DOWN)
+
+# Brace with label
+brace_label = BraceLabel(square, "Length")
+
+# Brace between points
+brace_between = BraceBetweenPoints(point1, point2)
+
+# Arc brace
+arc_brace = ArcBrace(some_arc)
+```
+
+These classes provide flexible ways to annotate and highlight mathematical or geometric relationships in Manim animations.

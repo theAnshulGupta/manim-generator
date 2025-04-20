@@ -1,0 +1,20 @@
+The `manim.utils.paths` module provides various path functions for transforming points between start and end positions during animations. Here's a summary:
+
+1. `straight_path()`: Points move directly in a straight line between start and end.
+
+2. `path_along_arc(arc_angle, axis=OUT)`: Points move along a circular arc with a specified angle and rotation axis.
+
+3. `clockwise_path()`: Points move clockwise in a half-circle path.
+
+4. `counterclockwise_path()`: Points move counterclockwise in a half-circle path.
+
+5. `path_along_circles(arc_angle, circles_centers, axis=OUT)`: Points move along individual circles with specified centers.
+
+6. `spiral_path(angle, axis=OUT)`: Points move along a spiral path while transitioning.
+
+Each function returns a path function that can be used with Manim's `Transform` animation. The functions allow for more dynamic and interesting movement during transformations. They include example scenes demonstrating their usage.
+
+Key features:
+- Customizable rotation angles
+- Flexible axis specification
+- Smooth interpolation between points

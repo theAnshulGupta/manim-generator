@@ -1,0 +1,30 @@
+Key points about Manim's color core module:
+
+1. Color Representation:
+- ManimColor is the internal color data structure
+- Supports multiple color input formats (RGB, hex, tuples, arrays)
+- Can be imported using uppercase color names (e.g., RED, GREEN)
+
+2. Color Conversion Functions:
+- `color_to_rgb()`: Convert color to RGB float array
+- `color_to_rgba()`: Convert color to RGBA float array
+- `rgb_to_hex()`: Convert RGB to hex string
+- `interpolate_color()`: Interpolate between two colors
+- `invert_color()`: Linearly invert a color
+
+3. Color Utility Functions:
+- `average_color()`: Calculate average color
+- `color_gradient()`: Create interpolated color list
+- `random_color()`: Generate random color
+- `random_bright_color()`: Generate bright random color
+
+4. Advanced Color Features:
+- Supports custom color space implementation
+- Requires implementing `_internal_value`, `_internal_space`, and `_from_internal()` methods
+- Provides consistent color manipulation across different color spaces
+
+Example usage:
+```python
+from manim import RED, GREEN, color_gradient
+gradient = color_gradient([RED, GREEN], 5)
+```

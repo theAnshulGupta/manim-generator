@@ -1,0 +1,33 @@
+Here's a concise summary of the AnnularSector class in Manim:
+
+AnnularSector creates a sector of an annulus (ring-like shape) with customizable parameters:
+
+Parameters:
+- `inner_radius`: Radius of the inner circle
+- `outer_radius`: Radius of the outer circle
+- `angle`: Clockwise angle of the sector
+- `start_angle`: Starting angle (default is 0)
+- `fill_opacity`: Color opacity (0-1)
+- `stroke_width`: Border thickness
+- `color`: Fill color
+
+Key Features:
+- Can create partial or full ring sectors
+- Supports different radii and angles
+- Allows transparency and color customization
+
+Example Code:
+```python
+# Basic usage
+s1 = AnnularSector(color=YELLOW)
+
+# Customized sector
+s2 = AnnularSector(
+    inner_radius=1.5, 
+    outer_radius=2, 
+    angle=45*DEGREES, 
+    color=RED
+)
+```
+
+The example demonstrates creating different AnnularSector shapes with varying parameters like radius, angle, and color.

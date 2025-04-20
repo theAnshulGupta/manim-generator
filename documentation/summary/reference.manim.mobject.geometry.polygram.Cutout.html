@@ -1,0 +1,18 @@
+Cutout is a Manim class for creating a shape with smaller shapes cut out from it. 
+
+Key details:
+- Takes a main shape and multiple smaller shapes to remove from it
+- Creates a new shape with "cutouts" where the smaller shapes intersect
+- Inherits from VMobject
+
+Example usage:
+```python
+s1 = Square().scale(2.5)  # Main shape
+s2 = Triangle().shift(DOWN + RIGHT).scale(0.5)  # First cutout
+s3 = Square().shift(UP + RIGHT).scale(0.5)  # Second cutout
+c = Cutout(s1, s2, s3, fill_opacity=1, color=BLUE, stroke_color=RED)
+```
+
+Warning: If cutout shapes extend outside the main shape, those parts will be added to the result, not just removed.
+
+The example demonstrates creating a blue square with multiple geometric shapes cut out, outlined in red.

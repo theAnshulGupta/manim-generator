@@ -1,0 +1,30 @@
+The Camera class in Manim is responsible for rendering scenes by managing how objects are displayed on screen. Here's a concise summary:
+
+Key Features:
+- Controls what is displayed on screen
+- Manages pixel arrays, backgrounds, and rendering of mobjects
+- Handles conversion of mobjects to pixel-based images
+
+Main Parameters:
+- background_image: Optional background image path
+- frame_center: Center of the camera's view
+- pixel_height/pixel_width: Scene dimensions in pixels
+- background_color: Scene background color
+
+Key Methods:
+- capture_mobjects(): Converts scene contents to pixel array
+- get_mobjects_to_display(): Determines which mobjects to render
+- is_in_frame(): Checks if a mobject is visible
+- set_background(): Sets scene background
+- convert_pixel_array(): Converts pixel values to proper RGB
+
+Basic Example Usage:
+```python
+camera = Camera(
+    pixel_height=1080, 
+    pixel_width=1920, 
+    background_color=WHITE
+)
+```
+
+The Camera class is crucial for rendering Manim scenes, managing how objects are displayed and converted into visual output.

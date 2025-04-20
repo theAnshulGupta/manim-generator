@@ -1,0 +1,31 @@
+Summary of Integer Class in Manim:
+
+Purpose:
+- Displays integers as text/graphical objects in Manim animations
+- Inherits from DecimalNumber class
+
+Key Parameters:
+- `number`: Value to display (can be float or integer)
+- `num_decimal_places`: Number of decimal places (default 0)
+- Additional styling kwargs supported
+
+Example Usage:
+```python
+# Creates an integer display with various stylings
+Integer(number=42)  # Basic integer
+Integer(number=3.14159, show_ellipsis=True)  # With ellipsis
+Integer(number=2.5).set_color(ORANGE).scale(2.5)  # Styled integer
+```
+
+Main Features:
+- Easily create and style numeric displays
+- Can scale, color, and position integers
+- Supports gradient coloring
+- Flexible number input (can use floats)
+
+Common Methods:
+- `set_color()`
+- `scale()`
+- `set_x()`
+- `set_y()`
+- `set_color_by_gradient()`

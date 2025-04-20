@@ -1,0 +1,38 @@
+`MarkupText` is a Manim class for rendering text with advanced formatting using Pango markup language. Key features include:
+
+Markup Features:
+- HTML-like tags for text styling: `<b>`, `<i>`, `<u>`, `<s>`
+- Color and font manipulation: `<span foreground="blue">`, `<span font_family="sans">`
+- Gradient coloring
+- Support for multiple languages
+- Ligature control
+- Text justification
+
+Basic Usage:
+```python
+# Simple text with markup
+text = MarkupText('<b>Bold</b> and <i>italic</i> text')
+
+# Colored text
+text = MarkupText('<span foreground="blue">Blue text</span>')
+
+# Multilingual support
+text = MarkupText('नमस्ते', font="sans-serif")
+```
+
+Key Parameters:
+- `text`: Markup text string
+- `font_size`: Text size
+- `color`: Global text color
+- `font`: Font family
+- `justify`: Text alignment
+- `disable_ligatures`: Disable character ligatures
+
+Supported Markup Tags:
+- Text style: `<b>`, `<i>`, `<u>`, `<s>`
+- Font size: `<big>`, `<small>`
+- Special characters: `<sup>`, `<sub>`
+- Color/font: `<span>` with various attributes
+- Custom gradients
+
+The class provides flexible text rendering with rich formatting options.

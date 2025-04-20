@@ -1,0 +1,23 @@
+`TypeWithCursor` is an animation class in Manim that types text letter by letter with an optional cursor. Here's a concise summary:
+
+Key Features:
+- Animates text by adding letters progressively
+- Includes a customizable cursor mobject
+- Works only with `Text` (not `MathTex`)
+
+Parameters:
+- `text`: Text to be typed
+- `cursor`: Mobject shown after text typing
+- `time_per_char`: Speed of letter appearance
+- `buff`: Distance between text and cursor
+- `keep_cursor_y`: Maintain cursor's vertical position
+- `leave_cursor_on`: Keep cursor visible after animation
+
+Example:
+```python
+text = Text("Inserting", color=PURPLE)
+cursor = Rectangle(color=GREY_A, height=1.1, width=0.5)
+self.play(TypeWithCursor(text, cursor))
+```
+
+This animation will type the text letter by letter and display a cursor next to it.

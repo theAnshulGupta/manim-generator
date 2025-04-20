@@ -1,0 +1,38 @@
+The `deprecation` module in Manim provides decorators for marking functions, classes, and parameters as deprecated:
+
+1. `@deprecated` decorator:
+- Used to mark functions, classes, or methods as deprecated
+- Generates warning when used
+- Optional parameters: 
+  - `since`: version/date of deprecation
+  - `until`: version/date of removal
+  - `replacement`: suggested alternative
+  - `message`: reason for deprecation
+
+Example:
+```python
+@deprecated(since="v0.2", until="v0.4", replacement="bar")
+def foo():
+    pass
+```
+
+2. `@deprecated_params` decorator:
+- Marks specific function parameters as deprecated
+- Can automatically redirect deprecated parameters
+- Parameters include:
+  - `params`: parameter(s) to deprecate
+  - `since`/`until`: deprecation timeline
+  - `message`: deprecation reason
+  - `redirections`: remap deprecated parameters
+
+Example:
+```python
+@deprecated_params(
+    params="old_param", 
+    redirections=[("old_param", "new_param")]
+)
+def foo(**kwargs):
+    return kwargs
+```
+
+Both decorators provide flexible ways to manage code transitions and warn users about upcoming changes.

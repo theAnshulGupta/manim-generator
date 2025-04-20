@@ -1,0 +1,9 @@
+This module provides animation classes that transform Mobjects while preserving matching parts:
+
+1. `TransformMatchingAbstractBase`: An abstract base class for transformations that track matching parts.
+
+2. `TransformMatchingShapes`: An animation that transforms groups by matching the shapes of their submobjects. For example, if two groups have similar shapes, the transformation will align and morph them accordingly.
+
+3. `TransformMatchingTex`: A specialized transformation for LaTeX strings, attempting to match and transform corresponding parts of rendered mathematical expressions.
+
+Example use cases include smoothly transitioning between similar mathematical equations or graphical representations while maintaining the structure of matching elements.

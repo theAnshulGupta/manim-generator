@@ -1,0 +1,35 @@
+Vector is a specialized Arrow class in Manim for creating vectors in graphs. Key points:
+
+Parameters:
+- `direction`: Vector's direction (default [1,0,0])
+- `buff`: Distance from vector's endpoints (default 0)
+- Inherits from Arrow class
+
+Basic Usage Example:
+```python
+class VectorExample(Scene):
+    def construct(self):
+        plane = NumberPlane()
+        vector_1 = Vector([1,2])    # Vector pointing (1,2)
+        vector_2 = Vector([-5,-2])  # Vector pointing (-5,-2)
+        self.add(plane, vector_1, vector_2)
+```
+
+Special Method - `coordinate_label()`:
+- Creates a matrix label showing vector coordinates
+- Optional parameters:
+  - `integer_labels`: Round coordinates to integers
+  - `n_dim`: Number of vector dimensions
+  - `color`: Label color
+
+Coordinate Label Example:
+```python
+class VectorCoordinateLabel(Scene):
+    def construct(self):
+        plane = NumberPlane()
+        vec_1 = Vector([1, 2])
+        label_1 = vec_1.coordinate_label()  # Creates coordinate matrix
+        self.add(plane, vec_1, label_1)
+```
+
+Key warning: Don't confuse with Vector2D/Vector3D type aliases, which are not Mobjects.

@@ -1,0 +1,13 @@
+The `manim.mobject.frame` module provides two rectangle classes for creating screen-like shapes:
+
+1. `ScreenRectangle`:
+   - Creates a rectangle with a customizable aspect ratio
+   - Default aspect ratio is 16:9
+   - Default height is 4
+   - Has an `aspect_ratio` property that allows dynamically changing the rectangle's width while maintaining the specified ratio
+
+2. `FullScreenRectangle`:
+   - Inherits from `ScreenRectangle`
+   - Sets height to the full frame height from Manim's configuration
+
+Both classes are useful for creating rectangular frames or screens in Manim animations, with flexibility in sizing and aspect ratio.

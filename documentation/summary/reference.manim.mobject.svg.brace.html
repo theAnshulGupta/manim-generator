@@ -1,0 +1,25 @@
+Brace classes in Manim allow you to create curly brace annotations for various purposes. Key classes include:
+
+1. `Brace`: Creates a brace adjacent to a given mobject
+   ```python
+   # Example: Brace next to a rectangle
+   rect = Rectangle()
+   brace = Brace(rect)
+   ```
+
+2. `BraceBetweenPoints`: Creates a brace between two specific points
+   ```python
+   # Example: Brace between two coordinates
+   brace = BraceBetweenPoints(point1, point2)
+   ```
+
+3. `BraceLabel`: Creates a brace with an attached text label
+   ```python
+   # Example: Brace with explanatory text
+   rect = Rectangle()
+   brace = BraceLabel(rect, "Description")
+   ```
+
+4. `ArcBrace`: Creates a brace that wraps around an arc
+
+These classes provide flexible ways to annotate and highlight elements in mathematical and explanatory animations.

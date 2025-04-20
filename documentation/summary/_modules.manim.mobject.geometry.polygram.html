@@ -1,0 +1,32 @@
+Here's a concise summary of the `manim.mobject.geometry.polygram` module:
+
+This module provides various polygon-related classes:
+
+1. `Polygram`: A generalized polygon allowing disconnected edges
+   - Can create complex shapes with multiple vertex groups
+   - Supports rounding corners
+   - Example: Creating a hexagram
+
+2. `Polygon`: A single closed loop of vertices
+   - Simpler version of Polygram
+   - Can create custom polygons
+
+3. `RegularPolygram`: Polygram with regularly spaced vertices
+   - Customizable vertex count and density
+   - Can create star-like shapes
+
+4. `RegularPolygon`: Specific case of RegularPolygram with connected vertices
+   - Creates regular n-sided polygons
+
+5. `Star`: A regular polygram without intersecting lines
+   - Configurable points, outer/inner radius, and density
+
+6. Other specific polygon types:
+   - `Triangle`: Equilateral triangle
+   - `Rectangle`: Quadrilateral with parallel sides
+   - `Square`: Rectangle with equal sides
+   - `RoundedRectangle`: Rectangle with rounded corners
+   - `Cutout`: Shape with smaller shapes cut out
+   - `ConvexHull`: Creates a convex hull from a set of points
+
+All classes support customization like color, size, and positioning.

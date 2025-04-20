@@ -1,0 +1,15 @@
+This module provides utility functions for command-related operations in Manim:
+
+1. `capture(command, cwd=None, command_input=None)`: Runs a shell command and returns its output, error stream, and return code.
+
+2. `get_video_metadata(path_to_video)`: Extracts metadata from a video file, including:
+   - Width and height
+   - Number of frames
+   - Duration
+   - Average frame rate
+   - Codec name
+   - Pixel format
+
+3. `get_dir_layout(dirpath)`: Recursively generates relative paths of all files in a directory and its subdirectories.
+
+The module uses `av` library for video metadata extraction and provides a `VideoMetadata` type for structured metadata storage.

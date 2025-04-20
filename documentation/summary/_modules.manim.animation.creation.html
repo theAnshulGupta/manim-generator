@@ -1,0 +1,35 @@
+Here's a concise summary of the Manim `creation` module:
+
+The `creation` module provides animations for showing/hiding mobjects with various styles:
+
+Key Animations:
+1. `Create`: Incrementally show a VMobject
+2. `Uncreate`: Reverse of Create
+3. `DrawBorderThenFill`: Draw border first, then fill
+4. `Write`: Simulate hand-writing text/drawing
+5. `Unwrite`: Simulate erasing text/drawing
+6. `SpiralIn`: Create mobjects with spiral trajectory
+7. `ShowIncreasingSubsets`: Show submobjects progressively
+8. `AddTextLetterByLetter`: Show text letter by letter
+9. `RemoveTextLetterByLetter`: Remove text letter by letter
+10. `TypeWithCursor`: Add text with a cursor
+11. `UntypeWithCursor`: Remove text with a cursor
+
+Example usage:
+```python
+# Basic creation
+self.play(Create(Square()))
+
+# Writing text
+text = Text("Hello")
+self.play(Write(text))
+
+# Typing with cursor
+cursor = Rectangle(...)
+self.play(TypeWithCursor(text, cursor))
+```
+
+Key features:
+- Supports various creation/removal styles
+- Customizable animation parameters
+- Works primarily with VMobjects and Text

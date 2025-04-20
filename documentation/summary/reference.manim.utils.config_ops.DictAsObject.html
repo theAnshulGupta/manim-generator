@@ -1,0 +1,11 @@
+A utility class in Manim that allows dictionary-like objects to be accessed using dot notation instead of bracket notation. It converts a standard dictionary into an object where dictionary keys can be accessed as attributes.
+
+Example:
+```python
+# Instead of: my_dict['key']
+# You can now do: my_dict.key
+config = DictAsObject({'width': 1920, 'height': 1080})
+print(config.width)  # Outputs: 1920
+```
+
+This provides a more convenient and readable way to access dictionary values by converting dictionary keys to object attributes.

@@ -1,0 +1,29 @@
+Here's a concise summary of the ConvexHull3D class:
+
+ConvexHull3D is a 3D geometric object that creates the smallest convex polyhedron that encloses a given set of 3D points. 
+
+Key Parameters:
+- points: List of 3D points to form the convex hull
+- tolerance: Precision for hull calculation (default 1e-05)
+
+Example Usage:
+```python
+points = [
+    [1.93, 0.44, -1.52],
+    [-0.93, 1.23, 0.64],
+    # ... more points
+]
+hull = ConvexHull3D(
+    *points, 
+    faces_config={"stroke_opacity": 0},
+    graph_config={
+        "vertex_type": Dot3D,
+        "edge_config": {
+            "stroke_color": BLUE,
+            "stroke_width": 2
+        }
+    }
+)
+```
+
+The example demonstrates creating a 3D convex hull with customizable rendering options like vertex and edge styling. The method automatically calculates and renders the minimal polyhedron that contains all input points.

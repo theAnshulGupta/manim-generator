@@ -1,0 +1,23 @@
+This module defines various arrow tip shapes for use with `TipableVMobject` in Manim. Here's a concise summary:
+
+Key Classes:
+- `ArrowTip`: Base class for arrow tips with properties like `base`, `tip_point`, `vector`, `tip_angle`, and `length`
+- `StealthTip`: A kite-shaped arrow tip
+- `ArrowTriangleTip`: Non-filled triangular tip
+- `ArrowTriangleFilledTip`: Filled triangular tip (default)
+- `ArrowCircleTip`: Non-filled circular tip
+- `ArrowCircleFilledTip`: Filled circular tip
+- `ArrowSquareTip`: Non-filled square tip
+- `ArrowSquareFilledTip`: Filled square tip
+
+Example usage:
+```python
+# Default arrow with default filled triangle tip
+arrow1 = Arrow(start=[-2, 0, 0], end=[2, 0, 0])
+
+# Arrow with different tip styles
+arrow2 = Arrow(start=[-2, -1, 0], end=[2, -1, 0], tip_shape=StealthTip)
+arrow3 = Arrow(start=[-2, -2, 0], end=[2, -2, 0], tip_shape=ArrowCircleTip)
+```
+
+Each tip can be customized with parameters like `fill_opacity`, `stroke_width`, `length`, and `start_angle`.

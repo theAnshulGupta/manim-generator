@@ -1,0 +1,44 @@
+The documentation for `text_mobject` covers how to display non-LaTeX text in Manim. Here's a concise summary:
+
+Key Points:
+- Uses Pango library to render text
+- Supports multiple alphabets (e.g., Chinese, Japanese, Korean, Arabic)
+- Provides `Text` class for adding text to animations
+
+Basic Usage Example:
+```python
+class HelloWorld(Scene):
+    def construct(self):
+        text = Text('Hello world').scale(3)
+        self.add(text)
+```
+
+Advanced Example (Text Alignment):
+```python
+class TextAlignment(Scene):
+    def construct(self):
+        title = Text("K-means clustering", color=WHITE).scale(0.75).to_edge(UP)
+        
+        topics = VGroup(
+            Text("1. Measuring"),
+            Text("2. Clustering"),
+            Text("3. Regression"),
+            Text("4. Prediction")
+        ).arrange(DOWN, aligned_edge=LEFT).scale(0.7)
+        
+        self.add(title, topics)
+```
+
+Additional Features:
+- Can adjust text color, scale, alignment
+- Supports creating text groups
+- Can modify text opacity and positioning
+
+Included Classes:
+- `Text`: Basic text rendering
+- `MarkupText`: Advanced text rendering
+- `Paragraph`: Paragraph text display
+
+Utility Functions:
+- `register_font()`: Add custom font files
+- `remove_invisible_chars()`: Remove unwanted invisible characters

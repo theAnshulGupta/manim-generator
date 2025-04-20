@@ -1,0 +1,16 @@
+RemoveTextLetterByLetter is an animation that removes text from the scene letter by letter. Key details:
+
+- Part of Manim's creation animations
+- Works only with Text class (not MathTex)
+- Parameters include:
+  - `time_per_char`: Speed of letter removal (default 0.1)
+  - `rate_func`: Controls animation progression
+  - `run_time`: Total animation duration
+
+Example usage:
+```python
+text = Text("Hello")
+self.play(RemoveTextLetterByLetter(text))
+```
+
+This animation will gradually remove letters from the text, starting from the end, creating a sequential disappearing effect.

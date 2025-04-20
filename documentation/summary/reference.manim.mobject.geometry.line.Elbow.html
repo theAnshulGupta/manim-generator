@@ -1,0 +1,24 @@
+Elbow is a Manim geometry class representing an L-shaped line segment:
+
+Key Features:
+- Creates a right-angled line (L-shape)
+- Customizable width and rotation angle
+- Inherits from VMobject
+
+Parameters:
+- `width` (float): Length of elbow's sides (default: 0.2)
+- `angle` (float): Rotation of the elbow (default: 0)
+
+Example Code:
+```python
+class ElbowExample(Scene):
+    def construct(self):
+        elbow_1 = Elbow()  # Default elbow
+        elbow_2 = Elbow(width=2.0)  # Longer elbow
+        elbow_3 = Elbow(width=2.0, angle=5*PI/4)  # Rotated elbow
+
+        elbow_group = Group(elbow_1, elbow_2, elbow_3).arrange(buff=1)
+        self.add(elbow_group)
+```
+
+This example demonstrates creating elbows with different widths and rotations, then arranging them in a group.

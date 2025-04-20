@@ -1,0 +1,15 @@
+`TransformFromCopy` is an animation class in Manim that performs a reversed Transform, essentially creating an animation where an object transforms from a target object back to its original state.
+
+Key points:
+- Inherits from the `Transform` animation class
+- Takes two mobjects as parameters: the original mobject and the target mobject
+- Interpolates the animation progress from the target object back to the original object
+
+Example usage would look like:
+```python
+original_mob = Circle()
+target_mob = Square()
+scene.play(TransformFromCopy(original_mob, target_mob))
+```
+
+The main method is `interpolate(alpha)`, which sets the animation progress from 0 (start) to 1 (end), determining how the transformation appears during the animation.

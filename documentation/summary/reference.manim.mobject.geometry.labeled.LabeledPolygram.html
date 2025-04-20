@@ -1,0 +1,30 @@
+Summary of LabeledPolygram:
+
+LabeledPolygram is a Manim class for creating polygrams (complex polygons) with a label positioned at the polygon's pole of inaccessibility (the most central point).
+
+Key Parameters:
+- vertex_groups: Lists of vertices defining polygon rings
+- label: Text to display on the polygon
+- precision: Accuracy for finding the pole location (default 0.01)
+- Optional config dictionaries for label, box, and frame styling
+
+Important Notes:
+- Vertex groups must form closed rings
+- Precision should match the scale of input coordinates
+- Supports various label types (Text, Tex, MathTex)
+
+Example Use Cases:
+1. Complex polygon with centered label
+2. Geographic map visualization
+3. Custom shape labeling
+
+Code Example:
+```python
+polygram = LabeledPolygram(
+    *[ring1, ring2, ring3],
+    label=Text('Pole', font='sans-serif'),
+    precision=0.01
+)
+```
+
+The class automatically finds the best label placement and can handle multiple nested polygon rings.

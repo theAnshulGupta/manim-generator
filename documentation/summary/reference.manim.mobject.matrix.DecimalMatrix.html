@@ -1,0 +1,27 @@
+DecimalMatrix is a Manim class for creating matrices with decimal number entries:
+
+Key Features:
+- Creates a matrix where entries are displayed as decimal numbers
+- Allows configuring decimal place precision
+- Inherits from Matrix class
+
+Example Usage:
+```python
+class DecimalMatrixExample(Scene):
+    def construct(self):
+        matrix = DecimalMatrix(
+            [[3.456, 2.122], [33.2244, 12]],
+            element_to_mobject_config={"num_decimal_places": 2},
+            left_bracket="{",
+            right_bracket="}"
+        )
+        self.add(matrix)
+```
+
+Parameters:
+- `matrix`: 2D list/array of numbers
+- `element_to_mobject`: Mobject type (default: DecimalNumber)
+- `element_to_mobject_config`: Configuration for number display (default: 1 decimal place)
+- Additional matrix formatting options like brackets can be customized
+
+The class automatically rounds/truncates decimal places based on the configuration, making it easy to create precise numerical matrix representations in Manim animations.

@@ -1,0 +1,25 @@
+MultiCamera is a specialized camera in Manim that allows multiple perspectives in a scene. Key details:
+
+Purpose:
+- Enables rendering multiple camera views simultaneously
+- Inherits from MovingCamera
+- Allows capturing multiple perspectives in a single scene
+
+Key Parameters:
+- `image_mobjects_from_cameras`: Optional ImageMobjects from cameras
+- `allow_cameras_to_capture_their_own_display`: Toggle for camera self-capture
+
+Main Methods:
+- `add_image_mobject_from_camera()`: Add ImageMobject from camera
+- `capture_mobjects()`: Convert scene mobjects to pixel array
+- `get_mobjects_indicating_movement()`: Detect moving mobjects
+- `reset()`: Reset the MultiCamera
+- `update_sub_cameras()`: Reshape camera pixel arrays
+
+Important Attributes:
+- `frame_center`: Camera frame's center point
+- `frame_height`: Frame height
+- `frame_width`: Frame width
+- `background_color`: Camera background color
+
+Primarily used for advanced scene rendering requiring multiple camera perspectives.

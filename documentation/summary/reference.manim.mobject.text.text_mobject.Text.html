@@ -1,0 +1,40 @@
+The `Text` class in Manim is used to render non-LaTeX text using Pango. Here's a concise summary:
+
+Key Features:
+- Renders text as a VGroup of characters
+- Supports multiple fonts, colors, styles
+- Can apply different styles to specific parts of text
+- Works with multiple languages and scripts
+
+Basic Usage:
+```python
+# Simple text creation
+text = Text('Hello world').scale(3)
+
+# Color customization
+text1 = Text('Hello world', color=BLUE)
+text2 = Text('Hello world', gradient=(BLUE, GREEN))
+
+# Style variations
+text_italic = Text("Hello world", slant=ITALIC)
+text_bold = Text("Hello world", weight=BOLD)
+
+# Per-character styling
+text_custom = Text(
+    'Google', 
+    t2c={'[:1]': '#3174f0', '[1:2]': '#e53125'...}
+)
+```
+
+Parameters:
+- `text`: Text to render
+- `color`: Text color
+- `font_size`: Size of text
+- `font`: Font family
+- `slant`: Text slant (NORMAL/ITALIC)
+- `weight`: Text weight (NORMAL/BOLD)
+- `t2c`: Per-character/substring color mapping
+- `t2f`: Per-character font mapping
+- More customization options available
+
+Supports rendering text in multiple languages and scripts with proper font support.

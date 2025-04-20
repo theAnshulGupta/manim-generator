@@ -1,0 +1,25 @@
+`LaggedStart` is an animation composition class in Manim that allows sequential animations of multiple objects with a staggered timing.
+
+Key Features:
+- Controls animation timing across multiple objects
+- Uses `lag_ratio` to define delay between animations
+- Default `lag_ratio` is 0.05 (5%)
+- Total animation runtime remains consistent
+
+Parameters:
+- `animations`: Sequence of animations to be played
+- `lag_ratio`: Percentage of animation completion before next animation starts
+  - 0.25 means next animation starts when 25% of previous animation is complete
+
+Example Code:
+```python
+self.play(LaggedStart(
+    dot1.animate.shift(RIGHT * 4),
+    dot2.animate.shift(RIGHT * 4),
+    dot3.animate.shift(RIGHT * 4),
+    lag_ratio=0.25,
+    run_time=4
+))
+```
+
+In this example, three dots will move horizontally with a 25% staggered start, completing the entire animation in 4 seconds.

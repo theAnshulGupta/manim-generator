@@ -1,0 +1,33 @@
+The Manim `Sphere` class is used to create 3D spherical objects with the following key features:
+
+Parameters:
+- `center`: Sphere's center point (default: `[0, 0, 0]`)
+- `radius`: Sphere's size (default: 1)
+- `resolution`: Number of samples for rendering (can specify separate u and v resolution)
+- `u_range`: Horizontal range of sphere (default: full circle)
+- `v_range`: Vertical range of sphere (default: full hemisphere)
+
+Example code:
+```python
+class ExampleSphere(ThreeDScene):
+    def construct(self):
+        # Camera setup for 3D view
+        self.set_camera_orientation(phi=PI/6, theta=PI/6)
+        
+        # Create spheres with different properties
+        sphere1 = Sphere(
+            center=(3, 0, 0),   # Position
+            radius=1,            # Size
+            resolution=(20, 20), # Sampling detail
+            u_range=[0.001, PI-0.001],  # Partial sphere
+            v_range=[0, TAU]     # Full horizontal range
+        )
+        sphere1.set_color(RED)
+        self.add(sphere1)
+```
+
+Key points:
+- Inherits from `Surface` class
+- Supports customization of position, size, resolution, and range
+- Can be colored and positioned in 3D space
+- Useful for creating spherical objects in mathematical or scientific animations

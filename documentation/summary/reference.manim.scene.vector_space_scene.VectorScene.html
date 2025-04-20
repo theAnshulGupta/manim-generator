@@ -1,0 +1,29 @@
+VectorScene is a specialized Manim scene class for creating and manipulating vector graphics in a 2D coordinate system. Key features include:
+
+Main Methods:
+- `add_axes()`: Adds coordinate axes to the scene
+- `add_plane()`: Adds a number plane background
+- `add_vector()`: Creates and adds a vector to the plane
+- `get_vector()`: Returns a vector based on numerical coordinates
+- `get_basis_vectors()`: Creates standard (1,0) and (0,1) basis vectors
+- `label_vector()`: Adds a label to a vector
+- `vector_to_coords()`: Displays vector and its coordinate representation
+- `show_ghost_movement()`: Animates plane movement in a vector's direction
+
+Example Use Cases:
+```python
+class VectorExample(VectorScene):
+    def construct(self):
+        # Add plane and axes
+        self.add_plane()
+        self.add_axes()
+        
+        # Create and label vectors
+        v1 = self.add_vector([3, 2])
+        self.label_vector(v1, "\\vec{v}")
+        
+        # Show vector coordinates
+        self.vector_to_coords(v1)
+```
+
+The class is particularly useful for linear algebra visualizations, vector field representations, and coordinate system demonstrations.

@@ -1,0 +1,20 @@
+`SpecialThreeDScene` is an enhanced version of `ThreeDScene` with additional configuration options for 3D scenes:
+
+Key Features:
+- Automatic shading of 3D objects
+- Default configuration for axes and spheres
+- Customizable camera settings
+
+Main Methods:
+1. `get_axes()`: Returns 3D axes
+2. `get_default_camera_position()`: Returns default camera position
+3. `get_sphere()`: Creates a sphere with custom properties
+4. `set_camera_to_default_position()`: Resets camera to default view
+
+Default Configurations:
+- Camera: Exponential projection, shading enabled
+- Axes: Elongated ticks, stroke width 2, unit size 2
+- Sphere: Radius 2, resolution (24, 48)
+- Low-quality mode: Disables shading, reduces resolution
+
+Example use would involve inheriting from this class for 3D scene creation with pre-configured settings.

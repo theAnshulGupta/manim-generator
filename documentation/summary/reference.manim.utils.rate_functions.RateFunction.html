@@ -1,0 +1,24 @@
+Rate functions are functions that control the rate of change during animations in Manim. They define how an animation progresses from start to end, determining the timing and interpolation of the animation. 
+
+Key points:
+- They map a linear time progression (0 to 1) to a non-linear progression
+- Used to create smooth, natural-looking animations
+- Control the speed and style of animation transitions
+
+Common rate functions include:
+- linear: Constant speed
+- smooth: Gradual acceleration and deceleration
+- rush_into: Starts slow, speeds up
+- rush_from: Starts fast, slows down
+- ease_in_out: Slow start and end, faster in middle
+
+Example usage:
+```python
+# Using a rate function in an animation
+self.play(
+    obj.animate.shift(RIGHT), 
+    rate_func=smooth
+)
+```
+
+The rate function transforms how the animation progresses, allowing for more dynamic and visually appealing motion.

@@ -1,0 +1,31 @@
+Here's a concise summary of the Arc class in Manim:
+
+Arc is a class for creating circular arc segments with configurable parameters:
+
+Key Parameters:
+- radius: Size of the arc (default 1.0)
+- start_angle: Starting angle (default 0)
+- angle: Sweep angle of the arc (default π/2)
+- num_components: Smoothness of the arc (default 9)
+- arc_center: Center point of the arc (default [0,0,0])
+
+Example Usage:
+```python
+class ArcExample(Scene):
+    def construct(self):
+        # Create an arc spanning π radians
+        self.add(Arc(angle=PI))
+```
+
+Important Methods:
+- generate_points(): Initializes the arc's geometric points
+- get_arc_center(): Calculates the arc's center point
+
+Key Attributes:
+- color
+- stroke_color
+- fill_color
+- width
+- height
+
+The Arc class inherits from TipableVMobject and allows flexible creation of curved line segments with precise angular control.

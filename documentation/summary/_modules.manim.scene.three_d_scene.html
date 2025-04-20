@@ -1,0 +1,22 @@
+The `manim.scene.three_d_scene` module provides two key classes for creating 3D scenes in Manim:
+
+1. `ThreeDScene`: A scene specialized for 3D rendering with methods for:
+   - Setting camera orientation (`set_camera_orientation`)
+   - Rotating camera (`begin_ambient_camera_rotation`, `stop_ambient_camera_rotation`)
+   - Moving camera (`move_camera`)
+   - Fixing mobject orientations (`add_fixed_orientation_mobjects`, `add_fixed_in_frame_mobjects`)
+
+2. `SpecialThreeDScene`: An extended version of `ThreeDScene` with additional configuration options for:
+   - 3D axes
+   - Spheres
+   - Camera shading
+   - Low-quality rendering settings
+
+Key methods include:
+- `get_axes()`: Returns customizable 3D axes
+- `get_sphere()`: Returns a configurable sphere
+- `set_camera_to_default_position()`: Sets camera to a predefined orientation
+
+The module supports both Cairo and OpenGL renderers, with slight variations in implementation.
+
+Example use cases include creating 3D mathematical visualizations, rotating scenes, and fixing object orientations during camera movement.

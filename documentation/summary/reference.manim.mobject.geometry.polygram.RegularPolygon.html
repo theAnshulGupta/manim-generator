@@ -1,0 +1,25 @@
+RegularPolygon is a Manim class for creating regular polygons with a specified number of sides. 
+
+Key details:
+- Inherits from RegularPolygram
+- Primary parameter is `n`: number of sides (defaults to 6)
+- Can customize start angle, color, and other properties
+
+Example usage:
+```python
+# Create different regular polygons
+hexagon = RegularPolygon(n=6)  # 6-sided polygon (default)
+rotated_hexagon = RegularPolygon(n=6, start_angle=30*DEGREES, color=GREEN)
+decagon = RegularPolygon(n=10, color=RED)
+
+# Group and arrange multiple polygons
+poly_group = Group(hexagon, rotated_hexagon, decagon).scale(1.5).arrange(buff=1)
+```
+
+Key methods/attributes inherited from parent classes:
+- `animate`: Animate polygon transformations
+- `color`: Set polygon color
+- `height/width`: Get polygon dimensions
+- `fill_color`: Get primary color
+
+The example demonstrates creating regular polygons with different side counts, rotations, and colors, then grouping and arranging them in a scene.

@@ -1,0 +1,39 @@
+NumberLine is a Manim class for creating customizable number lines with various features:
+
+Key Parameters:
+- x_range: Defines min, max, and step values (e.g., [-10, 10, 2])
+- length: Total line length
+- unit_size: Distance between ticks
+- include_ticks: Whether to show tick marks
+- include_numbers: Whether to display numbers on ticks
+- include_tip: Whether to add an arrow tip
+
+Example Usage:
+```python
+# Basic number line from -10 to 10 with steps of 2
+l0 = NumberLine(
+    x_range=[-10, 10, 2],
+    length=10,
+    color=BLUE,
+    include_numbers=True,
+    label_direction=UP
+)
+
+# Number line with custom tick sizes and font
+l1 = NumberLine(
+    x_range=[-10, 10, 2],
+    unit_size=0.5,
+    numbers_with_elongated_ticks=[-2, 4],
+    include_numbers=True,
+    font_size=24
+)
+```
+
+Key Methods:
+- add_labels(): Add custom labels to specific positions
+- add_numbers(): Add number labels to ticks
+- add_ticks(): Add tick marks
+- number_to_point(): Convert number to scene coordinate
+- point_to_number(): Convert scene coordinate to number
+
+Flexibility in customization allows creating various number line visualizations.

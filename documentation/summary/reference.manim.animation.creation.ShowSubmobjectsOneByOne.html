@@ -1,0 +1,15 @@
+`ShowSubmobjectsOneByOne` is an animation that displays submobjects of a group one at a time, removing previously shown submobjects. 
+
+Key points:
+- Inherits from `ShowIncreasingSubsets`
+- Takes an iterable of mobjects as input
+- Optional integer function to control subset progression (default is `ceil`)
+- Progressively reveals submobjects, clearing previous ones
+
+Example usage:
+```python
+group = VGroup(Square(), Circle(), Triangle())
+scene.play(ShowSubmobjectsOneByOne(group))
+```
+
+This would show each shape in the group one at a time, removing the previous shape before showing the next.

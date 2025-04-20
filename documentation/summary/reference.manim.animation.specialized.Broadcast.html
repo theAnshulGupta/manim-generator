@@ -1,0 +1,24 @@
+# Broadcast Animation in Manim
+
+## Overview
+`Broadcast` is a specialized animation that creates a wave-like expansion effect from a focal point, causing a mobject to gradually grow and fade out.
+
+## Key Parameters
+- `mobject`: The object to be broadcast
+- `focal_point`: Center of the broadcast (default: ORIGIN)
+- `n_mobs`: Number of emerging mobjects (default: 5)
+- `initial_opacity`: Starting stroke opacity (default: 1)
+- `final_opacity`: Ending stroke opacity (default: 0)
+- `initial_width`: Starting width of mobjects (default: 0.0)
+- `run_time`: Total animation duration (default: 3 seconds)
+- `lag_ratio`: Time between mobject iterations (default: 0.2)
+
+## Example Code
+```python
+class BroadcastExample(Scene):
+    def construct(self):
+        mob = Circle(radius=4, color=TEAL_A)
+        self.play(Broadcast(mob))
+```
+
+This creates a circular broadcast animation starting from the center, with concentric circles expanding and fading out.

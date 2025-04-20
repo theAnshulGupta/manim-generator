@@ -1,0 +1,17 @@
+This module provides utility functions for retrieving the appropriate Mobject class based on the current renderer (Cairo or OpenGL). There are three key functions:
+
+1. `get_mobject_class()`: Returns the base Mobject class (either `Mobject` or `OpenGLMobject`) depending on the renderer.
+
+2. `get_vectorized_mobject_class()`: Returns the vectorized Mobject class (either `VMobject` or `OpenGLVMobject`) depending on the renderer.
+
+3. `get_point_mobject_class()`: Returns the point cloud Mobject class (either `PMobject` or `OpenGLPMobject`) depending on the renderer.
+
+Each function checks the current renderer configuration and returns the appropriate class. If an unsupported renderer is used, a `NotImplementedError` is raised.
+
+These functions are primarily intended for use within Manim's codebase or plugins where renderer-independent code is needed.
+
+Example usage:
+```python
+from manim.mobject.utils import get_mobject_class
+base_class = get_mobject_class()  # Returns Mobject or OpenGLMobject
+```

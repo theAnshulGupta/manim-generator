@@ -1,0 +1,24 @@
+Here's a concise summary of the GrowFromEdge animation in Manim:
+
+GrowFromEdge is an animation that introduces a Mobject by growing it from a specific edge of its bounding box. 
+
+Key Parameters:
+- `mobject`: The object to animate
+- `edge`: Direction to grow from (e.g., DOWN, RIGHT, UR)
+- `point_color`: Optional initial color before growing (defaults to object's color)
+
+Example Code:
+```python
+class GrowFromEdgeExample(Scene):
+    def construct(self):
+        squares = [Square() for _ in range(4)]
+        VGroup(*squares).set_x(0).arrange(buff=1)
+        
+        # Grow squares from different edges
+        self.play(GrowFromEdge(squares[0], DOWN))
+        self.play(GrowFromEdge(squares[1], RIGHT))
+        self.play(GrowFromEdge(squares[2], UR))
+        self.play(GrowFromEdge(squares[3], UP, point_color=RED))
+```
+
+This animation smoothly reveals Mobjects by expanding them from a specified edge, with optional color customization.

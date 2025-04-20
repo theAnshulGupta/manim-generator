@@ -1,0 +1,33 @@
+The `manim.scene.vector_space_scene` module provides two main classes for creating vector-based scenes in Manim:
+
+1. `VectorScene`:
+- Base scene for working with vectors
+- Methods to:
+  - Add planes and axes
+  - Create and add vectors
+  - Write vector coordinates
+  - Label vectors
+  - Show vector transformations
+
+2. `LinearTransformationScene` (extends `VectorScene`):
+- Specialized for showing linear transformations
+- Additional features:
+  - Configurable background and foreground planes
+  - Track transformable mobjects
+  - Apply matrix transformations
+  - Add transformable labels
+  - Show vector movements and ghost vectors
+
+Key methods include:
+- `add_vector()`: Add vectors to the scene
+- `apply_matrix()`: Apply linear transformations
+- `get_matrix_transformation()`: Convert matrix to transformation function
+- `add_transformable_label()`: Create labels for vectors
+
+Example usage:
+```python
+class LinearTransformationSceneExample(LinearTransformationScene):
+    def construct(self):
+        matrix = [[1, 1], [0, 1]]
+        self.apply_matrix(matrix)
+```

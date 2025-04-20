@@ -1,0 +1,20 @@
+`ComplexPlane` is a specialized version of `NumberPlane` for visualizing complex numbers in Manim. Key features include:
+
+1. Purpose:
+- Represents a coordinate system for complex numbers
+- Allows plotting complex numbers as points on a 2D plane
+
+2. Methods:
+- `n2p(number)`: Converts a complex number to a point on the plane
+- `p2n(point)`: Converts a point back to a complex number
+- `add_coordinates()`: Adds coordinate labels to the plane
+- `get_coordinate_labels()`: Generates coordinate labels
+
+3. Example Usage:
+```python
+plane = ComplexPlane().add_coordinates()
+dot1 = Dot(plane.n2p(2 + 1j), color=YELLOW)  # Plot point 2+i
+dot2 = Dot(plane.n2p(-3 - 2j), color=YELLOW)  # Plot point -3-2i
+```
+
+The example shows how to create a complex plane, plot complex numbers as points, and label those points.

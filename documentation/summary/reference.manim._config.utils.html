@@ -1,0 +1,21 @@
+Summary of Manim's utils module:
+
+This module provides utilities for managing Manim's configuration system, with two key functions:
+
+1. `config_file_paths()`:
+- Returns paths where configuration (.cfg) files are searched
+- Precedence order: library-wide (default) → user-wide → folder-wide
+- Helps set up configuration settings for Manim
+
+2. `make_config_parser()`:
+- Creates a ConfigParser object that loads configuration files
+- User-wide and folder-wide configs can override library-wide defaults
+- Allows optional custom configuration file specification
+
+The module primarily supports the `ManimConfig` class, which manages all configuration options like:
+- Frame geometry (height/width, frame rate)
+- Output settings (directories, logging)
+- Styling (background color, transparency)
+- Rendering behavior (single frame vs movie)
+
+Essentially, this module provides a flexible configuration system for customizing Manim's behavior across different contexts.

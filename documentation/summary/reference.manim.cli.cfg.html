@@ -1,0 +1,36 @@
+Configuration related to the 'cfg' (configuration) module in Manim allows users to manage library settings through configuration files. Key points:
+
+1. Manim supports configuration via:
+- Command-line arguments
+- Configuration files (manim.cfg or pyproject.toml)
+- Environment variables
+
+2. Configuration files follow standard INI format with sections like:
+- [CLI]
+- [Logging]
+- [Rendering]
+
+3. Configuration precedence (highest to lowest):
+- Command-line arguments
+- Environment variables
+- Configuration files
+- Default library settings
+
+4. Users can specify settings like:
+- Video quality
+- Output directory
+- Rendering options
+- Logging preferences
+
+Example config file (manim.cfg):
+```ini
+[CLI]
+quality=medium
+progress_bar=True
+
+[Rendering]
+fps=60
+pixel_height=1080
+```
+
+This allows flexible, centralized configuration management for Manim projects.

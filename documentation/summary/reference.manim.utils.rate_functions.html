@@ -1,0 +1,33 @@
+Rate functions in Manim are speed curves that control how animations progress over time. They determine the pace and style of animation transitions.
+
+Key points:
+- Three main types of easing functions:
+  1. Ease In: Smooth start
+  2. Ease Out: Smooth end
+  3. Ease In Out: Smooth start and end
+
+- Functions are used by passing them to the `rate_func` parameter in animations
+- Example usage: `rate_func=rate_functions.ease_in_sine`
+
+Common rate functions include:
+- `linear`: Constant speed
+- `smooth`: Gradual acceleration/deceleration
+- `ease_in_sine`, `ease_out_sine`, `ease_in_out_sine`: Sine-based easing
+- `bounce`: Bouncing effect
+- `elastic`: Elastic stretching effect
+- `exponential_decay`: Gradual slowdown
+- `wiggle`: Oscillating movement
+- `running_start`: Dynamic acceleration
+- `there_and_back`: Animation goes forward then backward
+
+The attached image visualizes different rate function curves, showing how they modify animation progression over time.
+
+Example:
+```python
+self.play(
+    MoveAlongPath(dot, line, rate_func=rate_functions.ease_in_sine),
+    run_time=2
+)
+```
+
+This allows fine-tuned control over animation dynamics and feels.

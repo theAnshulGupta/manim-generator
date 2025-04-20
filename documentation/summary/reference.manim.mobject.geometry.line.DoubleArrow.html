@@ -1,0 +1,33 @@
+Summary of DoubleArrow:
+
+DoubleArrow is a Manim geometry class that creates an arrow with tips on both ends. Key features:
+
+Parameters:
+- Inherits from Arrow class
+- Can specify start and end points
+- Customizable tip shapes, lengths, and colors
+
+Example Usage:
+```python
+# Basic double arrow between two points
+d_arrow = DoubleArrow(start=point1, end=point2)
+
+# Custom tip styles
+d_arrow_custom = DoubleArrow(
+    tip_shape_end=ArrowCircleFilledTip, 
+    tip_shape_start=ArrowCircleFilledTip
+)
+```
+
+Key Customization Options:
+- `buff`: Space between points and arrow tips
+- `tip_length`: Length of arrow tips
+- `color`: Arrow color
+- `tip_shape_start/end`: Different tip styles
+
+The examples demonstrate:
+1. Creating double arrows on a circle
+2. Varying tip lengths and colors
+3. Positioning arrows between points
+
+This class is useful for visualizing bidirectional relationships, comparisons, or mappings in mathematical and technical animations.

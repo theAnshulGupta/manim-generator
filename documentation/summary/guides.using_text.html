@@ -1,0 +1,39 @@
+Here's a concise summary of rendering text and formulas in Manim:
+
+Text Rendering:
+1. Use Text class for simple text (supports multiple languages)
+- Basic usage: `Text("Hello world", font_size=144)`
+- Customize fonts, colors, styles
+- Supports multiple languages
+
+2. Use MarkupText for advanced text formatting
+- Allows HTML-like markup
+- More flexible styling options
+
+LaTeX Rendering:
+1. Use Tex for general LaTeX
+- Enclose math in $ symbols
+- Example: `Tex(r"$\LaTeX$")`
+
+2. Use MathTex for mathematical formulas
+- Automatically in math mode
+- Example: `MathTex(r"\frac{x^2}{y^2}")`
+
+Key Features:
+- Font customization
+- Color gradients
+- Substrings coloring
+- Multiple language support
+- Advanced math typesetting
+
+Examples demonstrate how to:
+- Change font weight/style
+- Apply colors
+- Use gradients
+- Disable ligatures
+- Work with complex LaTeX expressions
+
+Best Practices:
+- Use raw strings (r'...') for LaTeX
+- Use `substrings_to_isolate` for precise coloring
+- Use appropriate class based on text type

@@ -1,0 +1,31 @@
+This module provides utility functions for working with iterables in Manim. Here are the key functions:
+
+1. `adjacent_n_tuples(objects, n)`: Creates n-length tuples from a sequence, cycling through elements.
+   ```python
+   adjacent_n_tuples([1, 2, 3, 4], 2) # [(1, 2), (2, 3), (3, 4), (4, 1)]
+   ```
+
+2. `concatenate_lists(...)`: Combines multiple iterables into a single list.
+   ```python
+   concatenate_lists([1, 2], [3, 4], [5]) # [1, 2, 3, 4, 5]
+   ```
+
+3. `listify(obj)`: Converts an object to a list intelligently.
+   ```python
+   listify("str") # ['str']
+   listify((1, 2)) # [1, 2]
+   ```
+
+4. `make_even(iterable_1, iterable_2)`: Extends shorter iterable to match length of longer one.
+   ```python
+   make_even([1, 2], [3, 4, 5, 6]) # ([1, 1, 2, 2], [3, 4, 5, 6])
+   ```
+
+5. `remove_nones(sequence)`: Removes falsy elements from a sequence.
+   ```python
+   remove_nones(["m", "", "l", 0, 42, False, True]) # ['m', 'l', 42, True]
+   ```
+
+6. Array resizing functions like `resize_array()`, `resize_preserving_order()`, and `resize_with_interpolation()` for manipulating numpy arrays.
+
+These functions provide convenient ways to manipulate and transform iterables and arrays in Manim.

@@ -1,0 +1,19 @@
+UpdateFromAlphaFunc is an animation that allows updating a mobject based on a custom function using an alpha value (0 to 1) to control the progression of the update.
+
+Key points:
+- Inherits from UpdateFromFunc
+- Parameters:
+  - mobject: The object to be updated
+  - update_function: A function that defines how the mobject changes
+  - suspend_mobject_updating: Optional flag to suspend regular mobject updates
+
+Example usage:
+```python
+def update_func(mob, alpha):
+    # Modify mob based on alpha value
+    mob.set_opacity(alpha)
+
+anim = UpdateFromAlphaFunc(some_mobject, update_func)
+```
+
+The `interpolate_mobject` method applies the update function using an alpha value that progresses from 0 to 1 during the animation, allowing smooth, custom transformations of the mobject.

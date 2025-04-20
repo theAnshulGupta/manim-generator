@@ -1,0 +1,46 @@
+Here's a concise summary of the Graph class in Manim:
+
+Graph is a Manim class for creating undirected graphs with vertices and edges. Key features include:
+
+1. Basic Creation:
+```python
+vertices = [1, 2, 3, 4]
+edges = [(1, 2), (2, 3), (3, 4), (1, 4)]
+graph = Graph(vertices, edges)
+```
+
+2. Layout Options:
+- Automatic layouts: "spring", "circular", "kamada_kawai", "planar", etc.
+- Manual positioning by providing coordinates
+- Partite layout for layered graphs (e.g., neural networks)
+
+3. Customization:
+- Vertex and edge configuration
+- Custom labels
+- Different vertex/edge types
+- Coloring specific vertices/edges
+
+4. Key Parameters:
+- `vertices`: List of nodes
+- `edges`: List of node connections
+- `layout`: Positioning method
+- `labels`: Boolean or custom labels
+- `vertex_config`: Styling for vertices
+- `edge_config`: Styling for edges
+
+5. Special Layouts:
+- Partite layout for layer-based graphs
+- Tree layout with root vertex
+- Configurable vertex spacing
+
+Example of advanced usage:
+```python
+graph = Graph(
+    vertices, 
+    edges, 
+    layout='partite', 
+    partitions=[[0, 1], [2, 3]], 
+    labels=True, 
+    vertex_config={7: {"fill_color": RED}}
+)
+```

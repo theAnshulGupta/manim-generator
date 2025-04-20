@@ -1,0 +1,17 @@
+This module defines two key classes for Manim's Segmented Video API:
+
+1. `DefaultSectionType`: An enumeration for classifying sections with a default "NORMAL" type. It allows third-party applications to categorize sections (e.g., for presentations).
+
+2. `Section`: Represents a segment of a Manim scene with these key attributes:
+   - `type_`: Classification of the section
+   - `video`: Path to the section's video file
+   - `name`: Human-readable section name
+   - `skip_animations`: Option to skip rendering animations
+   - `partial_movie_files`: List of animations in the section
+
+Key methods:
+- `is_empty()`: Checks if section has no animations
+- `get_clean_partial_movie_files()`: Returns non-None movie files
+- `get_dict()`: Generates metadata dictionary for the section
+
+The class supports creating sections with different types and controlling their rendering behavior, enabling more flexible video creation and presentation.

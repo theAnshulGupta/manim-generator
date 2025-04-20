@@ -1,0 +1,31 @@
+SVGMobject is a Manim class for converting SVG files into vectorized mobjects with customizable styling. 
+
+Key features:
+- Creates vectorized mobjects from SVG files
+- Supports customizing height, width, color, opacity, stroke properties
+- Can center the imported SVG
+- Caches SVG imports for performance
+- Automatically scales and transforms SVG elements
+
+Basic usage example:
+```python
+# Import an SVG file as a Manim mobject
+svg = SVGMobject("path/to/file.svg")
+
+# Customize import options
+svg = SVGMobject(
+    "path/to/file.svg", 
+    height=3,  # Set specific height
+    color=RED,  # Override SVG colors
+    stroke_width=2
+)
+```
+
+Important parameters:
+- `file_name`: Path to SVG file
+- `should_center`: Center the mobject (default True)
+- `height`/`width`: Scale imported SVG
+- `color`, `opacity`, `fill_color`, `stroke_color`: Styling options
+- `use_svg_cache`: Enable performance caching (default True)
+
+The class automatically handles converting SVG elements like paths, rectangles, ellipses, and polygons into Manim-compatible vectorized mobjects.

@@ -1,0 +1,34 @@
+ArcPolygon is a Manim geometry class for creating polygons with curved edges (arcs) instead of straight lines. Here's a concise summary:
+
+Key Features:
+- Creates polygons where sides are arcs instead of straight lines
+- Allows customization of arc parameters (angle, radius, individual arc configs)
+- Can be used with multiple configuration methods
+
+Parameters:
+- vertices: Points defining the polygon's shape
+- angle: Default arc angle (default 45 degrees)
+- radius: Optional circle radius for arcs
+- arc_config: Custom configuration for individual arcs
+
+Example Usage:
+```python
+# Basic arc polygon with default settings
+ap1 = ArcPolygon([0,0,0], [2,0,0], [0,2,0], radius=2)
+
+# Arc polygon with custom angle
+ap2 = ArcPolygon([0,0,0], [2,0,0], [0,2,0], angle=45*DEGREES)
+
+# Arc polygon with individual arc configurations
+ap3 = ArcPolygon([0,0,0], [2,0,0], [0,2,0], 
+                 arc_config=[
+                     {'radius': 1.7, 'color': RED},
+                     {'angle': 20*DEGREES, 'color': BLUE},
+                     {'radius': 1}
+                 ])
+```
+
+Important Notes:
+- Arcs with angle=0 are essentially straight lines
+- Can be transformed between different ArcPolygon instances
+- Provides flexibility in creating non-linear polygon shapes

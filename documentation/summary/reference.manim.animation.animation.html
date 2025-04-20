@@ -1,0 +1,28 @@
+Here's a concise summary of the Manim animation documentation:
+
+The `animation` module in Manim provides core classes and functions for animating mobjects:
+
+Main Classes:
+- `Add`: Adds mobjects to a scene without additional animation
+- `Animation`: Base class for all animations
+- `Wait`: A "no-operation" animation that pauses the scene
+
+Key Functions:
+1. `override_animation()`: 
+   - Decorator to customize how specific animations work for custom mobjects
+   - Allows defining custom animation behaviors for specific animation types
+
+   Example:
+   ```python
+   class MySquare(Square):
+       @override_animation(FadeIn)
+       def _fade_in_override(self, **kwargs):
+           return Create(self, **kwargs)
+   ```
+
+2. `prepare_animation()`:
+   - Converts various inputs into valid Manim animations
+   - Handles animation builders and direct mobject transformations
+   - Raises TypeError if input can't be converted to an animation
+
+These tools provide flexibility in creating and customizing animations in Manim scenes.

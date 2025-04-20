@@ -1,0 +1,28 @@
+The `render` module in Manim's CLI is responsible for rendering Manim scenes. Here's a concise summary:
+
+Key Features:
+- Renders Manim scenes from Python scripts
+- Supports multiple output formats and rendering options
+- Handles various configuration settings for video generation
+
+Main Render Options:
+- Input files/scenes to render
+- Output formats (mp4, gif, etc.)
+- Quality settings (low, medium, high)
+- Specific scene selection
+- Preview and output directory configurations
+
+Example Usage:
+```bash
+manim render scene_file.py MyScene  # Renders specific scene
+manim render scene_file.py -q h     # High-quality render
+manim render scene_file.py -p       # Preview render
+```
+
+Key CLI Flags:
+- `-q/--quality`: Set render quality
+- `-p/--preview`: Open rendered video
+- `--format`: Specify output format
+- `--save_last_frame`: Save only final frame
+
+Supports comprehensive scene rendering with flexible configuration options.

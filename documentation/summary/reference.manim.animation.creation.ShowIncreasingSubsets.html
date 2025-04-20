@@ -1,0 +1,23 @@
+`ShowIncreasingSubsets` is an animation class in Manim that sequentially reveals submobjects of a group, keeping previously shown submobjects visible.
+
+Key features:
+- Shows submobjects of a group one at a time
+- Keeps previously revealed submobjects on screen
+- Can be used with VGroups
+
+Example usage:
+```python
+class ShowIncreasingSubsetsScene(Scene):
+    def construct(self):
+        p = VGroup(Dot(), Square(), Triangle())
+        self.add(p)
+        self.play(ShowIncreasingSubsets(p))  # Reveals Dot, then Square, then Triangle
+        self.wait()
+```
+
+Parameters:
+- `group`: The Mobject/VGroup containing submobjects
+- `suspend_mobject_updating`: Optional boolean
+- `int_func`: Optional function to control subset selection (default is floor)
+
+The animation gradually reveals submobjects based on the animation's progress, making it useful for step-by-step demonstrations of grouped objects.

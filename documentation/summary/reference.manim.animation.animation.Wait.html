@@ -1,0 +1,25 @@
+The `Wait` animation in Manim is a "no operation" animation that allows pausing the scene for a specified duration. Key details:
+
+Parameters:
+- `run_time`: How long the wait should last (default 1 second)
+- `stop_condition`: Optional function that can prematurely end the wait
+- `frozen_frame`: Controls whether the frame remains static
+
+Basic usage example:
+```python
+# Wait for 2 seconds
+self.play(Wait(run_time=2))
+
+# Wait with a stop condition
+def my_condition():
+    return some_logic_here
+
+self.play(Wait(run_time=5, stop_condition=my_condition))
+```
+
+The `Wait` animation is useful for:
+- Pausing between other animations
+- Creating deliberate timing in animations
+- Conditionally stopping animation progression
+
+Essentially, it's a way to control timing and flow in Manim scenes without adding visual changes.

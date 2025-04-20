@@ -1,0 +1,35 @@
+Summary of Polyhedron in Manim:
+
+A Polyhedron is a 3D object defined by vertex coordinates and faces. Key characteristics:
+
+Parameters:
+- vertex_coords: List of vertex coordinates
+- faces_list: List of vertex indices forming each face
+- Optional: faces_config and graph_config for customization
+
+Example (Square Pyramid):
+```python
+vertex_coords = [
+    [1, 1, 0], [1, -1, 0], [-1, -1, 0], [-1, 1, 0],  # base vertices
+    [0, 0, 2]  # apex
+]
+faces_list = [
+    [0, 1, 4],   # triangular faces
+    [1, 2, 4],
+    [2, 3, 4],
+    [3, 0, 4],
+    [0, 1, 2, 3]  # base face
+]
+pyramid = Polyhedron(vertex_coords, faces_list)
+```
+
+Key Features:
+- Extends VGroup
+- Can modify individual faces and graph elements
+- Supports custom polyhedra creation
+- Easily configurable colors and properties
+
+Methods:
+- create_faces(): Generate face group
+- extract_face_coords(): Get vertex coordinates
+- get_edges(): Create edge list

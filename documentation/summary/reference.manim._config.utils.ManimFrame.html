@@ -1,0 +1,16 @@
+A `ManimFrame` is a configuration object that defines the spatial and dimensional properties of the rendering frame in Manim. It provides attributes describing the frame's size, position, and orientation, derived from a `ManimConfig` object.
+
+Key Attributes:
+- `frame_width`: Total width of the rendering frame
+- `frame_height`: Total height of the rendering frame
+- `aspect_ratio`: Width/height ratio of the frame
+- `pixel_width`: Frame width in pixels
+- `pixel_height`: Frame height in pixels
+
+Directional Attributes:
+- `LEFT`, `RIGHT`, `UP`, `DOWN`
+- `ORIGIN`: Center point of the frame
+- `X_AXIS`, `Y_AXIS`, `Z_AXIS`: Standard coordinate axes
+- `top`, `bottom`, `left_side`, `right_side`: Boundary positions
+
+These attributes help in positioning and sizing Manim objects relative to the rendering frame, making it easier to create precise animations and visualizations.

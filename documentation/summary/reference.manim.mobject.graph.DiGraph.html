@@ -1,0 +1,32 @@
+Here's a concise summary of the DiGraph class:
+
+DiGraph is a directed graph class in Manim for creating and manipulating directed graphs with customizable vertices and edges.
+
+Key Parameters:
+- vertices: List of hashable vertex identifiers
+- edges: List of directed edge tuples (start, end)
+- labels: Optional vertex labels (boolean or dictionary)
+- layout: Graph layout method ('spring', 'circular', etc.)
+- vertex_type: Mobject used for vertices (default: Dot)
+- edge_type: Mobject used for edges (default: Line)
+
+Main Features:
+- Supports automatic and manual vertex positioning
+- Customizable vertex and edge styles
+- Ability to move vertices dynamically
+- Configurable arrow tips and edge appearances
+
+Example Usage:
+```python
+vertices = [1, 2, 3, 4]
+edges = [(1, 2), (2, 3), (3, 4), (1, 3)]
+g = DiGraph(vertices, edges, labels=True, layout='circular')
+```
+
+Customization options include:
+- Vertex and edge configurations
+- Label styling
+- Layout scaling
+- Arrow tip modifications
+
+The class inherits from GenericGraph and provides methods for updating edges and animating graph elements.

@@ -1,0 +1,27 @@
+Surface is a Manim class for creating parametric 3D surfaces with the following key features:
+
+Parameters:
+- `func`: Function defining surface coordinates (takes u, v as inputs)
+- `u_range` & `v_range`: Parameter ranges for surface generation
+- `resolution`: Number of samples/segments for surface
+- `fill_color`/`fill_opacity`: Surface color and transparency
+- `checkerboard_colors`: Optional alternating color pattern
+- `stroke_color`/`stroke_width`: Border style of surface segments
+
+Key Methods:
+1. `set_fill_by_checkerboard()`: Creates alternating color pattern
+2. `set_fill_by_value()`: Colors surface based on coordinate values
+
+Example Usage:
+```python
+surface = Surface(
+    lambda u, v: axes.c2p(*func(u, v)),
+    u_range=[-PI, PI],
+    v_range=[0, TAU],
+    resolution=8
+)
+```
+
+The documentation provides two comprehensive examples demonstrating:
+1. Creating a twisted surface with parametric function
+2. Coloring a surface based on z-axis values using a color gradient

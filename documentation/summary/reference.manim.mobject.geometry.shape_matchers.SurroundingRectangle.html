@@ -1,0 +1,25 @@
+`SurroundingRectangle` is a Manim class for creating a rectangular border around a Mobject with customizable properties:
+
+Key Parameters:
+- `mobjects`: The object(s) to surround
+- `color`: Border color (default yellow)
+- `buff`: Space between object and rectangle (default 0.1)
+- `corner_radius`: Roundness of rectangle corners (default 0)
+
+Example Usage:
+```python
+quote = Text("Hello World")
+box = SurroundingRectangle(quote, color=YELLOW, buff=0.2, corner_radius=0.1)
+```
+
+Demonstrates creating a surrounding rectangle with:
+- Custom text object
+- Yellow color
+- Small padding
+- Slightly rounded corners
+
+The example scene shows two instances:
+1. A quote with a yellow rectangular border
+2. "Hello World" text with a rounded rectangular border
+
+Key methods inherited from `RoundedRectangle`, allowing flexible styling and positioning of the rectangle around any Manim object.

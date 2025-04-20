@@ -1,0 +1,34 @@
+NumberPlane is a class in Manim that creates a Cartesian coordinate plane with background grid lines. Here's a concise summary:
+
+Key Parameters:
+- `x_range`: Defines horizontal axis range (min, max, step)
+- `y_range`: Defines vertical axis range (min, max, step)
+- `x_length`/`y_length`: Width/height of the plane
+- `background_line_style`: Customize main grid line appearance
+- `faded_line_style`: Customize background grid line appearance
+- `faded_line_ratio`: Controls number of background grid boxes
+
+Example Usage:
+```python
+# Create a number plane with teal grid lines
+number_plane = NumberPlane(
+    background_line_style={
+        "stroke_color": TEAL,
+        "stroke_width": 4,
+        "stroke_opacity": 0.6
+    }
+)
+
+# Create a scaled number plane
+number_plane = NumberPlane(
+    x_range=(-4, 11, 1),
+    y_range=(-3, 3, 1),
+    x_length=5,
+    y_length=2
+)
+```
+
+Important Notes:
+- If `x_length`/`y_length` aren't specified, they're automatically calculated
+- Useful for creating mathematical visualizations and graphs
+- Inherits from the Axes class

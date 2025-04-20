@@ -1,0 +1,29 @@
+# ShowPassingFlash Animation
+
+A Manim animation that shows only a sliver of a VMobject (vector mobject) moving along its stroke during the animation.
+
+## Key Parameters
+- `mobject`: The VMobject to animate
+- `time_width`: Controls the length of the sliver relative to the stroke length
+  - Default: 0.1
+  - Smaller values create a narrower "passing flash"
+  - Larger values create a wider passing flash
+
+## Example Usage
+```python
+# Demonstrates different time_width values
+class TimeWidthValues(Scene):
+    def construct(self):
+        p = RegularPolygon(5).scale(3)
+        for time_width in [0.2, 0.5, 1, 2]:
+            self.play(ShowPassingFlash(
+                p.copy(), 
+                run_time=2, 
+                time_width=time_width
+            ))
+```
+
+## Key Characteristics
+- Animates a small segment of the mobject's stroke
+- Segment moves along the entire length of the stroke
+- Time width determines how much of the stroke is visible at once

@@ -1,0 +1,32 @@
+Here's a concise summary of the `manim.mobject.graph` module:
+
+The module provides classes for creating and manipulating graphs in Manim:
+
+1. `Graph`: Undirected graph class
+   - Create graphs with vertices and edges
+   - Supports various layout algorithms (spring, circular, etc.)
+   - Vertices and edges can be customized
+   - Edges automatically update when vertices move
+
+2. `DiGraph`: Directed graph class
+   - Similar to `Graph`, but with directed edges
+   - Supports arrow tip customization
+
+Key features:
+- Automatic and manual vertex positioning
+- Labeling vertices
+- Configuring vertex and edge styles
+- Dynamic graph manipulation (add/remove vertices/edges)
+
+Example:
+```python
+# Create an undirected graph
+graph = Graph(
+    [1, 2, 3, 4],  # vertices
+    [(1, 2), (2, 3), (3, 4)],  # edges
+    layout="spring",  # layout algorithm
+    labels=True  # label vertices
+)
+```
+
+Layouts include: spring, circular, kamada_kawai, planar, random, shell, spectral, spiral, tree, and partite.

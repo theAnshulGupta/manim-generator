@@ -1,0 +1,21 @@
+ArrowTriangleTip is a Manim class for creating triangular arrow tips with customizable properties:
+
+Key Parameters:
+- `fill_opacity`: Controls tip's fill transparency (default 0)
+- `stroke_width`: Thickness of tip's outline (default 3)
+- `length`: Length of the arrow tip (default 0.35)
+- `width`: Width of the arrow tip (default 0.35)
+- `start_angle`: Initial orientation angle (default π)
+
+Inherits from `ArrowTip` and `Triangle`, it creates a triangular tip for arrows with configurable visual attributes. Use it when creating Arrow objects to customize the tip's appearance.
+
+Example:
+```python
+arrow = Arrow(start_point, end_point, tip_class=ArrowTriangleTip)
+```
+
+Key attributes include:
+- `base`: Base point of the tip
+- `tip_point`: Point of the tip
+- `vector`: Vector from base to tip
+- `length`/`width`: Geometrical dimensions

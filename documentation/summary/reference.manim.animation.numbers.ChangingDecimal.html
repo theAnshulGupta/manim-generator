@@ -1,0 +1,22 @@
+`ChangingDecimal` is an animation that allows dynamically changing a `DecimalNumber` object during an animation. 
+
+Key features:
+- Takes a `DecimalNumber` and a function to update its value
+- Supports smoothly transitioning a number from one value to another
+- Allows custom number update functions
+
+Example usage:
+```python
+def update_func(t):
+    # Function that returns new value based on animation progress
+    return 10 * t  # Goes from 0 to 10
+
+ChangingDecimal(decimal_mob, update_func)
+```
+
+Parameters:
+- `decimal_mob`: The `DecimalNumber` to animate
+- `number_update_func`: Function that takes progress (0-1) and returns new number value
+- `suspend_mobject_updating`: Optional flag to pause mobject updates
+
+The animation interpolates the decimal number's value smoothly based on the animation's progress.

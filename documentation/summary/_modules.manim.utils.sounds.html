@@ -1,0 +1,12 @@
+The `manim.utils.sounds` module provides a utility function `get_full_sound_file_path()` for locating sound files. It helps find the full path of a sound file by:
+
+1. Searching in the default assets directory specified in the Manim configuration
+2. Supporting both .wav and .mp3 file extensions
+3. Using `seek_full_path_from_defaults()` to find the complete file path
+
+Example usage would be:
+```python
+sound_path = get_full_sound_file_path("mysound")  # Checks mysound.wav or mysound.mp3 in assets
+```
+
+This function is primarily used internally by Manim's sound-related functionality.

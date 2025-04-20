@@ -1,0 +1,19 @@
+`FocusOn` is an animation in Manim that creates a spotlight effect by shrinking a spotlight to focus on a specific point or mobject. 
+
+Key Parameters:
+- `focus_point`: The point or mobject to focus on
+- `opacity`: Spotlight's opacity (default 0.2)
+- `color`: Spotlight's color (default grayish)
+- `run_time`: Animation duration (default 2 seconds)
+
+Example Usage:
+```python
+class UsingFocusOn(Scene):
+    def construct(self):
+        dot = Dot(color=YELLOW).shift(DOWN)
+        self.add(Tex("Focusing on the dot below:"), dot)
+        self.play(FocusOn(dot))  # Shrinks spotlight onto the dot
+        self.wait()
+```
+
+The animation creates a visual effect of zooming/focusing attention on a specific element by shrinking a semi-transparent spotlight around it, which can be useful for emphasizing particular parts of a scene.

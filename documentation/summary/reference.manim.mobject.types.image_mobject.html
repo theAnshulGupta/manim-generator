@@ -1,0 +1,16 @@
+Image Mobjects in Manim provide ways to display raster images in animations. There are three key classes:
+
+1. `AbstractImageMobject`: Base class for image mobjects, automatically filters out black pixels.
+
+2. `ImageMobject`: Primary class for displaying images. Can be created from:
+   - Numpy array
+   - Image file path
+   - Example usage:
+     ```python
+     img = ImageMobject("path/to/image.png")
+     self.add(img)
+     ```
+
+3. `ImageMobjectFromCamera`: Creates image mobjects directly from camera captures.
+
+The module allows easy integration of images into Manim animations with simple instantiation and manipulation methods.

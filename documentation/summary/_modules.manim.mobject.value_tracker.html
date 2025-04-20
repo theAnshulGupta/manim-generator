@@ -1,0 +1,31 @@
+The `value_tracker.py` module provides two key classes for tracking numerical values in Manim:
+
+1. `ValueTracker`: Tracks real-valued parameters
+   - Not meant to be displayed
+   - Allows animating parameter changes
+   - Key methods:
+     - `get_value()`: Retrieve current value
+     - `set_value(value)`: Set new value
+     - `increment_value(d_value)`: Add to current value
+   - Supports arithmetic operations like `+=`, `-=`, `*=`, etc.
+   - Can be used with updaters and animations
+
+Example:
+```python
+tracker = ValueTracker(0)
+pointer.add_updater(lambda m: m.next_to(number_line.n2p(tracker.get_value()), UP))
+self.play(tracker.animate.set_value(5))
+```
+
+2. `ComplexValueTracker`: Tracks complex-valued parameters
+   - Inherits from `ValueTracker`
+   - Stores complex numbers geometrically
+   - `get_value()` returns a complex number
+   - Useful for animating complex number transformations
+
+Example:
+```python
+tracker = ComplexValueTracker(-2+1j)
+dot = Dot().add_updater(lambda x: x.move_to(tracker.points))
+self.play(tracker.animate.set_value(3+2j))
+```

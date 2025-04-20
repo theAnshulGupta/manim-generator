@@ -1,0 +1,21 @@
+Uncreate is an animation in Manim that does the opposite of Create - it makes a mobject gradually disappear by erasing its strokes/drawing in reverse. 
+
+Key characteristics:
+- Part of the creation animations
+- Reverses the Create animation
+- Works with VMobjects (vector graphic objects)
+- By default uses a reversed rate function and marks the object for removal after animation
+
+Example usage:
+```python
+class ShowUncreate(Scene):
+    def construct(self):
+        self.play(Uncreate(Square()))  # Makes a square slowly disappear by erasing its lines
+```
+
+Parameters:
+- `mobject`: The VMobject to uncreate
+- `reverse_rate_function`: Typically True (reverses animation progression)
+- `remover`: Typically True (removes object after animation)
+
+This animation is useful for making objects vanish in a drawing/tracing style, opposite to how Create builds objects.

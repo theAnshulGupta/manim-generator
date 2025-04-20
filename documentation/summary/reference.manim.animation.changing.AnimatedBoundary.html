@@ -1,0 +1,21 @@
+`AnimatedBoundary` is an animation that adds a dynamic, color-changing boundary around a VMobject (like text or shapes). Key details:
+
+Parameters:
+- `vmobject`: The object to animate the boundary around
+- `colors`: List of colors to cycle through (default: blue/teal shades)
+- `max_stroke_width`: Maximum width of the boundary
+- `cycle_rate`: Speed of color transition
+- `back_and_forth`: Whether color cycles back and forth
+- `draw_rate_func` & `fade_rate_func`: Control animation smoothness
+
+Example:
+```python
+class AnimatedBoundaryExample(Scene):
+    def construct(self):
+        text = Text("So shiny!")
+        boundary = AnimatedBoundary(text, colors=[RED, GREEN, BLUE], cycle_rate=3)
+        self.add(text, boundary)
+        self.wait(2)
+```
+
+This creates a text object with a boundary that cycles through red, green, and blue colors at a fast rate, creating a shiny, dynamic effect.

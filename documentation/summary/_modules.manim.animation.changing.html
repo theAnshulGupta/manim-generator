@@ -1,0 +1,32 @@
+The `manim.animation.changing` module provides two key classes for animating mobject boundaries and tracing paths:
+
+1. `AnimatedBoundary`:
+   - Animates the boundary of a VMobject with color changes
+   - Parameters include:
+     - `vmobject`: The object to animate
+     - `colors`: List of colors to cycle through
+     - `max_stroke_width`: Maximum width of the boundary
+     - `cycle_rate`: Speed of color cycling
+   - Example:
+     ```python
+     text = Text("So shiny!")
+     boundary = AnimatedBoundary(text, colors=[RED, GREEN, BLUE], cycle_rate=3)
+     ```
+
+2. `TracedPath`:
+   - Traces the path of a point returned by a function
+   - Parameters include:
+     - `traced_point_func`: Function returning the point to trace
+     - `stroke_width`: Width of the trace
+     - `stroke_color`: Color of the trace
+     - `dissipating_time`: Optional time for path to fade
+   - Examples:
+     ```python
+     # Trace circle's start point
+     circ = Circle(color=RED).shift(4*LEFT)
+     trace = TracedPath(circ.get_start)
+     
+     # Dissipating path
+     a = Dot(RIGHT * 2)
+     b = TracedPath(a.get_center, dissipating_time=0.5)
+     ```

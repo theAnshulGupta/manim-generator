@@ -1,0 +1,25 @@
+The Cylinder class in Manim creates a 3D cylindrical object with customizable parameters:
+
+Key Parameters:
+- radius: Size of the cylinder's circular base (default 1)
+- height: Vertical extent of the cylinder (default 2)
+- direction: Orientation of the cylinder's central axis (default [0,0,1])
+- show_ends: Whether to display end caps (default True)
+- resolution: Smoothness of cylinder rendering (default 24x24)
+
+Example Code:
+```python
+class ExampleCylinder(ThreeDScene):
+    def construct(self):
+        axes = ThreeDAxes()
+        cylinder = Cylinder(radius=2, height=3)
+        self.set_camera_orientation(phi=75*DEGREES, theta=30*DEGREES)
+        self.add(axes, cylinder)
+```
+
+Key Methods:
+- add_bases(): Adds end caps to cylinder
+- get_direction(): Returns cylinder's axis orientation
+- set_direction(): Changes cylinder's axis orientation
+
+The class inherits from Surface and allows detailed 3D cylinder creation with flexible configuration options.

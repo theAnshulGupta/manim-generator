@@ -1,0 +1,26 @@
+FadeIn is an animation in Manim that allows objects to gradually appear on screen with optional transformation effects:
+
+Key Parameters:
+- `mobject`: The object to fade in
+- `shift`: Vector defining movement during fade-in
+- `target_position`: Starting point for the object
+- `scale`: Initial scaling factor before returning to original size
+
+Example Usage:
+```python
+class FadeInExample(Scene):
+    def construct(self):
+        dot = Dot(UP * 2 + LEFT)
+        tex = Tex("FadeIn with different effects").scale(1)
+        
+        animations = [
+            FadeIn(tex),                   # Basic fade-in
+            FadeIn(tex, shift=DOWN),       # Fade-in with downward shift
+            FadeIn(tex, target_position=dot),  # Fade-in from dot's position
+            FadeIn(tex, scale=1.5)         # Fade-in with initial scaling
+        ]
+        
+        self.play(AnimationGroup(*animations, lag_ratio=0.5))
+```
+
+The example demonstrates various ways to customize the FadeIn animation, showing how objects can appear with different movement, positioning, and scaling effects.

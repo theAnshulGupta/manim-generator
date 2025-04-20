@@ -1,0 +1,15 @@
+ShowPartial is an abstract animation class in Manim that partially reveals a VMobject. Key points:
+
+- Inherits from Animation
+- Works only with VMobject types
+- Raises TypeError if mobject is not a VMobject
+- Used for creating animations that gradually show parts of an object
+- Related to other creation animations like Create and ShowPassingFlash
+
+Example would be revealing a line, curve, or shape incrementally during animation. Typically used as a base class for more specific partial reveal animations.
+
+Methods/Attributes:
+- interpolate_submobject: Controls how the object is partially shown
+- run_time: Duration of the animation
+
+Important for creating smooth, progressive object reveals in mathematical visualizations.

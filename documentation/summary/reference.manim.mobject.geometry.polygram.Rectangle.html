@@ -1,0 +1,29 @@
+Here's a concise summary of the Rectangle class in Manim:
+
+Rectangle is a geometric mobject representing a quadrilateral with parallel sides. 
+
+Key Parameters:
+- `color`: Rectangle's color (default white)
+- `height`: Vertical height (default 2.0)
+- `width`: Horizontal width (default 4.0)
+- `grid_xstep`: Vertical grid line spacing
+- `grid_ystep`: Horizontal grid line spacing
+
+Example code:
+```python
+class RectangleExample(Scene):
+    def construct(self):
+        # Create rectangles with different dimensions and grid settings
+        rect1 = Rectangle(width=4.0, height=2.0, grid_xstep=1.0, grid_ystep=0.5)
+        rect2 = Rectangle(width=1.0, height=4.0)
+        rect3 = Rectangle(width=2.0, height=2.0, grid_xstep=1.0, grid_ystep=1.0)
+        
+        # Arrange rectangles side by side
+        rects = Group(rect1, rect2, rect3).arrange(buff=1)
+        self.add(rects)
+```
+
+Key features:
+- Inherits from Polygon
+- Customizable size and grid
+- Easy to create and manipulate

@@ -1,0 +1,22 @@
+The documentation covers three main classes for graphing functions in Manim:
+
+1. `ParametricFunction`:
+- Creates a parametric curve
+- Parameters include function, t_range, scaling, smoothing options
+- Can handle 2D and 3D parametric functions
+- Supports discontinuities
+- Example: Plotting sine curves, 3D spring
+
+2. `FunctionGraph`:
+- Subclass of `ParametricFunction`
+- Spans the scene by default
+- Simplifies plotting standard mathematical functions
+- Example: Plotting cosine and sine variants
+
+3. `ImplicitFunction`:
+- Plots functions defined implicitly (f(x,y) = 0)
+- Allows specification of x/y ranges
+- Controls curve detail via min_depth and max_quads
+- Example: Plotting complex algebraic curves
+
+Each class provides flexible ways to visualize different types of mathematical functions in Manim, with extensive customization options.

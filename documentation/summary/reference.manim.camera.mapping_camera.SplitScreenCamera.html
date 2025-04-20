@@ -1,0 +1,18 @@
+A SplitScreenCamera is a specialized camera in Manim that allows rendering two separate cameras side by side in the same scene. 
+
+Key features:
+- Inherits from OldMultiCamera
+- Takes two cameras as arguments: `left_camera` and `right_camera`
+- Enables splitting the screen into two distinct rendering areas
+- Useful for comparing or displaying different views simultaneously
+
+Basic usage would involve creating two separate Camera objects and passing them to SplitScreenCamera when setting up a scene that requires a split-screen view.
+
+Example structure might look like:
+```python
+left_cam = Camera()
+right_cam = Camera()
+split_screen = SplitScreenCamera(left_cam, right_cam)
+```
+
+The camera allows flexible configuration of how the two camera views are displayed, though specific details of configuration are not elaborated in the given documentation.

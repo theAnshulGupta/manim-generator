@@ -1,0 +1,36 @@
+The Group class in Manim is used to combine multiple Mobjects into a single object. Key points:
+
+1. Purpose:
+- Groups multiple Mobjects together
+- Allows treating multiple objects as a single entity
+
+2. Usage:
+```python
+group = Group(object1, object2, object3)
+```
+
+3. Important Notes:
+- Duplicate objects are automatically ignored
+- Use `Mobject.copy()` to add the same object multiple times
+
+4. Key Features:
+- Can manipulate all grouped objects simultaneously
+- Inherits methods and attributes from Mobject
+- Supports animations and transformations on the entire group
+
+Example:
+```python
+from manim import *
+
+class GroupExample(Scene):
+    def construct(self):
+        circle = Circle()
+        square = Square()
+        triangle = Triangle()
+        
+        # Create a group of shapes
+        shape_group = Group(circle, square, triangle)
+        
+        # Animate the entire group
+        self.play(shape_group.animate.shift(RIGHT))
+```

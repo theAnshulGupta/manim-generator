@@ -1,0 +1,14 @@
+ThreeDVMobject is a specialized VMobject for 3D rendering that inherits from VMobject and provides enhanced capabilities for three-dimensional objects. 
+
+Key characteristics:
+- Designed for 3D visualization
+- Supports shading in 3D space through `shade_in_3d` parameter (default is True)
+- Inherits standard VMobject attributes like color, width, height, stroke_color
+- Can be used as a base class for creating custom 3D vectorized objects
+
+Example use might look like:
+```python
+my_3d_object = ThreeDVMobject(shade_in_3d=True, color=BLUE)
+```
+
+The class is primarily useful for developers creating custom 3D geometric objects in Manim, providing a foundation for more complex 3D visualizations.

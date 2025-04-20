@@ -1,0 +1,19 @@
+`ThreeDScene` is a specialized scene for creating 3D animations in Manim. Key methods include:
+
+1. Camera Control:
+- `move_camera()`: Animate camera movement in 3D space
+- `set_camera_orientation()`: Set specific camera angles/position
+- `begin_ambient_camera_rotation()`: Start continuous camera rotation
+- `stop_ambient_camera_rotation()`: Stop camera rotation
+
+2. Mobject Positioning:
+- `add_fixed_in_frame_mobjects()`: Keep mobjects stationary during camera movement
+- `add_fixed_orientation_mobjects()`: Maintain mobject orientation relative to camera
+- `remove_fixed_in_frame_mobjects()`: Allow mobjects to move with camera
+- `remove_fixed_orientation_mobjects()`: Allow mobject rotation
+
+3. Special Effects:
+- `begin_3dillusion_camera_rotation()`: Create camera rotation illusion
+- `stop_3dillusion_camera_rotation()`: Stop rotation illusion
+
+Example use would involve creating 3D scenes with dynamic camera movements and 3D object manipulations.

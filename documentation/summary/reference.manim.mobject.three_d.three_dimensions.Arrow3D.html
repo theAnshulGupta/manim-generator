@@ -1,0 +1,31 @@
+Here's a concise summary of the Arrow3D class:
+
+Arrow3D is a 3D arrow mobject with customizable parameters:
+
+Key Parameters:
+- start: Starting point (default [-1,0,0])
+- end: Ending point (default [1,0,0])
+- thickness: Arrow shaft width (default 0.02)
+- height: Tip height (default 0.3)
+- base_radius: Tip base radius (default 0.08)
+- color: Arrow color (default white)
+- resolution: Smoothness of arrow (default 24)
+
+Example Usage:
+```python
+class ExampleArrow3D(ThreeDScene):
+    def construct(self):
+        axes = ThreeDAxes()
+        arrow = Arrow3D(
+            start=[0,0,0],
+            end=[2,2,2],
+            resolution=8
+        )
+        self.set_camera_orientation(phi=75*DEGREES, theta=30*DEGREES)
+        self.add(axes, arrow)
+```
+
+Key Methods:
+- get_end(): Returns the arrow's end point
+
+The Arrow3D creates a 3D arrow with a cylindrical shaft and conical tip, useful for visualizing vectors or directions in three-dimensional scenes.

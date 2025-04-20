@@ -1,0 +1,24 @@
+The `Indicate` animation is a built-in Manim animation that temporarily resizes and recolors a mobject to draw attention to it. 
+
+Key Parameters:
+- `mobject`: The object to indicate
+- `scale_factor`: How much to scale the object (default 1.2)
+- `color`: Temporary color to change to (default yellow)
+- `rate_func`: Controls the animation's progression (default is `there_and_back`)
+
+Example Usage:
+```python
+class UsingIndicate(Scene):
+    def construct(self):
+        tex = Tex("Indicate").scale(3)
+        self.play(Indicate(tex))  # Briefly enlarges and changes color of the text
+        self.wait()
+```
+
+This animation will:
+1. Temporarily scale the mobject up
+2. Change its color
+3. Return to its original size and color
+4. Provide a visual emphasis on the object
+
+The animation is useful for highlighting specific elements in a Manim scene by creating a quick, attention-grabbing effect.

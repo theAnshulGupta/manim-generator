@@ -1,0 +1,26 @@
+The `manim.utils.tex_templates` module provides two main classes for working with TeX templates in Manim:
+
+1. `TexTemplateLibrary`: A collection of predefined TeX templates
+   - `default`: The default Manim TeX template
+   - `threeb1b`: 3Blue1Brown's original template
+   - `ctex`: Template for Chinese text rendering
+   - `simple`: A basic template with only AMS packages
+
+Example:
+```python
+Tex("My text", tex_template=TexTemplateLibrary.ctex)
+```
+
+2. `TexFontTemplates`: A collection of TeX templates with different font styles
+   - Contains over 50 font templates like Comic Sans, Palatino, Biolinum, etc.
+   - Allows rendering text and math with various font styles
+
+Example:
+```python
+Tex("My text", tex_template=TexFontTemplates.comic_sans)
+```
+
+Key Notes:
+- Many font templates require specific fonts to be installed locally
+- Templates can change font, math symbol rendering, and text style
+- Useful for customizing the appearance of TeX and MathTex objects

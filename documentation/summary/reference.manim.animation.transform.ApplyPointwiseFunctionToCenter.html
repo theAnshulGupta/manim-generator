@@ -1,0 +1,21 @@
+The `ApplyPointwiseFunctionToCenter` is an animation in Manim that applies a point-wise function specifically to the center of a mobject. It is a subclass of `ApplyPointwiseFunction`.
+
+Key details:
+- Applies a function to the center of a mobject
+- Inherits from `ApplyPointwiseFunction`
+- Takes two main parameters:
+  1. `function`: A method that defines how to transform the mobject
+  2. `mobject`: The mobject to be transformed
+
+Example usage would look like:
+```python
+# Hypothetical example of applying a function to a mobject's center
+some_mobject = Square()
+def transform_func(point):
+    # Define some transformation
+    return point * 2
+
+animation = ApplyPointwiseFunctionToCenter(transform_func, some_mobject)
+```
+
+The animation has a `begin()` method that initializes the transformation when the animation starts.

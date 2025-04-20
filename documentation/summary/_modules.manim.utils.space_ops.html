@@ -1,0 +1,28 @@
+Here's a summary of the key functions in the `manim.utils.space_ops` module:
+
+Vector Operations:
+- `normalize(vect)`: Normalizes a vector to unit length
+- `cross(v1, v2)`: Computes cross product of 3D vectors
+- `angle_between_vectors(v1, v2)`: Calculates angle between two vectors
+- `rotate_vector(vector, angle, axis)`: Rotates a vector around a specified axis
+
+Coordinate Transformations:
+- `cartesian_to_spherical(vec)`: Converts Cartesian coordinates to spherical
+- `spherical_to_cartesian(spherical)`: Converts spherical coordinates to Cartesian
+- `complex_to_R3(complex_num)`: Converts complex number to 3D vector
+- `R3_to_complex(point)`: Converts 3D vector to complex number
+
+Geometric Utilities:
+- `midpoint(point1, point2)`: Calculates midpoint between two points
+- `line_intersection(line1, line2)`: Finds intersection point of two lines
+- `regular_vertices(n, radius)`: Generates regular polygon vertices
+- `compass_directions(n)`: Generates evenly spaced directions
+
+Rotation and Quaternion Functions:
+- `quaternion_mult(...)`: Multiplies quaternions
+- `quaternion_from_angle_axis(angle, axis)`: Creates quaternion from angle and axis
+- `rotation_matrix(angle, axis)`: Generates rotation matrix
+
+Polygon/Triangulation:
+- `shoelace(x_y)`: Computes polygon area using shoelace formula
+- `earclip_triangulation(verts, ring_ends)`: Triangulates polygons with potential holes

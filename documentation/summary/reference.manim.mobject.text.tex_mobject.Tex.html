@@ -1,0 +1,36 @@
+# Tex Class in Manim
+
+A `Tex` class for rendering LaTeX text in normal mode with customizable options:
+
+## Key Features
+- Renders LaTeX strings as text
+- Supports color customization
+- Can retain original TeX color commands
+- Works with multiple LaTeX strings
+
+## Basic Usage
+```python
+# Create a Tex object with a text string
+tex = Tex('The horse does not eat cucumber salad.')
+```
+
+## Parameters
+- `*tex_strings`: LaTeX text strings to render
+- `arg_separator=''`: Separator between multiple strings
+- `tex_environment='center'`: LaTeX environment for rendering
+- `**kwargs`: Additional configuration options
+
+## Example Variations
+```python
+# Multiple strings
+tex = Tex('Hello', 'World')
+
+# Custom color
+tex = Tex('Text', color=BLUE)
+```
+
+## Important Attributes
+- `color`: Text color
+- `font_size`: Text font size
+- `width`, `height`: Dimension properties
+- `animate`: Animate text transformations

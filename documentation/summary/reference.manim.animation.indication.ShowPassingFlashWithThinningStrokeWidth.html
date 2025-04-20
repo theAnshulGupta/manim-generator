@@ -1,0 +1,17 @@
+ShowPassingFlashWithThinningStrokeWidth is an animation that creates a passing flash effect on a mobject where the stroke width gradually thins out. 
+
+Key characteristics:
+- Inherits from AnimationGroup
+- Creates a visual effect of a flash passing through a mobject
+- Allows customization of:
+  - Number of segments (default: 10)
+  - Time width of the flash (default: 0.1)
+  - Automatically removes itself after animation (default: True)
+
+Example usage would look like:
+```python
+mobject = Line()  # or any VMobject
+flash = ShowPassingFlashWithThinningStrokeWidth(mobject)
+```
+
+This animation is useful for highlighting or drawing attention to a specific mobject by creating a dynamic, thinning flash effect across its length.

@@ -1,0 +1,20 @@
+This module provides two animations for manipulating numerical displays:
+
+1. `ChangeDecimalToValue`:
+   - Changes a decimal number from its current value to a target value
+   - Allows smooth numerical transitions
+   - Can customize the interpolation method
+
+2. `ChangingDecimal`:
+   - Dynamically updates a decimal number's value during an animation
+   - Uses a function to generate new values progressively
+   - Useful for creating animated number changes based on custom logic
+
+Example usage would look like:
+```python
+decimal = DecimalNumber(0)
+self.play(ChangeDecimalToValue(decimal, 10))  # Animate 0 to 10
+self.play(ChangingDecimal(decimal, lambda x: some_function(x)))
+```
+
+These animations are particularly useful for creating dynamic numerical visualizations and transitions in mathematical or data-driven animations.

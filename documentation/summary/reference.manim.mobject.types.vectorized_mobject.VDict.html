@@ -1,0 +1,33 @@
+VDict in Manim is a dictionary-like group of Mobjects that allows you to:
+
+1. Create and manage a collection of Mobjects with associated keys
+2. Supports operations similar to both Python dictionaries and VGroups
+
+Key Features:
+- Create VDict using list of tuples or existing dictionaries
+- Access and manipulate Mobjects using keys
+- Optional display of keys alongside Mobjects
+- Methods to add, remove, and interact with Mobjects
+
+Example Usage:
+```python
+class ShapesWithVDict(Scene):
+    def construct(self):
+        # Create VDict with shapes
+        pairs = [("s", Square().set_color(RED)), 
+                 ("c", Circle().set_color(YELLOW))]
+        my_dict = VDict(pairs, show_keys=True)
+
+        # Add/remove/modify Mobjects
+        self.play(Create(my_dict))
+        my_dict["r"] = Rectangle()  # Add new Mobject
+        my_dict["c"].set_color(GREEN)  # Modify Mobject
+        my_dict.remove("s")  # Remove Mobject
+```
+
+Supports multiple initialization methods:
+- From list of tuples
+- From existing dictionary
+- Using `zip()`
+
+Useful for complex scene compositions with organized Mobject management.

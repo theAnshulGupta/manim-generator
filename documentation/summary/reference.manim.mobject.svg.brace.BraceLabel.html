@@ -1,0 +1,23 @@
+The `BraceLabel` class in Manim allows you to create a brace (curved or angled bracket) next to a mobject with an optional text label. Here's a concise summary:
+
+Key Parameters:
+- `obj`: The mobject the brace will be adjacent to
+- `text`: Label text for the brace
+- `brace_direction`: Direction of the brace (default is DOWN)
+- `label_constructor`: How to create the label (default is MathTex)
+- `font_size`: Size of the label text
+- `buff`: Space between mobject and brace
+
+Example usage:
+```python
+text = Text("Some text")
+brace_label = BraceLabel(text, "Label", brace_direction=RIGHT)
+```
+
+Methods:
+- `change_brace_label()`: Modify brace and label
+- `change_label()`: Update label text
+- `creation_anim()`: Animation for creating brace
+- `shift_brace()`: Move brace position
+
+The class is flexible, allowing customization of brace placement, label style, and text.

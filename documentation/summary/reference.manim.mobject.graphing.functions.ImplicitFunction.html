@@ -1,0 +1,27 @@
+Summary of ImplicitFunction:
+
+A class for plotting implicit functions (equations in the form f(x, y) = 0) in Manim.
+
+Key Parameters:
+- `func`: A lambda or function defining the implicit equation
+- `x_range`: Range of x values (optional)
+- `y_range`: Range of y values (optional)
+- `min_depth`: Minimum computational depth (default 5)
+- `max_quads`: Maximum number of quads for curve rendering (default 1500)
+- `use_smoothing`: Whether to smooth the curve (default True)
+
+Example:
+```python
+graph = ImplicitFunction(
+    lambda x, y: x * y**2 - x**2 * y - 2,
+    color=YELLOW
+)
+self.add(NumberPlane(), graph)
+```
+
+Notes:
+- Small `min_depth` might ignore small curve details
+- Higher `max_quads` improves curve quality but increases render time
+- Inherits from VMobject
+
+The class allows flexible plotting of complex 2D curves defined implicitly.

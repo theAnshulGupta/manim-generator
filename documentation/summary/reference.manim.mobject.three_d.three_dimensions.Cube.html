@@ -1,0 +1,25 @@
+The Cube class in Manim is a 3D geometric mobject representing a cube with customizable properties:
+
+Parameters:
+- side_length (float): Length of each cube side (default: 2)
+- fill_opacity (float): Transparency of the cube (default: 0.75)
+- fill_color (color): Color of the cube (default: light blue)
+- stroke_width (float): Width of cube edges (default: 0)
+
+Example usage:
+```python
+class CubeExample(ThreeDScene):
+    def construct(self):
+        self.set_camera_orientation(phi=75*DEGREES, theta=-45*DEGREES)
+        cube = Cube(side_length=3, fill_opacity=0.7, fill_color=BLUE)
+        self.add(cube)
+```
+
+Key methods:
+- generate_points(): Creates the cube's sides
+- init_points(): Similar to generate_points()
+
+Important notes:
+- Must be used in a ThreeDScene
+- Requires camera orientation adjustment to view properly
+- Customizable through various parameters

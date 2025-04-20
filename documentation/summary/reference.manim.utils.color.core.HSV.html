@@ -1,0 +1,26 @@
+HSV is a color space class in Manim for representing colors using Hue, Saturation, and Value.
+
+Key features:
+- Inherits from ManimColor
+- Represents colors with 3-4 parameters (HSV or HSVA)
+- Can specify optional alpha (transparency) value
+
+Constructor parameters:
+- `hsv`: HSV color values (array or tuple)
+- `alpha`: Transparency value (default 1.0)
+
+Attributes:
+- `h`: Hue
+- `s`: Saturation
+- `v`: Value
+
+Methods:
+- `_from_internal()`: Converts internal color representation
+- `_internal_space`: Provides custom color space representation
+- `_internal_value`: Returns color as [r,g,b,a] float array
+
+Example usage would look like:
+```python
+color = HSV((0.5, 0.7, 0.9))  # Specific HSV color
+color_with_alpha = HSV((0.5, 0.7, 0.9), alpha=0.5)  # With transparency
+```

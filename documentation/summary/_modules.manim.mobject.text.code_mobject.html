@@ -1,0 +1,35 @@
+The `Code` class in Manim is used to render and highlight source code in animations. Here's a concise summary:
+
+Key Features:
+- Renders code from a file or string with syntax highlighting
+- Supports multiple programming languages
+- Customizable styling and formatting
+- Optional line numbers
+- Different background styles (rectangle or window)
+
+Parameters:
+- `code_file`: Path to code file
+- `code_string`: Direct code input
+- `language`: Programming language (auto-detected if not specified)
+- `formatter_style`: Syntax highlight style (default "vim")
+- `tab_width`: Tab size in spaces
+- `add_line_numbers`: Show/hide line numbers
+- `background`: Background type ("rectangle" or "window")
+
+Example Usage:
+```python
+# From file
+listing = Code("helloworldcpp.cpp", language="cpp")
+
+# From string
+code = '''def hello():
+    print("World")'''
+rendered_code = Code(code_string=code, language="python")
+```
+
+Customization Options:
+- Adjust font, colors, line spacing
+- Configure background style
+- Choose syntax highlighting style
+
+The class uses Pygments for syntax highlighting and BeautifulSoup for HTML parsing.

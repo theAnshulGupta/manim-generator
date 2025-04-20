@@ -1,0 +1,16 @@
+AddTextLetterByLetter is an animation that reveals text letter by letter in a scene. Key details:
+
+- Works only with Text class, not MathTex
+- Parameters:
+  - `text`: Text object to animate
+  - `time_per_char`: Speed/frequency of letter appearance (default 0.1)
+  - `suspend_mobject_updating`: Optional mobject update suspension
+  - `run_time`: Optional total animation duration
+
+Example usage:
+```python
+text = Text("Hello World")
+self.play(AddTextLetterByLetter(text))
+```
+
+This will gradually reveal "Hello World" letter by letter, with each letter appearing at 0.1 second intervals by default. Customizable through parameters like `time_per_char` and `run_time`.

@@ -1,0 +1,26 @@
+The `manim.mobject.logo` module provides a `ManimBanner` class for creating and animating Manim's logo. Key features include:
+
+1. Logo Class (`ManimBanner`):
+   - Represents Manim's logo with customizable theme (dark/light)
+   - Consists of geometric shapes (triangle, square, circle) and text letters
+   - Supports custom scaling and animations
+
+2. Main Methods:
+   - `create()`: Animates logo creation with a spiral-in effect
+   - `expand()`: Expands logo to reveal full text with directional options (left/right/center)
+   - `scale()`: Scales the banner while maintaining proportions
+
+3. Usage Example:
+```python
+class LogoScene(Scene):
+    def construct(self):
+        banner = ManimBanner()  # Dark theme by default
+        self.play(banner.create())  # Animate logo creation
+        self.play(banner.expand())  # Expand logo to show full text
+```
+
+4. Customization:
+   - Can set theme with `dark_theme` parameter
+   - Supports different animation directions during expansion
+
+The module provides a convenient way to create and animate Manim's logo with flexible rendering options.

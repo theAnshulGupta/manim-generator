@@ -1,0 +1,27 @@
+The ArrowVectorField is a Manim class for visualizing vector fields through an array of arrows representing vector changes at different positions. Key points:
+
+Purpose:
+- Represents a vector field using arrows
+- Each arrow shows direction and magnitude of change at a specific point
+- Customizable in color, size, spacing, and range
+
+Key Parameters:
+- `func`: Function defining vector change at each position
+- `color`: Optional uniform color for all arrows
+- `color_scheme`: Optional function to color arrows based on vector properties
+- `x_range/y_range/z_range`: Control arrow placement and grid
+- `length_func`: Control arrow display size
+- `opacity`: Arrow transparency
+
+Examples demonstrate:
+1. Basic vector field creation with directional vectors
+2. Adjusting vector size and spacing
+3. Custom color mapping based on vector magnitude
+
+Basic usage:
+```python
+func = lambda pos: ((pos[0] * UR + pos[1] * LEFT) - pos) / 3
+ArrowVectorField(func)
+```
+
+The class allows flexible visualization of vector fields with numerous customization options.

@@ -1,0 +1,22 @@
+`ComplexValueTracker` is a Manim class for tracking and animating complex number values. Key features:
+
+- Inherits from `ValueTracker`
+- Tracks complex numbers
+- Allows smooth animation between complex values
+
+Example usage:
+```python
+tracker = ComplexValueTracker(-2+1j)
+dot = Dot().add_updater(lambda x: x.move_to(tracker.points))
+
+# Animate tracker value changes
+self.play(tracker.animate.set_value(3+2j))
+self.play(tracker.animate.set_value(tracker.get_value() * 1j))
+```
+
+Main methods:
+- `get_value()`: Returns current complex number
+- `set_value(z)`: Sets new complex number value
+- Can be animated with `.animate`
+
+The class is useful for creating animations involving complex number transformations, particularly in visualization scenarios like moving points on a complex plane.

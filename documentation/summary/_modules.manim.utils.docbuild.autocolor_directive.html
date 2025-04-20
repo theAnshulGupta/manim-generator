@@ -1,0 +1,23 @@
+This module provides a Sphinx directive for automatically generating documentation for color modules in Manim. Here's a concise summary:
+
+1. Purpose: Creates a dynamic color reference table for Manim color modules
+
+2. Key Features:
+- Automatically imports and processes a specified color module
+- Generates a table with color names and their corresponding hex codes
+- Dynamically adjusts text color for readability based on background luminance
+- Supports displaying multiple colors in configurable rows
+
+3. Usage Example:
+```rst
+.. automanimcolormodule:: manim.color.manim_colors
+```
+
+4. Output:
+- Creates an HTML table with:
+  - Color names
+  - Hex color codes
+  - Colored background representations
+  - Adaptive text color for visibility
+
+The directive is primarily used in Manim's documentation to automatically document color modules, making color references more visual and informative.

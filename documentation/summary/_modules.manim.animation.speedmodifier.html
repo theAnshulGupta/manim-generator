@@ -1,0 +1,33 @@
+The `ChangeSpeed` class in Manim allows you to modify the speed of an animation dynamically. Here's a concise summary:
+
+Purpose:
+- Modify the speed of an animation at different points during its runtime
+- Control animation speed through a speed map
+
+Key Features:
+- Takes an animation and a `speedinfo` dictionary defining speed changes
+- Can modify entire animation groups
+- Supports custom rate functions
+- Can affect speed-specific updaters
+
+Basic Usage:
+```python
+# Modify animation speed
+self.play(
+    ChangeSpeed(
+        animation,
+        speedinfo={0.3: 1, 0.4: 0.1, 0.6: 0.1, 1: 1},
+        rate_func=linear
+    )
+)
+
+# With updaters
+ChangeSpeed.add_updater(mobject, update_function)
+```
+
+Key Parameters:
+- `speedinfo`: Dictionary mapping time points to speed factors
+- `rate_func`: Optional custom rate function
+- `affects_speed_updaters`: Control updater speed changes
+
+The class enables complex speed manipulations while maintaining animation integrity.

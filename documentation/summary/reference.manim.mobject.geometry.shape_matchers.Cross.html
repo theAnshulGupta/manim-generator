@@ -1,0 +1,24 @@
+Here's a concise summary of the Cross class in Manim:
+
+Cross is a VGroup subclass that creates a simple X-shaped cross with customizable properties:
+
+Parameters:
+- mobject: Optional mobject to fit the cross to
+- stroke_color: Color of cross lines (default: red)
+- stroke_width: Thickness of cross lines (default: 6.0)
+- scale_factor: Size scaling (default: 1.0)
+
+Example usage:
+```python
+class ExampleCross(Scene):
+    def construct(self):
+        cross = Cross()  # Creates a default red X
+        self.add(cross)
+```
+
+Key features:
+- Creates a basic X shape
+- Can be scaled and colored
+- Can be fitted to another mobject if specified
+
+The class is useful for marking, highlighting, or indicating errors/negation in Manim animations.

@@ -1,0 +1,24 @@
+TexTemplate is a class for customizing LaTeX rendering in Manim. Key features:
+
+Main Constructor Parameters:
+- tex_compiler: LaTeX compiler (default 'latex')
+- output_format: File output type (default '.dvi')
+- documentclass: LaTeX document class (default standalone)
+- preamble: LaTeX packages and setup
+- placeholder_text: Text to be replaced during rendering
+
+Key Methods:
+- add_to_preamble(): Add packages/definitions to LaTeX preamble
+- add_to_document(): Add commands after document begins
+- get_texcode_for_expression(): Convert expression to full LaTeX code
+- from_file(): Create template from external .tex file
+- copy(): Create a deep copy of the template
+
+Example Usage:
+```python
+template = TexTemplate()
+template.add_to_preamble(r'\usepackage{some_package}')
+template.add_to_document(r'\boldmath')
+```
+
+Purpose: Provides flexible configuration for rendering mathematical expressions and text in Manim scenes.

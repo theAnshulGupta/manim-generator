@@ -1,0 +1,15 @@
+The `TexFontTemplates` is a collection of pre-configured LaTeX templates that allow you to render text and mathematics using different fonts. Each template is designed to work with specific fonts, often requiring those fonts to be installed on your machine.
+
+Key points:
+- Used for customizing font styles in Tex and MathTex mobjects
+- Example usage: `Tex("My text", tex_template=TexFontTemplates.comic_sans)`
+- Requires specific fonts to be installed locally
+- Contains over 40 different font templates
+
+Example template attributes include:
+- Font name (e.g., Comic Sans, Palatino)
+- LaTeX compiler (latex, xelatex, lualatex)
+- Output format (.dvi, .xdv, .pdf)
+- Preamble configuration for font and math symbol rendering
+
+Important note: Not all templates will work if the corresponding font is not installed on your system.

@@ -1,0 +1,25 @@
+Here's a concise summary of the Circle class in Manim:
+
+Circle is a geometric mobject that represents a circle, inheriting from Arc. 
+
+Key Parameters:
+- radius: Circle's size (default is None)
+- color: Circle's color (default is reddish)
+
+Main Methods:
+1. from_three_points(): Creates a circle passing through 3 specified points
+2. point_at_angle(): Returns a point on the circle's circumference
+3. surround(): Modifies circle to encompass another mobject
+
+Example Usage:
+```python
+circle_1 = Circle(radius=1.0)  # Basic circle
+circle_2 = Circle(radius=1.5, color=GREEN)  # Colored, different size
+circle_3 = Circle(radius=1.0, fill_opacity=1)  # Filled circle
+```
+
+Key features:
+- Customizable radius, color, and fill
+- Can be positioned and transformed like other Manim mobjects
+
+Useful for creating circular shapes, highlighting areas, or mathematical visualizations.

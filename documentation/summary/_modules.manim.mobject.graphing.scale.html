@@ -1,0 +1,23 @@
+This module defines two scaling classes for graphing and functions in Manim:
+
+1. `LinearBase`: A simple linear scaling
+   - Multiplies input by a scale factor
+   - Default scale factor is 1.0
+   - `function(x)` returns `scale_factor * x`
+   - `inverse_function(x)` returns `x / scale_factor`
+
+2. `LogBase`: Logarithmic scaling
+   - Uses a configurable base (default 10)
+   - `function(x)` returns `base^x`
+   - `inverse_function(x)` returns `log_base(x)`
+   - Can generate custom labels like `10^2`
+
+Example usage:
+```python
+func = ParametricFunction(lambda x: x, scaling=LogBase(base=2))
+```
+
+Key features:
+- Supports custom labels
+- Handles both linear and logarithmic scaling
+- Useful for creating graphs with different scaling methods

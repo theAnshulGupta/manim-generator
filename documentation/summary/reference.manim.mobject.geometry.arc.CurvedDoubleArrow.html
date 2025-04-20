@@ -1,0 +1,19 @@
+CurvedDoubleArrow is a Manim class for creating a curved double-headed arrow between two points:
+
+Key Details:
+- Inherits from CurvedArrow
+- Takes start_point and end_point as required parameters
+- Creates a curved arrow with arrowheads at both ends
+
+Example Usage:
+```python
+# Create a curved double arrow between (0,0) and (3,3)
+curved_double_arrow = CurvedDoubleArrow(
+    start_point=[0, 0, 0], 
+    end_point=[3, 3, 0]
+)
+```
+
+Additional parameters can be passed through kwargs to customize appearance like color, stroke width, etc.
+
+The class allows flexible creation of curved arrows with arrowheads at both ends, useful for visualizing relationships, directional curves, or transformations in mathematical or diagrammatic animations.

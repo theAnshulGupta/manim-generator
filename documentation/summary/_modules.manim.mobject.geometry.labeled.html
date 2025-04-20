@@ -1,0 +1,25 @@
+The documentation describes several labeled geometric Manim mobjects:
+
+1. `Label`: A versatile label component with configurable text and optional background/frame
+   - Can be created with Text, MathTex, or Tex
+   - Supports custom configurations for label, background box, and frame
+   - Example shows creating a labeled text with blue background
+
+2. `LabeledLine`: A line with a label positioned at a specific point
+   - Label position is configurable via `label_position` (0-1 ratio)
+   - Inherits from `Line` class
+   - Example demonstrates creating a line with a label at 80% of its length
+
+3. `LabeledArrow`: Similar to `LabeledLine`, but inherits from both `LabeledLine` and `Arrow`
+   - Simple example shows creating an arrow with a centered label
+
+4. `LabeledPolygram`: A polygon with a label placed at its "pole of inaccessibility"
+   - Uses PolyLabel algorithm to find the most central label position
+   - Supports multiple vertex groups/rings
+   - Complex examples include creating labeled polygons and even tracing country boundaries
+
+Key features:
+- Flexible label configuration
+- Support for various text types
+- Intelligent label positioning
+- Configurable background and frame options

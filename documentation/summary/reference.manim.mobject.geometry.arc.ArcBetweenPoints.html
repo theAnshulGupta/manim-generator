@@ -1,0 +1,25 @@
+ArcBetweenPoints creates an arc between two specified points with configurable parameters:
+
+Key Parameters:
+- `start`: Starting point of the arc
+- `end`: Ending point of the arc
+- `angle`: Angle of the arc (default is π/2 or 90 degrees)
+- `radius`: Radius of the arc (optional)
+
+Example Code:
+```python
+class ArcBetweenPointsExample(Scene):
+    def construct(self):
+        circle = Circle(radius=2, stroke_color=GREY)
+        dot_1 = Dot(color=GREEN).move_to([2, 0, 0]).scale(0.5)
+        dot_2 = Dot(color=GREEN).move_to([0, 2, 0]).scale(0.5)
+        arc = ArcBetweenPoints(start=2 * RIGHT, end=2 * UP, stroke_color=YELLOW)
+        self.add(circle, dot_1, dot_2)
+        self.play(Create(arc))
+```
+
+Key Points:
+- Inherits from `Arc` class
+- Allows creating arcs between two specific points
+- Flexible angle and radius configuration
+- Useful for creating curved paths or segments

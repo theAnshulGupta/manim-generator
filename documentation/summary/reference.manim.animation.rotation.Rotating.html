@@ -1,0 +1,19 @@
+The `Rotating` animation in Manim allows you to rotate a mobject around a specified axis. Here's a concise summary:
+
+Key Parameters:
+- `mobject`: Object to rotate
+- `axis`: Rotation axis (default [0, 0, 1] - z-axis)
+- `radians`: Total rotation angle (default 2π, a full rotation)
+- `about_point`: Rotation center point
+- `about_edge`: Alternative way to specify rotation center
+- `run_time`: Duration of rotation (default 5 seconds)
+- `rate_func`: Controls rotation speed (default linear)
+
+Example usage:
+```python
+# Rotate a circle around z-axis for one full rotation over 5 seconds
+circle = Circle()
+rotating_circle = Rotating(circle)
+```
+
+The animation interpolates the mobject's rotation smoothly from 0 to the specified radians based on the animation's progress.

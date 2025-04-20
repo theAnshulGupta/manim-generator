@@ -1,0 +1,24 @@
+Summary of CyclicReplace:
+
+CyclicReplace is an animation that moves multiple mobjects in a cyclic manner. When applied to a group of mobjects, each mobject moves to the position of the next mobject, with the last mobject moving to the first mobject's original position.
+
+Key features:
+- Inherits from Transform animation
+- Works with multiple mobjects in a group
+- Optional `path_arc` parameter controls the arc angle of movement (default is π/2 or 90 degrees)
+
+Example code:
+```python
+class CyclicReplaceExample(Scene):
+    def construct(self):
+        # Create a group of shapes
+        group = VGroup(Square(), Circle(), Triangle(), Star())
+        group.arrange(RIGHT)
+        self.add(group)
+
+        # Cycle shapes 4 times
+        for _ in range(4):
+            self.play(CyclicReplace(*group))
+```
+
+In this example, the shapes (Square, Circle, Triangle, Star) will continuously cycle through their positions, creating a rotating effect.

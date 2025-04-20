@@ -1,0 +1,28 @@
+ThreeDCamera is a specialized camera for rendering 3D scenes in Manim. Key features include:
+
+Initialization Parameters:
+- focal_distance: Camera's focal length
+- shading_factor: Controls object shading
+- light_source_start_point: Initial light source position
+- phi, theta, gamma: Rotation angles
+- zoom: Camera zoom level
+
+Main Methods:
+1. Rotation and Positioning:
+- set_phi(): Set polar angle
+- set_theta(): Set azimuthal angle
+- set_gamma(): Set camera rotation
+- set_zoom(): Adjust camera zoom
+- get_rotation_matrix(): Generate camera rotation matrix
+
+2. Object Handling:
+- add_fixed_in_frame_mobjects(): Keep objects in fixed screen position
+- add_fixed_orientation_mobjects(): Maintain object orientation during camera movement
+- project_point()/project_points(): Project 3D points onto 2D screen
+
+3. Rendering Utilities:
+- get_fill_rgbas(): Get object fill colors
+- get_stroke_rgbas(): Get object stroke colors
+- capture_mobjects(): Render scene objects
+
+Use this camera when creating complex 3D animations or scenes requiring advanced camera manipulation.

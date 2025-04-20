@@ -1,0 +1,26 @@
+The `manim.utils.iterables` module provides utility functions for working with iterables (lists, tuples, etc.) in Manim. Here's a concise summary of key functions:
+
+1. Tuple/List Manipulation:
+- `adjacent_n_tuples()`: Creates cyclical n-length tuples from a sequence
+- `adjacent_pairs()`: Specifically creates 2-length cyclical tuples
+- `concatenate_lists()`: Combines multiple lists into one
+- `listify()`: Converts various object types to lists
+- `tuplify()`: Converts various object types to tuples
+
+2. List Modification:
+- `list_difference_update()`: Removes elements of one list from another
+- `list_update()`: Merges lists while maintaining order
+- `remove_list_redundancies()`: Removes duplicates while preserving order
+- `remove_nones()`: Removes falsy elements from a list
+
+3. Array Resizing:
+- `resize_array()`: Extends/truncates numpy arrays by cycling elements
+- `resize_preserving_order()`: Extends arrays by duplicating earlier elements
+- `resize_with_interpolation()`: Extends arrays by interpolating new values
+
+4. Utility Functions:
+- `make_even()`: Extends shorter iterables to match longer ones
+- `uniq_chain()`: Generates unique elements from multiple iterables
+- `all_elements_are_instances()`: Checks if all elements are of a specific type
+
+Each function includes type hints and example usage to demonstrate its functionality.

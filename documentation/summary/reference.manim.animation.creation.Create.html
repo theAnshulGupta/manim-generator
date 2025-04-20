@@ -1,0 +1,25 @@
+The `Create` animation in Manim is used to incrementally show a VMobject (vector graphic object) by gradually drawing its outline or filling it in. 
+
+Key details:
+- It takes a VMobject as input (like a Square, Circle, etc.)
+- Animates the object by progressively revealing it
+- Can be used in a scene's `play()` method
+
+Basic example:
+```python
+class CreateScene(Scene):
+    def construct(self):
+        self.play(Create(Square()))  # Animates drawing a square
+```
+
+Parameters:
+- `mobject`: The VMobject to animate (required)
+- `lag_ratio`: Controls animation timing for multiple objects
+- `introducer`: Boolean flag for animation behavior
+
+Important notes:
+- Only works with VMobjects 
+- Raises a TypeError if the input is not a valid VMobject
+- Similar to `DrawBorderThenFill`, but with a different animation style
+
+The animation smoothly reveals the object, making it useful for visually introducing graphical elements in a Manim scene.

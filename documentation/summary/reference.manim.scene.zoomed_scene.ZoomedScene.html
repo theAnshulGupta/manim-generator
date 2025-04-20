@@ -1,0 +1,28 @@
+ZoomedScene is a specialized Scene subclass for creating zoomed-in views of specific parts of an animation. Key features:
+
+Key Methods:
+- `activate_zooming()`: Enables zooming camera
+- `get_zoom_factor()`: Returns zoom ratio
+- `get_zoom_in_animation()`: Generates zoom-in animation
+- `get_zoomed_display_pop_out_animation()`: Creates pop-out animation for zoomed display
+
+Example Usage:
+```python
+class MyZoomedScene(ZoomedScene):
+    def construct(self):
+        # Activate zooming
+        self.activate_zooming()
+        
+        # Zoom into a specific mobject
+        self.play(self.get_zoom_in_animation())
+        
+        # Optional: Pop out zoomed display
+        self.play(self.get_zoomed_display_pop_out_animation())
+```
+
+Configurable Parameters:
+- `zoomed_display_height/width`: Size of zoomed display
+- `zoom_factor`: Magnification level
+- `zoomed_display_corner`: Positioning of zoomed view
+
+Useful for highlighting specific details or demonstrations requiring close-up views.

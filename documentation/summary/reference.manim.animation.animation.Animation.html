@@ -1,0 +1,34 @@
+Animation is the base class for creating animations in Manim. Here's a concise summary:
+
+Key Parameters:
+- mobject: Object to be animated
+- lag_ratio: Delay between submobject animations
+- run_time: Duration of animation in seconds
+- rate_func: Function defining animation progress
+- remover: Whether to remove mobject after animation
+- suspend_mobject_updating: Pause mobject updaters during animation
+
+Key Methods:
+- begin(): Initialize animation
+- interpolate(alpha): Set animation progress (0-1)
+- set_run_time(): Change animation duration
+- set_rate_func(): Modify animation progression function
+
+Key Features:
+- Supports complex animation timing with lag_ratio
+- Allows custom rate functions to control animation progression
+- Can add/remove objects from scene
+- Supports nested submobject animations
+
+Example demonstrates different lag_ratios:
+```python
+class LagRatios(Scene):
+    def construct(self):
+        group = VGroup(*[Dot() for _ in range(4)]).arrange_submobjects()
+        self.play(AnimationGroup(*[
+            group.animate(lag_ratio=ratio).shift(DOWN)
+            for ratio in [0, 0.1, 0.5, 1, 2]
+        ]))
+```
+
+This base class provides fundamental animation control in Manim.

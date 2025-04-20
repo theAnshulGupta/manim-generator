@@ -1,0 +1,25 @@
+Summary of BraceText:
+
+BraceText is a class derived from BraceLabel used to create a labeled brace object. Key features:
+
+1. Constructor parameters:
+- `obj`: The object to which the brace will be attached
+- `text`: The text to be displayed with the brace
+- `label_constructor`: Defaults to Tex class for creating the label (optional)
+- Additional keyword arguments can be passed
+
+2. Inherits standard Manim mobject attributes like:
+- `animate`
+- `color`
+- `height`
+- `width`
+- `stroke_color`
+
+3. Primarily used to add descriptive text/labels to braces in mathematical or diagrammatic visualizations
+
+Example usage would look like:
+```python
+my_brace = BraceText(some_object, "Description")
+```
+
+This allows quickly annotating objects with braces and explanatory text in Manim animations.

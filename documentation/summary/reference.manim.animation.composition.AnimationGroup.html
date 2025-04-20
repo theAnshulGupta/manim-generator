@@ -1,0 +1,24 @@
+AnimationGroup is a Manim class for playing multiple animations together or in sequence. Key features:
+
+Parameters:
+- animations: List of animations to play
+- run_time: Total duration of the animation
+- lag_ratio: Delay between animation starts (0 = simultaneous)
+- rate_func: Controls animation progression
+
+Example usage:
+```python
+AnimationGroup(
+    FadeIn(obj1),
+    FadeOut(obj2),
+    run_time=2,  # Total 2 seconds
+    lag_ratio=0.5  # Second animation starts halfway through first
+)
+```
+
+Main methods:
+- begin(): Initializes animation
+- interpolate(alpha): Progresses animation
+- clean_up_from_scene(): Handles scene cleanup
+
+Primary purpose is to combine multiple animations with control over timing and sequence, allowing complex animation compositions.

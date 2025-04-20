@@ -1,0 +1,22 @@
+LogBase is a scaling class for creating logarithmic graphs/functions in Manim:
+
+Key Features:
+- Creates logarithmic scale with configurable base (default is 10)
+- Can generate custom labels
+- Used for scaling values logarithmically
+
+Main Methods:
+- `function(value)`: Scales value logarithmically (e.g., `function(5)` returns 10^5)
+- `inverse_function(value)`: Reverses logarithmic scaling
+- `get_custom_labels()`: Creates custom integer labels like 10^2
+
+Example Usage:
+```python
+func = ParametricFunction(lambda x: x, scaling=LogBase(base=2))
+```
+
+Parameters:
+- `base`: Logarithm base (default 10)
+- `custom_labels`: Whether to include LaTeX axis labels (default True)
+
+Useful for creating graphs with exponential or logarithmic relationships.

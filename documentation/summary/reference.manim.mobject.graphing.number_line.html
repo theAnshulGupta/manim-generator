@@ -1,0 +1,22 @@
+The `number_line` module in Manim provides two key classes for creating number lines:
+
+1. `NumberLine`: Creates a customizable number line with configurable properties like:
+   - Range of numbers
+   - Length
+   - Unit size
+   - Tick marks (frequency, length)
+   - Label positions
+   - Color and style
+
+Example:
+```python
+number_line = NumberLine(
+    x_range=[-5, 5, 1],  # Start, end, step
+    length=10,           # Total line length
+    color=BLUE
+)
+```
+
+2. `UnitInterval`: A specialized number line representing the interval between 0 and 1, useful for mathematical visualizations.
+
+Key features include precise control over number line appearance and behavior, making it easy to create visual representations of mathematical concepts.

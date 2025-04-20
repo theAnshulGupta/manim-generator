@@ -1,0 +1,15 @@
+These classes perform boolean operations on 2D Manim vector mobjects:
+
+1. Difference: Subtracts one VMobject from another
+   Example: `Difference(circle, square)` would cut the circle shape out of the square
+
+2. Exclusion (XOR): Creates a shape that includes areas in either object, but not both
+   Example: `Exclusion(circle, square)` shows regions inside circle or square, but not overlapping
+
+3. Intersection: Creates a shape representing the overlapping area between two VMobjects
+   Example: `Intersection(circle, square)` shows only the area where circle and square overlap
+
+4. Union: Combines multiple VMobjects into a single shape
+   Example: `Union(circle, square)` merges circle and square into one continuous shape
+
+Each class allows complex geometric manipulations by combining vector shapes mathematically.

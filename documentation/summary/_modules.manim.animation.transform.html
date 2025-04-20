@@ -1,0 +1,36 @@
+Here's a concise summary of the `manim.animation.transform` module:
+
+The module provides various transformation animations for Manim mobjects:
+
+Key Classes:
+1. `Transform`: Base class for transforming one mobject into another
+   - Parameters: `mobject`, `target_mobject`, `path_func`, `path_arc`
+   - Allows customizing how points move during transformation
+
+2. `ReplacementTransform`: Replaces one mobject with another completely
+   - Removes original mobject after transformation
+
+3. `ApplyMethod`: Applies a method to a mobject during animation
+   - Useful for transforming mobjects by calling their methods
+
+4. `ApplyPointwiseFunction`: Applies a function to each point of a mobject
+   - Allows complex point-wise transformations
+
+5. `FadeTransform`: Fades one mobject into another
+   - Can stretch or match dimensions
+   - Supports submobject-level transformations with `FadeTransformPieces`
+
+Other Notable Transformations:
+- `ScaleInPlace`: Scales a mobject
+- `Restore`: Returns mobject to saved state
+- `ApplyMatrix`: Applies matrix transformations
+- `ClockwiseTransform`/`CounterclockwiseTransform`: Arc-based transformations
+
+Example:
+```python
+# Basic transformation
+self.play(Transform(circle, square))
+
+# Replace and morph
+self.play(ReplacementTransform(circle, triangle))
+```

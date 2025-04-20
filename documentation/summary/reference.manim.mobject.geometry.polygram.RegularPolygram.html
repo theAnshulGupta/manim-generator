@@ -1,0 +1,25 @@
+RegularPolygram is a Manim class for creating polygrams (star-like shapes) with configurable properties:
+
+Key Parameters:
+- `num_vertices`: Number of points on the shape
+- `density`: How vertices are connected (default 2)
+- `radius`: Size of the shape
+- `start_angle`: Rotation of the shape
+
+Basic Example:
+```python
+class RegularPolygramExample(Scene):
+    def construct(self):
+        pentagram = RegularPolygram(5, radius=2)  # 5-pointed star
+        self.add(pentagram)
+```
+
+Key Features:
+- Creates geometric shapes by connecting vertices on a circle
+- Allows flexible vertex connections through `density`
+- Can control size and rotation
+- Useful for creating stars, pentacles, and other geometric patterns
+
+The `density` parameter determines how vertices are connected. A density of 2 creates a typical star shape by skipping every other vertex when drawing lines.
+
+Use cases include mathematical visualizations, geometric art, and creating complex polygon shapes programmatically.

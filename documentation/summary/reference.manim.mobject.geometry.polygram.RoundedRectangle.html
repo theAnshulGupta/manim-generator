@@ -1,0 +1,26 @@
+RoundedRectangle is a Manim class for creating rectangles with rounded corners. Key details:
+
+Parameters:
+- `corner_radius`: Controls the curvature of rectangle corners
+  - Can be a single float or a list of floats
+  - Default is 0.5
+- Supports additional Rectangle configuration options via kwargs
+
+Example code:
+```python
+class RoundedRectangleExample(Scene):
+    def construct(self):
+        # Create two rounded rectangles with different corner radii
+        rect_1 = RoundedRectangle(corner_radius=0.5)
+        rect_2 = RoundedRectangle(corner_radius=1.5, height=4.0, width=4.0)
+
+        # Arrange rectangles side by side
+        rect_group = Group(rect_1, rect_2).arrange(buff=1)
+        self.add(rect_group)
+```
+
+Key points:
+- Inherits from Rectangle class
+- Allows customizing corner roundness
+- Can modify size, color, and other Rectangle properties
+- Useful for creating UI elements, design components, or stylized shapes

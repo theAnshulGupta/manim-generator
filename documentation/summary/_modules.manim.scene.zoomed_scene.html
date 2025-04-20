@@ -1,0 +1,27 @@
+The `ZoomedScene` class in Manim is a specialized scene for zooming in on specific parts of an animation. Here's a concise summary:
+
+Key Features:
+- Allows creating a zoomed-in view of a specific area
+- Configurable zoom parameters like size, position, and zoom factor
+- Can animate zooming in and out
+
+Basic Usage Example:
+```python
+class UseZoomedScene(ZoomedScene):
+    def construct(self):
+        dot = Dot().set_color(GREEN)
+        self.add(dot)
+        self.activate_zooming(animate=False)  # Activate zooming
+        self.play(dot.animate.shift(LEFT))    # Move object while zoomed
+```
+
+Customization Options:
+- `zoom_factor`: Controls zoom level
+- `zoomed_display_height/width`: Sets zoomed display size
+- `zoomed_display_corner`: Positions zoomed display
+- `animate` parameter in `activate_zooming()` controls animation
+
+Main Methods:
+- `activate_zooming()`: Turns on zooming
+- `get_zoom_in_animation()`: Creates zoom-in animation
+- `get_zoomed_display_pop_out_animation()`: Animates zoomed display appearance

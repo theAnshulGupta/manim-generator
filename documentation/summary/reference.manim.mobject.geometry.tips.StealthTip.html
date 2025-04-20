@@ -1,0 +1,15 @@
+A StealthTip is a specialized arrow tip in Manim that looks like a stealth fighter/kite shape. Its key parameters are:
+
+- `fill_opacity`: Controls transparency (default 1)
+- `stroke_width`: Controls line thickness (default 3)
+- `length`: Controls tip size (default 0.175)
+- `start_angle`: Initial orientation (default π)
+
+It's a subclass of ArrowTip and can be used to customize arrow appearance. The length property specifically computes the tip's height to ensure appropriate scaling.
+
+Example usage would be creating an arrow with a stealth-style tip, like:
+```python
+arrow = Arrow(start, end, tip_shape=StealthTip)
+```
+
+The tip provides a more angular, geometric arrowhead compared to standard triangle tips.

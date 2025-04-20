@@ -1,0 +1,17 @@
+CubicBezier is a Manim class for creating cubic Bézier curves with four defining points:
+
+- `start_anchor`: Starting point of the curve
+- `start_handle`: First control point that influences the curve's shape
+- `end_handle`: Second control point that influences the curve's shape
+- `end_anchor`: Ending point of the curve
+
+Example code demonstrates creating a CubicBezier:
+```python
+p1 = np.array([-3, 1, 0])
+p1b = p1 + [1, 0, 0]
+p2 = np.array([3, -1, 0])
+p2b = p2 - [1, 0, 0]
+bezier = CubicBezier(p1b, p1b + 3 * RIGHT, p2b - 3 * RIGHT, p2b)
+```
+
+The curve's shape is determined by the control points (handles), which allow for smooth, flexible curve generation. It inherits from VMobject and can be styled like other Manim geometric objects.

@@ -1,0 +1,30 @@
+Summary of DecimalNumber in Manim:
+
+DecimalNumber is a Manim mobject for displaying and animating decimal numbers with customizable formatting:
+
+Key Parameters:
+- number: Initial numeric value
+- num_decimal_places: Decimal places to display
+- include_sign: Show +/- for positive/zero numbers
+- group_with_commas: Use comma separators
+- show_ellipsis: Show ... if number is truncated
+- unit: Optional unit string to append
+- font_size: Text size
+
+Key Methods:
+- set_value(): Change the displayed number
+- add_updater(): Dynamically update number
+
+Example Code:
+```python
+decimal = DecimalNumber(
+    0,
+    show_ellipsis=True,
+    num_decimal_places=3,
+    include_sign=True,
+    unit=r"\text{M-Units}"
+)
+decimal.add_updater(lambda d: d.set_value(some_value))
+```
+
+The mobject allows flexible number display with various formatting options and can be dynamically updated during animations.

@@ -1,0 +1,20 @@
+`ImageMobjectFromCamera` is a specialized image mobject in Manim that creates an image directly from a camera. 
+
+Key points:
+- Inherits from `AbstractImageMobject`
+- Creates an image mobject using a camera as its source
+- Allows customization of display frame configuration
+- Can be used to capture and display real-time camera frames in Manim animations
+
+Basic usage would involve:
+1. Creating a camera object
+2. Passing the camera to `ImageMobjectFromCamera`
+3. Using the resulting mobject in a scene
+
+Example structure might look like:
+```python
+camera = Camera()
+image_from_camera = ImageMobjectFromCamera(camera)
+```
+
+Attributes include standard mobject properties like `height`, `width`, `animate`, allowing typical Manim manipulation and animation.

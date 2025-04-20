@@ -1,0 +1,16 @@
+ArrowCircleFilledTip is a Manim class for creating circular arrow tips with a filled interior. Key details:
+
+- Inherits from ArrowCircleTip
+- Creates a circular arrow tip that is completely filled
+- Default parameters:
+  - `fill_opacity=1`: Fully opaque fill
+  - `stroke_width=0`: No border stroke
+
+Basic usage would involve using this as a tip for arrows, providing a circular filled arrowhead style. It can be customized through standard Manim mobject parameters like color, size, etc.
+
+Example:
+```python
+arrow = Arrow(start, end, tip_class=ArrowCircleFilledTip)
+```
+
+This creates an arrow with a solid circular tip, filling the entire tip area.

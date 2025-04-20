@@ -1,0 +1,37 @@
+ArrowTip is a base class for creating arrow tips in Manim, with several pre-defined tip styles:
+
+Key Points:
+- Abstract base class for arrow tips
+- Cannot be used directly
+- Subclasses include: ArrowTriangleTip, ArrowCircleTip, ArrowSquareTip, etc.
+
+Properties:
+- `base`: Connection point to arrow line
+- `length`: Length of the tip
+- `tip_angle`: Angle of the tip
+- `tip_point`: End point of the tip
+- `vector`: Vector from base to tip point
+
+Example Usage:
+```python
+# Custom tip by inheriting from ArrowTip and another shape
+class MyCustomArrowTip(ArrowTip, RegularPolygon):
+    def __init__(self, length=0.35, **kwargs):
+        RegularPolygon.__init__(self, n=5, **kwargs)
+        self.width = length
+        self.stretch_to_fit_height(length)
+
+# Creating an arrow with custom tip
+arr = Arrow(
+    np.array([-2, -2, 0]), 
+    np.array([2, 2, 0]), 
+    tip_shape=MyCustomArrowTip
+)
+```
+
+Predefined Tips:
+- ArrowTriangleTip
+- ArrowCircleTip
+- ArrowSquareTip
+- StealthTip
+- Filled/non-filled variants of each

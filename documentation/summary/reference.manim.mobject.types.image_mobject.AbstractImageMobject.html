@@ -1,0 +1,24 @@
+`AbstractImageMobject` is a base class for creating image objects in Manim with the following key features:
+
+Parameters:
+- `scale_to_resolution`: Sets the image resolution
+- `pixel_array_dtype`: Pixel data type (default 'uint8')
+- `resampling_algorithm`: Image scaling method (default BICUBIC)
+
+Main Methods:
+- `reset_points()`: Sets image corners
+- `set_color()`: Modifies image color
+- `set_resampling_algorithm()`: Changes image scaling interpolation method
+
+Key Characteristics:
+- Inherits from `Mobject`
+- Automatically filters out black pixels
+- Allows flexible image rendering and manipulation
+- Supports different scaling/resampling algorithms
+
+Example Use:
+```python
+image = AbstractImageMobject("path/to/image.png", scale_to_resolution=1080)
+```
+
+This class provides a foundational framework for image handling in Manim animations, with customizable resolution and scaling options.

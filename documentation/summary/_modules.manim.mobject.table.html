@@ -1,0 +1,33 @@
+The documentation describes various table classes in Manim for creating tables with different types of entries:
+
+1. `Table` (base class):
+- Creates tables with customizable entries
+- Supports row and column labels
+- Can add lines, background rectangles
+- Methods to get/manipulate table elements
+- Customizable entry creation and animations
+
+Example:
+```python
+table = Table(
+    [["First", "Second"],
+    ["Third","Fourth"]],
+    row_labels=[Text("R1"), Text("R2")],
+    col_labels=[Text("C1"), Text("C2")],
+    include_outer_lines=True
+)
+```
+
+2. Specialized Table Subclasses:
+- `MathTable`: Uses LaTeX for entries
+- `MobjectTable`: Allows any Mobject as entries
+- `IntegerTable`: Integers as entries
+- `DecimalTable`: Decimal numbers with configurable precision
+
+Key Methods:
+- `get_entries()`: Retrieve table entries
+- `add_highlighted_cell()`: Highlight specific cells
+- `create()`: Animate table creation
+- `set_row_colors()`, `set_column_colors()`: Color customization
+
+Use appropriate subclass based on entry type for cleaner, type-specific table creation.

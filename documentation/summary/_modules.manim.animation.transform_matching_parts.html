@@ -1,0 +1,30 @@
+This module provides two animation classes for transforming Mobjects while preserving matching parts:
+
+1. `TransformMatchingShapes`:
+   - Transforms groups by matching submobject shapes
+   - Matches based on normalized point coordinates
+   - Example use case: Transforming text anagrams
+
+```python
+# Example
+class Anagram(Scene):
+    def construct(self):
+        src = Text("the morse code")
+        tar = Text("here come dots")
+        self.play(TransformMatchingShapes(src, tar, path_arc=PI/2))
+```
+
+2. `TransformMatchingTex`:
+   - Transforms LaTeX strings by matching submobject tex_strings
+   - Useful for manipulating mathematical equations
+
+```python
+# Example
+class MatchingEquationParts(Scene):
+    def construct(self):
+        eq1 = MathTex("x^2", "+", "y^2", "=", "z^2")
+        eq2 = MathTex("a^2", "+", "b^2", "=", "c^2")
+        self.play(TransformMatchingTex(eq1, eq2))
+```
+
+Both classes inherit from `TransformMatchingAbstractBase` and provide customizable transformation behaviors like handling mismatched parts.

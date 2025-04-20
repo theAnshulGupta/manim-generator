@@ -1,0 +1,34 @@
+This module provides classes for handling image-based mobjects in Manim:
+
+1. `AbstractImageMobject`: Base class for image mobjects with:
+   - Customizable resolution scaling
+   - Resampling algorithm selection
+   - Point-based positioning
+
+2. `ImageMobject`: Primary image handling class
+   - Loads images from files or numpy arrays
+   - Supports:
+     - Color manipulation
+     - Opacity control
+     - Interpolation
+     - Multiple resampling algorithms
+   - Examples demonstrate image creation, interpolation, and scaling
+
+3. `ImageMobjectFromCamera`: Specialized image mobject that:
+   - Creates image from camera's pixel array
+   - Can add display frame
+   - Supports color interpolation
+
+Key features:
+- Flexible image loading
+- Color/opacity modifications
+- Multiple interpolation methods
+- Easy integration with Manim scenes
+
+Example usage:
+```python
+# Load image from array
+image = ImageMobject(np.uint8([[0, 100, 30, 200],
+                               [255, 0, 5, 33]]))
+image.height = 7
+```

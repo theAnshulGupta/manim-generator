@@ -1,0 +1,12 @@
+This is a technical documentation for the `JSONFormatter` class in Manim's logging utilities, which is primarily used for internal testing purposes. Here's a concise summary:
+
+`JSONFormatter` is a logging formatter that outputs logs in a custom JSON format. Key points:
+
+- Inherits from Python's standard `Formatter` class
+- Allows custom JSON log formatting
+- Can specify formatting style ('%', '{', or '$')
+- Has a `format()` method that converts log records to JSON-formatted strings
+- Used internally for testing
+- Supports optional date formatting with `datefmt`
+
+Example usage would typically be in configuring Python's logging system for Manim's internal logging mechanisms. For most Manim users, this class is not directly relevant to animation creation.

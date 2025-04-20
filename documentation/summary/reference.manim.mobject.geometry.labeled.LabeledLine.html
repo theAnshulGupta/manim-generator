@@ -1,0 +1,25 @@
+`LabeledLine` is a Manim class for creating a line with a label positioned along its length. Key features include:
+
+Parameters:
+- `label`: Text to display on line (str, Tex, MathTex, Text)
+- `label_position`: Float between 0-1 indicating label's position (default 0.5)
+- `label_config`: Label text configuration
+- `box_config`: Background box configuration
+- `frame_config`: Frame configuration
+
+Example:
+```python
+class LabeledLineExample(Scene):
+    def construct(self):
+        line = LabeledLine(
+            label='0.5',
+            label_position=0.8,
+            label_config={"font_size": 20},
+            start=LEFT+DOWN,
+            end=RIGHT+UP
+        )
+        line.set_length(line.get_length() * 2)
+        self.add(line)
+```
+
+This creates a line with a "0.5" label positioned 80% along its length, with custom font size and adjusted length.

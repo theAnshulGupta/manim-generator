@@ -1,0 +1,28 @@
+This module defines a Sphinx directive for including Manim videos in documentation. Here's a concise summary:
+
+The `ManimDirective` allows embedding Manim scenes directly in documentation with several key features:
+
+1. Basic Usage:
+```python
+.. manim:: MyScene
+
+    class MyScene(Scene):
+        def construct(self):
+            ...
+```
+
+2. Supported Options:
+- `hide_source`: Hide source code
+- `no_autoplay`: Prevent video autoplay
+- `quality`: Set render quality (low/medium/high/fourk)
+- `save_as_gif`: Render as GIF
+- `save_last_frame`: Render only last frame
+- `ref_classes/functions/methods`: Add reference links
+
+3. Key Functionality:
+- Renders Manim scenes during documentation build
+- Supports inline content and doctests
+- Handles different rendering modes
+- Generates HTML/video output for documentation
+
+The directive processes the scene, renders it, and inserts the result into the documentation with configurable display options.

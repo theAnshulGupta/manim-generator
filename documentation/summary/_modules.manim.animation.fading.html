@@ -1,0 +1,27 @@
+The Manim `fading` module provides two main animation classes for smoothly introducing or removing objects from a scene:
+
+1. `FadeIn`: Gradually makes a mobject visible
+   - Parameters:
+     - `mobjects`: Objects to fade in
+     - `shift`: Vector to move object during fade
+     - `target_position`: Starting point for fade
+     - `scale`: Initial scaling factor
+
+   Example:
+   ```python
+   dot = Dot(UP * 2 + LEFT)
+   tex = Tex("FadeIn example")
+   animations = [
+       FadeIn(tex),
+       FadeIn(tex, shift=DOWN),
+       FadeIn(tex, target_position=dot),
+       FadeIn(tex, scale=1.5)
+   ]
+   self.play(AnimationGroup(*animations))
+   ```
+
+2. `FadeOut`: Gradually makes a mobject disappear
+   - Parameters are similar to `FadeIn`
+   - Removes object from scene after animation
+
+Both classes support shifting, scaling, and targeting specific positions during the fade transition.

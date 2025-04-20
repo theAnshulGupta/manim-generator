@@ -1,0 +1,40 @@
+Summary of the `Add` Animation in Manim:
+
+`Add` is a simple animation class that adds Mobjects to a scene without any additional effects. Key points:
+
+- Purpose: Instantly add one or more Mobjects to a scene
+- Similar to `Scene.add()`, but can be used within animation sequences
+- Default run time is 0 (instant addition)
+
+Parameters:
+- `mobjects`: Mobject(s) to add
+- `run_time`: Optional duration after adding (defaults to 0)
+
+Examples:
+
+1. Basic usage:
+```python
+# Add multiple text objects in a sequence
+self.play(
+    Succession(
+        Add(text_1),
+        Wait(1.0),
+        Add(text_2, text_3)
+    )
+)
+```
+
+2. Adding with specific run time:
+```python
+# Add circles with a short pause between each
+self.play(
+    Succession(
+        *[Add(circle, run_time=0.2) for circle in circles]
+    )
+)
+```
+
+Key features:
+- Can be used in `Succession` or other animation groups
+- Allows control over addition timing
+- Useful for precisely managing Mobject appearance in animations

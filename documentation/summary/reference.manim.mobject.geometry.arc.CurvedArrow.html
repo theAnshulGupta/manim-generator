@@ -1,0 +1,22 @@
+CurvedArrow is a Manim geometry class that creates a curved arrow between two points. Key details:
+
+- Inherits from ArcBetweenPoints
+- Takes start_point and end_point as required parameters
+- Allows additional customization through kwargs
+- Creates a curved line with an arrowhead connecting two specified points
+- Can customize color, stroke width, tip style through additional arguments
+
+Example usage:
+```python
+# Create a curved arrow from (0,0,0) to (3,2,0)
+curved_arrow = CurvedArrow([0,0,0], [3,2,0])
+```
+
+Typical customizable parameters include:
+- color
+- stroke_width
+- tip_length
+- arc_center
+- angle
+
+The class provides a flexible way to draw curved arrows between points in Manim animations.

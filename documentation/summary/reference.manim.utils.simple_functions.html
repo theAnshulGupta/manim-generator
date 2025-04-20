@@ -1,0 +1,23 @@
+Here's a concise summary of the `simple_functions` module:
+
+Contains utility functions for mathematical and comparison operations:
+
+1. `binary_search(function, target, lower_bound, upper_bound, tolerance=0.0001)`:
+   - Numerically finds input to a function that yields a target value
+   - Returns input value or None if not found
+   - Example: Find x where x^2 + 3x + 1 = 11
+
+2. `choose(n, k)`:
+   - Calculates binomial coefficient (number of ways to choose k items from n)
+   - Returns number of possible combinations
+
+3. `clip(a, min_a, max_a)`:
+   - Constrains value `a` between `min_a` and `max_a`
+   - Returns closest value if outside range
+   - Works with any comparable objects
+
+4. `sigmoid(x)`:
+   - Calculates logistic function: 1 / (1 + e^-x)
+   - Common mathematical function used in machine learning
+
+Also includes a `ComparableT` type for type hinting comparable objects.

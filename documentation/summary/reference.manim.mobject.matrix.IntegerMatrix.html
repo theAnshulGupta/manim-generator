@@ -1,0 +1,28 @@
+`IntegerMatrix` is a Manim class for creating matrices with integer entries. Key points:
+
+- Inherits from the `Matrix` class
+- Automatically rounds decimal values to integers
+- Default element representation is the `Integer` mobject
+- Can customize bracket styles
+
+Example usage:
+```python
+class IntegerMatrixExample(Scene):
+    def construct(self):
+        m0 = IntegerMatrix(
+            [[3.7, 2], [42.2, 12]],  # Decimals will be rounded
+            left_bracket="(",
+            right_bracket=")"
+        )
+        self.add(m0)
+```
+
+Parameters:
+- `matrix`: 2D array/list of numbers
+- `element_to_mobject`: Optional custom mobject for matrix elements (defaults to `Integer`)
+- Supports additional matrix styling keyword arguments
+
+Main features:
+- Automatically converts decimal entries to integers
+- Flexible matrix representation
+- Easy to customize appearance

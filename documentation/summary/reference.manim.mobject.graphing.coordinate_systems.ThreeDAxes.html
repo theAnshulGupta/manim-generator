@@ -1,0 +1,27 @@
+ThreeDAxes is a Manim class for creating 3D coordinate systems with configurable ranges and lengths. Key features include:
+
+Constructor Parameters:
+- x_range, y_range, z_range: Define axis min, max, and step values
+- x_length, y_length, z_length: Set axis lengths
+- Customizable z-axis configuration and normal direction
+
+Main Methods:
+1. get_axis_labels(): Adds labels to x, y, and z axes
+2. get_y_axis_label(): Generate specific y-axis label
+3. get_z_axis_label(): Generate specific z-axis label
+
+Example usage:
+```python
+class ThreeDAxesExample(ThreeDScene):
+    def construct(self):
+        self.set_camera_orientation(phi=2*PI/5, theta=PI/5)
+        axes = ThreeDAxes()
+        labels = axes.get_axis_labels(
+            Text("x-axis").scale(0.7), 
+            Text("y-axis").scale(0.45), 
+            Text("z-axis").scale(0.45)
+        )
+        self.add(axes, labels)
+```
+
+This class is essential for creating 3D coordinate visualizations in Manim.

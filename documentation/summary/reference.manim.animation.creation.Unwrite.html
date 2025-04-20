@@ -1,0 +1,19 @@
+Unwrite is an animation in Manim that simulates hand-erasing text or a VMobject. Key points:
+
+Parameters:
+- `reverse` (boolean): Controls the erasing direction
+  - `True` (default): Erases from last submobject first
+  - `False`: Erases from first submobject first
+- `vmobject`: The object to be "unwritten"
+- `rate_func`: Function controlling animation speed
+
+Example usage:
+```python
+# Unwrite from last to first (default)
+self.play(Unwrite(text))
+
+# Unwrite from first to last
+self.play(Unwrite(text, reverse=False))
+```
+
+The examples demonstrate unwriting a Tex object "Alice and Bob" with different `reverse` settings, showing how the animation progressively erases text from opposite directions.

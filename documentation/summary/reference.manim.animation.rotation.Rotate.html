@@ -1,0 +1,30 @@
+The `Rotate` animation in Manim is used to rotate a Mobject around a specified axis. Key parameters include:
+
+- `mobject`: The object to be rotated
+- `angle`: Rotation angle (default is π)
+- `axis`: Rotation axis (default is Z-axis)
+- `about_point`: Center of rotation
+- `about_edge`: Alternative way to specify rotation center
+
+Example usage:
+```python
+class UsingRotate(Scene):
+    def construct(self):
+        self.play(
+            # Rotate square 360 degrees around origin
+            Rotate(
+                Square(side_length=0.5).shift(UP * 2),
+                angle=2*PI,
+                about_point=ORIGIN,
+                rate_func=linear
+            ),
+            # Rotate another square 360 degrees
+            Rotate(
+                Square(side_length=0.5), 
+                angle=2*PI, 
+                rate_func=linear
+            )
+        )
+```
+
+This animation allows flexible rotation of Mobjects with customizable angle, axis, and rotation point.

@@ -1,0 +1,28 @@
+This module contains two rotation-related animation classes for Manim:
+
+1. `Rotating`: A continuous rotation animation
+   - Rotates a mobject around an axis
+   - Parameters include:
+     - `axis`: Rotation axis (default: OUT)
+     - `radians`: Total rotation angle (default: TAU/full circle)
+     - `about_point`: Rotation center point
+     - `about_edge`: Alternative rotation center specification
+   - Runs for 5 seconds by default with linear rate function
+
+2. `Rotate`: A transform-based rotation animation
+   - Rotates a mobject to a specific angle
+   - Parameters include:
+     - `angle`: Rotation angle (default: PI/half circle)
+     - `axis`: Rotation axis (default: OUT)
+     - `about_point`: Rotation center point
+     - `about_edge`: Alternative rotation center specification
+
+Example usage:
+```python
+class UsingRotate(Scene):
+    def construct(self):
+        self.play(
+            Rotate(Square().shift(UP * 2), angle=2*PI, about_point=ORIGIN),
+            Rotate(Square(), angle=2*PI)
+        )
+```

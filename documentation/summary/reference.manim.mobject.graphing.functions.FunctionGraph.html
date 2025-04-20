@@ -1,0 +1,39 @@
+FunctionGraph is a Manim class for creating graphs of mathematical functions with the following key characteristics:
+
+Key Features:
+- Creates a graph by plotting a given function across a specified x-range
+- Inherits from ParametricFunction
+- Defaults to spanning the entire scene if no x_range is specified
+- Allows custom color specification
+
+Basic Usage:
+```python
+# Create a function graph
+graph = FunctionGraph(
+    lambda t: np.cos(t),  # Function to graph
+    color=RED,            # Optional color parameter
+    x_range=[-4, 4]       # Optional x-range specification
+)
+```
+
+Example Code:
+```python
+class ExampleFunctionGraph(Scene):
+    def construct(self):
+        # Multiple function graphs with different parameters
+        cos_func = FunctionGraph(
+            lambda t: np.cos(t) + 0.5 * np.cos(7 * t) + (1 / 7) * np.cos(14 * t),
+            color=RED
+        )
+        sin_func_1 = FunctionGraph(
+            lambda t: np.sin(t) + 0.5 * np.sin(7 * t) + (1 / 7) * np.sin(14 * t),
+            color=BLUE
+        )
+        sin_func_2 = FunctionGraph(
+            lambda t: np.sin(t) + 0.5 * np.sin(7 * t) + (1 / 7) * np.sin(14 * t),
+            x_range=[-4, 4],
+            color=GREEN
+        ).move_to([0, 1, 0])
+
+        self.add(cos_func, sin_func_1, sin_func_2)
+```

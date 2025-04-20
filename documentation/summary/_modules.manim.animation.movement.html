@@ -1,0 +1,27 @@
+This module contains animations related to movement in Manim:
+
+1. `Homotopy`: A flexible animation that transforms points of a mobject using a custom function. The function takes (x, y, z, t) and returns (x', y', z'), allowing complex point transformations over time.
+
+Example:
+```python
+def homotopy(x, y, z, t):
+    return (x, y + t * 0.2 * np.sin(x), z)
+self.play(Homotopy(homotopy, square, rate_func=linear, run_time=2))
+```
+
+2. `SmoothedVectorizedHomotopy`: Similar to Homotopy, but ensures the transformed mobject remains smooth.
+
+3. `ComplexHomotopy`: A specialized Homotopy that works with complex number transformations.
+
+4. `PhaseFlow`: An animation that applies a continuous function to mobject points over time.
+
+5. `MoveAlongPath`: Moves a mobject along the path of another mobject.
+
+Example:
+```python
+d1 = Dot()
+l1 = Line(LEFT, RIGHT)
+self.play(MoveAlongPath(d1, l1), rate_func=linear)
+```
+
+These animations provide powerful ways to transform and move mobjects dynamically in Manim animations.

@@ -1,0 +1,24 @@
+The `manim.utils.tex` module provides utilities for processing LaTeX templates in Manim. Here's a concise summary:
+
+`TexTemplate` is the key class for creating LaTeX templates with customizable attributes:
+
+- `tex_compiler`: Choose TeX compiler (default: "latex")
+- `documentclass`: Define document class
+- `preamble`: Add package imports and definitions
+- `body`: Full LaTeX template content
+
+Key methods:
+- `from_file()`: Create template from a file
+- `add_to_preamble()`: Add packages/definitions to preamble
+- `add_to_document()`: Add commands after `\begin{document}`
+- `get_texcode_for_expression()`: Insert text into template
+- `get_texcode_for_expression_in_env()`: Insert text in specific LaTeX environment
+
+Example:
+```python
+template = TexTemplate()
+template.add_to_preamble(r"\usepackage{color}")
+tex_code = template.get_texcode_for_expression("$x^2$")
+```
+
+The module helps create flexible LaTeX templates for rendering mathematical expressions in Manim.

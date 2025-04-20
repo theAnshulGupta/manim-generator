@@ -1,0 +1,23 @@
+The `Broadcast` animation in Manim is a specialized animation that creates a spreading effect from a focal point. Key points:
+
+- Creates multiple copies of a mobject that expand from a central point
+- Configurable parameters include:
+  - `focal_point`: Center of the broadcast (default: ORIGIN)
+  - `n_mobs`: Number of emerging mobjects (default: 5)
+  - `initial_opacity`: Starting opacity (default: 1)
+  - `final_opacity`: Ending opacity (default: 0)
+  - `initial_width`: Starting width (default: 0.0)
+
+Example usage:
+```python
+class BroadcastExample(Scene):
+    def construct(self):
+        mob = Circle(radius=4, color=TEAL_A)
+        self.play(Broadcast(mob))
+```
+
+Internally, it works by:
+- Copying the mobject multiple times
+- Moving copies to the focal point
+- Scaling from initial width to full size
+- Changing opacity during the animation

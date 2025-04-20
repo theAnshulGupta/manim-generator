@@ -1,0 +1,25 @@
+SpinInFromNothing is an animation in Manim that introduces a mobject by spinning and growing it from its center. 
+
+Key Parameters:
+- `mobject`: The object to animate
+- `angle`: Rotation amount (default is π/2, can be set to full rotation like 2*PI)
+- `point_color`: Initial color of the mobject before growing (optional)
+
+Example Usage:
+```python
+class SpinInFromNothingExample(Scene):
+    def construct(self):
+        squares = [Square() for _ in range(3)]
+        VGroup(*squares).set_x(0).arrange(buff=2)
+        
+        # Basic spin-in
+        self.play(SpinInFromNothing(squares[0]))
+        
+        # Full rotation spin-in
+        self.play(SpinInFromNothing(squares[1], angle=2 * PI))
+        
+        # Spin-in with custom initial color
+        self.play(SpinInFromNothing(squares[2], point_color=RED))
+```
+
+This animation makes mobjects appear by spinning and growing from a point, providing a dynamic introduction effect.

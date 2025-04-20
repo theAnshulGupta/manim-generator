@@ -1,0 +1,32 @@
+Here's a summary of the `NumberLine` class documentation:
+
+`NumberLine` creates a customizable number line with the following key features:
+
+Parameters:
+- `x_range`: Defines the range of values (min, max, step)
+- `length`: Total length of the line
+- `unit_size`: Distance between ticks
+- `include_ticks`: Option to show/hide tick marks
+- `include_numbers`: Option to display numbers on ticks
+- `scaling`: Allows linear or logarithmic scaling
+- `rotation`: Rotates the number line
+- `label_direction`: Controls label positioning
+
+Key Methods:
+- `number_to_point(number)`: Converts a number to a scene coordinate
+- `point_to_number(point)`: Converts a scene coordinate to a number
+- `add_ticks()`: Adds tick marks
+- `add_numbers()`: Adds number labels
+- `add_labels(dict_values)`: Adds custom labels
+
+Example Usage:
+```python
+number_line = NumberLine(
+    x_range=[-10, 10, 2],
+    length=10,
+    include_numbers=True,
+    label_direction=UP
+)
+```
+
+`UnitInterval` is a specialized `NumberLine` specifically for the range 0 to 1.

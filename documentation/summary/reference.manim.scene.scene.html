@@ -1,0 +1,25 @@
+Scene is the core class for creating animations in Manim. Here's a concise summary:
+
+`Scene` is the fundamental class that serves as the canvas for your animations. Key aspects include:
+
+1. Basic Usage:
+```python
+class MyScene(Scene):
+    def construct(self):
+        # All animation logic goes here
+        circle = Circle()
+        self.play(Create(circle))
+```
+
+2. Main Methods:
+- `construct()`: Main method where you define your animation sequence
+- `play()`: Runs animations
+- `add()`: Adds static mobjects to the scene
+- `wait()`: Pauses animation for specified duration
+
+3. Important Features:
+- Controls animation rendering
+- Manages mobject creation and transformation
+- Handles camera and rendering settings
+
+The `Scene` class is essential for creating any Manim animation, acting as the primary container for your visual content and animation logic.

@@ -1,0 +1,17 @@
+This module provides utility functions for continuous animation and updating of mobjects in Manim:
+
+Key Functions:
+1. `always()`: Adds a persistent updater to a mobject method
+2. `f_always()`: Similar to `always()`, but with function argument generators
+3. `always_redraw()`: Continuously regenerates a mobject using a provided function
+4. `always_shift()`: Continuously shifts a mobject in a specified direction
+5. `always_rotate()`: Continuously rotates a mobject at a specified rate
+6. `turn_animation_into_updater()`: Converts an animation into a continuous updater
+7. `cycle_animation()`: Repeats an animation cyclically
+
+Example use cases include:
+- Creating dynamic objects that update in real-time
+- Implementing continuous motion
+- Adding persistent transformations to mobjects
+
+The module is particularly useful for creating animations with ongoing, dynamic behavior without manually defining each frame's state.

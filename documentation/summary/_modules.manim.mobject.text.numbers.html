@@ -1,0 +1,37 @@
+This module provides three key classes for representing numbers in Manim:
+
+1. `DecimalNumber`: Represents decimal numbers with customizable formatting
+   - Parameters include decimal places, sign display, comma grouping, etc.
+   - Can render numbers with units and optional ellipsis
+   - Supports dynamic value updates via `set_value()`
+
+   Example:
+   ```python
+   decimal = DecimalNumber(
+       0, 
+       show_ellipsis=True, 
+       num_decimal_places=3, 
+       include_sign=True, 
+       unit=r"\text{M-Units}"
+   )
+   ```
+
+2. `Integer`: A subclass of `DecimalNumber` specifically for integers
+   - Defaults to 0 decimal places
+   - Rounds numbers to nearest integer
+
+3. `Variable`: Displays a label and value that can be dynamically tracked
+   - Combines a label, equals sign, and a value tracker
+   - Supports different number types (decimal or integer)
+   - Can update values and add custom styling
+
+   Example:
+   ```python
+   var = Variable(
+       start_value, 
+       label='x', 
+       num_decimal_places=3
+   )
+   ```
+
+Key methods include `set_value()`, `get_value()`, and `increment_value()` for manipulating number displays.

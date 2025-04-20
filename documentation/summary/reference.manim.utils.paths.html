@@ -1,0 +1,25 @@
+This documentation page describes various path transformation functions in Manim's `utils.paths` module, which define how points move between starting and ending positions during animations. Here's a concise summary:
+
+Key Path Functions:
+1. `straight_path()`: Points move directly in a straight line to their destination
+2. `clockwise_path()`: Points move clockwise around a half-circle
+3. `counterclockwise_path()`: Points move counterclockwise around a half-circle
+4. `path_along_arc(arc_angle)`: Points move along a circular arc
+5. `path_along_circles(arc_angle, circles_centers)`: Points move along quasi-circular paths
+6. `spiral_path(angle)`: Points move along a spiral trajectory
+
+Each function can be used with `Transform()` to create unique motion animations. All functions take similar parameters like `arc_angle` and optional `axis` for rotation.
+
+Example usage pattern:
+```python
+self.play(
+    Transform(
+        starting_points,
+        finish_points,
+        path_func=utils.paths.spiral_path(2 * TAU),
+        run_time=5
+    )
+)
+```
+
+The documentation includes visual examples demonstrating each path type's movement characteristics.

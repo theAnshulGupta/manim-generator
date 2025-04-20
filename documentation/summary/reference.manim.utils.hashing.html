@@ -1,0 +1,13 @@
+The `hashing` module in Manim provides utilities for scene caching with two main functions:
+
+1. `get_hash_from_play_call(scene_object, camera_object, animations_list, current_mobjects_list)`:
+   - Purpose: Generate a hash string for a scene's play call
+   - Inputs: Scene, camera, animations, and current mobjects
+   - Returns: A concatenated string hash representing these components
+
+2. `get_json(obj)`:
+   - Purpose: Recursively serialize a dictionary to JSON
+   - Input: A dictionary
+   - Returns: A flattened JSON string representation of the input
+
+These functions are primarily used internally for Manim's caching mechanism to optimize scene rendering and avoid redundant computations.

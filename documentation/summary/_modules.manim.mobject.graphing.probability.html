@@ -1,0 +1,34 @@
+Here's a concise summary of the Manim probability module:
+
+The module contains two main classes:
+
+1. `SampleSpace`: A rectangular mobject representing a sampling space
+   - Can divide space vertically/horizontally
+   - Supports adding labels and titles
+   - Useful for visualizing probability distributions
+
+   Example:
+   ```python
+   sample_space = SampleSpace(width=3, height=3)
+   sample_space.divide_vertically(p_list=[0.3, 0.7])
+   ```
+
+2. `BarChart`: Creates bar charts with flexible configuration
+   - Inherits from `Axes`
+   - Supports custom bar colors, names, sizes
+   - Can add bar labels and x-axis labels
+
+   Example:
+   ```python
+   chart = BarChart(
+       values=[10, 20, 30],
+       bar_names=['A', 'B', 'C'],
+       bar_colors=['blue', 'green', 'red']
+   )
+   bar_labels = chart.get_bar_labels()
+   ```
+
+Key methods:
+- `divide_vertically/horizontally()` for `SampleSpace`
+- `change_bar_values()` for `BarChart`
+- `get_bar_labels()` for `BarChart`

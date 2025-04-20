@@ -1,0 +1,29 @@
+This module provides utility functions for working with 2D and 3D vectors, primarily focusing on geometric transformations, coordinate conversions, and vector calculations. Key functionalities include:
+
+Coordinate Conversions:
+- Convert between Cartesian, spherical, and complex coordinate systems
+- `cartesian_to_spherical()`, `spherical_to_cartesian()`, `complex_to_R3()`
+
+Vector Manipulations:
+- Calculate vector angles and norms
+- `angle_between_vectors()`, `normalize()`, `cross()`, `midpoint()`
+
+Rotation Functions:
+- Generate rotation matrices and quaternions
+- `rotate_vector()`, `rotation_matrix()`, `quaternion_from_angle_axis()`
+
+Geometric Utilities:
+- Find intersections, normals, and center of mass
+- `line_intersection()`, `get_unit_normal()`, `center_of_mass()`
+
+Polygon Operations:
+- Triangulation and winding number calculations
+- `earclip_triangulation()`, `get_winding_number()`
+
+Example:
+```python
+# Rotate a vector
+rotated_vec = rotate_vector([1, 0, 0], angle=np.pi/2)
+```
+
+These functions are essential for geometric transformations and vector calculations in Manim animations.

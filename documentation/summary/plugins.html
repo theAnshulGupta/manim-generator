@@ -1,0 +1,37 @@
+Here's a concise summary of Manim Plugins:
+
+Plugins Overview:
+- Extend Manim's core functionality
+- Naming convention: prefix with "manim-"
+- Available at https://plugins.manim.community/
+
+Installation:
+```bash
+pip install manim-*
+# List plugins
+manim plugins -l
+```
+
+Using Plugins:
+- Enable via manim.cfg or command line
+- Example config:
+```ini
+[CLI]
+plugins = manim_rubikscube, manim_plugintemplate
+```
+
+Creating Plugins:
+- Must specify entry point with group "manim.plugins"
+- No strict structure requirements
+- Example entry point (in Poetry):
+```toml
+[tool.poetry.plugins."manim.plugins"]
+"name" = "object_reference"
+```
+
+Renderer Compatibility:
+- Custom mobjects may need different behaviors for different renderers
+- Check current renderer via `manim.config.renderer`
+- Use `ConvertToOpenGL` metaclass for basic compatibility
+
+Key note: Plugin system is still evolving, so expect potential changes.

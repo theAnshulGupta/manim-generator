@@ -1,0 +1,25 @@
+The Brace class in Manim is used to create a graphical brace (curved bracket) that can be positioned next to a mobject. Here's a concise summary:
+
+Purpose:
+- Creates a brace adjacent to a given mobject
+- Customizable direction, sharpness, and styling
+
+Key Parameters:
+- `mobject`: The object the brace will be placed near
+- `direction`: Vector indicating brace placement (default: below)
+- `buff`: Spacing between brace and mobject
+- `sharpness`: Controls brace curvature (0.1-1.0)
+
+Example Usage:
+```python
+s = Square()
+br = Brace(s, sharpness=0.5)  # Brace below square with moderate sharpness
+```
+
+Key Methods:
+- `get_tex()`: Add LaTeX at brace tip
+- `get_text()`: Add text at brace tip
+- `get_tip()`: Get brace tip coordinates
+- `put_at_tip()`: Place mobject at brace tip
+
+The example in the documentation demonstrates how changing `sharpness` affects the brace's appearance, showing values from 0.1 to 1.0.

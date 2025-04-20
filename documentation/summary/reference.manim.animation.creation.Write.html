@@ -1,0 +1,27 @@
+Summary of Write Animation in Manim:
+
+Purpose:
+- Simulates hand-writing text or drawing a vector mobject
+- Creates a writing/drawing animation effect
+
+Key Parameters:
+- `mobject`: The text or VMobject to animate
+- `reverse`: Optional parameter to write from end to start
+- `remover`: Controls object removal after animation
+
+Basic Usage Examples:
+```python
+# Standard writing animation
+self.play(Write(Text("Hello", font_size=144)))
+
+# Reversed writing animation
+self.play(Write(Text("Hello", font_size=144), reverse=True, remover=False))
+```
+
+Key Characteristics:
+- Inherits from DrawBorderThenFill
+- Works with Text and VMobject types
+- Customizable writing speed and direction
+- Part of Manim's creation animation set
+
+Simple, flexible animation for creating writing/drawing effects in mathematical and educational animations.

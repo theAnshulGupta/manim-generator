@@ -1,0 +1,25 @@
+BraceBetweenPoints is a Manim class used to create a brace between two specified points. Key details:
+
+Parameters:
+- point_1: First point coordinates
+- point_2: Second point coordinates
+- direction: Optional parameter to specify brace orientation (default is [0,0,0])
+
+Key features:
+- Automatically calculates brace placement based on point positions
+- If points are left-to-right, brace appears below
+- Swapping points changes brace side
+
+Example code:
+```python
+class BraceBPExample(Scene):
+    def construct(self):
+        p1 = [0,0,0]
+        p2 = [1,2,0]
+        brace = BraceBetweenPoints(p1,p2)
+        self.play(Create(NumberPlane()))
+        self.play(Create(brace))
+        self.wait(2)
+```
+
+This creates a brace that spans between (0,0,0) and (1,2,0) on a number plane, demonstrating how easily you can place braces between specific points in Manim.

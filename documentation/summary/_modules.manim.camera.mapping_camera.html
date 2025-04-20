@@ -1,0 +1,18 @@
+The `manim.camera.mapping_camera` module provides custom camera classes in Manim that modify how objects are rendered:
+
+1. `MappingCamera`: A camera that allows mapping between objects
+   - Can apply a custom mapping function to object points
+   - Parameters:
+     - `mapping_func`: Function to transform points (default: identity)
+     - `min_num_curves`: Minimum number of curves for VMobjects
+     - `allow_object_intrusion`: Option to modify original objects
+
+2. `OldMultiCamera`: Legacy camera that supports layering multiple cameras
+   - Allows positioning multiple cameras on the same pixel array
+   - Supports overlapping camera views
+
+3. `SplitScreenCamera`: A specialized multi-camera for creating split-screen views
+   - Automatically divides screen into two equal halves
+   - Takes two cameras (left and right) and renders them side by side
+
+Key features include flexible point transformation, multiple camera rendering, and split-screen capabilities.

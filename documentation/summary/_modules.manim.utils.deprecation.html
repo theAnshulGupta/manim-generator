@@ -1,0 +1,24 @@
+This module provides deprecation utilities for Manim, specifically two key decorators:
+
+1. `@deprecated`: Marks a callable (function, method, or class) as deprecated
+   - Logs a warning when the callable is used
+   - Can specify version/date of deprecation, removal date, replacement, and custom message
+   - Modifies docstring to indicate deprecation
+
+2. `@deprecated_params`: Marks specific parameters of a callable as deprecated
+   - Can deprecate single or multiple parameters
+   - Supports parameter redirection
+   - Allows specifying deprecation details like version/date
+
+Example usage:
+```python
+@deprecated(since="v0.2", until="v0.4", replacement="new_func")
+def old_func():
+    pass
+
+@deprecated_params(params="old_param", replacement="new_param")
+def func(**kwargs):
+    pass
+```
+
+These decorators help manage API changes by warning users about deprecated features and guiding them towards new implementations.

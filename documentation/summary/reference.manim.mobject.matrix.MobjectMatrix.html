@@ -1,0 +1,31 @@
+`MobjectMatrix` is a special matrix class in Manim that allows you to create matrices with custom mobject entries instead of just numbers or text.
+
+Key Features:
+- Creates matrices where each cell can contain any Manim mobject (like shapes, text, etc.)
+- Inherits from the base `Matrix` class
+- Flexible and customizable
+
+Basic Example:
+```python
+class MobjectMatrixExample(Scene):
+    def construct(self):
+        # Create different mobjects to use as matrix entries
+        a = Circle().scale(0.3)
+        b = Square().scale(0.3)
+        c = MathTex("π").scale(2)
+        d = Star().scale(0.3)
+        
+        # Create a matrix with these mobjects
+        matrix = MobjectMatrix([[a, b], [c, d]])
+        self.add(matrix)
+```
+
+In this example:
+- A 2x2 matrix is created
+- Each cell contains a different mobject (circle, square, math text, star)
+- Mobjects can be scaled and customized as needed
+
+Parameters:
+- `matrix`: 2D list of mobjects
+- `element_to_mobject`: Optional function to convert entries (default converts to text/math tex)
+- Additional keyword arguments for matrix styling

@@ -1,0 +1,22 @@
+The Tetrahedron class in Manim is a 3D geometric object representing one of the five Platonic solids. Here's a concise summary:
+
+Key Features:
+- A polyhedron with 4 faces, 6 edges, and 4 vertices
+- Can be created with a customizable edge length (default is 1)
+
+Basic Usage Example:
+```python
+class TetrahedronScene(ThreeDScene):
+    def construct(self):
+        # Set camera angle for 3D view
+        self.set_camera_orientation(phi=75 * DEGREES, theta=30 * DEGREES)
+        
+        # Create a tetrahedron
+        obj = Tetrahedron()
+        self.add(obj)
+```
+
+Parameters:
+- `edge_length` (float): Length of edges between vertices (default: 1)
+
+The class inherits from the Polyhedron class and can be easily added to 3D scenes in Manim, with options to customize its appearance and orientation.

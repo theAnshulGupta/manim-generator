@@ -1,0 +1,14 @@
+`ArrowCircleTip` is a specialized arrow tip in Manim that creates a circular-shaped tip for arrows. 
+
+Key Parameters:
+- `fill_opacity`: Controls the transparency of the tip (default 0)
+- `stroke_width`: Controls the thickness of the tip's outline (default 3)
+- `length`: Controls the size of the tip (default 0.35)
+- `start_angle`: Controls the initial angle of the tip (default π)
+
+Example usage would look like:
+```python
+arrow = Arrow(start_point, end_point, tip_class=ArrowCircleTip)
+```
+
+The tip inherits properties from both `ArrowTip` and `Circle`, creating a circular-shaped arrowhead with customizable visual properties. It's a variant of standard arrow tips, providing more stylistic options for visualizations.

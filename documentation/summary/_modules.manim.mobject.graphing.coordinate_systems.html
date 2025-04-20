@@ -1,0 +1,40 @@
+Here's a concise summary of the documentation for `manim.mobject.graphing.coordinate_systems`:
+
+The module provides classes for creating coordinate systems in Manim:
+
+1. `CoordinateSystem`: Abstract base class for coordinate systems
+   - Methods for converting between coordinates and points
+   - Supports plotting functions, curves, and surfaces
+   - Calculus-related methods like derivatives and area calculation
+
+2. `Axes`: Creates a 2D coordinate system
+   - Configurable x and y ranges, lengths
+   - Supports axis labels and coordinate labels
+   - Plotting methods like `plot()`, `plot_parametric_curve()`
+
+3. `ThreeDAxes`: 3D coordinate system extending `Axes`
+   - Adds z-axis
+   - Methods for z-axis labeling
+
+4. `NumberPlane`: Cartesian plane with background grid lines
+   - Customizable line styles
+   - Background and faded lines
+
+5. `PolarPlane`: Polar coordinate system
+   - Configurable azimuth units and direction
+   - Radius and angle labeling
+
+6. `ComplexPlane`: Specialized `NumberPlane` for complex numbers
+   - Methods to convert between complex numbers and points
+
+Key features:
+- Extensive plotting capabilities
+- Coordinate conversion
+- Flexible configuration options
+- Support for various mathematical visualizations
+
+Example usage:
+```python
+ax = Axes()
+curve = ax.plot(lambda x: np.sin(x))
+```

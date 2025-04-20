@@ -1,0 +1,27 @@
+PGroup is a class in Manim for grouping multiple point mobjects together. Here's a concise summary:
+
+Purpose:
+- Creates a group of point-based mobjects
+- Allows handling multiple point cloud elements as a single object
+
+Example Usage:
+```python
+p1 = PointCloudDot(radius=1, density=20, color=BLUE)
+p2 = PointCloudDot()
+p3 = PointCloudDot(radius=1.5, stroke_width=2.5, color=PINK)
+
+# Combine point cloud dots into a single group
+pList = PGroup(p1, p2, p3)
+```
+
+Key Features:
+- Can group multiple PointCloudDot or similar point-based mobjects
+- Supports moving, transforming, and animating the entire group
+- Inherits from PMobject
+- Allows customization of individual point cloud elements within the group
+
+Typical Use Case:
+- Creating complex point-based visualizations
+- Manipulating multiple point cloud elements simultaneously
+
+The class provides flexibility in working with point cloud graphics in Manim animations.

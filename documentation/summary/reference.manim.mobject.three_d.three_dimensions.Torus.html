@@ -1,0 +1,24 @@
+Torus is a 3D geometric shape in Manim that represents a donut-like surface. Here's a concise summary:
+
+Parameters:
+- `major_radius`: Distance from tube center to torus center (default 3)
+- `minor_radius`: Tube radius (default 1)
+- `u_range`: Range of u parameter (default full 2π circle)
+- `v_range`: Range of v parameter (default full 2π circle)
+- `resolution`: Number of samples for rendering
+
+Basic Example:
+```python
+class ExampleTorus(ThreeDScene):
+    def construct(self):
+        axes = ThreeDAxes()
+        torus = Torus()
+        self.set_camera_orientation(phi=75*DEGREES, theta=30*DEGREES)
+        self.add(axes, torus)
+```
+
+Key Points:
+- Inherits from Surface class
+- Customizable through radius and parameter ranges
+- Part of Manim's 3D mobjects
+- Requires 3D scene for rendering

@@ -1,0 +1,23 @@
+`UpdateFromFunc` is an animation class in Manim that allows you to dynamically update a mobject during an animation based on a custom update function. 
+
+Key characteristics:
+- Inherits from the `Animation` class
+- Takes a mobject and an update function as main parameters
+- The update function modifies the mobject's state during animation
+
+Example usage:
+```python
+def update_func(mobject):
+    # Custom logic to modify mobject
+    mobject.scale(1.1)  # Example: scaling mobject
+
+animation = UpdateFromFunc(some_mobject, update_func)
+```
+
+Parameters:
+- `mobject`: The Manim object to be updated
+- `update_function`: A callable that takes the mobject and modifies it
+- `suspend_mobject_updating`: Optional flag to control mobject updating
+- Supports additional animation-related keyword arguments
+
+The `interpolate_mobject` method applies the update function during the animation's progress, allowing dynamic transformations of the mobject based on the animation's alpha value.

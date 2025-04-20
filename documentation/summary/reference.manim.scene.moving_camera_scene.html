@@ -1,0 +1,28 @@
+The `moving_camera_scene` module in Manim provides a specialized scene class (`MovingCameraScene`) that allows dynamic camera manipulation during animations. Key features include:
+
+1. Purpose:
+- Enables moving, zooming, and adjusting the camera's view during animations
+- Provides methods to dynamically change camera position and frame
+
+2. Key Methods:
+- `self.camera.frame.move_to()`: Move camera to specific location
+- `self.camera.frame.set(width=...)`: Adjust camera zoom/frame width
+- `self.camera.frame.save_state()` and `Restore(self.camera.frame)`: Save and restore camera state
+
+3. Example Use Cases:
+- Zooming into specific objects
+- Panning between multiple scenes
+- Following graphs or moving elements
+- Dynamically adjusting view during animations
+
+4. Sample Code Structure:
+```python
+class YourMovingCameraScene(MovingCameraScene):
+    def construct(self):
+        # Create objects
+        # Manipulate camera using methods like:
+        self.play(self.camera.frame.animate.move_to(object))
+        self.play(self.camera.frame.animate.set(width=object.width*2))
+```
+
+The module provides flexible camera control for creating dynamic, engaging animations.

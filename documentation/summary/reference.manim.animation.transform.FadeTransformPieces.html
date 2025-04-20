@@ -1,0 +1,28 @@
+`FadeTransformPieces` is a Manim animation that transforms submobjects of one group into submobjects of another group by fading.
+
+Key Features:
+- Transforms individual pieces/submobjects between two groups
+- Similar to `FadeTransform`, but works at the submobject level
+- Allows smooth transition between different grouped objects
+
+Example Code:
+```python
+class FadeTransformSubmobjects(Scene):
+    def construct(self):
+        # Create source and target groups
+        src = VGroup(Square(), Circle().shift(LEFT + UP))
+        target = VGroup(Circle(), Triangle().shift(RIGHT + DOWN))
+
+        # Perform fade transform of pieces
+        self.play(
+            FadeTransform(src, target),  # Transform whole group
+            FadeTransformPieces(src, target)  # Transform individual submobjects
+        )
+```
+
+In this example:
+- The source group is transformed into the target group
+- `FadeTransform` replaces the entire group
+- `FadeTransformPieces` fades individual submobjects from source to corresponding submobjects in target
+
+The animation smoothly transitions submobjects between groups by fading them in and out.

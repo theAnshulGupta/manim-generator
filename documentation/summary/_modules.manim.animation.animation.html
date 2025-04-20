@@ -1,0 +1,51 @@
+Summary of the `manim.animation.animation` module:
+
+Core Animation Class:
+```python
+class Animation:
+    """Base class for all animations in Manim.
+
+    Key Parameters:
+    - mobject: Object to animate
+    - run_time: Duration of animation (default 1 second)
+    - rate_func: Function controlling animation progress
+    - lag_ratio: Delay between submobject animations
+    - remover: Whether to remove mobject after animation
+    """
+
+    def interpolate(self, alpha: float):
+        """Interpolate animation progress from 0 to 1"""
+        pass
+
+    def begin(self):
+        """Initialize animation setup"""
+        pass
+
+    def finish(self):
+        """Complete animation"""
+        pass
+```
+
+Special Animation Classes:
+```python
+class Wait(Animation):
+    """Static "do nothing" animation with optional duration"""
+
+class Add(Animation):
+    """Instantly add mobjects to the scene"""
+```
+
+Key Utility Functions:
+```python
+def prepare_animation(anim):
+    """Convert various inputs to an Animation object"""
+
+def override_animation(animation_class):
+    """Decorator to override default animations for specific mobjects"""
+```
+
+Main Features:
+- Flexible animation creation
+- Customizable timing and progression
+- Support for submobject animations
+- Easy extension through inheritance

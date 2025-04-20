@@ -1,0 +1,19 @@
+ValueTracker is a Manim utility for tracking and updating real-valued parameters dynamically during animations. It provides two key classes:
+
+1. `ValueTracker`: Tracks real numbers
+   - Use to store and modify numeric values during animations
+   - Allows smooth parameter changes
+   - Example:
+     ```python
+     tracker = ValueTracker(0)
+     tracker.set_value(5)  # Changes tracked value
+     ```
+
+2. `ComplexValueTracker`: Tracks complex numbers
+   - Similar to ValueTracker but for complex values
+   - Useful for tracking complex-plane transformations
+
+Key features:
+- Can be used with updaters
+- Enables dynamic value manipulation in animations
+- Simplifies creating interactive or parametric animations

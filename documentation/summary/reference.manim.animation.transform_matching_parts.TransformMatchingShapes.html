@@ -1,0 +1,27 @@
+`TransformMatchingShapes` is an animation class in Manim that transforms shapes by matching their submobjects' shapes intelligently.
+
+Key Features:
+- Matches submobjects by comparing their normalized point coordinates
+- Allows smooth transformations between similar shapes
+- Can handle text and other complex mobjects
+
+Example Usage:
+```python
+class Anagram(Scene):
+    def construct(self):
+        src = Text("the morse code")
+        tar = Text("here come dots")
+        
+        # Transforms src to tar, matching similar letter shapes
+        self.play(Write(src))
+        self.play(TransformMatchingShapes(src, tar, path_arc=PI/2))
+```
+
+Parameters:
+- `mobject`: Original mobject
+- `target_mobject`: Target mobject to transform into
+- `transform_mismatches`: Whether to transform unmatched parts
+- `fade_transform_mismatches`: Whether to fade unmatched parts
+- `key_map`: Optional custom mapping between submobjects
+
+The animation intelligently maps and transforms similar shapes within the source and target mobjects, creating smooth, visually appealing transitions.

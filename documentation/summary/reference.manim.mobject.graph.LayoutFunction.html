@@ -1,0 +1,42 @@
+The `LayoutFunction` is a protocol for creating graph layout functions in Manim, which determines how vertices are positioned in a graph. Key points:
+
+1. Purpose:
+- Defines a way to compute node positions for graphs
+- Must be a pure function (doesn't modify the input graph)
+- Used in `change_layout()` method
+
+2. Built-in Layout Types:
+- Circular: Places nodes on a circle
+- Kamada Kawai: Respects specified distances between nodes
+- Partite: Arranges nodes in distinct partitions
+- Planar: Minimizes edge crossings
+- Random: Randomly positions nodes
+- Shell: Places nodes in concentric circles
+- Spectral: Uses graph Laplacian eigenvectors
+- Spiral: Arranges nodes in a spiral pattern
+- Spring: Uses force-directed algorithm
+- Tree: Arranges nodes in a tree structure
+
+3. Custom Layout Example:
+```python
+def custom_layout(graph, scale=2, n=4, *args, **kwargs):
+    nodes = sorted(list(graph))
+    height = len(nodes) // n
+    return {
+        node: (scale * np.array([
+            (i % n) - (n-1)/2,
+            -(i // n) + height/2,
+            0
+        ])) for i, node in enumerate(graph)
+    }
+```
+
+4. Usage:
+```python
+graph = Graph(
+    nodes, 
+    edges, 
+    layout=custom_layout,  # or built-in layout name
+    layout_config={...}    # optional configuration
+)
+```

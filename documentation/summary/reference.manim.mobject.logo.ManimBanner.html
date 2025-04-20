@@ -1,0 +1,28 @@
+Here's a concise summary of the ManimBanner class:
+
+ManimBanner is a Manim class representing the library's logo/banner, with two key features:
+
+1. Initialization:
+- Create with `ManimBanner(dark_theme=True)` 
+- Default is dark theme, can switch to light theme by setting `dark_theme=False`
+
+2. Main Methods:
+- `create()`: Animates logo creation (default 2s runtime)
+- `expand()`: Expands logo to full banner
+  - Optional parameters: `run_time`, `direction` ('center', 'left', 'right')
+- `scale()`: Resize banner
+
+Example usage:
+```python
+class LogoScene(Scene):
+    def construct(self):
+        banner = ManimBanner()
+        self.play(banner.create())  # Draw logo
+        self.play(banner.expand())  # Expand to full banner
+        self.wait()
+```
+
+Key points:
+- Supports dark and light themes
+- Provides animation methods for logo/banner
+- Easily customizable runtime and expansion direction

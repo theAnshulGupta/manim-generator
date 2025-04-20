@@ -1,0 +1,17 @@
+The `three_d_camera` module in Manim provides a specialized camera for 3D scenes:
+
+`ThreeDCamera`: A camera that can be positioned and oriented in three-dimensional space. It allows for flexible camera manipulation in 3D animations, enabling users to create complex spatial visualizations by changing camera position, angle, and perspective.
+
+Typical use involves setting camera position, rotation, and zoom in 3D scenes to create dynamic and immersive mathematical or scientific animations.
+
+Example usage would look like:
+```python
+from manim import ThreeDScene, ThreeDCamera
+
+class My3DScene(ThreeDScene):
+    def construct(self):
+        # Camera manipulation methods available
+        self.camera.set_camera_orientation(phi=45*DEGREES, theta=30*DEGREES)
+```
+
+The camera provides methods to control its position and orientation in 3D space, crucial for creating compelling three-dimensional visualizations.

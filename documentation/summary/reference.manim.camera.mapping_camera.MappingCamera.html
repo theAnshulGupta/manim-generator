@@ -1,0 +1,23 @@
+MappingCamera is a specialized Camera class in Manim that allows custom mapping of objects during rendering. Key features:
+
+1. Initialization Parameters:
+- `mapping_func`: Custom function to map object coordinates
+- `min_num_curves`: Minimum number of curves for mapping
+- `allow_object_intrusion`: Whether objects can intrude mapped regions
+
+2. Main Method: `capture_mobjects()`
+- Captures mobjects and renders them on pixel array
+- Applies custom mapping function to object coordinates
+- Converts scene contents into renderable image/video array
+
+3. Usage Example:
+```python
+# Create a camera with custom coordinate mapping
+camera = MappingCamera(
+    mapping_func=lambda point: some_transformation(point),
+    min_num_curves=100,
+    allow_object_intrusion=True
+)
+```
+
+The MappingCamera is useful for creating complex visual transformations or distortions of scenes during rendering.

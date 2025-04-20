@@ -1,0 +1,21 @@
+`ArrowSquareFilledTip` is a specialized arrow tip in Manim with a filled square shape. Specifically:
+
+- It's a subclass of `ArrowSquareTip`
+- Creates a square-shaped arrow tip that is completely filled
+- Default parameters:
+  - `fill_opacity=1` (fully opaque)
+  - `stroke_width=0` (no border)
+
+Key attributes include:
+- `base`: Base point of the arrow tip
+- `tip_point`: Endpoint of the arrow tip
+- `tip_angle`: Angle of the arrow tip
+- `length`: Length of the arrow tip
+- `side_length`: Length of the square tip's side
+
+Typical usage would be customizing arrow tips in Manim graphics, providing a filled square style for arrow endpoints.
+
+Example:
+```python
+arrow = Arrow(start_point, end_point, tip_class=ArrowSquareFilledTip)
+```

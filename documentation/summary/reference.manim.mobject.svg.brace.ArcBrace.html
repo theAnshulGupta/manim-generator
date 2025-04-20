@@ -1,0 +1,25 @@
+Here's a concise summary of the ArcBrace class in Manim:
+
+ArcBrace is a specialized Brace that wraps around an Arc. Key features:
+
+- Creates a brace that follows the curvature of an Arc
+- Accepts parameters:
+  - `arc`: The Arc to create the brace for
+  - `direction`: Specifies whether the brace is inside or outside the arc
+
+Notes:
+- Scales down for arcs with smaller radii
+- Direction can be LEFT (inside) or RIGHT (outside)
+
+Example usage:
+```python
+arc = Arc(radius=1.5, start_angle=0, angle=2*PI/3)
+brace = ArcBrace(arc, LEFT)  # Brace inside the arc
+```
+
+The example demonstrates creating ArcBraces for different arcs with varying:
+- Radii
+- Angles
+- Directions
+
+Practical for highlighting or annotating curved segments in mathematical or geometric visualizations.

@@ -1,0 +1,30 @@
+The `manim._config.utils` module provides utilities for configuring Manim, primarily through the `ManimConfig` class. Here's a concise summary:
+
+Key Components:
+1. `ManimConfig`: A dict-like class managing all configuration options for Manim
+   - Supports setting config via files, CLI arguments, or programmatically
+   - Handles directories, rendering, frame properties, output formats, etc.
+
+Key Methods:
+- `digest_parser()`: Process configuration from a ConfigParser
+- `digest_args()`: Process configuration from CLI arguments
+- `digest_file()`: Process configuration from a specific config file
+- `get_dir()`: Resolve directory paths with flexible formatting
+
+Key Features:
+- Supports various config options like frame size, background color, rendering quality
+- Can set directories dynamically
+- Supports multiple renderers (Cairo, OpenGL)
+- Handles file paths, logging, and output settings
+
+Example Usage:
+```python
+from manim import config
+
+# Modify configuration programmatically
+config.media_dir = "custom_media"
+config.background_color = WHITE
+config.quality = "high"
+```
+
+Note: All configuration is managed through the global `config` object, allowing flexible and centralized configuration of Manim.

@@ -1,0 +1,32 @@
+ClockwiseTransform is an animation in Manim that transforms a mobject's points along a clockwise-oriented arc. 
+
+Key points:
+- Inherits from the Transform animation
+- Rotates mobjects clockwise during transformation
+- Default path arc is approximately -π (negative pi)
+
+Example code demonstrates its usage:
+```python
+class ClockwiseExample(Scene):
+    def construct(self):
+        dl, dr = Dot(), Dot()
+        sl, sr = Square(), Square()
+
+        VGroup(dl, sl).arrange(DOWN).shift(2*LEFT)
+        VGroup(dr, sr).arrange(DOWN).shift(2*RIGHT)
+
+        self.add(dl, dr)
+        self.wait()
+        self.play(
+            ClockwiseTransform(dl, sl),  # Clockwise transformation
+            Transform(dr, sr)  # Standard transform for comparison
+        )
+        self.wait()
+```
+
+This animation shows how a Dot transforms into a Square with a clockwise rotational movement, while the other Dot transforms with a standard Transform.
+
+Main parameters:
+- mobject: The initial mobject
+- target_mobject: The mobject to transform into
+- path_arc: Angle of rotation (default -π)

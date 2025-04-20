@@ -1,0 +1,22 @@
+CounterclockwiseTransform is an animation class in Manim that transforms a mobject's points along a counterclockwise oriented arc. It's a variant of the standard Transform animation with a different path trajectory.
+
+Key points:
+- Subclass of Transform
+- Moves mobject points in a counterclockwise direction
+- Useful for creating circular or rotational transformation effects
+
+Example demonstrates the difference between CounterclockwiseTransform and standard Transform:
+- CounterclockwiseTransform moves objects in a counterclockwise arc
+- Standard Transform moves objects directly between start and end positions
+
+Typical usage:
+```python
+self.play(CounterclockwiseTransform(obj1, obj2))
+```
+
+Main parameters:
+- mobject: Initial object
+- target_mobject: Object to transform into
+- path_arc: Angle of rotation (default is π)
+
+The example in the documentation shows two numbers transforming - one using CounterclockwiseTransform (moving in a counterclockwise arc) and another using standard Transform (moving directly).

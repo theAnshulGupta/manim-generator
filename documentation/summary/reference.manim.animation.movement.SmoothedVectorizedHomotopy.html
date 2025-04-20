@@ -1,0 +1,22 @@
+This class provides a smoothed version of the Homotopy animation in Manim. It allows for creating a smooth transformation of a mobject based on a custom homotopy function.
+
+Key points:
+- Inherits from Homotopy
+- Takes a homotopy function that maps points from an initial state to a final state
+- Allows smoothing of the transformation
+- Parameters include:
+  - `homotopy`: A callable function that defines the transformation
+  - `mobject`: The object to be transformed
+  - `run_time`: Duration of the animation (default 3 seconds)
+  - `apply_function_kwargs`: Optional additional arguments for the transformation
+
+Typical use would be creating custom, smoothly interpolated transformations of mobjects in Manim animations.
+
+Example might look like:
+```python
+def my_homotopy(t, x, y, z):
+    # Define custom transformation
+    return (new_x, new_y, new_z)
+
+SmoothedVectorizedHomotopy(my_homotopy, some_mobject)
+```

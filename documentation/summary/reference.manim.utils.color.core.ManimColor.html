@@ -1,0 +1,40 @@
+ManimColor is Manim's core color representation class with robust color manipulation capabilities:
+
+Key Features:
+- Represents colors as 4-float RGBA arrays ([r,g,b,a])
+- Supports multiple color space conversions (RGB, HSL, HSV)
+- Can parse colors from various formats (hex, string, tuples)
+
+Main Methods:
+- Creation: 
+  ```python
+  color = ManimColor.from_rgb((1, 0, 0))  # Red
+  color = ManimColor.from_hex("#00FF00")  # Green
+  ```
+
+- Conversion:
+  ```python
+  hex_color = color.to_hex()
+  rgb_array = color.to_rgb()
+  ```
+
+- Manipulation:
+  ```python
+  lighter_color = color.lighter()
+  darker_color = color.darker()
+  inverted_color = color.invert()
+  interpolated = color.interpolate(other_color, 0.5)
+  contrasting = color.contrasting()
+  ```
+
+- Opacity:
+  ```python
+  transparent_color = color.opacity(0.5)
+  ```
+
+Example Usage:
+```python
+red = ManimColor.from_rgb((1, 0, 0))
+green = ManimColor.from_hex("#00FF00")
+mixed_color = red.interpolate(green, 0.5)
+```

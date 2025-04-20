@@ -1,0 +1,26 @@
+Line3D is a Manim class for creating 3D cylindrical lines in ThreeDScene. Here's a concise summary:
+
+Parameters:
+- `start`: Starting point of the line (default `[-1, 0, 0]`)
+- `end`: Ending point of the line (default `[1, 0, 0]`)
+- `thickness`: Line thickness (default 0.02)
+- `color`: Line color
+- `resolution`: Line sampling points
+
+Key Methods:
+- `get_start()`: Returns starting point
+- `get_end()`: Returns ending point
+- `parallel_to()`: Creates a line parallel to another line
+- `perpendicular_to()`: Creates a line perpendicular to another line
+
+Example Usage:
+```python
+class ExampleLine3D(ThreeDScene):
+    def construct(self):
+        axes = ThreeDAxes()
+        line = Line3D(start=[0,0,0], end=[2,2,2])
+        self.set_camera_orientation(phi=75*DEGREES, theta=30*DEGREES)
+        self.add(axes, line)
+```
+
+The class inherits from Cylinder and is designed for 3D scene line representations with customizable properties.

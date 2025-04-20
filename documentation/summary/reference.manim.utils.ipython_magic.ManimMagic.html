@@ -1,0 +1,28 @@
+ManimMagic is an IPython magic command for rendering Manim scenes directly in Jupyter notebooks. Here's a concise summary:
+
+Key Features:
+- Works as line or cell magic in Jupyter environments
+- Renders Manim scenes with configurable options
+- Best used in JupyterLab for consistent video updates
+
+Usage Examples:
+```python
+# Line mode
+%manim MyScene
+
+# Cell mode
+%%manim MyScene
+class MyScene(Scene):
+    def construct(self):
+        # Scene definition
+```
+
+Configuration Options:
+- `media_width`: Controls rendered video width (default: 25vw)
+- `media_embed`: Embeds video/image in notebook
+- `progress_bar`: Can be set to None to hide progress bar
+
+Important Notes:
+- Requires Manim import beforehand
+- Supports CLI options like `-v WARNING`, `-qm`
+- Recommended to use in JupyterLab for best experience

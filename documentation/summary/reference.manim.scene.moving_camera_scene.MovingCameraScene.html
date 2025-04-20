@@ -1,0 +1,19 @@
+`MovingCameraScene` is a specialized scene in Manim designed for scenarios where camera movement is important:
+
+Key Features:
+- Inherits from `Scene`
+- Uses `MovingCamera` by default
+- Allows dynamic camera positioning and movement during animations
+
+Main Method:
+- `get_moving_mobjects(*animations)`: Returns a list of moving mobjects within given animations
+
+Example usage would typically involve:
+```python
+class CameraMovementDemo(MovingCameraScene):
+    def construct(self):
+        # Create camera movements and object transformations
+        # Use methods like self.camera.frame.move_to() or self.camera.frame.scale()
+```
+
+The scene provides flexibility in camera positioning, enabling complex visual storytelling through camera motion.

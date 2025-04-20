@@ -1,0 +1,18 @@
+This documentation describes three utility functions in Manim's utils module:
+
+1. `get_mobject_class()`: 
+   - Returns the base mobject class for the current renderer
+   - Useful for Manim developers and plugin creators
+   - Returns either 'Mobject' or 'OpenGLMobject'
+
+2. `get_point_mobject_class()`:
+   - Returns the point cloud mobject class for the current renderer
+   - Useful for Manim developers and plugin creators
+   - Returns either 'PMobject' or 'OpenGLPMobject'
+
+3. `get_vectorized_mobject_class()`:
+   - Returns the vectorized mobject class for the current renderer
+   - Useful for Manim developers and plugin creators
+   - Returns either 'VMobject' or 'OpenGLVMobject'
+
+Each function is intended to provide renderer-independent access to base mobject classes, primarily for internal Manim development or plugin creation.

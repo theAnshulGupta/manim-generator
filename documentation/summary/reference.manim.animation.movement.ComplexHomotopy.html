@@ -1,0 +1,17 @@
+ComplexHomotopy is an animation that allows complex transformations of mobjects using a complex-valued homotopy function. 
+
+Key points:
+- Subclass of Homotopy animation
+- Takes a complex homotopy function that maps complex numbers to complex numbers
+- Used to create smooth, parametric transformations of mobjects
+- Complex homotopy function gets a complex point and a time parameter (0 to 1)
+
+Example usage:
+```python
+def complex_func(z, t):
+    return z * (1 - t) + (2 + 3j) * t  # Example transformation
+
+anim = ComplexHomotopy(complex_func, some_mobject)
+```
+
+The complex function defines how points of the mobject move over time from their original position to a new position, with `t` representing the animation progress from 0 to 1.

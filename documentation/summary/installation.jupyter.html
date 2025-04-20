@@ -1,0 +1,30 @@
+Here's a concise summary:
+
+Jupyter Notebooks with Manim: Two Primary Methods
+
+1. Binder (Online Interactive Environment):
+- Platform for sharing Jupyter notebooks
+- Steps to create:
+  a. Prepare notebooks
+  b. Add Dockerfile with Manim image
+  c. Make repository public
+  d. Use https://mybinder.org to generate interactive environment
+
+Example Dockerfile:
+```dockerfile
+FROM docker.io/manimcommunity/manim:v0.9.0
+COPY --chown=manimuser:manimuser . /manim
+```
+
+2. Google Colaboratory:
+- Install dependencies in each new notebook
+- Installation commands:
+  ```
+  !sudo apt update
+  !sudo apt install libcairo2-dev texlive texlive-latex-extra...
+  !pip install manim
+  !pip install IPython==8.21.0
+  ```
+- Verify by importing Manim and running a sample animation
+
+Both methods support using the %%manim Jupyter magic command for rendering animations directly in notebooks.

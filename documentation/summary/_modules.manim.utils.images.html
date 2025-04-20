@@ -1,0 +1,16 @@
+The `manim.utils.images` module provides utility functions for image manipulation in Manim:
+
+1. `get_full_raster_image_path(image_file_name)`: Finds the full path of a raster image (jpg, png, etc.) in the assets directory.
+
+2. `get_full_vector_image_path(image_file_name)`: Finds the full path of a vector image (svg) in the assets directory.
+
+3. `drag_pixels(frames)`: Applies a cumulative effect to a list of image frames, where each frame is added to the previous non-zero pixels.
+
+4. `invert_image(image)`: Inverts the colors of an image by subtracting pixel values from 255.
+
+5. `change_to_rgba_array(image, dtype='uint8')`: Converts an RGB image array to RGBA by:
+   - Converting 2D to 3D array if needed
+   - Ensuring 3 color channels
+   - Adding a full opacity alpha channel
+
+These functions help with image processing tasks in Manim animations.

@@ -1,0 +1,20 @@
+The `Swap` animation in Manim is used to swap the positions of two or more mobjects with an optional arc path. 
+
+Key details:
+- Inherits from `CyclicReplace`
+- Swaps positions of mobjects
+- Default path arc is π/2 (1.5707963267948966 radians)
+
+Example usage:
+```python
+# Swap positions of two objects
+Swap(object1, object2)
+
+# Can swap more than two objects
+Swap(object1, object2, object3)
+
+# Customize arc path
+Swap(object1, object2, path_arc=PI)
+```
+
+The animation smoothly moves mobjects to each other's original positions, with a slight arc trajectory by default.

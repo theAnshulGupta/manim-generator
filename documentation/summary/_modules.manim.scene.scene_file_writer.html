@@ -1,0 +1,31 @@
+Here's a concise summary of the SceneFileWriter class:
+
+SceneFileWriter manages rendering and saving of Manim animations. Key functionalities include:
+
+1. Output Management:
+- Handles video and image file creation
+- Supports multiple output formats (mp4, gif, png)
+- Creates resolution-specific directories
+- Manages partial movie files
+
+2. Audio Integration:
+- Adds audio segments to animations
+- Supports various audio file conversions
+- Can overlay and adjust audio gains
+
+3. Rendering Process:
+- Opens/closes video streams
+- Writes individual frames
+- Combines partial movie files
+- Handles section-based rendering
+
+4. Caching:
+- Manages cached partial movie files
+- Can clean or flush cache directory
+
+5. Additional Features:
+- Supports subcaption generation
+- Handles frame writing for both Cairo and OpenGL renderers
+- Provides logging and file path management
+
+Primary use is internal to Manim, rarely directly instantiated by users. Manages the technical details of converting animation frames into video files.

@@ -1,0 +1,24 @@
+The `ConvexHull` class in Manim is used to create a polygon that encompasses a set of points, forming the smallest possible convex shape that contains all those points. 
+
+Key details:
+- It takes a list of points as input
+- Creates a polygon that wraps around the outermost points
+- Includes an optional tolerance parameter (default 1e-05)
+
+Example usage:
+```python
+points = [
+    [-2.35, -2.25, 0],
+    [1.65, -2.25, 0],
+    [2.65, -0.25, 0],
+    # ... more points
+]
+hull = ConvexHull(*points, color=BLUE)
+```
+
+The example demonstrates:
+- Creating a `ConvexHull` from a list of 2D/3D points
+- Coloring the hull
+- Can be combined with `Dot` objects to show original points
+
+The class automatically determines which points form the hull's boundary, creating a polygon that encloses all input points efficiently.

@@ -1,0 +1,21 @@
+FadeToColor is an animation in Manim that smoothly changes the color of a mobject from its original color to a specified target color.
+
+Key details:
+- Inherits from ApplyMethod
+- Used to transition a mobject's color gradually
+- Takes two main parameters: the mobject and the target color
+
+Example usage:
+```python
+class FadeToColorExample(Scene):
+    def construct(self):
+        # Changes "Hello World!" text to red color
+        self.play(FadeToColor(Text("Hello World!"), color=RED))
+```
+
+Basic syntax:
+```python
+FadeToColor(mobject, color=target_color)
+```
+
+The animation smoothly interpolates the mobject's color from its original color to the specified target color during the animation.

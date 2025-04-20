@@ -1,0 +1,24 @@
+Here's a concise summary of the SampleSpace class:
+
+SampleSpace is a rectangular mobject used to represent a sampling space in probability visualization. Key features:
+
+- Inherits from Rectangle
+- Customizable dimensions (default 3x3)
+- Configurable appearance (fill color, opacity, stroke width/color)
+
+Key Methods:
+- `divide_vertically()`: Split sample space vertically with different colors/proportions
+- `divide_horizontally()`: Split sample space horizontally
+- `add_label()`: Add labels to the sample space
+- `add_braces_and_labels()`: Add braces and labels to divisions
+
+Example Usage:
+```python
+poly1 = SampleSpace(stroke_width=15, fill_opacity=1)
+poly3 = SampleSpace(width=2, height=2, stroke_width=5, fill_opacity=0.1)
+poly3.divide_vertically(p_list=np.array([0.37, 0.13, 0.5]), 
+                        colors=[BLACK, WHITE, GRAY], 
+                        vect=RIGHT)
+```
+
+This class is useful for creating visual representations of probability spaces and sample distributions.

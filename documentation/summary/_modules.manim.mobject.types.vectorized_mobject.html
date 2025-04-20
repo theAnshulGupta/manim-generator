@@ -1,0 +1,31 @@
+Summary of `manim.mobject.types.vectorized_mobject`:
+
+This module defines key classes for creating and manipulating vector-based graphics in Manim:
+
+1. `VMobject`: Base class for vector-based mobjects
+   - Supports complex drawing operations
+   - Manages points, curves, bezier paths
+   - Methods for:
+     - Color manipulation
+     - Point/curve management
+     - Styling (fill, stroke, opacity)
+     - Transforming and interpolating
+
+2. `VGroup`: A group of vectorized mobjects
+   - Allows collective manipulation of multiple VMobjects
+   - Supports adding/removing elements
+   - Can be used like a list or dictionary
+
+3. `VDict`: A dictionary-like VGroup
+   - Stores VMobjects with associated keys
+   - Supports key-based access and manipulation
+   - Optional key display
+
+4. `VectorizedPoint`: A single point with vector properties
+   - Useful for creating minimal vector objects
+
+5. Helper classes:
+   - `CurvesAsSubmobjects`: Converts curves into individual submobjects
+   - `DashedVMobject`: Creates dashed versions of VMobjects
+
+Key features include flexible point manipulation, styling, and transformation capabilities for vector graphics.

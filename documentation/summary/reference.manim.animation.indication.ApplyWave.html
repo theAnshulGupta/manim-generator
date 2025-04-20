@@ -1,0 +1,33 @@
+ApplyWave is an animation in Manim that creates a wave-like distortion effect on a mobject. 
+
+Key Parameters:
+- `mobject`: The object to apply the wave animation to
+- `direction`: Wave direction (default is vertical)
+- `amplitude`: Shift distance of points (default 0.2)
+- `wave_func`: Function defining wave shape (default is smooth)
+- `time_width`: Wave length relative to mobject width
+- `ripples`: Number of wave ripples
+- `run_time`: Animation duration
+
+Example Usage:
+```python
+# Basic wave animation
+self.play(ApplyWave(tex))
+
+# Customized wave with right direction, reduced width, and specific amplitude
+self.play(ApplyWave(
+    tex,
+    direction=RIGHT,
+    time_width=0.5,
+    amplitude=0.3
+))
+
+# Wave with linear rate and multiple ripples
+self.play(ApplyWave(
+    tex,
+    rate_func=linear,
+    ripples=4
+))
+```
+
+The animation temporarily distorts the mobject by shifting its points in a wave-like pattern, creating a dynamic visual effect.

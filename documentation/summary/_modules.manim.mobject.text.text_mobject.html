@@ -1,0 +1,42 @@
+Here's a summary of the documentation for the `manim.mobject.text.text_mobject` module:
+
+The module provides three main text-rendering classes: `Text`, `Paragraph`, and `MarkupText`. 
+
+1. `Text` class:
+- Renders non-LaTeX text using Pango library
+- Supports multiple languages and alphabets
+- Allows customization like:
+  - Font size, color
+  - Font family
+  - Slant (italic/normal)
+  - Weight (bold/normal)
+  - Gradient coloring
+- Characters can be individually styled
+- Example:
+```python
+text = Text('Hello world', color=BLUE, font_size=48)
+```
+
+2. `Paragraph` class:
+- Creates multi-line text with alignment options
+- Allows line spacing and character-level manipulation
+- Can align lines left, right, or center
+
+3. `MarkupText` class:
+- Similar to `Text`, but supports Pango markup language
+- Allows inline styling using XML-like tags
+- Supports features like:
+  - Bold, italic
+  - Underline, strikethrough
+  - Color changes
+  - Gradients
+  - Font changes
+- Example:
+```python
+text = MarkupText('<b>Bold</b> <i>Italic</i>')
+```
+
+4. Additional utility:
+- `register_font()` context manager to temporarily add custom font files
+
+Key features include extensive text rendering capabilities with fine-grained control over appearance.

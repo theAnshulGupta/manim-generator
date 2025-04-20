@@ -1,0 +1,25 @@
+Here's a concise summary of the `manim.utils.bezier` module:
+
+This module provides utility functions for working with Bézier curves, including:
+
+1. Curve Creation and Manipulation:
+- `bezier(points)`: Creates a Bézier curve function from control points
+- `split_bezier(points, t)`: Splits a Bézier curve at a specific point
+- `subdivide_bezier(points, n_divisions)`: Subdivides a Bézier curve into multiple subcurves
+
+2. Interpolation Functions:
+- `interpolate(start, end, alpha)`: Linear interpolation between two values
+- `integer_interpolate(start, end, alpha)`: Integer-based interpolation
+- `inverse_interpolate(start, end, value)`: Calculates interpolation alpha
+- `match_interpolate()`: Interpolates values between different ranges
+
+3. Curve Smoothing:
+- `get_smooth_cubic_bezier_handle_points(anchors)`: Generates smooth handle points for cubic Bézier curves
+- `get_quadratic_approximation_of_cubic()`: Approximates cubic Bézier curves with quadratic curves
+
+4. Utility Functions:
+- `bezier_remap()`: Remaps Bézier curves to a different number of curves
+- `is_closed(points)`: Checks if a spline is closed
+- `point_lies_on_bezier()`: Checks if a point lies on a Bézier curve
+
+The module mainly deals with mathematical operations for creating, manipulating, and analyzing Bézier curves with various interpolation and smoothing techniques.

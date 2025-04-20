@@ -1,0 +1,18 @@
+This module provides two debugging utilities for Manim:
+
+1. `print_family(mobject, n_tabs=0)`:
+   - Recursively prints the hierarchy of a mobject and its submobjects
+   - Useful for debugging complex mobject structures
+   - Indents submobjects to show hierarchy
+   - Prints the mobject and its memory ID
+
+2. `index_labels(mobject, label_height=0.15, ...)`:
+   - Creates a VGroup of labeled integers representing each submobject's index
+   - Helps visualize and work with complex mobject compositions
+   - Example use case: labeling parts of a MathTex object
+   - Configurable label appearance (height, stroke width, color)
+
+Key features:
+- Helps with debugging and understanding mobject structures
+- Provides visual indexing for complex mobjects
+- Flexible configuration options for labels

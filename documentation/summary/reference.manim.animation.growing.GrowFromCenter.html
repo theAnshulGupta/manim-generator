@@ -1,0 +1,22 @@
+`GrowFromCenter` is an animation in Manim that grows a mobject from its center point:
+
+Key Details:
+- Inherits from `GrowFromPoint`
+- Introduces a mobject by expanding it from its center
+- Optional `point_color` parameter to set initial color before growing
+
+Parameters:
+- `mobject`: The object to animate
+- `point_color`: Initial color before growth (defaults to mobject's color)
+
+Example Code:
+```python
+class GrowFromCenterExample(Scene):
+    def construct(self):
+        squares = [Square() for _ in range(2)]
+        VGroup(*squares).set_x(0).arrange(buff=2)
+        self.play(GrowFromCenter(squares[0]))  # Default growth
+        self.play(GrowFromCenter(squares[1], point_color=RED))  # Custom initial color
+```
+
+This animation smoothly expands a mobject from a single point at its center to its full size, with optional color customization.

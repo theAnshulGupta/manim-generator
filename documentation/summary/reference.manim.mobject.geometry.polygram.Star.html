@@ -1,0 +1,28 @@
+Summary of Star Class in Manim:
+
+The Star class creates a star-shaped polygon with customizable properties:
+
+Key Parameters:
+- `n`: Number of star points (default 5)
+- `outer_radius`: Radius of outer vertices circle (default 1)
+- `inner_radius`: Radius of inner vertices circle (optional)
+- `density`: Controls star's shape complexity (default 2)
+- `start_angle`: Rotation of the star (default 1.5708 radians)
+
+Examples:
+```python
+# Basic 5-pointed star
+star = Star(outer_radius=2)
+
+# 7-pointed star with different densities
+density_2_star = Star(7, outer_radius=2, density=2)
+density_3_star = Star(7, outer_radius=2, density=3)
+```
+
+Key Points:
+- Inherits from Polygon
+- Can create stars with varying point counts and shapes
+- Inner radius can be auto-calculated if not specified
+- Raises ValueError if density is invalid
+
+The class allows creating geometrically interesting star shapes with precise control over their structure.

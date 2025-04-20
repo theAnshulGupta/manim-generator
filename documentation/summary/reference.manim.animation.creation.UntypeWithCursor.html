@@ -1,0 +1,28 @@
+The `UntypeWithCursor` is an animation in Manim that deletes text letter by letter with an accompanying cursor. Key details:
+
+- Similar to `RemoveTextLetterByLetter`, but includes a cursor object
+- Works only with `Text` (not `MathTex`)
+- Allows customization of:
+  - Time per character
+  - Cursor object
+  - Cursor positioning
+  - Whether to leave cursor on screen after animation
+
+Example code demonstrates its use:
+```python
+class DeletingTextExample(Scene):
+    def construct(self):
+        text = Text("Deleting", color=PURPLE).scale(1.5).to_edge(LEFT)
+        cursor = Rectangle(
+            color=GREY_A,
+            fill_color=GREY_A,
+            fill_opacity=1.0,
+            height=1.1,
+            width=0.5,
+        ).move_to(text[0])
+
+        self.play(UntypeWithCursor(text, cursor))
+        self.play(Blink(cursor, blinks=2))
+```
+
+This creates an animation that deletes text letter by letter with a blinking cursor.

@@ -1,0 +1,25 @@
+DrawBorderThenFill is an animation in Manim that progressively draws the border of a shape and then fills it in. 
+
+Key Features:
+- Draws the outline/border of a VMobject first
+- Then fills in the shape
+- Customizable parameters like run time, stroke width, and colors
+
+Example Usage:
+```python
+class ShowDrawBorderThenFill(Scene):
+    def construct(self):
+        # Creates a square with orange fill, animating border then fill
+        self.play(DrawBorderThenFill(Square(fill_opacity=1, fill_color=ORANGE)))
+```
+
+Main Parameters:
+- vmobject: The shape to animate
+- run_time: Duration of animation (default 2 seconds)
+- rate_func: Controls animation speed
+- stroke_width: Width of border line
+- stroke_color: Color of border
+- fill_animation_config: Custom fill animation settings
+- draw_border_animation_config: Custom border drawing settings
+
+This animation is useful for gradually revealing and filling shapes in a visually appealing way.

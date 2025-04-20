@@ -1,0 +1,16 @@
+`ShrinkToCenter` is an animation in Manim that makes a mobject shrink towards its center. 
+
+Key points:
+- Inherits from `ScaleInPlace`
+- Makes an object gradually scale down to its center point
+- Simple to use with one-line animation
+
+Example usage:
+```python
+class ShrinkToCenterExample(Scene):
+    def construct(self):
+        # Shrinks "Hello World!" text to its center
+        self.play(ShrinkToCenter(Text("Hello World!")))
+```
+
+The animation smoothly reduces the size of the mobject until it disappears at its center point, creating a visual "shrinking" effect.

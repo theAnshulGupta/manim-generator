@@ -1,0 +1,31 @@
+The `LinearTransformationScene` is a specialized scene in Manim for visualizing linear transformations in a 2D coordinate system. Key features include:
+
+Parameters:
+- Option to include background/foreground planes
+- Customizable basis vectors (i_hat and j_hat)
+- Control over coordinate display and vector visibility
+
+Main Methods:
+- `apply_matrix()`: Applies a linear transformation matrix to the scene
+- `add_vector()`: Adds vectors to be transformed
+- `apply_function()`: Applies non-linear transformations
+- `add_transformable_label()`: Adds labels to vectors
+
+Example Usage:
+```python
+class LinearTransformationSceneExample(LinearTransformationScene):
+    def __init__(self, **kwargs):
+        LinearTransformationScene.__init__(
+            self,
+            show_coordinates=True,
+            leave_ghost_vectors=True,
+            **kwargs
+        )
+
+    def construct(self):
+        matrix = [[1, 1], [0, 1]]
+        self.apply_matrix(matrix)
+        self.wait()
+```
+
+This scene allows users to easily demonstrate how matrices transform coordinate systems and vectors, making it ideal for teaching linear algebra concepts visually.

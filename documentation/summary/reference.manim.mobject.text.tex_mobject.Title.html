@@ -1,0 +1,27 @@
+The `Title` class in Manim is a specialized text mobject for creating titles with an optional underline. Here's a concise summary:
+
+Purpose:
+- Creates a title with optional underline
+- Inherits from the `Tex` class
+
+Key Parameters:
+- `*text_parts`: Text to be displayed as the title
+- `include_underline`: Whether to include an underline (default: True)
+- `match_underline_width_to_text`: If underline width should match text width
+- `underline_buff`: Buffer space around the underline
+
+Example Usage:
+```python
+class TitleExample(Scene):
+    def construct(self):
+        # Create a title with version number
+        title = Title(f"Manim version {manim.__version__}")
+        self.add(title)
+```
+
+Notable Features:
+- Automatically creates an underlined text mobject
+- Flexible configuration for underline appearance
+- Inherits standard text mobject properties
+
+The class provides a simple way to create professional-looking titles in Manim animations.

@@ -1,0 +1,28 @@
+DashedVMobject is a Manim class that transforms a VMobject (like a line or circle) into a series of dashes. Key features include:
+
+Parameters:
+- `vmobject`: Original object to be dashed
+- `num_dashes`: Number of dashes (default 15)
+- `dashed_ratio`: Ratio of dash to empty space (default 0.5)
+- `dash_offset`: Shifts starting point of dashes
+- `equal_lengths`: Controls dash distribution method
+
+Example code demonstrates three use cases:
+1. Varying number of dashes on circles
+2. Changing dash-to-space ratio
+3. Comparing different dash length distributions on a function graph
+
+Typical usage:
+```python
+# Create a dashed circle
+dashed_circle = DashedVMobject(Circle(radius=1), num_dashes=10)
+
+# Create a dashed function graph
+dashed_graph = DashedVMobject(
+    FunctionGraph(lambda t: t**2), 
+    num_dashes=6, 
+    dashed_ratio=0.7
+)
+```
+
+This class allows flexible customization of dashed line appearances in Manim animations.

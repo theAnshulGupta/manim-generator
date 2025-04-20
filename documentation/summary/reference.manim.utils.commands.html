@@ -1,0 +1,18 @@
+Here's a concise summary of the commands module:
+
+This module provides utility functions for command-related operations:
+
+1. `capture(command, cwd=None, command_input=None)`:
+   - Executes a shell command
+   - Returns tuple with (stdout, stderr, return_code)
+   - Optional parameters for current working directory and command input
+
+2. `get_dir_layout(dirpath)`:
+   - Recursively lists all file paths relative to a given directory
+   - Returns a generator of file paths
+
+3. `get_video_metadata(path_to_video)`:
+   - Retrieves metadata for a video file
+   - Returns a VideoMetadata object
+
+The functions are primarily useful for system command execution, directory traversal, and video file metadata retrieval within the Manim library.

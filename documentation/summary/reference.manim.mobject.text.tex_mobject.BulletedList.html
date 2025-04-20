@@ -1,0 +1,28 @@
+BulletedList is a Manim class for creating bulleted lists in LaTeX. 
+
+Key features:
+- Creates a list of text items with bullet points
+- Allows customization of spacing (buff), dot size (dot_scale_factor)
+- Can set different colors for individual list items
+
+Example usage:
+```python
+class BulletedListExample(Scene):
+    def construct(self):
+        # Create a bulleted list with 3 items
+        blist = BulletedList("Item 1", "Item 2", "Item 3", height=2, width=2)
+        
+        # Optionally set different colors for items
+        blist.set_color_by_tex("Item 1", RED)
+        blist.set_color_by_tex("Item 2", GREEN)
+        blist.set_color_by_tex("Item 3", BLUE)
+        
+        self.add(blist)
+```
+
+Parameters:
+- `*items`: List of text items
+- `buff`: Spacing between items (default 0.5)
+- `dot_scale_factor`: Size of bullet points (default 2)
+- `tex_environment`: Optional LaTeX environment
+- Additional kwargs can be passed for further customization

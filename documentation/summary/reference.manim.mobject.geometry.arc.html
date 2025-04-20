@@ -1,0 +1,37 @@
+Summary of Arc Module in Manim:
+
+The Arc module provides curved geometric mobjects with various specialized classes:
+
+Key Geometric Curve Classes:
+- Arc: Basic circular arc
+- Circle: Full circular shape
+- ArcBetweenPoints: Arc spanning two specific points
+- CurvedArrow: Curved directional arrow
+- CurvedDoubleArrow: Curved double-headed arrow
+- Ellipse: Oval/circular shape
+- Sector: Slice of a circle
+
+Annotation Classes:
+- AnnotationDot: Large dot for emphasis
+- LabeledDot: Dot with central label
+- Dot: Small circular point
+
+Specialized Arc Shapes:
+- AnnularSector: Sector within an annulus
+- Annulus: Region between concentric circles
+- ArcPolygon: Polygon with arc connections
+
+Example Code:
+```python
+class UsefulAnnotations(Scene):
+    def construct(self):
+        m0 = Dot()
+        m1 = AnnotationDot()
+        m2 = LabeledDot("ii")
+        m3 = LabeledDot(MathTex(r"\alpha").set_color(ORANGE))
+        m4 = CurvedArrow(2*LEFT, 2*RIGHT, radius= -5)
+        m5 = CurvedArrow(2*LEFT, 2*RIGHT, radius= 8)
+        m6 = CurvedDoubleArrow(ORIGIN, 2*RIGHT)
+
+        self.add(m0, m1, m2, m3, m4, m5, m6)
+```

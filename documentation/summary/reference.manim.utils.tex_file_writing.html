@@ -1,0 +1,23 @@
+The `tex_file_writing` module provides utility functions for working with LaTeX files in Manim. Key functions include:
+
+1. `generate_tex_file()`: Creates a complete LaTeX file from a given expression, allowing specification of environment and template.
+
+2. `compile_tex()`: Compiles a LaTeX file into DVI, XDV, or PDF using a specified compiler.
+
+3. `convert_to_svg()`: Converts compiled LaTeX files (DVI, XDV, PDF) to SVG format.
+
+4. `tex_to_svg_file()`: Combines generation, compilation, and conversion into a single function that turns a LaTeX expression directly into an SVG file.
+
+5. Utility functions for handling TeX compilation errors and file management.
+
+Main use cases:
+- Rendering mathematical expressions
+- Converting LaTeX to SVG for use in Manim animations
+- Handling different LaTeX compilation scenarios
+
+Example usage:
+```python
+svg_path = tex_to_svg_file(r'\sqrt{2}')  # Converts LaTeX to SVG
+```
+
+The module provides flexible tools for working with TeX files in the Manim library.

@@ -1,0 +1,22 @@
+Summary of _config module:
+
+The `_config` module provides a `tempconfig()` context manager for temporarily modifying Manim's global configuration.
+
+Key Function: `tempconfig(temp)`
+- Allows temporary changes to configuration settings
+- Restores original settings after exiting the context
+
+Example Usage:
+```python
+# Default frame height
+config["frame_height"]  # 8.0
+
+# Temporarily change frame height
+with tempconfig({"frame_height": 100.0}):
+    print(config["frame_height"])  # 100.0
+
+# Original value restored
+config["frame_height"]  # 8.0
+```
+
+Useful for making short-term configuration adjustments without permanently changing global settings.

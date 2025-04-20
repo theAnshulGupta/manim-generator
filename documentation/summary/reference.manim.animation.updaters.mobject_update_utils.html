@@ -1,0 +1,32 @@
+Summary of mobject_update_utils:
+
+This module provides utility functions for continuous animation and updating of mobjects in Manim:
+
+Key Functions:
+1. always_redraw(func): Continuously regenerates a mobject using the provided function every frame.
+
+2. always_rotate(mobject, rate=..., **kwargs): Continuously rotates a mobject at a specified rate.
+
+3. always_shift(mobject, direction=..., rate=...): Continuously shifts a mobject in a specified direction at a given rate.
+
+4. turn_animation_into_updater(animation, cycle=False, delay=0): Converts an animation into a persistent updater that can optionally repeat.
+
+Example Use Cases:
+- Create a point that moves along a curve
+- Spin an object continuously
+- Shift an object across the screen
+- Transform an animation into a continuous effect
+
+Example Code Snippet:
+```python
+point = always_redraw(
+    lambda: Dot(
+        sine.point_from_proportion(alpha.get_value()),
+        color=BLUE
+    )
+)
+always_rotate(triangle, rate=2*PI)
+always_shift(square, RIGHT, rate=5)
+```
+
+These functions help create dynamic, continuously updating animations in Manim.

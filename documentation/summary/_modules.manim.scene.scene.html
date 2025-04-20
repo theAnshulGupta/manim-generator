@@ -1,0 +1,27 @@
+This documentation describes the `Scene` class in Manim, which serves as the primary canvas for animations. Here's a concise summary:
+
+Key Methods:
+- `__init__()`: Initializes the scene with renderer, camera, and other settings
+- `construct()`: Main method to be overridden, where animations and mobjects are added
+- `play()`: Plays animations in the scene
+- `add()`: Adds mobjects to the scene
+- `remove()`: Removes mobjects from the scene
+- `wait()`: Pauses the scene for a specified duration
+- `add_updater()`: Adds update functions to the scene
+
+Basic Usage Example:
+```python
+class MyScene(Scene):
+    def construct(self):
+        square = Square()
+        self.play(Create(square))  # Animate square creation
+        self.wait(1)  # Pause for 1 second
+```
+
+Key Features:
+- Manages mobjects and animations
+- Supports rendering with different renderers (Cairo, OpenGL)
+- Allows for interactive embedding
+- Provides methods for adding, removing, and manipulating scene elements
+
+Not relevant for basic usage: Detailed implementation details of rendering, internal methods, and complex interaction mechanisms.

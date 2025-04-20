@@ -1,0 +1,42 @@
+ManimConfig is a powerful configuration management class for Manim that allows users to customize rendering settings through multiple methods:
+
+1. Purpose:
+- Store and manage all configurable options for Manim
+- Provides a single source of truth for library behavior
+- Supports configuration via config files, CLI, and programmatic changes
+
+2. Key Configuration Methods:
+- `digest_args()`: Process CLI arguments
+- `digest_file()`: Process .cfg file configurations
+- `digest_parser()`: Process ConfigParser configurations
+- `update()`: Update config from another ManimConfig or dictionary
+
+3. Configuration Precedence (lowest to highest):
+- Configuration files
+- Command line arguments
+- Programmatic changes in code
+
+4. Accessing/Modifying Configuration:
+```python
+# Two equivalent ways to set background color
+config.background_color = WHITE
+config["background_color"] = WHITE
+```
+
+5. Notable Configurable Attributes:
+- `background_color`
+- `frame_height/width`
+- `pixel_height/width`
+- `renderer`
+- `quality`
+- `output_file`
+- `media_dir`
+- `preview`
+- Many more directory and rendering-related settings
+
+6. Key Features:
+- Maintains internal configuration consistency
+- Supports multiple configuration sources
+- Provides type checking and validation for configuration values
+
+Practical usage involves importing `config` and modifying its attributes before or within scene definitions.

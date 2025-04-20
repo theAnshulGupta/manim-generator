@@ -1,0 +1,24 @@
+`ApplyMethod` is an animation class in Manim that allows applying a method to a mobject during an animation.
+
+Key features:
+- Animates a mobject by applying a specific method
+- Only requires passing the method, not necessarily the mobject
+- Method must return the modified mobject
+
+Example:
+```python
+# Applies a scaling method to a square
+square.animate.scale(2)  # Equivalent to ApplyMethod(square.scale, 2)
+```
+
+Parameters:
+- `method`: The method to be applied
+- `*args`: Positional arguments for the method
+- `**kwargs`: Keyword arguments for the `Transform` animation
+
+How it works:
+- Transforms the mobject by applying the specified method
+- Automatically handles the animation of the method's effect
+- Ensures the method returns the modified mobject
+
+The animation smoothly interpolates between the initial and final states of the mobject after applying the method.
