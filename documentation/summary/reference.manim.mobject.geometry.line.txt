@@ -1,17 +1,1 @@
-Summary of the Line Geometry Module in Manim:
-
-Classes:
-1. Line: Base line mobject
-2. DashedLine: A line with dashed segments
-3. Arrow: Line with an arrowhead
-4. DoubleArrow: Arrow with tips on both ends
-5. Vector: Line specialized for graph representation
-6. Elbow: L-shaped line at right angle
-7. Angle: Circular arc representing angle between lines
-8. RightAngle: Specific 90-degree angle representation
-9. TangentLine: Line tangent to a VMobject at a specific point
-
-Type Alias:
-- AngleQuadrant: Tuple representing quadrant coordinates ([-1, 1], [-1, 1])
-
-This module provides various line-based geometric mobjects for creating mathematical and graphical visualizations in Manim.
+The `line` module in Manim provides mobjects representing lines and line-related geometric elements. Key classes include: `Line` (basic line), `Arrow` (directed line), `DashedLine` (line with dashed style), `DoubleArrow` (line with tips on both ends), `Elbow` (L-shaped line), `RightAngle` (90-degree angle line), `TangentLine` (line tangent to a curve), and `Vector` (specialized line for graphs). The module also defines a type alias `AngleQuadrant` for quadrant coordinates.

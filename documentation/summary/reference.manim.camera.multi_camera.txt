@@ -1,1 +1,1 @@
-The `multi_camera` module in Manim provides a `MultiCamera` class that allows rendering multiple perspectives in a single scene. This camera enables you to display different views or camera angles within the same animation, giving more flexibility in visualization. No specific usage examples were provided in the documentation.
+The `multi_camera` module provides the `MultiCamera` class, which is a specialized Camera object that enables rendering multiple perspectives simultaneously in a Manim scene, allowing for complex visual compositions with different camera views.

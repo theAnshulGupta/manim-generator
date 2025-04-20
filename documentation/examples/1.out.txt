@@ -1,0 +1,158 @@
+from manim import *
+
+# ---------------------------------------------------------------------------
+# Utility helpers
+# ---------------------------------------------------------------------------
+
+FRAME_W = config.frame_width  # default 14.222…
+MARGIN   = 0.8                # left–right padding when auto‑shrinking
+
+
+def shrink_to_fit(mobj: Mobject, margin: float = MARGIN):
+    """Scale mobj down so its width ≤ frame width ‑ margin (no enlargement)."""
+    max_w = FRAME_W - margin
+    if mobj.width > max_w:
+        mobj.scale_to_fit_width(max_w)
+    return mobj
+
+# ---------------------------------------------------------------------------
+# Helper functions – each adds animations to *the same* Scene instance
+# ---------------------------------------------------------------------------
+
+def play_title(scene: Scene):
+    title = Text("Bernoulli & Binomial Random Variables", font_size=64, weight=BOLD)
+    subtitle = Text("An intuitive visual introduction", font_size=36, slant=ITALIC)
+
+    shrink_to_fit(title)
+    shrink_to_fit(subtitle)
+    subtitle.next_to(title, DOWN, buff=0.4)
+
+    scene.play(Write(title, run_time=2.5))
+    scene.play(FadeIn(subtitle, shift=UP, run_time=1.8))
+    scene.wait(1)
+    scene.play(FadeOut(VGroup(title, subtitle)))
+
+
+def play_bernoulli(scene: Scene):
+    header = Text("1. Bernoulli Random Variable", font_size=48, weight=BOLD)
+    header.to_edge(UP)
+    shrink_to_fit(header)
+
+    pmf = MathTex(r"P(X=1)=p", r"\quad", r"P(X=0)=1-p", tex_to_color_map={"1": YELLOW, "0": RED, "p": BLUE})
+    pmf.next_to(header, DOWN, buff=0.5).scale(1.1)
+    shrink_to_fit(pmf)
+
+    # Success / failure icon + label groups (prevents overlap)
+    success_icon = Text("✔", color=GREEN, font_size=72)
+    success_lbl  = Text("Success → X = 1", font_size=30, color=GREEN)
+    success_grp  = VGroup(success_icon, success_lbl).arrange(DOWN, buff=0.2)
+
+    failure_icon = Text("✘", color=RED, font_size=72)
+    failure_lbl  = Text("Failure → X = 0", font_size=30, color=RED)
+    failure_grp  = VGroup(failure_icon, failure_lbl).arrange(DOWN, buff=0.2)
+
+    icons_row = VGroup(success_grp, failure_grp).arrange(RIGHT, buff=3)
+    icons_row.next_to(pmf, DOWN, buff=0.8)
+    shrink_to_fit(icons_row)
+
+    note = Text("Exactly TWO possible outcomes", font_size=32, color=YELLOW_E)
+    shrink_to_fit(note)
+    note.to_edge(DOWN)
+
+    scene.play(Write(header))
+    scene.play(FadeIn(pmf, shift=DOWN))
+    scene.play(FadeIn(icons_row, shift=DOWN))
+    scene.wait(0.5)
+    scene.play(Indicate(pmf[0]), Indicate(pmf[2]))
+    scene.play(FadeIn(note, shift=UP))
+    scene.wait(1.5)
+    scene.play(FadeOut(VGroup(header, pmf, icons_row, note)))
+
+
+def play_binomial(scene: Scene):
+    header = Text("2. Binomial Random Variable", font_size=48, weight=BOLD)
+    shrink_to_fit(header).to_edge(UP)
+
+    desc_text = (
+        "Perform n independent Bernoulli trials (success prob = p). "
+        "Let X = number of successes."
+    )
+    desc = Text(desc_text, font_size=32)
+    shrink_to_fit(desc)
+    desc.next_to(header, DOWN, buff=0.4)
+
+    pmf = MathTex(r"P(X=k)={n \choose k} p^{k}(1-p)^{n-k}", tex_to_color_map={"k": YELLOW, "n": TEAL, "p": BLUE})
+    shrink_to_fit(pmf).next_to(desc, DOWN, buff=0.6)
+
+    special = Text("When n = 1 → Bernoulli", font_size=28, color=GRAY_D)
+    shrink_to_fit(special).next_to(pmf, DOWN, buff=0.5)
+
+    scene.play(Write(header))
+    scene.play(FadeIn(desc, shift=DOWN))
+    scene.play(Write(pmf))
+    scene.play(FadeIn(special, shift=UP))
+    scene.wait(2.5)
+    scene.play(FadeOut(VGroup(header, desc, pmf, special)))
+
+
+def play_pmf(scene: Scene):
+    n, p = 4, 0.5
+    from math import comb
+    k_vals = range(n + 1)
+    probs = [comb(n, k) * p ** k * (1 - p) ** (n - k) for k in k_vals]
+
+    header = Text(f"Binomial(n={n}, p={p}) – PMF", font_size=40, weight=BOLD)
+    shrink_to_fit(header).to_edge(UP)
+    scene.play(Write(header))
+
+    chart = BarChart(
+        values=probs,
+        bar_names=[f"k={k}" for k in k_vals],
+        y_range=[0, max(probs) + 0.05, 0.1],
+        y_axis_config={"decimal_number_config": {"num_decimal_places": 2}},
+        x_length=8,
+        y_length=4,
+        bar_width=0.6,
+    ).shift(DOWN * 0.5)
+    scene.play(Create(chart))
+    scene.wait(0.4)
+
+    for k, bar in zip(k_vals, chart.bars):
+        comb_tex = MathTex(rf"{{{n} \choose {k}}} = {comb(n, k)}")
+        term_tex = MathTex(rf"p^{{{k}}}(1-p)^{{{n-k}}}", font_size=32)
+        comb_grp = VGroup(comb_tex, term_tex).arrange(DOWN, buff=0.15)
+        comb_grp.next_to(bar, UP)
+        scene.play(FocusOn(bar), FadeIn(comb_grp, shift=UP))
+        scene.wait(1.1)
+        scene.play(FadeOut(comb_grp))
+
+    scene.wait(0.8)
+    scene.play(FadeOut(VGroup(header, chart)))
+
+
+def play_summary(scene: Scene):
+    bullets = BulletedList(
+        "Bernoulli: 1 trial $\\to$ success (1) or failure (0)",
+        "Binomial: n independent Bernoulli trials",
+        r"PMF: $\displaystyle {n \choose k} p^{k}(1-p)^{n-k}$",
+        "Special case n = 1 $\\Rightarrow$ Bernoulli",
+        font_size=34,
+    )
+    shrink_to_fit(bullets)
+    scene.play(Write(bullets, run_time=5))
+    scene.wait(2.5)
+    scene.play(FadeOut(bullets))
+
+# ---------------------------------------------------------------------------
+# Single Scene that stitches everything together
+# ---------------------------------------------------------------------------
+
+class FullTutorial(Scene):
+    """Continuous ~1‑minute tutorial MP4."""
+
+    def construct(self):
+        play_title(self)
+        play_bernoulli(self)
+        play_binomial(self)
+        play_pmf(self)
+        play_summary(self)

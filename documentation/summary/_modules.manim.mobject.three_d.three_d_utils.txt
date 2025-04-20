@@ -1,10 +1,1 @@
-This module provides utility functions for 3D vector mobjects (VMobs) in Manim, focusing on retrieving specific points, indices, and unit normals:
-
-Key Functions:
-- `get_3d_vmob_gradient_start_and_end_points`: Returns start and end points of a 3D VMob
-- `get_3d_vmob_start_corner_index` & `get_3d_vmob_end_corner_index`: Get start and end corner indices
-- `get_3d_vmob_start_corner` & `get_3d_vmob_end_corner`: Get start and end corner points
-- `get_3d_vmob_unit_normal`: Calculates unit normal vector at a specific point
-- `get_3d_vmob_start_corner_unit_normal` & `get_3d_vmob_end_corner_unit_normal`: Get unit normals at start and end corners
-
-These functions are primarily used for internal 3D rendering and manipulation of vector mobjects, providing geometric utility methods for more complex 3D animations and transformations.
+This module provides utility functions for working with 3D vectorized mobjects (VMobs) in Manim. The functions help retrieve specific points, indices, and unit normals of 3D VMobs, such as start and end corners, point indices, and unit normal vectors. These utilities are useful for manipulating and calculating geometric properties of 3D objects in Manim animations, particularly for handling corners, gradients, and spatial orientation of vectorized 3D mobjects.

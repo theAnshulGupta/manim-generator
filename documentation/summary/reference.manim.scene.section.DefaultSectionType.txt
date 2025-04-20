@@ -1,10 +1,1 @@
-DefaultSectionType is an enumeration defining section types for Manim, primarily used for third-party applications like presentation systems. It has one default attribute:
-
-- `NORMAL`: A standard section type that can be used for typical scene progression
-
-The documentation provides an extensible example showing how you can create custom section types with specific behaviors like:
-- `SKIP`: Sections that immediately continue
-- `LOOP`: Sections that can restart
-- `COMPLETE_LOOP`: Sections that finish animations before restarting
-
-This allows flexible control over scene sections and potential presentation-like interactions.
+DefaultSectionType is an enumeration for classifying sections in Manim, primarily intended for third-party applications like presentation systems. It provides a standard way to define section types that can control how sections are processed or displayed, with the default NORMAL type. The documentation suggests developers can extend this enum to create custom section type classifications for specific use cases.

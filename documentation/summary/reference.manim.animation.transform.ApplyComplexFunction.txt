@@ -1,18 +1,1 @@
-ApplyComplexFunction is an animation in Manim that applies a complex function transformation to a mobject. 
-
-Key points:
-- Inherits from ApplyMethod
-- Takes a complex function and a mobject as parameters
-- Transforms the mobject by applying the complex function to its points
-- Useful for visualizing complex number transformations
-
-Example usage:
-```python
-def complex_func(z):
-    return z**2  # Square the complex number
-
-# Apply the complex transformation to a mobject
-scene.play(ApplyComplexFunction(complex_func, some_mobject))
-```
-
-This animation allows you to visually demonstrate how complex functions modify geometric objects by transforming their points according to the specified complex function.
+`ApplyComplexFunction` is an animation class that applies a complex-valued function to a specific mobject, transforming it by mapping its points through the given complex-valued function during the animation sequence. It inherits from `ApplyMethod` and allows applying complex mathematical transformations to geometric objects in Manim animations.

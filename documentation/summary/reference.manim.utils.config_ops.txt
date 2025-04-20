@@ -1,18 +1,1 @@
-Summary of config_ops:
-
-1. Contains utility functions for working with configuration dictionaries:
-
-2. `merge_dicts_recursively(*dicts)`:
-   - Creates a new dictionary merging multiple input dictionaries
-   - Uses values from first dictionary with that key
-   - Recursively merges nested dictionaries
-   - Later dictionaries have higher priority
-
-3. `update_dict_recursively(current_dict, *others)`:
-   - Updates the first dictionary with values from subsequent dictionaries
-   - Modifies the first dictionary in-place
-   - Recursively updates nested dictionaries
-
-4. Includes `DictAsObject` class (details not provided in documentation)
-
-The module provides helpers for complex dictionary manipulation, particularly useful for configuration management.
+The `config_ops` module provides utility functions for handling configuration dictionaries in Manim. `merge_dicts_recursively()` creates a merged dictionary from multiple input dictionaries, with later dictionaries taking precedence and recursive merging for nested dictionaries. `update_dict_recursively()` updates a current dictionary with values from other dictionaries recursively. The module also includes a `DictAsObject` class, which allows dictionary-like objects to be accessed with dot notation.

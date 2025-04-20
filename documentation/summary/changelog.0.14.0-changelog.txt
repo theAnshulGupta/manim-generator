@@ -1,1 +1,1 @@
-Not relevant
+Manim Community v0.14.0 release includes contributions from 29 people, with key updates such as: deprecating certain functions and classes, updating Text color handling, adding label_constructor parameter for NumberLine, enhancing Surface.set_fill_by_value(), improving DashedVMobject, fixing performance and bug issues, adding MyPy support, and various documentation improvements. Notable changes include removing deprecated methods, supporting new ManimPango color settings, and enhancing type annotations and code quality.

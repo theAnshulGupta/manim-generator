@@ -1,18 +1,1 @@
-Summary of Polygram Module:
-
-The Polygram module provides various geometric shape classes in Manim:
-
-Key Classes:
-- Polygon: Basic closed shape with connected vertices
-- Polygram: More flexible shape allowing disconnected edges
-- RegularPolygon: Polygon with equal-length sides and equal angles
-- RegularPolygram: Polygram with evenly spaced vertices
-- Rectangle: Quadrilateral with parallel sides
-- RoundedRectangle: Rectangle with rounded corners
-- Square: Rectangle with equal sides
-- Triangle: Equilateral triangle
-- Star: Regular polygram without intersecting lines
-- Cutout: Shape with smaller internal cutouts
-- ConvexHull: Constructs minimal enclosing shape around a set of points
-
-These classes allow users to create various geometric shapes programmatically in Manim animations.
+The polygram module in Manim provides classes for creating various geometric shapes, including basic polygons and more complex configurations. Key classes include Polygon (a single closed loop of vertices), Polygram (a generalized polygon allowing disconnected edges), RegularPolygon (n-sided regular polygon), RegularPolygram (polygon with regularly spaced vertices), Rectangle, Square, RoundedRectangle, Triangle, Star, and ConvexHull. These classes enable flexible creation of geometric shapes for mathematical and visual animations.

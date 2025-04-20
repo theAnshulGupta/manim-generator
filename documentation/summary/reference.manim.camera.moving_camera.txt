@@ -1,8 +1,1 @@
-The `moving_camera` module in Manim provides a `MovingCamera` class, which is a camera that can move through a scene while staying aligned with its frame (a Rectangle). 
-
-Key points:
-- Allows dynamic camera movement during animation
-- Maintains alignment with its frame's height, width, and position
-- Useful for creating scenes with camera motion or zooming effects
-
-Example usage would typically involve using the `MovingCameraScene` and its methods to control camera movement during animation.
+A MovingCamera is a specialized camera in Manim that dynamically tracks and adjusts its position relative to a specified 'frame' (a Rectangle), maintaining alignment with its height, width, and position. It enables more flexible scene visualization by allowing the camera to move and adapt to the scene's elements.

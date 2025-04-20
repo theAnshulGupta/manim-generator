@@ -1,1 +1,1 @@
-Not relevant
+ManimColorModuleDocumenter is a Sphinx directive class in Manim's docbuild utilities for processing color module documentation. It inherits from the base Directive class and is designed to handle documentation generation for color-related modules, with 1 required argument and the ability to have content. Key attributes include has_content set to True and required_arguments set to 1, indicating it can process directives with a single mandatory argument and optional additional content.

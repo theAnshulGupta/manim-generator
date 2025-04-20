@@ -1,26 +1,9 @@
-Bézier Curve Utility Functions Summary:
+The bezier module in Manim provides utility functions for working with Bézier curves, including functions to:
 
-Key Functions:
-1. `bezier(points)`: Creates a Bézier curve function from control points. Can work with single or multiple curves.
+1. Create Bézier curves using control points
+2. Split, subdivide, and remap Bézier curves
+3. Generate smooth cubic Bézier splines
+4. Interpolate between points
+5. Check point relationships with Bézier curves
 
-2. Curve Manipulation Functions:
-- `split_bezier(points, t)`: Splits a Bézier curve into two curves at point t
-- `subdivide_bezier(points, n_divisions)`: Divides a curve into n subcurves
-- `partial_bezier_points(points, a, b)`: Extracts a portion of a Bézier curve between a and b
-
-3. Smoothing Functions:
-- `get_smooth_cubic_bezier_handle_points(anchors)`: Computes smooth handle points for a cubic spline
-- `get_smooth_open_cubic_bezier_handle_points(anchors)`: For non-closed splines
-- `get_smooth_closed_cubic_bezier_handle_points(anchors)`: For closed splines
-
-4. Utility Interpolation Functions:
-- `interpolate(start, end, alpha)`: Linear interpolation
-- `inverse_interpolate(start, end, value)`: Finds alpha value for interpolation
-- `match_interpolate()`: Interpolates values between different ranges
-
-5. Point Checking Functions:
-- `point_lies_on_bezier(point, control_points)`: Checks if a point is on a Bézier curve
-- `proportions_along_bezier_curve_for_point()`: Finds curve parameter for a point
-- `is_closed(points)`: Checks if a spline is closed
-
-The module provides comprehensive tools for creating, manipulating, and analyzing Bézier curves in Manim.
+Key functions include bezier() for creating curves, split_bezier() for dividing curves, get_smooth_cubic_bezier_handle_points() for creating smooth splines, and various interpolation utilities like interpolate() and inverse_interpolate(). The module supports operations on 2D and 3D Bézier curves with efficient matrix-based implementations for low-degree curves.

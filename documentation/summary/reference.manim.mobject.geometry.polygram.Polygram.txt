@@ -1,22 +1,10 @@
-Here's a concise summary of the Polygram class:
+The Polygram class in Manim is a generalized polygon that allows for creating shapes with disconnected or multiple sets of edges. It takes vertex groups as input, where each group represents a set of points defining a polygon-like shape. Key features include:
 
-Polygram is a generalized polygon in Manim that allows for disconnected sets of edges. Key features:
+- Allows creating complex shapes with multiple disconnected vertex groups
+- Vertices must be 3-dimensional points
+- Can round corners using the `round_corners()` method
+- Provides methods to get vertex groups and individual vertices
+- Inherits from VMobject, supporting vectorized manipulation
+- Default color is a light blue (#58C4DD)
 
-Parameters:
-- vertex_groups: Lists of 3D points defining shape vertices
-- color: Shape's color (default: light blue)
-
-Methods:
-1. get_vertex_groups(): Returns the vertex groups used to create the shape
-2. get_vertices(): Returns all vertices of the shape
-3. round_corners(): Rounds the corners of the shape with optional customization
-
-Example:
-```python
-hexagram = Polygram(
-    [[0, 2, 0], [-sqrt(3), -1, 0], [sqrt(3), -1, 0]],
-    [[-sqrt(3), 1, 0], [0, -2, 0], [sqrt(3), 1, 0]]
-)
-```
-
-Key difference from Polygon: Polygram can create shapes with multiple disconnected groups of edges, while Polygon creates a single connected shape.
+The example demonstrates creating a hexagram by defining two triangular vertex groups that intersect, showing the flexibility of creating non-traditional polygon shapes with disconnected edges.

@@ -1,1 +1,1 @@
-Not relevant
+Version 0.15.1 was released on March 08, 2022, with contributions from 9 people. Key changes include support for groups in TransformMatchingTex, fixes for rendering issues with introducer animations, image display in Jupyter Notebooks, and Tex string rendering, along with docstring refactoring and type hint corrections. 9 pull requests were merged, addressing various bugs and enhancing functionality.

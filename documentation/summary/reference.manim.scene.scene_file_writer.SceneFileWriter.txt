@@ -1,16 +1,1 @@
-`SceneFileWriter` is an internal Manim class responsible for writing animations to video files using FFMPEG. Most users won't directly interact with this class.
-
-Key attributes:
-- `write_to_movie` (bool): Whether to write animations to a video file
-- `movie_file_extension` (str): Output video file type (default ".mp4")
-- `partial_movie_files`: List of partial movie file paths
-
-Important methods:
-- `add_sound()`: Add audio to the video at a specific timestamp
-- `begin_animation()`: Start streaming animation to FFMPEG
-- `combine_to_movie()`: Combine partial movie files into a single video
-- `finish()`: Complete video writing process
-- `save_final_image()`: Save the final frame of an animation
-- `write_frame()`: Write a single frame to the video stream
-
-Users typically won't need to use these methods directly, as they are handled automatically by Manim's rendering process. This class is mainly for internal use in Manim's rendering pipeline.
+SceneFileWriter is an internal Manim class responsible for writing animations to video files using FFMPEG. It manages video rendering, including handling partial movie files, audio segments, output directories, and video encoding. Key features include adding audio, caching partial movie files, combining video segments, and controlling video output settings. Primarily used internally by Manim for video generation, it provides methods for writing frames, managing sections, and finalizing video output.

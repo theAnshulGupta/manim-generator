@@ -1,1 +1,1 @@
-Not relevant
+This changelog for Manim v0.13.0 highlights 39 merged pull requests involving 27 contributors. Key updates include: adding subcaption support, improved graph layout algorithm, SVG logo resizing, coordinate system antiderivative graphing, bug fixes for ThreeDAxes alignment and RGBA value handling, documentation improvements, and removal of several deprecated methods and classes.

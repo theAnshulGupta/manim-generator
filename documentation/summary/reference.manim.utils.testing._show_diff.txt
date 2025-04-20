@@ -1,1 +1,1 @@
-Not relevant. This appears to be an internal testing utility function that is not meant for typical Manim usage, and would only be of interest to Manim library developers.
+A utility function `show_diff_helper()` used for visually displaying differences between generated and expected frames during testing, taking frame number, current frame data, expected frame data, and a control data filename as inputs, and uses matplotlib to highlight discrepancies between image frames.

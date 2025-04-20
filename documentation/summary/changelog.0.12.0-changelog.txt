@@ -1,1 +1,1 @@
-Not relevant
+Summary of Manim v0.12.0 changelog: This release introduced significant features like scene sections via `Scene.next_section()`, logarithmic scaling for NumberLine, MovingCamera auto-zoom, and improvements to coordinate systems. There were 40 contributors, 52 merged pull requests, deprecation of some classes/methods, new API capabilities, bug fixes, performance enhancements, and infrastructure updates. Key highlights include better scene management, expanded mathematical plotting options, OpenGL renderer improvements, and code quality refinements.

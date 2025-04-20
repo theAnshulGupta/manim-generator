@@ -1,25 +1,24 @@
-Here's a concise summary of the `manim.utils.bezier` module:
+The `manim.utils.bezier` module provides utility functions related to Bézier curves, including:
 
-This module provides utility functions for working with Bézier curves, including:
+1. Bezier curve generation and manipulation functions:
+- `bezier()`: Generates Bézier curves of various degrees
+- `partial_bezier_points()`: Extracts a portion of a Bézier curve
+- `split_bezier()`: Splits a Bézier curve at a specific point
+- `subdivide_bezier()`: Subdivides a Bézier curve into multiple parts
+- `bezier_remap()`: Remaps Bézier curves to a desired number of curves
 
-1. Curve Creation and Manipulation:
-- `bezier(points)`: Creates a Bézier curve function from control points
-- `split_bezier(points, t)`: Splits a Bézier curve at a specific point
-- `subdivide_bezier(points, n_divisions)`: Subdivides a Bézier curve into multiple subcurves
+2. Interpolation functions:
+- `interpolate()`: Linear interpolation between values
+- `integer_interpolate()`: Integer-based interpolation
+- `mid()`: Calculates midpoint
+- `inverse_interpolate()`: Calculates interpolation alpha
+- `match_interpolate()`: Interpolates values between ranges
 
-2. Interpolation Functions:
-- `interpolate(start, end, alpha)`: Linear interpolation between two values
-- `integer_interpolate(start, end, alpha)`: Integer-based interpolation
-- `inverse_interpolate(start, end, value)`: Calculates interpolation alpha
-- `match_interpolate()`: Interpolates values between different ranges
-
-3. Curve Smoothing:
-- `get_smooth_cubic_bezier_handle_points(anchors)`: Generates smooth handle points for cubic Bézier curves
+3. Curve smoothing functions:
+- `get_smooth_cubic_bezier_handle_points()`: Generates smooth handle points for cubic Bézier curves
 - `get_quadratic_approximation_of_cubic()`: Approximates cubic Bézier curves with quadratic curves
 
-4. Utility Functions:
-- `bezier_remap()`: Remaps Bézier curves to a different number of curves
-- `is_closed(points)`: Checks if a spline is closed
+4. Utility functions:
+- `is_closed()`: Checks if a spline is closed
+- `proportions_along_bezier_curve_for_point()`: Finds parameter values for a point on a Bézier curve
 - `point_lies_on_bezier()`: Checks if a point lies on a Bézier curve
-
-The module mainly deals with mathematical operations for creating, manipulating, and analyzing Bézier curves with various interpolation and smoothing techniques.

@@ -1,10 +1,1 @@
-The RerunSceneHandler is a utility class in Manim that automatically reruns a scene when its source file is modified. It's designed to help developers quickly iterate on their animations by watching for file changes and automatically re-rendering the scene. 
-
-Key points:
-- Inherits from FileSystemEventHandler
-- Triggered when a file is modified
-- Useful for real-time development and preview of Manim animations
-
-Example usage would typically involve setting up a file watcher that uses this handler to automatically rerun a scene during development.
-
-Note: This is a technical implementation detail that most users won't directly interact with, but it's helpful for developers working on Manim animations.
+A utility class in Manim that inherits from FileSystemEventHandler, designed to automatically rerun a Scene when its source file is modified. The `on_modified()` method is triggered when a file or directory changes, allowing for dynamic scene regeneration during development. Useful for real-time scene editing and preview.

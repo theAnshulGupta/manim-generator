@@ -1,16 +1,1 @@
-The `rotation` module in Manim provides two key animations for rotating mobjects:
-
-1. `Rotate`: An animation that rotates a mobject
-   - Key parameters:
-     - Specify angle of rotation
-     - Rotation axis
-     - Optional pivot point
-   - Example:
-     ```python
-     circle.animate.rotate(PI/2)  # Rotates 90 degrees
-     ```
-
-2. `Rotating`: Likely a continuous rotation animation
-   - Specifics would require more detailed documentation
-
-These animations allow you to create rotational movements for geometric objects in Manim animations.
+The rotation module in Manim provides animations for rotating mobjects. It contains two key classes: `Rotate`, an animation that rotates a mobject about a specific point with configurable angle and direction, and `Rotating`, which likely represents a continuous rotation animation. These classes enable developers to create dynamic rotational transformations in mathematical visualizations and animations.

@@ -1,1 +1,1 @@
-Not relevant
+A lightweight class derived from TypedDict that appears to be used in the context of documentation build metadata, with attributes `parallel_read_safe` and `parallel_write_safe` likely indicating whether documentation processing can be performed in parallel. The specific implementation details are minimal and not extensively elaborated in the documentation.

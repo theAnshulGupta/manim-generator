@@ -1,15 +1,1 @@
-`LinearBase` is a class for linear scaling in Manim:
-
-- It's a default scaling class with a scale factor (default: 1.0)
-- Has two main methods:
-  1. `function(value)`: Multiplies input value by scale factor
-  2. `inverse_function(value)`: Divides input value by scale factor
-
-Example implementation:
-```python
-scale = LinearBase(2.0)
-print(scale.function(5))      # Returns 10.0
-print(scale.inverse_function(10))  # Returns 5.0
-```
-
-The class is essentially a simple linear transformation that can scale values up or down based on the specified scale factor.
+`LinearBase` is a scaling class in Manim that provides linear scaling functionality. It takes an optional `scale_factor` (default 1.0) and offers two methods: `function()` which multiplies an input value by the scale factor, and `inverse_function()` which divides an input value by the scale factor, enabling straightforward linear transformations of numeric values.

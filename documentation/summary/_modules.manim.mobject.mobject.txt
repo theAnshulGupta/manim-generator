@@ -1,32 +1,12 @@
-Here's a summary of the `manim.mobject.mobject` module:
+The `manim.mobject.mobject` module defines the base `Mobject` class, which is the fundamental building block for all objects that can be displayed in Manim. Key features include:
 
-The module defines two main classes: `Mobject` (base class for mathematical objects) and `Group` (for grouping mobjects).
+- Base class for mathematical objects with points, submobjects, colors, and various transformation/manipulation methods
+- Supports adding/removing submobjects, applying functions, scaling, rotating, positioning, and aligning
+- Provides methods for color manipulation, interpolation, and state management
+- Includes updater functionality for dynamic object behavior
+- Offers methods for positioning, arranging, and transforming objects
+- Supports z-index for controlling display order
+- Provides a `Group` class for collecting multiple mobjects
+- Implements an `animate` property for creating animations of method applications
 
-Key `Mobject` features:
-- Initialization with color, name, dimensions
-- Point and submobject management
-- Positioning and transformation methods (shift, scale, rotate, etc.)
-- Color manipulation
-- Updater and animation support
-- Alignment and arrangement methods
-- Coordinate and size getters/setters
-
-Example methods include:
-- `add()`: Add submobjects
-- `shift()`: Move object
-- `scale()`: Resize object
-- `rotate()`: Rotate object
-- `set_color()`: Change object color
-- `next_to()`: Position relative to another object
-- `arrange()`: Arrange submobjects
-- `animate`: Property for creating animations
-
-The `_AnimationBuilder` and `override_animate` support custom animation methods.
-
-Key functionalities:
-- Flexible object manipulation
-- Hierarchical object structure
-- Animation and transformation support
-- Coordinate and color management
-
-Not relevant to core usage: internal implementation details, type hints, and some less common methods.
+The module serves as a core component of Manim, providing a flexible and extensible base for creating and manipulating mathematical visualizations.

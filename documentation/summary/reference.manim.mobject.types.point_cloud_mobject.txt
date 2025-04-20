@@ -1,11 +1,1 @@
-Point cloud mobjects are specialized Manim objects representing collections of points:
-
-Key Classes:
-- Point: Basic point mobject
-- PGroup: Group of point mobjects
-- PMobject: Disc made of dot cloud
-- PointCloudDot: Specialized dot cloud disc
-- Mobject1D: 1-dimensional point cloud
-- Mobject2D: 2-dimensional point cloud
-
-These classes are useful for creating and manipulating point-based visual representations in Manim, allowing complex point cloud and scatter plot-like animations and visualizations.
+Point cloud mobjects are Manim classes for representing collections of points in 1D and 2D spaces. The module includes `Mobject1D`, `Mobject2D`, `PGroup` (a group for point mobjects), `PMobject` (a disc of dots), `Point` (representing a single point), and `PointCloudDot` (a disc made of dots). These classes provide flexible ways to create and manipulate point-based visual elements in Manim animations.

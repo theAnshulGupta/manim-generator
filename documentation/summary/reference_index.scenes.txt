@@ -1,15 +1,1 @@
-Scenes in Manim are specialized classes that serve as canvases for creating animations and visualizations:
-
-1. `Scene`: The basic base class for creating animations, where you add and manipulate mobjects and define their behaviors.
-
-2. `MovingCameraScene`: Allows dynamic camera movement during animations, enabling zooming, panning, and repositioning.
-
-3. `ThreeDScene`: Specifically designed for rendering and animating 3D objects and scenes.
-
-4. `VectorSpaceScene`: Useful for visualizing vector-related concepts and transformations.
-
-5. `ZoomedScene`: Provides functionality to zoom in on specific parts of the animation.
-
-6. `Section`: A building block for creating segmented video content, allowing more structured video creation.
-
-Each scene type offers unique capabilities for different animation and visualization needs, providing flexibility in creating mathematical and educational animations.
+Scenes in Manim are fundamental components for creating animations, with several specialized types: MovingCameraScene (for mobile camera), Scene (basic animation canvas), ThreeDScene (for 3D rendering), VectorSpaceScene (for vector space visualizations), ZoomedScene (for zooming capabilities), and Section (for segmented video creation). Each scene type provides unique capabilities for constructing different kinds of mathematical and visual animations, serving as the core framework for generating dynamic content.

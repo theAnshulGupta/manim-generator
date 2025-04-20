@@ -1,1 +1,1 @@
-Not relevant
+Version 0.2.0 of Manim Community was released on January 1, 2021, with significant changes including removal of CONFIG dictionaries and old animation syntax, introduction of the .animate property for animations, added support for a plugin system, new MarkupText implementation, type hints, Graph class, and numerous bugfixes. Key breaking changes involve updating class construction and animation methods, while new features encompass improved text rendering, more flexible mobject manipulation, and enhanced documentation.

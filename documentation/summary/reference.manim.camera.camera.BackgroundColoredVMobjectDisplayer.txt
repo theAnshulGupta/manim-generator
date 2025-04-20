@@ -1,17 +1,1 @@
-This is an auxiliary class in the Manim camera module for handling the display of vectorized mobjects with a background image. Its key methods include:
-
-1. `display(*cvmobjects)`: Displays colored VMobjects on the scene
-   - Takes VMobjects as input
-   - Returns pixel array with objects displayed
-
-2. `get_background_array(image)`: Retrieves pixel array for a background image
-   - Accepts image file or path
-   - Returns numpy array representing image pixels
-
-3. `resize_background_array(background_array, new_width, new_height)`: Resizes background pixel array
-   - Adjusts background image dimensions
-   - Returns resized numpy pixel array
-
-4. `resize_background_array_to_match(background_array, pixel_array)`: Resizes background to match another pixel array's dimensions
-
-Primarily used internally by Manim's rendering system to manage background images and object rendering.
+BackgroundColoredVMobjectDisplayer is an auxiliary class in Manim that handles displaying vectorized mobjects with a set background image. It provides methods to load, resize, and manipulate background images, including display() for rendering VMobjects, get_background_array() for retrieving image pixel arrays, and resize_background_array() for adjusting background image dimensions. The class takes a Camera object as a parameter and helps manage background image rendering in Manim scenes.

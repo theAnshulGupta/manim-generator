@@ -1,18 +1,1 @@
-This module provides utility functions for working with dictionaries in Manim:
-
-1. `merge_dicts_recursively(*dicts)`: 
-   - Merges multiple dictionaries recursively
-   - Later dictionaries have higher priority
-   - Recursively merges nested dictionaries
-   - Returns a new merged dictionary
-
-2. `update_dict_recursively(current_dict, *others)`:
-   - Updates a dictionary in-place using recursive merging
-   - Modifies the first dictionary with values from subsequent dictionaries
-
-3. `DictAsObject`:
-   - A simple class that converts a dictionary to an object
-   - Allows accessing dictionary keys as attributes
-   - Example: `obj.x` instead of `obj["x"]`
-
-The module also contains two descriptor classes (`_Data` and `_Uniforms`) which seem to be internal utilities for handling data and uniform attributes, but are likely not meant for direct user interaction.
+Provides utility functions for handling configuration dictionaries in Manim: `merge_dicts_recursively()` merges multiple dictionaries recursively with later dictionaries having higher priority, `update_dict_recursively()` updates a dictionary using merged results, and `DictAsObject` allows dictionary-like object attribute access. Additionally includes descriptor classes `_Data` and `_Uniforms` for managing grouped data and uniforms attributes.

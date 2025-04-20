@@ -1,0 +1,48 @@
+\textbf{Linear Regression}
+
+Given \(n\) data pairs \(\bigl(x_i, y_i\bigr)\), the estimates that minimize the sum of the squared residuals are given by
+\[
+\hat{\theta}_1 \;=\; \frac{\sum_{i=1}^n (x_i - \bar{x})(y_i - \bar{y})}{\sum_{i=1}^n (x_i - \bar{x})^2},
+\quad
+\hat{\theta}_0 \;=\; \bar{y} \;-\; \hat{\theta}_1\,\bar{x},
+\]
+where
+\[
+\bar{x} \;=\; \frac{1}{n}\,\sum_{i=1}^n x_i,
+\quad
+\bar{y} \;=\; \frac{1}{n}\,\sum_{i=1}^n y_i.
+\]
+
+\textit{Example 9.9.} The leaning tower of Pisa continuously tilts over time. Measurements between years 1975 and 1987 of the “lean” of a fixed point on the tower (the distance in meters of the actual position of the point, and its position if the tower were straight) have produced the following table.
+
+\[
+\begin{array}{c|ccccccc}
+\text{Year} & 1975 & 1976 & 1977 & 1978 & 1979 & 1980 & 1981 \\ \hline
+\text{Lean} & 2.9642 & 2.9644 & 2.9656 & 2.9667 & 2.9673 & 2.9688 & 2.9696
+\end{array}
+\]
+
+\[
+\begin{array}{c|cccccc}
+\text{Year} & 1982 & 1983 & 1984 & 1985 & 1986 & 1987 \\ \hline
+\text{Lean} & 2.9698 & 2.9713 & 2.9717 & 2.9725 & 2.9742 & 2.9757
+\end{array}
+\]
+
+Let us use linear regression to estimate the parameters \(\theta_0\) and \(\theta_1\) in a model of the form \(y = \theta_0 + \theta_1 x\), where \(x\) is the year and \(y\) is the lean. Using the regression formulas, we obtain
+\[
+\hat{\theta}_1 \;=\; 0.0009,
+\quad
+\hat{\theta}_0 \;=\; 1.1233,
+\]
+where
+\[
+\bar{x} \;=\; 1981,
+\quad
+\bar{y} \;=\; 2.9694.
+\]
+The estimated linear model is
+\[
+y \;=\; 0.0009\,x \;+\; 1.1233,
+\]
+and is illustrated in Figure 9.6.

@@ -1,1 +1,1 @@
-Not relevant
+The testing module provides utilities for testing Manim using pytest, with a focus on helping developers create and run tests for the library. It includes submodules for frame testing, difference visualization, and test class creation, and is part of Manim's development process for ensuring code quality and reliability.

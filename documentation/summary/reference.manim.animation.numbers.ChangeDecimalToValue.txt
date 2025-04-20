@@ -1,15 +1,1 @@
-`ChangeDecimalToValue` is an animation in Manim that changes a `DecimalNumber` from its current value to a target value smoothly. 
-
-Key features:
-- Inherits from `ChangingDecimal`
-- Takes two main parameters:
-  1. `decimal_mob`: The `DecimalNumber` to be animated
-  2. `target_number`: The final value to transform to
-
-Example usage would look like:
-```python
-decimal = DecimalNumber(10)
-self.play(ChangeDecimalToValue(decimal, 20))  # Animates decimal from 10 to 20
-```
-
-The animation interpolates the number smoothly between its starting and ending values during the animation's runtime.
+ChangeDecimalToValue is an animation class in Manim that smoothly transitions a DecimalNumber object from its current value to a specified target number. It inherits from ChangingDecimal and allows users to animate the gradual change of a numeric value with customizable parameters. The animation takes a DecimalNumber mobject and a target number as inputs, creating a fluid numeric transformation during the animation sequence.

@@ -1,11 +1,1 @@
-`FullScreenRectangle` is a Manim mobject representing a rectangle that fills the entire screen. It inherits from `ScreenRectangle` and provides a way to create a full-screen rectangular area in a Manim scene. No constructor-specific details are provided, so it uses default initialization with optional keyword arguments. It can be customized like other Manim mobjects with properties such as color, fill_color, and other standard mobject attributes.
-
-Example usage:
-```python
-from manim import *
-
-class FullScreenExample(Scene):
-    def construct(self):
-        rect = FullScreenRectangle()
-        self.add(rect)
-```
+A subclass of ScreenRectangle that creates a rectangle covering the entire screen, inheriting attributes like width, height, and color. It can be used to create full-screen background elements in Manim animations, with customizable properties through keyword arguments.

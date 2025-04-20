@@ -1,11 +1,1 @@
-Coordinate Systems in Manim provide classes for creating various types of graphical coordinate systems:
-
-Key Classes:
-1. `CoordinateSystem`: Abstract base class for coordinate systems
-2. `Axes`: Creates standard Cartesian axes
-3. `NumberPlane`: Creates a Cartesian plane with background grid lines
-4. `ComplexPlane`: Specialized NumberPlane for complex numbers
-5. `PolarPlane`: Creates a polar coordinate system
-6. `ThreeDAxes`: 3D coordinate system
-
-Each class allows you to customize axis lines, labels, tick marks, and ranges. They are fundamental for graphing functions, plotting points, and visualizing mathematical concepts in Manim animations.
+The `coordinate_systems` module in Manim provides classes for creating various coordinate systems, including `Axes` (standard Cartesian axes), `ComplexPlane` (specialized for complex numbers), `CoordinateSystem` (abstract base class), `NumberPlane` (Cartesian plane with background lines), `PolarPlane` (polar coordinate system), and `ThreeDAxes` (3D coordinate system). These classes allow users to create and customize different types of coordinate systems for mathematical visualizations and graphing purposes.

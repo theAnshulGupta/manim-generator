@@ -1,14 +1,1 @@
-This module provides a custom Sphinx directive `AliasAttrDocumenter` for automatically documenting type aliases and module-level attributes in Manim's documentation. Key features include:
-
-- Parses module attributes using `parse_module_attributes()`
-- Creates separate sections for:
-  1. Type Aliases
-  2. TypeVars
-  3. Module Attributes
-
-- Automatically cross-references type aliases within documentation
-- Uses `smart_replace()` to handle overlapping alias replacements
-- Supports categorization of type aliases
-- Generates documentation with hyperlinks and parsed literals
-
-The main purpose is to improve the automatic documentation generation process for Manim's type aliases and module attributes.
+The `autoaliasattr_directive` module provides a custom Sphinx directive `AliasAttrDocumenter` for documenting type aliases and module-level attributes in Manim. It automatically generates sections for type aliases, TypeVars, and other module attributes by parsing module information using `parse_module_attributes()`. The directive supports intelligent cross-referencing, categorization of aliases, and preserves documentation for each alias, ensuring comprehensive and structured documentation generation.

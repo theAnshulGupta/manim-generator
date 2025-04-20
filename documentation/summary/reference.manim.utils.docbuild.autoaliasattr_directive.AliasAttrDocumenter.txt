@@ -1,1 +1,1 @@
-Not relevant. This appears to be a technical implementation detail related to documentation generation for the Manim library's documentation system, which is not important for typical users of Manim.
+A custom Sphinx directive for processing module-level type aliases in Manim documentation. It crafts a separate "Type Aliases" section by manually identifying and extracting module-level attributes explicitly annotated as TypeAlias, distinguishing them from regular module attributes. This helps improve documentation organization by providing a clear separation of type aliases.

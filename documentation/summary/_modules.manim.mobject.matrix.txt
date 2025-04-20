@@ -1,29 +1,11 @@
-The `manim.mobject.matrix` module provides classes for creating matrices with various entry types in Manim. Here's a concise summary:
+This module provides classes for creating and manipulating matrix representations in Manim. The key classes are:
 
-1. `Matrix`: Basic matrix class
-   - Supports customizable entries, brackets, colors
-   - Methods like `get_columns()`, `get_rows()`, `set_column_colors()`, `set_row_colors()`
+1. `Matrix`: Creates a basic matrix with customizable brackets, element formatting, and styling options. Supports setting column/row colors, adding background rectangles, and accessing matrix entries.
 
-2. Specialized Matrix Classes:
-   - `DecimalMatrix`: Matrix with decimal number entries
-   - `IntegerMatrix`: Matrix with integer entries
-   - `MobjectMatrix`: Matrix with arbitrary mobject entries
+2. `DecimalMatrix`: A specialized matrix for displaying decimal numbers with configurable decimal places.
 
-3. Example Use:
-```python
-# Basic matrix
-m0 = Matrix([["π", 3], [1, 5]])
+3. `IntegerMatrix`: A matrix specifically for integer entries, automatically rounding decimal inputs.
 
-# Decimal matrix with 2 decimal places
-m1 = DecimalMatrix([[3.456, 2.122]], element_to_mobject_config={"num_decimal_places": 2})
+4. `MobjectMatrix`: Allows creating matrices with arbitrary mobject entries, enabling complex visual representations.
 
-# Matrix with mixed mobject entries
-m2 = MobjectMatrix([[Circle(), Square()], [MathTex("π"), Star()]])
-```
-
-4. Additional Features:
-   - Customizable bracket types
-   - Background rectangles for entries
-   - Color manipulation of rows/columns
-
-The module provides flexible ways to create and manipulate matrix visualizations in Manim.
+Utility functions include `matrix_to_tex_string()` for LaTeX conversion and `get_det_text()` for displaying matrix determinants. The module offers extensive customization for matrix visualization in mathematical animations.

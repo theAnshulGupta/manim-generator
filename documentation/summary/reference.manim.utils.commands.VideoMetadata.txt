@@ -1,11 +1,1 @@
-Video metadata class in Manim that represents technical details about a video. It's a TypedDict with the following attributes:
-
-- `width`: Width of the video in pixels
-- `height`: Height of the video in pixels
-- `nb_frames`: Total number of frames in the video
-- `duration`: Total video duration
-- `avg_frame_rate`: Average frames per second
-- `codec_name`: Name of the video codec used
-- `pix_fmt`: Pixel format of the video
-
-Essentially, it provides a structured way to store key technical information about a video file.
+A TypedDict class in Manim's utils.commands module representing video metadata, containing attributes like width, height, number of frames, duration, average frame rate, codec name, and pixel format. Used for storing technical information about video files during Manim rendering and processing.

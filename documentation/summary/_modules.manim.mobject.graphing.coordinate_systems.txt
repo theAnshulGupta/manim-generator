@@ -1,40 +1,24 @@
-Here's a concise summary of the documentation for `manim.mobject.graphing.coordinate_systems`:
+The `manim.mobject.graphing.coordinate_systems` module provides classes for creating and manipulating coordinate systems in Manim. Here's a concise summary:
 
-The module provides classes for creating coordinate systems in Manim:
+The module defines several key coordinate system classes:
 
-1. `CoordinateSystem`: Abstract base class for coordinate systems
-   - Methods for converting between coordinates and points
-   - Supports plotting functions, curves, and surfaces
-   - Calculus-related methods like derivatives and area calculation
+1. `CoordinateSystem`: Abstract base class with core methods for coordinate transformations and graphing.
 
-2. `Axes`: Creates a 2D coordinate system
-   - Configurable x and y ranges, lengths
-   - Supports axis labels and coordinate labels
-   - Plotting methods like `plot()`, `plot_parametric_curve()`
+2. `Axes`: Creates a standard 2D coordinate system with x and y axes, supporting various configuration options like range, length, and styling.
 
-3. `ThreeDAxes`: 3D coordinate system extending `Axes`
-   - Adds z-axis
-   - Methods for z-axis labeling
+3. `ThreeDAxes`: Extends `Axes` to create a 3D coordinate system with x, y, and z axes.
 
-4. `NumberPlane`: Cartesian plane with background grid lines
-   - Customizable line styles
-   - Background and faded lines
+4. `NumberPlane`: A coordinate system with background grid lines, allowing customizable styling and visualization.
 
-5. `PolarPlane`: Polar coordinate system
-   - Configurable azimuth units and direction
-   - Radius and angle labeling
+5. `PolarPlane`: Creates a polar coordinate system with configurable azimuth units and radius scaling.
 
-6. `ComplexPlane`: Specialized `NumberPlane` for complex numbers
-   - Methods to convert between complex numbers and points
+6. `ComplexPlane`: A specialized `NumberPlane` for working with complex numbers, providing methods to convert between complex numbers and points.
 
-Key features:
-- Extensive plotting capabilities
-- Coordinate conversion
-- Flexible configuration options
-- Support for various mathematical visualizations
+Key features include:
+- Coordinate transformation methods
+- Graphing functions (plot, plot_derivative, etc.)
+- Customizable axis labels and styling
+- Support for various coordinate systems (Cartesian, polar, complex)
+- Methods for adding coordinates, lines, and other graphical elements
 
-Example usage:
-```python
-ax = Axes()
-curve = ax.plot(lambda x: np.sin(x))
-```
+These classes provide flexible tools for creating and manipulating coordinate systems in mathematical visualizations.

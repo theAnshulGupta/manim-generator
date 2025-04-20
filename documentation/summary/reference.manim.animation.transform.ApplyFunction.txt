@@ -1,16 +1,1 @@
-The `ApplyFunction` is an animation that transforms a mobject by applying a custom function to it. Key points:
-
-- Inherits from `Transform`
-- Takes a function and a mobject as parameters
-- The function defines how the mobject will be transformed
-
-Example usage:
-```python
-# Apply a function that scales and rotates a mobject
-def custom_transform(mob):
-    return mob.scale(1.5).rotate(PI/4)
-
-scene.play(ApplyFunction(custom_transform, my_mobject))
-```
-
-This animation allows you to create custom transformations by defining a function that modifies the mobject's properties during the animation.
+ApplyFunction is a Transform animation in Manim that applies a specific function to a mobject, modifying its properties. It takes a function and a mobject as inputs, transforming the mobject by applying the given function during the animation. This allows dynamic modification of mobject characteristics like position, size, color, or shape during the animation process.

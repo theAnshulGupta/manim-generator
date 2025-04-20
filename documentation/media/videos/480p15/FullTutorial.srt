@@ -1,0 +1,316 @@
+1
+00:00:00,000 --> 00:00:03,502
+Welcome to this tutorial on Gradient Descent, one of
+
+2
+00:00:03,602 --> 00:00:07,868
+the most important optimization techniques in machine learning.
+
+3
+00:00:07,968 --> 00:00:12,538
+In supervised learning, we often want to find the parameter set
+
+4
+00:00:12,638 --> 00:00:17,060
+theta star that minimizes some objective function J of theta.
+
+5
+00:00:17,101 --> 00:00:21,117
+When the objective function is too complex for closed-form
+
+6
+00:00:21,217 --> 00:00:25,162
+optimization, or when the parameter dimension is huge, we
+
+7
+00:00:25,262 --> 00:00:28,569
+turn to iterative methods like gradient descent.
+
+8
+00:00:28,634 --> 00:00:33,785
+Intuitively, imagine J of theta as a terrain. Gradient descent starts
+
+9
+00:00:33,885 --> 00:00:39,189
+from an initial point, looks for the steepest downward direction, takes
+
+10
+00:00:39,289 --> 00:00:43,222
+a small step, and repeats until it reaches a minimum.
+
+11
+00:00:43,301 --> 00:00:47,010
+In this tutorial, we'll explore gradient descent
+
+12
+00:00:47,110 --> 00:00:51,692
+in four stages: One-dimensional gradient descent, extension
+
+13
+00:00:51,792 --> 00:00:55,660
+to many dimensions, application to regression, and
+
+14
+00:00:55,760 --> 00:01:00,025
+finally stochastic gradient descent for large datasets.
+
+15
+00:01:00,101 --> 00:01:03,529
+Let's start with gradient descent in one dimension.
+
+16
+00:01:03,568 --> 00:01:08,578
+In the one-dimensional case, we have three hyperparameters: the
+
+17
+00:01:08,678 --> 00:01:12,714
+initial value theta init, the step size or learning
+
+18
+00:01:12,814 --> 00:01:16,284
+rate eta, and an accuracy threshold epsilon.
+
+19
+00:01:16,368 --> 00:01:20,276
+Here's the algorithm for one-dimensional gradient descent.
+
+20
+00:01:20,368 --> 00:01:25,496
+Let's see an example with the function f of x equals x minus
+
+21
+00:01:25,596 --> 00:01:30,900
+2 squared, starting at x equals 4 with a learning rate of 0.5.
+
+22
+00:01:30,968 --> 00:01:34,240
+Now, let's run through a few iterations
+
+23
+00:01:34,340 --> 00:01:37,612
+of gradient descent with step size 0.5.
+
+24
+00:01:37,701 --> 00:01:42,110
+We've converged to the minimum at x equals 2 in just one step
+
+25
+00:01:42,210 --> 00:01:47,729
+because this is a quadratic function and our step size was optimally chosen.
+
+26
+00:01:47,768 --> 00:01:52,468
+For convex functions like this one, gradient descent converges to
+
+27
+00:01:52,568 --> 00:01:56,308
+the global minimum if the step size is small enough.
+
+28
+00:01:56,368 --> 00:02:01,526
+However, if the function is non-convex, convergence depends on the
+
+29
+00:02:01,626 --> 00:02:06,307
+starting point and step size. Gradient descent can get stuck
+
+30
+00:02:06,407 --> 00:02:10,212
+at saddle points or diverge if no minimum exists.
+
+31
+00:02:10,301 --> 00:02:14,713
+Now, let's extend gradient descent to multiple dimensions.
+
+32
+00:02:14,813 --> 00:02:17,610
+When the parameter theta is in R to the
+
+33
+00:02:17,710 --> 00:02:21,769
+m, the gradient becomes a vector of partial derivatives.
+
+34
+00:02:21,813 --> 00:02:27,609
+The gradient descent update becomes: Theta t equals Theta t minus 1
+
+35
+00:02:27,709 --> 00:02:32,273
+minus eta times the gradient of f at Theta t minus 1.
+
+36
+00:02:32,346 --> 00:02:35,212
+Let's visualize gradient descent in two
+
+37
+00:02:35,312 --> 00:02:38,558
+dimensions with a simple quadratic function.
+
+38
+00:02:39,346 --> 00:02:43,434
+In multiple dimensions, we follow the negative gradient at
+
+39
+00:02:43,534 --> 00:02:47,406
+each point, which is the direction of steepest descent.
+
+40
+00:02:47,480 --> 00:02:50,991
+For termination, we typically use a function change
+
+41
+00:02:51,091 --> 00:02:54,743
+threshold, where we stop when the absolute difference
+
+42
+00:02:54,843 --> 00:02:58,780
+between consecutive function values is less than epsilon.
+
+43
+00:02:58,880 --> 00:03:01,615
+Now, let's apply gradient descent to
+
+44
+00:03:01,715 --> 00:03:04,924
+linear regression with squared error loss.
+
+45
+00:03:05,013 --> 00:03:08,750
+For linear regression, our objective function is the
+
+46
+00:03:08,850 --> 00:03:12,809
+mean squared error between predictions and true values.
+
+47
+00:03:12,880 --> 00:03:17,604
+The gradient of this objective with respect to theta is given by:
+
+48
+00:03:17,680 --> 00:03:20,028
+Which leads to the update rule:
+
+49
+00:03:20,080 --> 00:03:22,522
+For ridge regression, we add L2
+
+50
+00:03:22,622 --> 00:03:25,884
+regularization to the objective function.
+
+51
+00:03:25,946 --> 00:03:30,118
+This gives us the following gradients for theta and theta zero:
+
+52
+00:03:30,213 --> 00:03:33,014
+Let's visualize how gradient descent works
+
+53
+00:03:33,114 --> 00:03:35,225
+for a simple regression problem.
+
+54
+00:03:41,213 --> 00:03:46,561
+Finally, let's look at stochastic gradient descent, or SGD.
+
+55
+00:03:46,613 --> 00:03:49,814
+When our objective function is a sum over many
+
+56
+00:03:49,914 --> 00:03:53,761
+data points, computing the full gradient can be costly.
+
+57
+00:03:53,813 --> 00:03:57,656
+Stochastic gradient descent updates using only one
+
+58
+00:03:57,756 --> 00:04:00,337
+randomly chosen term at each step.
+
+59
+00:04:00,413 --> 00:04:05,503
+If the objective is convex and the learning rate sequence satisfies
+
+60
+00:04:05,603 --> 00:04:10,849
+specific conditions, SGD converges to the optimum with probability 1.
+
+61
+00:04:10,946 --> 00:04:16,149
+There are several reasons to use SGD. First, it's more efficient
+
+62
+00:04:16,249 --> 00:04:21,286
+for large datasets, as each step only requires one data point.
+
+63
+00:04:21,346 --> 00:04:25,108
+Second, the noise in SGD updates may help escape
+
+64
+00:04:25,208 --> 00:04:29,934
+shallow local minima that would trap batch gradient descent.
+
+65
+00:04:30,013 --> 00:04:35,028
+Finally, SGD's slight under-optimization can reduce overfitting,
+
+66
+00:04:35,128 --> 00:04:39,105
+often leading to better generalization performance.
+
+67
+00:04:39,146 --> 00:04:44,398
+Let's compare the trajectories of batch gradient descent and SGD.
+
+68
+00:04:53,146 --> 00:04:56,598
+Let's summarize what we've learned about gradient descent.
+
+69
+00:04:56,680 --> 00:05:01,583
+Gradient descent is an iterative optimization algorithm that minimizes
+
+70
+00:05:01,683 --> 00:05:06,372
+an objective function by following the negative gradient direction.
+
+71
+00:05:06,413 --> 00:05:09,018
+It requires setting a learning rate,
+
+72
+00:05:09,118 --> 00:05:12,625
+initial parameter values, and stopping criteria.
+
+73
+00:05:12,680 --> 00:05:17,476
+The algorithm generalizes from one dimension to multiple dimensions,
+
+74
+00:05:17,576 --> 00:05:21,004
+making it applicable to a wide range of problems.
+
+75
+00:05:21,080 --> 00:05:24,148
+It can be applied to various machine learning
+
+76
+00:05:24,248 --> 00:05:27,388
+problems, such as linear and ridge regression.
+
+77
+00:05:27,480 --> 00:05:32,789
+For large datasets, stochastic gradient descent provides an efficient
+
+78
+00:05:32,889 --> 00:05:36,788
+alternative by using random subsamples of the data.
+
+79
+00:05:36,880 --> 00:05:40,668
+Thank you for watching this tutorial on gradient descent!
+

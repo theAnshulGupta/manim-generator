@@ -1,17 +1,1 @@
-Summary of Manim's functions module:
-
-The module contains three main classes for graphing functions:
-
-1. FunctionGraph:
-- Creates a graph of a function that spans the entire scene by default
-- Allows plotting mathematical functions as visual elements
-
-2. ParametricFunction:
-- Represents a parametric curve
-- Enables plotting curves defined by parametric equations
-
-3. ImplicitFunction:
-- Represents functions where the relationship between variables is not explicitly solved for y
-- Useful for plotting complex function relationships
-
-Each class provides different ways to visualize mathematical functions in Manim, catering to various graphing needs from standard function plots to more complex parametric and implicit curves.
+The `functions` module in Manim provides mobjects for representing mathematical function graphs. It contains three key classes: `FunctionGraph` (a parametric function spanning the scene by default), `ImplicitFunction` (representing implicit mathematical functions), and `ParametricFunction` (for creating parametric curves), enabling users to visualize various types of mathematical functions and curves in animations.

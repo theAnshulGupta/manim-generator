@@ -1,16 +1,1 @@
-The `AddTextWordByWord` is an animation that progressively reveals a text object word by word. Key points:
-
-- Inherits from `Succession` animation type
-- Currently noted as "broken" in the documentation
-- Parameters:
-  - `text_mobject`: The Text object to animate
-  - `run_time`: Total animation duration
-  - `time_per_char`: Time per word (default 0.06)
-
-Example usage would look like:
-```python
-text = Text("Hello world")
-scene.play(AddTextWordByWord(text))
-```
-
-Note: The documentation suggests this animation might not work as expected.
+The `AddTextWordByWord` is an animation class in Manim that reveals text word by word, inheriting from `Succession`. It takes a text mobject and parameters like `run_time` and `time_per_char`, though the documentation notes it is currently broken. The class is designed to progressively display text by showing each word sequentially, with configurable timing for word appearance.

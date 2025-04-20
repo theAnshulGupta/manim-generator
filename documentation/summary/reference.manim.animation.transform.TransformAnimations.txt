@@ -1,12 +1,1 @@
-This is a specialized Manim animation class for transforming between two animations. Key points:
-
-- Inherits from `Transform` animation
-- Takes two animations as input: a start and end animation
-- Allows interpolation between these animations
-- Provides a method `interpolate(alpha)` to set animation progress
-- `alpha` ranges from 0 (start) to 1 (end)
-- Allows customization of rate function for transformation
-
-Example usage would involve creating two animations and smoothly transitioning between them using this class, controlling the transition with a rate function.
-
-Useful for creating complex, smooth animated transitions between different animation states in Manim.
+TransformAnimations is a subclass of Transform animation in Manim that allows transitioning between two different animations. It takes a start animation and an end animation as parameters, with an optional rate function to control the interpolation. The key method is `interpolate(alpha)`, which sets the animation's progress from 0 (start) to 1 (end), enabling smooth transformation between two different animation states.

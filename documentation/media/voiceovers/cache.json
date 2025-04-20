@@ -1,0 +1,875 @@
+[
+  {
+    "input_text": "Welcome to this tutorial on Gradient Descent, one of the most important optimization techniques in machine learning.",
+    "input_data": {
+      "input_text": "Welcome to this tutorial on Gradient Descent, one of the most important optimization techniques in machine learning.",
+      "service": "gtts"
+    },
+    "original_audio": "welcome-to-this-tutorial-on-gradient-descent-one-fdb2ebbc.mp3",
+    "final_audio": "welcome-to-this-tutorial-on-gradient-descent-one-fdb2ebbc.mp3"
+  },
+  {
+    "input_text": "In supervised learning, we often want to find the parameter set theta star that minimizes some objective function J of theta.",
+    "input_data": {
+      "input_text": "In supervised learning, we often want to find the parameter set theta star that minimizes some objective function J of theta.",
+      "service": "gtts"
+    },
+    "original_audio": "in-supervised-learning-we-often-want-to-find-the-cd914f1f.mp3",
+    "final_audio": "in-supervised-learning-we-often-want-to-find-the-cd914f1f.mp3"
+  },
+  {
+    "input_text": "When the objective function is too complex for closed-form optimization, or when the parameter dimension is huge, we turn to iterative methods like gradient descent.",
+    "input_data": {
+      "input_text": "When the objective function is too complex for closed-form optimization, or when the parameter dimension is huge, we turn to iterative methods like gradient descent.",
+      "service": "gtts"
+    },
+    "original_audio": "when-the-objective-function-is-too-complex-for-59d1b25d.mp3",
+    "final_audio": "when-the-objective-function-is-too-complex-for-59d1b25d.mp3"
+  },
+  {
+    "input_text": "Intuitively, imagine J of theta as a terrain. Gradient descent starts from an initial point, looks for the steepest downward direction, takes a small step, and repeats until it reaches a minimum.",
+    "input_data": {
+      "input_text": "Intuitively, imagine J of theta as a terrain. Gradient descent starts from an initial point, looks for the steepest downward direction, takes a small step, and repeats until it reaches a minimum.",
+      "service": "gtts"
+    },
+    "original_audio": "intuitively-imagine-j-of-theta-as-a-terrain-66f43cd3.mp3",
+    "final_audio": "intuitively-imagine-j-of-theta-as-a-terrain-66f43cd3.mp3"
+  },
+  {
+    "input_text": "In this tutorial, we'll explore gradient descent in four stages: One-dimensional gradient descent, extension to many dimensions, application to regression, and finally stochastic gradient descent for large datasets.",
+    "input_data": {
+      "input_text": "In this tutorial, we'll explore gradient descent in four stages: One-dimensional gradient descent, extension to many dimensions, application to regression, and finally stochastic gradient descent for large datasets.",
+      "service": "gtts"
+    },
+    "original_audio": "in-this-tutorial-we-ll-explore-gradient-descent-in-9c37da73.mp3",
+    "final_audio": "in-this-tutorial-we-ll-explore-gradient-descent-in-9c37da73.mp3"
+  },
+  {
+    "input_text": "Let's start with gradient descent in one dimension.",
+    "input_data": {
+      "input_text": "Let's start with gradient descent in one dimension.",
+      "service": "gtts"
+    },
+    "original_audio": "let-s-start-with-gradient-descent-in-one-dimension-37089cfb.mp3",
+    "final_audio": "let-s-start-with-gradient-descent-in-one-dimension-37089cfb.mp3"
+  },
+  {
+    "input_text": "In the one-dimensional case, we have three hyperparameters: the initial value theta init, the step size or learning rate eta, and an accuracy threshold epsilon.",
+    "input_data": {
+      "input_text": "In the one-dimensional case, we have three hyperparameters: the initial value theta init, the step size or learning rate eta, and an accuracy threshold epsilon.",
+      "service": "gtts"
+    },
+    "original_audio": "in-the-one-dimensional-case-we-have-three-d1a07b9a.mp3",
+    "final_audio": "in-the-one-dimensional-case-we-have-three-d1a07b9a.mp3"
+  },
+  {
+    "input_text": "Here's the algorithm for one-dimensional gradient descent.",
+    "input_data": {
+      "input_text": "Here's the algorithm for one-dimensional gradient descent.",
+      "service": "gtts"
+    },
+    "original_audio": "here-s-the-algorithm-for-one-dimensional-gradient-24b419a7.mp3",
+    "final_audio": "here-s-the-algorithm-for-one-dimensional-gradient-24b419a7.mp3"
+  },
+  {
+    "input_text": "Let's see an example with the function f of x equals x minus 2 squared, starting at x equals 4 with a learning rate of 0.5.",
+    "input_data": {
+      "input_text": "Let's see an example with the function f of x equals x minus 2 squared, starting at x equals 4 with a learning rate of 0.5.",
+      "service": "gtts"
+    },
+    "original_audio": "let-s-see-an-example-with-the-function-f-of-x-7ad599de.mp3",
+    "final_audio": "let-s-see-an-example-with-the-function-f-of-x-7ad599de.mp3"
+  },
+  {
+    "input_text": "Now, let's run through a few iterations of gradient descent with step size 0.5.",
+    "input_data": {
+      "input_text": "Now, let's run through a few iterations of gradient descent with step size 0.5.",
+      "service": "gtts"
+    },
+    "original_audio": "now-let-s-run-through-a-few-iterations-of-gradient-0b8a0920.mp3",
+    "final_audio": "now-let-s-run-through-a-few-iterations-of-gradient-0b8a0920.mp3"
+  },
+  {
+    "input_text": "We've converged to the minimum at x equals 2 in just one step because this is a quadratic function and our step size was optimally chosen.",
+    "input_data": {
+      "input_text": "We've converged to the minimum at x equals 2 in just one step because this is a quadratic function and our step size was optimally chosen.",
+      "service": "gtts"
+    },
+    "original_audio": "we-ve-converged-to-the-minimum-at-x-equals-2-in-47ffdf05.mp3",
+    "final_audio": "we-ve-converged-to-the-minimum-at-x-equals-2-in-47ffdf05.mp3"
+  },
+  {
+    "input_text": "For convex functions like this one, gradient descent converges to the global minimum if the step size is small enough.",
+    "input_data": {
+      "input_text": "For convex functions like this one, gradient descent converges to the global minimum if the step size is small enough.",
+      "service": "gtts"
+    },
+    "original_audio": "for-convex-functions-like-this-one-gradient-b2b777a7.mp3",
+    "final_audio": "for-convex-functions-like-this-one-gradient-b2b777a7.mp3"
+  },
+  {
+    "input_text": "However, if the function is non-convex, convergence depends on the starting point and step size. Gradient descent can get stuck at saddle points or diverge if no minimum exists.",
+    "input_data": {
+      "input_text": "However, if the function is non-convex, convergence depends on the starting point and step size. Gradient descent can get stuck at saddle points or diverge if no minimum exists.",
+      "service": "gtts"
+    },
+    "original_audio": "however-if-the-function-is-non-convex-convergence-02c70fc9.mp3",
+    "final_audio": "however-if-the-function-is-non-convex-convergence-02c70fc9.mp3"
+  },
+  {
+    "input_text": "Now, let's extend gradient descent to multiple dimensions.",
+    "input_data": {
+      "input_text": "Now, let's extend gradient descent to multiple dimensions.",
+      "service": "gtts"
+    },
+    "original_audio": "now-let-s-extend-gradient-descent-to-multiple-6649a374.mp3",
+    "final_audio": "now-let-s-extend-gradient-descent-to-multiple-6649a374.mp3"
+  },
+  {
+    "input_text": "When the parameter theta is in R to the m, the gradient becomes a vector of partial derivatives.",
+    "input_data": {
+      "input_text": "When the parameter theta is in R to the m, the gradient becomes a vector of partial derivatives.",
+      "service": "gtts"
+    },
+    "original_audio": "when-the-parameter-theta-is-in-r-to-the-m-the-1aa64eaf.mp3",
+    "final_audio": "when-the-parameter-theta-is-in-r-to-the-m-the-1aa64eaf.mp3"
+  },
+  {
+    "input_text": "The gradient descent update becomes: Theta t equals Theta t minus 1 minus eta times the gradient of f at Theta t minus 1.",
+    "input_data": {
+      "input_text": "The gradient descent update becomes: Theta t equals Theta t minus 1 minus eta times the gradient of f at Theta t minus 1.",
+      "service": "gtts"
+    },
+    "original_audio": "the-gradient-descent-update-becomes-theta-t-equals-bf28c82d.mp3",
+    "final_audio": "the-gradient-descent-update-becomes-theta-t-equals-bf28c82d.mp3"
+  },
+  {
+    "input_text": "Let's visualize gradient descent in two dimensions with a simple quadratic function.",
+    "input_data": {
+      "input_text": "Let's visualize gradient descent in two dimensions with a simple quadratic function.",
+      "service": "gtts"
+    },
+    "original_audio": "let-s-visualize-gradient-descent-in-two-dimensions-0548328e.mp3",
+    "final_audio": "let-s-visualize-gradient-descent-in-two-dimensions-0548328e.mp3"
+  },
+  {
+    "input_text": "Welcome to this tutorial on Gradient Descent, one of the most important optimization techniques in machine learning.",
+    "input_data": {
+      "input_text": "Welcome to this tutorial on Gradient Descent, one of the most important optimization techniques in machine learning.",
+      "service": "gtts"
+    },
+    "original_audio": "welcome-to-this-tutorial-on-gradient-descent-one-fdb2ebbc.mp3",
+    "final_audio": "welcome-to-this-tutorial-on-gradient-descent-one-fdb2ebbc.mp3"
+  },
+  {
+    "input_text": "In supervised learning, we often want to find the parameter set theta star that minimizes some objective function J of theta.",
+    "input_data": {
+      "input_text": "In supervised learning, we often want to find the parameter set theta star that minimizes some objective function J of theta.",
+      "service": "gtts"
+    },
+    "original_audio": "in-supervised-learning-we-often-want-to-find-the-cd914f1f.mp3",
+    "final_audio": "in-supervised-learning-we-often-want-to-find-the-cd914f1f.mp3"
+  },
+  {
+    "input_text": "When the objective function is too complex for closed-form optimization, or when the parameter dimension is huge, we turn to iterative methods like gradient descent.",
+    "input_data": {
+      "input_text": "When the objective function is too complex for closed-form optimization, or when the parameter dimension is huge, we turn to iterative methods like gradient descent.",
+      "service": "gtts"
+    },
+    "original_audio": "when-the-objective-function-is-too-complex-for-59d1b25d.mp3",
+    "final_audio": "when-the-objective-function-is-too-complex-for-59d1b25d.mp3"
+  },
+  {
+    "input_text": "Intuitively, imagine J of theta as a terrain. Gradient descent starts from an initial point, looks for the steepest downward direction, takes a small step, and repeats until it reaches a minimum.",
+    "input_data": {
+      "input_text": "Intuitively, imagine J of theta as a terrain. Gradient descent starts from an initial point, looks for the steepest downward direction, takes a small step, and repeats until it reaches a minimum.",
+      "service": "gtts"
+    },
+    "original_audio": "intuitively-imagine-j-of-theta-as-a-terrain-66f43cd3.mp3",
+    "final_audio": "intuitively-imagine-j-of-theta-as-a-terrain-66f43cd3.mp3"
+  },
+  {
+    "input_text": "In this tutorial, we'll explore gradient descent in four stages: One-dimensional gradient descent, extension to many dimensions, application to regression, and finally stochastic gradient descent for large datasets.",
+    "input_data": {
+      "input_text": "In this tutorial, we'll explore gradient descent in four stages: One-dimensional gradient descent, extension to many dimensions, application to regression, and finally stochastic gradient descent for large datasets.",
+      "service": "gtts"
+    },
+    "original_audio": "in-this-tutorial-we-ll-explore-gradient-descent-in-9c37da73.mp3",
+    "final_audio": "in-this-tutorial-we-ll-explore-gradient-descent-in-9c37da73.mp3"
+  },
+  {
+    "input_text": "Let's start with gradient descent in one dimension.",
+    "input_data": {
+      "input_text": "Let's start with gradient descent in one dimension.",
+      "service": "gtts"
+    },
+    "original_audio": "let-s-start-with-gradient-descent-in-one-dimension-37089cfb.mp3",
+    "final_audio": "let-s-start-with-gradient-descent-in-one-dimension-37089cfb.mp3"
+  },
+  {
+    "input_text": "In the one-dimensional case, we have three hyperparameters: the initial value theta init, the step size or learning rate eta, and an accuracy threshold epsilon.",
+    "input_data": {
+      "input_text": "In the one-dimensional case, we have three hyperparameters: the initial value theta init, the step size or learning rate eta, and an accuracy threshold epsilon.",
+      "service": "gtts"
+    },
+    "original_audio": "in-the-one-dimensional-case-we-have-three-d1a07b9a.mp3",
+    "final_audio": "in-the-one-dimensional-case-we-have-three-d1a07b9a.mp3"
+  },
+  {
+    "input_text": "Here's the algorithm for one-dimensional gradient descent.",
+    "input_data": {
+      "input_text": "Here's the algorithm for one-dimensional gradient descent.",
+      "service": "gtts"
+    },
+    "original_audio": "here-s-the-algorithm-for-one-dimensional-gradient-24b419a7.mp3",
+    "final_audio": "here-s-the-algorithm-for-one-dimensional-gradient-24b419a7.mp3"
+  },
+  {
+    "input_text": "Let's see an example with the function f of x equals x minus 2 squared, starting at x equals 4 with a learning rate of 0.5.",
+    "input_data": {
+      "input_text": "Let's see an example with the function f of x equals x minus 2 squared, starting at x equals 4 with a learning rate of 0.5.",
+      "service": "gtts"
+    },
+    "original_audio": "let-s-see-an-example-with-the-function-f-of-x-7ad599de.mp3",
+    "final_audio": "let-s-see-an-example-with-the-function-f-of-x-7ad599de.mp3"
+  },
+  {
+    "input_text": "Now, let's run through a few iterations of gradient descent with step size 0.5.",
+    "input_data": {
+      "input_text": "Now, let's run through a few iterations of gradient descent with step size 0.5.",
+      "service": "gtts"
+    },
+    "original_audio": "now-let-s-run-through-a-few-iterations-of-gradient-0b8a0920.mp3",
+    "final_audio": "now-let-s-run-through-a-few-iterations-of-gradient-0b8a0920.mp3"
+  },
+  {
+    "input_text": "We've converged to the minimum at x equals 2 in just one step because this is a quadratic function and our step size was optimally chosen.",
+    "input_data": {
+      "input_text": "We've converged to the minimum at x equals 2 in just one step because this is a quadratic function and our step size was optimally chosen.",
+      "service": "gtts"
+    },
+    "original_audio": "we-ve-converged-to-the-minimum-at-x-equals-2-in-47ffdf05.mp3",
+    "final_audio": "we-ve-converged-to-the-minimum-at-x-equals-2-in-47ffdf05.mp3"
+  },
+  {
+    "input_text": "For convex functions like this one, gradient descent converges to the global minimum if the step size is small enough.",
+    "input_data": {
+      "input_text": "For convex functions like this one, gradient descent converges to the global minimum if the step size is small enough.",
+      "service": "gtts"
+    },
+    "original_audio": "for-convex-functions-like-this-one-gradient-b2b777a7.mp3",
+    "final_audio": "for-convex-functions-like-this-one-gradient-b2b777a7.mp3"
+  },
+  {
+    "input_text": "However, if the function is non-convex, convergence depends on the starting point and step size. Gradient descent can get stuck at saddle points or diverge if no minimum exists.",
+    "input_data": {
+      "input_text": "However, if the function is non-convex, convergence depends on the starting point and step size. Gradient descent can get stuck at saddle points or diverge if no minimum exists.",
+      "service": "gtts"
+    },
+    "original_audio": "however-if-the-function-is-non-convex-convergence-02c70fc9.mp3",
+    "final_audio": "however-if-the-function-is-non-convex-convergence-02c70fc9.mp3"
+  },
+  {
+    "input_text": "Now, let's extend gradient descent to multiple dimensions.",
+    "input_data": {
+      "input_text": "Now, let's extend gradient descent to multiple dimensions.",
+      "service": "gtts"
+    },
+    "original_audio": "now-let-s-extend-gradient-descent-to-multiple-6649a374.mp3",
+    "final_audio": "now-let-s-extend-gradient-descent-to-multiple-6649a374.mp3"
+  },
+  {
+    "input_text": "When the parameter theta is in R to the m, the gradient becomes a vector of partial derivatives.",
+    "input_data": {
+      "input_text": "When the parameter theta is in R to the m, the gradient becomes a vector of partial derivatives.",
+      "service": "gtts"
+    },
+    "original_audio": "when-the-parameter-theta-is-in-r-to-the-m-the-1aa64eaf.mp3",
+    "final_audio": "when-the-parameter-theta-is-in-r-to-the-m-the-1aa64eaf.mp3"
+  },
+  {
+    "input_text": "The gradient descent update becomes: Theta t equals Theta t minus 1 minus eta times the gradient of f at Theta t minus 1.",
+    "input_data": {
+      "input_text": "The gradient descent update becomes: Theta t equals Theta t minus 1 minus eta times the gradient of f at Theta t minus 1.",
+      "service": "gtts"
+    },
+    "original_audio": "the-gradient-descent-update-becomes-theta-t-equals-bf28c82d.mp3",
+    "final_audio": "the-gradient-descent-update-becomes-theta-t-equals-bf28c82d.mp3"
+  },
+  {
+    "input_text": "Let's visualize gradient descent in two dimensions with a simple quadratic function.",
+    "input_data": {
+      "input_text": "Let's visualize gradient descent in two dimensions with a simple quadratic function.",
+      "service": "gtts"
+    },
+    "original_audio": "let-s-visualize-gradient-descent-in-two-dimensions-0548328e.mp3",
+    "final_audio": "let-s-visualize-gradient-descent-in-two-dimensions-0548328e.mp3"
+  },
+  {
+    "input_text": "Welcome to this tutorial on Gradient Descent, one of the most important optimization techniques in machine learning.",
+    "input_data": {
+      "input_text": "Welcome to this tutorial on Gradient Descent, one of the most important optimization techniques in machine learning.",
+      "service": "gtts"
+    },
+    "original_audio": "welcome-to-this-tutorial-on-gradient-descent-one-fdb2ebbc.mp3",
+    "final_audio": "welcome-to-this-tutorial-on-gradient-descent-one-fdb2ebbc.mp3"
+  },
+  {
+    "input_text": "In supervised learning, we often want to find the parameter set theta star that minimizes some objective function J of theta.",
+    "input_data": {
+      "input_text": "In supervised learning, we often want to find the parameter set theta star that minimizes some objective function J of theta.",
+      "service": "gtts"
+    },
+    "original_audio": "in-supervised-learning-we-often-want-to-find-the-cd914f1f.mp3",
+    "final_audio": "in-supervised-learning-we-often-want-to-find-the-cd914f1f.mp3"
+  },
+  {
+    "input_text": "When the objective function is too complex for closed-form optimization, or when the parameter dimension is huge, we turn to iterative methods like gradient descent.",
+    "input_data": {
+      "input_text": "When the objective function is too complex for closed-form optimization, or when the parameter dimension is huge, we turn to iterative methods like gradient descent.",
+      "service": "gtts"
+    },
+    "original_audio": "when-the-objective-function-is-too-complex-for-59d1b25d.mp3",
+    "final_audio": "when-the-objective-function-is-too-complex-for-59d1b25d.mp3"
+  },
+  {
+    "input_text": "Intuitively, imagine J of theta as a terrain. Gradient descent starts from an initial point, looks for the steepest downward direction, takes a small step, and repeats until it reaches a minimum.",
+    "input_data": {
+      "input_text": "Intuitively, imagine J of theta as a terrain. Gradient descent starts from an initial point, looks for the steepest downward direction, takes a small step, and repeats until it reaches a minimum.",
+      "service": "gtts"
+    },
+    "original_audio": "intuitively-imagine-j-of-theta-as-a-terrain-66f43cd3.mp3",
+    "final_audio": "intuitively-imagine-j-of-theta-as-a-terrain-66f43cd3.mp3"
+  },
+  {
+    "input_text": "In this tutorial, we'll explore gradient descent in four stages: One-dimensional gradient descent, extension to many dimensions, application to regression, and finally stochastic gradient descent for large datasets.",
+    "input_data": {
+      "input_text": "In this tutorial, we'll explore gradient descent in four stages: One-dimensional gradient descent, extension to many dimensions, application to regression, and finally stochastic gradient descent for large datasets.",
+      "service": "gtts"
+    },
+    "original_audio": "in-this-tutorial-we-ll-explore-gradient-descent-in-9c37da73.mp3",
+    "final_audio": "in-this-tutorial-we-ll-explore-gradient-descent-in-9c37da73.mp3"
+  },
+  {
+    "input_text": "Let's start with gradient descent in one dimension.",
+    "input_data": {
+      "input_text": "Let's start with gradient descent in one dimension.",
+      "service": "gtts"
+    },
+    "original_audio": "let-s-start-with-gradient-descent-in-one-dimension-37089cfb.mp3",
+    "final_audio": "let-s-start-with-gradient-descent-in-one-dimension-37089cfb.mp3"
+  },
+  {
+    "input_text": "In the one-dimensional case, we have three hyperparameters: the initial value theta init, the step size or learning rate eta, and an accuracy threshold epsilon.",
+    "input_data": {
+      "input_text": "In the one-dimensional case, we have three hyperparameters: the initial value theta init, the step size or learning rate eta, and an accuracy threshold epsilon.",
+      "service": "gtts"
+    },
+    "original_audio": "in-the-one-dimensional-case-we-have-three-d1a07b9a.mp3",
+    "final_audio": "in-the-one-dimensional-case-we-have-three-d1a07b9a.mp3"
+  },
+  {
+    "input_text": "Here's the algorithm for one-dimensional gradient descent.",
+    "input_data": {
+      "input_text": "Here's the algorithm for one-dimensional gradient descent.",
+      "service": "gtts"
+    },
+    "original_audio": "here-s-the-algorithm-for-one-dimensional-gradient-24b419a7.mp3",
+    "final_audio": "here-s-the-algorithm-for-one-dimensional-gradient-24b419a7.mp3"
+  },
+  {
+    "input_text": "Let's see an example with the function f of x equals x minus 2 squared, starting at x equals 4 with a learning rate of 0.5.",
+    "input_data": {
+      "input_text": "Let's see an example with the function f of x equals x minus 2 squared, starting at x equals 4 with a learning rate of 0.5.",
+      "service": "gtts"
+    },
+    "original_audio": "let-s-see-an-example-with-the-function-f-of-x-7ad599de.mp3",
+    "final_audio": "let-s-see-an-example-with-the-function-f-of-x-7ad599de.mp3"
+  },
+  {
+    "input_text": "Now, let's run through a few iterations of gradient descent with step size 0.5.",
+    "input_data": {
+      "input_text": "Now, let's run through a few iterations of gradient descent with step size 0.5.",
+      "service": "gtts"
+    },
+    "original_audio": "now-let-s-run-through-a-few-iterations-of-gradient-0b8a0920.mp3",
+    "final_audio": "now-let-s-run-through-a-few-iterations-of-gradient-0b8a0920.mp3"
+  },
+  {
+    "input_text": "We've converged to the minimum at x equals 2 in just one step because this is a quadratic function and our step size was optimally chosen.",
+    "input_data": {
+      "input_text": "We've converged to the minimum at x equals 2 in just one step because this is a quadratic function and our step size was optimally chosen.",
+      "service": "gtts"
+    },
+    "original_audio": "we-ve-converged-to-the-minimum-at-x-equals-2-in-47ffdf05.mp3",
+    "final_audio": "we-ve-converged-to-the-minimum-at-x-equals-2-in-47ffdf05.mp3"
+  },
+  {
+    "input_text": "For convex functions like this one, gradient descent converges to the global minimum if the step size is small enough.",
+    "input_data": {
+      "input_text": "For convex functions like this one, gradient descent converges to the global minimum if the step size is small enough.",
+      "service": "gtts"
+    },
+    "original_audio": "for-convex-functions-like-this-one-gradient-b2b777a7.mp3",
+    "final_audio": "for-convex-functions-like-this-one-gradient-b2b777a7.mp3"
+  },
+  {
+    "input_text": "However, if the function is non-convex, convergence depends on the starting point and step size. Gradient descent can get stuck at saddle points or diverge if no minimum exists.",
+    "input_data": {
+      "input_text": "However, if the function is non-convex, convergence depends on the starting point and step size. Gradient descent can get stuck at saddle points or diverge if no minimum exists.",
+      "service": "gtts"
+    },
+    "original_audio": "however-if-the-function-is-non-convex-convergence-02c70fc9.mp3",
+    "final_audio": "however-if-the-function-is-non-convex-convergence-02c70fc9.mp3"
+  },
+  {
+    "input_text": "Now, let's extend gradient descent to multiple dimensions.",
+    "input_data": {
+      "input_text": "Now, let's extend gradient descent to multiple dimensions.",
+      "service": "gtts"
+    },
+    "original_audio": "now-let-s-extend-gradient-descent-to-multiple-6649a374.mp3",
+    "final_audio": "now-let-s-extend-gradient-descent-to-multiple-6649a374.mp3"
+  },
+  {
+    "input_text": "When the parameter theta is in R to the m, the gradient becomes a vector of partial derivatives.",
+    "input_data": {
+      "input_text": "When the parameter theta is in R to the m, the gradient becomes a vector of partial derivatives.",
+      "service": "gtts"
+    },
+    "original_audio": "when-the-parameter-theta-is-in-r-to-the-m-the-1aa64eaf.mp3",
+    "final_audio": "when-the-parameter-theta-is-in-r-to-the-m-the-1aa64eaf.mp3"
+  },
+  {
+    "input_text": "The gradient descent update becomes: Theta t equals Theta t minus 1 minus eta times the gradient of f at Theta t minus 1.",
+    "input_data": {
+      "input_text": "The gradient descent update becomes: Theta t equals Theta t minus 1 minus eta times the gradient of f at Theta t minus 1.",
+      "service": "gtts"
+    },
+    "original_audio": "the-gradient-descent-update-becomes-theta-t-equals-bf28c82d.mp3",
+    "final_audio": "the-gradient-descent-update-becomes-theta-t-equals-bf28c82d.mp3"
+  },
+  {
+    "input_text": "Let's visualize gradient descent in two dimensions with a simple quadratic function.",
+    "input_data": {
+      "input_text": "Let's visualize gradient descent in two dimensions with a simple quadratic function.",
+      "service": "gtts"
+    },
+    "original_audio": "let-s-visualize-gradient-descent-in-two-dimensions-0548328e.mp3",
+    "final_audio": "let-s-visualize-gradient-descent-in-two-dimensions-0548328e.mp3"
+  },
+  {
+    "input_text": "In multiple dimensions, we follow the negative gradient at each point, which is the direction of steepest descent.",
+    "input_data": {
+      "input_text": "In multiple dimensions, we follow the negative gradient at each point, which is the direction of steepest descent.",
+      "service": "gtts"
+    },
+    "original_audio": "in-multiple-dimensions-we-follow-the-negative-5370c2aa.mp3",
+    "final_audio": "in-multiple-dimensions-we-follow-the-negative-5370c2aa.mp3"
+  },
+  {
+    "input_text": "For termination, we typically use a function change threshold, where we stop when the absolute difference between consecutive function values is less than epsilon.",
+    "input_data": {
+      "input_text": "For termination, we typically use a function change threshold, where we stop when the absolute difference between consecutive function values is less than epsilon.",
+      "service": "gtts"
+    },
+    "original_audio": "for-termination-we-typically-use-a-function-change-bf798e9b.mp3",
+    "final_audio": "for-termination-we-typically-use-a-function-change-bf798e9b.mp3"
+  },
+  {
+    "input_text": "Now, let's apply gradient descent to linear regression with squared error loss.",
+    "input_data": {
+      "input_text": "Now, let's apply gradient descent to linear regression with squared error loss.",
+      "service": "gtts"
+    },
+    "original_audio": "now-let-s-apply-gradient-descent-to-linear-56b0d8ef.mp3",
+    "final_audio": "now-let-s-apply-gradient-descent-to-linear-56b0d8ef.mp3"
+  },
+  {
+    "input_text": "For linear regression, our objective function is the mean squared error between predictions and true values.",
+    "input_data": {
+      "input_text": "For linear regression, our objective function is the mean squared error between predictions and true values.",
+      "service": "gtts"
+    },
+    "original_audio": "for-linear-regression-our-objective-function-is-a42a3ed0.mp3",
+    "final_audio": "for-linear-regression-our-objective-function-is-a42a3ed0.mp3"
+  },
+  {
+    "input_text": "The gradient of this objective with respect to theta is given by:",
+    "input_data": {
+      "input_text": "The gradient of this objective with respect to theta is given by:",
+      "service": "gtts"
+    },
+    "original_audio": "the-gradient-of-this-objective-with-respect-to-62b8fe0e.mp3",
+    "final_audio": "the-gradient-of-this-objective-with-respect-to-62b8fe0e.mp3"
+  },
+  {
+    "input_text": "Which leads to the update rule:",
+    "input_data": {
+      "input_text": "Which leads to the update rule:",
+      "service": "gtts"
+    },
+    "original_audio": "which-leads-to-the-update-rule-d46aa103.mp3",
+    "final_audio": "which-leads-to-the-update-rule-d46aa103.mp3"
+  },
+  {
+    "input_text": "For ridge regression, we add L2 regularization to the objective function.",
+    "input_data": {
+      "input_text": "For ridge regression, we add L2 regularization to the objective function.",
+      "service": "gtts"
+    },
+    "original_audio": "for-ridge-regression-we-add-l2-regularization-to-a7299468.mp3",
+    "final_audio": "for-ridge-regression-we-add-l2-regularization-to-a7299468.mp3"
+  },
+  {
+    "input_text": "This gives us the following gradients for theta and theta zero:",
+    "input_data": {
+      "input_text": "This gives us the following gradients for theta and theta zero:",
+      "service": "gtts"
+    },
+    "original_audio": "this-gives-us-the-following-gradients-for-theta-796506f8.mp3",
+    "final_audio": "this-gives-us-the-following-gradients-for-theta-796506f8.mp3"
+  },
+  {
+    "input_text": "Let's visualize how gradient descent works for a simple regression problem.",
+    "input_data": {
+      "input_text": "Let's visualize how gradient descent works for a simple regression problem.",
+      "service": "gtts"
+    },
+    "original_audio": "let-s-visualize-how-gradient-descent-works-for-a-e5f7ef41.mp3",
+    "final_audio": "let-s-visualize-how-gradient-descent-works-for-a-e5f7ef41.mp3"
+  },
+  {
+    "input_text": "Finally, let's look at stochastic gradient descent, or SGD.",
+    "input_data": {
+      "input_text": "Finally, let's look at stochastic gradient descent, or SGD.",
+      "service": "gtts"
+    },
+    "original_audio": "finally-let-s-look-at-stochastic-gradient-descent-8be262ce.mp3",
+    "final_audio": "finally-let-s-look-at-stochastic-gradient-descent-8be262ce.mp3"
+  },
+  {
+    "input_text": "When our objective function is a sum over many data points, computing the full gradient can be costly.",
+    "input_data": {
+      "input_text": "When our objective function is a sum over many data points, computing the full gradient can be costly.",
+      "service": "gtts"
+    },
+    "original_audio": "when-our-objective-function-is-a-sum-over-many-c476bc2c.mp3",
+    "final_audio": "when-our-objective-function-is-a-sum-over-many-c476bc2c.mp3"
+  },
+  {
+    "input_text": "Stochastic gradient descent updates using only one randomly chosen term at each step.",
+    "input_data": {
+      "input_text": "Stochastic gradient descent updates using only one randomly chosen term at each step.",
+      "service": "gtts"
+    },
+    "original_audio": "stochastic-gradient-descent-updates-using-only-one-79b7f0c7.mp3",
+    "final_audio": "stochastic-gradient-descent-updates-using-only-one-79b7f0c7.mp3"
+  },
+  {
+    "input_text": "If the objective is convex and the learning rate sequence satisfies specific conditions, SGD converges to the optimum with probability 1.",
+    "input_data": {
+      "input_text": "If the objective is convex and the learning rate sequence satisfies specific conditions, SGD converges to the optimum with probability 1.",
+      "service": "gtts"
+    },
+    "original_audio": "if-the-objective-is-convex-and-the-learning-rate-8ae93106.mp3",
+    "final_audio": "if-the-objective-is-convex-and-the-learning-rate-8ae93106.mp3"
+  },
+  {
+    "input_text": "There are several reasons to use SGD. First, it's more efficient for large datasets, as each step only requires one data point.",
+    "input_data": {
+      "input_text": "There are several reasons to use SGD. First, it's more efficient for large datasets, as each step only requires one data point.",
+      "service": "gtts"
+    },
+    "original_audio": "there-are-several-reasons-to-use-sgd-first-it-s-c5c826bd.mp3",
+    "final_audio": "there-are-several-reasons-to-use-sgd-first-it-s-c5c826bd.mp3"
+  },
+  {
+    "input_text": "Second, the noise in SGD updates may help escape shallow local minima that would trap batch gradient descent.",
+    "input_data": {
+      "input_text": "Second, the noise in SGD updates may help escape shallow local minima that would trap batch gradient descent.",
+      "service": "gtts"
+    },
+    "original_audio": "second-the-noise-in-sgd-updates-may-help-escape-678bcb27.mp3",
+    "final_audio": "second-the-noise-in-sgd-updates-may-help-escape-678bcb27.mp3"
+  },
+  {
+    "input_text": "Finally, SGD's slight under-optimization can reduce overfitting, often leading to better generalization performance.",
+    "input_data": {
+      "input_text": "Finally, SGD's slight under-optimization can reduce overfitting, often leading to better generalization performance.",
+      "service": "gtts"
+    },
+    "original_audio": "finally-sgd-s-slight-under-optimization-can-reduce-ee6fa983.mp3",
+    "final_audio": "finally-sgd-s-slight-under-optimization-can-reduce-ee6fa983.mp3"
+  },
+  {
+    "input_text": "Let's compare the trajectories of batch gradient descent and SGD.",
+    "input_data": {
+      "input_text": "Let's compare the trajectories of batch gradient descent and SGD.",
+      "service": "gtts"
+    },
+    "original_audio": "let-s-compare-the-trajectories-of-batch-gradient-d0c6ff33.mp3",
+    "final_audio": "let-s-compare-the-trajectories-of-batch-gradient-d0c6ff33.mp3"
+  },
+  {
+    "input_text": "Let's summarize what we've learned about gradient descent.",
+    "input_data": {
+      "input_text": "Let's summarize what we've learned about gradient descent.",
+      "service": "gtts"
+    },
+    "original_audio": "let-s-summarize-what-we-ve-learned-about-gradient-40c26c47.mp3",
+    "final_audio": "let-s-summarize-what-we-ve-learned-about-gradient-40c26c47.mp3"
+  },
+  {
+    "input_text": "Gradient descent is an iterative optimization algorithm that minimizes an objective function by following the negative gradient direction.",
+    "input_data": {
+      "input_text": "Gradient descent is an iterative optimization algorithm that minimizes an objective function by following the negative gradient direction.",
+      "service": "gtts"
+    },
+    "original_audio": "gradient-descent-is-an-iterative-optimization-d24e0ec7.mp3",
+    "final_audio": "gradient-descent-is-an-iterative-optimization-d24e0ec7.mp3"
+  },
+  {
+    "input_text": "It requires setting a learning rate, initial parameter values, and stopping criteria.",
+    "input_data": {
+      "input_text": "It requires setting a learning rate, initial parameter values, and stopping criteria.",
+      "service": "gtts"
+    },
+    "original_audio": "it-requires-setting-a-learning-rate-initial-87effccb.mp3",
+    "final_audio": "it-requires-setting-a-learning-rate-initial-87effccb.mp3"
+  },
+  {
+    "input_text": "The algorithm generalizes from one dimension to multiple dimensions, making it applicable to a wide range of problems.",
+    "input_data": {
+      "input_text": "The algorithm generalizes from one dimension to multiple dimensions, making it applicable to a wide range of problems.",
+      "service": "gtts"
+    },
+    "original_audio": "the-algorithm-generalizes-from-one-dimension-to-06c0edb8.mp3",
+    "final_audio": "the-algorithm-generalizes-from-one-dimension-to-06c0edb8.mp3"
+  },
+  {
+    "input_text": "It can be applied to various machine learning problems, such as linear and ridge regression.",
+    "input_data": {
+      "input_text": "It can be applied to various machine learning problems, such as linear and ridge regression.",
+      "service": "gtts"
+    },
+    "original_audio": "it-can-be-applied-to-various-machine-learning-a001e3ab.mp3",
+    "final_audio": "it-can-be-applied-to-various-machine-learning-a001e3ab.mp3"
+  },
+  {
+    "input_text": "For large datasets, stochastic gradient descent provides an efficient alternative by using random subsamples of the data.",
+    "input_data": {
+      "input_text": "For large datasets, stochastic gradient descent provides an efficient alternative by using random subsamples of the data.",
+      "service": "gtts"
+    },
+    "original_audio": "for-large-datasets-stochastic-gradient-descent-45872c19.mp3",
+    "final_audio": "for-large-datasets-stochastic-gradient-descent-45872c19.mp3"
+  },
+  {
+    "input_text": "Thank you for watching this tutorial on gradient descent!",
+    "input_data": {
+      "input_text": "Thank you for watching this tutorial on gradient descent!",
+      "service": "gtts"
+    },
+    "original_audio": "thank-you-for-watching-this-tutorial-on-gradient-75327eb0.mp3",
+    "final_audio": "thank-you-for-watching-this-tutorial-on-gradient-75327eb0.mp3"
+  },
+  {
+    "input_text": "Welcome to this tutorial on gradient descent, one of the most fundamental optimization algorithms in machine learning.",
+    "input_data": {
+      "input_text": "Welcome to this tutorial on gradient descent, one of the most fundamental optimization algorithms in machine learning.",
+      "service": "gtts"
+    },
+    "original_audio": "welcome-to-this-tutorial-on-gradient-descent-one-04047886.mp3",
+    "final_audio": "welcome-to-this-tutorial-on-gradient-descent-one-04047886.mp3"
+  },
+  {
+    "input_text": "In supervised learning, we often want to find parameters that minimize an objective function.",
+    "input_data": {
+      "input_text": "In supervised learning, we often want to find parameters that minimize an objective function.",
+      "service": "gtts"
+    },
+    "original_audio": "in-supervised-learning-we-often-want-to-find-6b1d9ecd.mp3",
+    "final_audio": "in-supervised-learning-we-often-want-to-find-6b1d9ecd.mp3"
+  },
+  {
+    "input_text": "Intuitively, imagine the objective function as a terrain. Gradient descent starts from an initial point, looks for the steepest downward direction, takes a step, and repeats until reaching a minimum.",
+    "input_data": {
+      "input_text": "Intuitively, imagine the objective function as a terrain. Gradient descent starts from an initial point, looks for the steepest downward direction, takes a step, and repeats until reaching a minimum.",
+      "service": "gtts"
+    },
+    "original_audio": "intuitively-imagine-the-objective-function-as-a-5734eb45.mp3",
+    "final_audio": "intuitively-imagine-the-objective-function-as-a-5734eb45.mp3"
+  },
+  {
+    "input_text": "In this tutorial, we'll cover gradient descent in four stages: One-dimensional gradient descent, extension to many dimensions, application to regression, and stochastic gradient descent for large datasets.",
+    "input_data": {
+      "input_text": "In this tutorial, we'll cover gradient descent in four stages: One-dimensional gradient descent, extension to many dimensions, application to regression, and stochastic gradient descent for large datasets.",
+      "service": "gtts"
+    },
+    "original_audio": "in-this-tutorial-we-ll-cover-gradient-descent-in-baf4c804.mp3",
+    "final_audio": "in-this-tutorial-we-ll-cover-gradient-descent-in-baf4c804.mp3"
+  },
+  {
+    "input_text": "Let's begin with gradient descent in one dimension.",
+    "input_data": {
+      "input_text": "Let's begin with gradient descent in one dimension.",
+      "service": "gtts"
+    },
+    "original_audio": "let-s-begin-with-gradient-descent-in-one-dimension-1f6c2440.mp3",
+    "final_audio": "let-s-begin-with-gradient-descent-in-one-dimension-1f6c2440.mp3"
+  },
+  {
+    "input_text": "In one dimension, we need an objective function f, its derivative, and three hyperparameters: an initial value, a step size or learning rate eta, and an accuracy threshold epsilon.",
+    "input_data": {
+      "input_text": "In one dimension, we need an objective function f, its derivative, and three hyperparameters: an initial value, a step size or learning rate eta, and an accuracy threshold epsilon.",
+      "service": "gtts"
+    },
+    "original_audio": "in-one-dimension-we-need-an-objective-function-f-d30bfaa2.mp3",
+    "final_audio": "in-one-dimension-we-need-an-objective-function-f-d30bfaa2.mp3"
+  },
+  {
+    "input_text": "The gradient descent algorithm starts at the initial point and iteratively updates the parameter by moving in the direction opposite to the derivative, scaled by the learning rate.",
+    "input_data": {
+      "input_text": "The gradient descent algorithm starts at the initial point and iteratively updates the parameter by moving in the direction opposite to the derivative, scaled by the learning rate.",
+      "service": "gtts"
+    },
+    "original_audio": "the-gradient-descent-algorithm-starts-at-the-0ccb5e1e.mp3",
+    "final_audio": "the-gradient-descent-algorithm-starts-at-the-0ccb5e1e.mp3"
+  },
+  {
+    "input_text": "Let's visualize this with a simple example: minimizing the function f(x) equals (x minus 2) squared.",
+    "input_data": {
+      "input_text": "Let's visualize this with a simple example: minimizing the function f(x) equals (x minus 2) squared.",
+      "service": "gtts"
+    },
+    "original_audio": "let-s-visualize-this-with-a-simple-example-2b191f34.mp3",
+    "final_audio": "let-s-visualize-this-with-a-simple-example-2b191f34.mp3"
+  },
+  {
+    "input_text": "Starting at x equals 4 with a learning rate of 0.5, let's trace the gradient descent steps.",
+    "input_data": {
+      "input_text": "Starting at x equals 4 with a learning rate of 0.5, let's trace the gradient descent steps.",
+      "service": "gtts"
+    },
+    "original_audio": "starting-at-x-equals-4-with-a-learning-rate-of-0-5-3decd13d.mp3",
+    "final_audio": "starting-at-x-equals-4-with-a-learning-rate-of-0-5-3decd13d.mp3"
+  },
+  {
+    "input_text": "Eventually, our algorithm converges to the minimum at x equals 2.",
+    "input_data": {
+      "input_text": "Eventually, our algorithm converges to the minimum at x equals 2.",
+      "service": "gtts"
+    },
+    "original_audio": "eventually-our-algorithm-converges-to-the-minimum-f5c8bca5.mp3",
+    "final_audio": "eventually-our-algorithm-converges-to-the-minimum-f5c8bca5.mp3"
+  },
+  {
+    "input_text": "In convex functions like this one, gradient descent is guaranteed to converge to the global minimum if the learning rate is small enough.",
+    "input_data": {
+      "input_text": "In convex functions like this one, gradient descent is guaranteed to converge to the global minimum if the learning rate is small enough.",
+      "service": "gtts"
+    },
+    "original_audio": "in-convex-functions-like-this-one-gradient-descent-db4afaf4.mp3",
+    "final_audio": "in-convex-functions-like-this-one-gradient-descent-db4afaf4.mp3"
+  },
+  {
+    "input_text": "Now, let's extend gradient descent to multiple dimensions.",
+    "input_data": {
+      "input_text": "Now, let's extend gradient descent to multiple dimensions.",
+      "service": "gtts"
+    },
+    "original_audio": "now-let-s-extend-gradient-descent-to-multiple-6649a374.mp3",
+    "final_audio": "now-let-s-extend-gradient-descent-to-multiple-6649a374.mp3"
+  },
+  {
+    "input_text": "In multiple dimensions, we replace the derivative with the gradient vector, which contains the partial derivatives with respect to each parameter.",
+    "input_data": {
+      "input_text": "In multiple dimensions, we replace the derivative with the gradient vector, which contains the partial derivatives with respect to each parameter.",
+      "service": "gtts"
+    },
+    "original_audio": "in-multiple-dimensions-we-replace-the-derivative-50ccc777.mp3",
+    "final_audio": "in-multiple-dimensions-we-replace-the-derivative-50ccc777.mp3"
+  },
+  {
+    "input_text": "The update rule becomes vector-valued, subtracting the gradient scaled by the learning rate from the current parameter vector.",
+    "input_data": {
+      "input_text": "The update rule becomes vector-valued, subtracting the gradient scaled by the learning rate from the current parameter vector.",
+      "service": "gtts"
+    },
+    "original_audio": "the-update-rule-becomes-vector-valued-subtracting-ef3c2c82.mp3",
+    "final_audio": "the-update-rule-becomes-vector-valued-subtracting-ef3c2c82.mp3"
+  },
+  {
+    "input_text": "Let's visualize gradient descent in two dimensions, where our objective forms a bowl-shaped surface.",
+    "input_data": {
+      "input_text": "Let's visualize gradient descent in two dimensions, where our objective forms a bowl-shaped surface.",
+      "service": "gtts"
+    },
+    "original_audio": "let-s-visualize-gradient-descent-in-two-dimensions-60d8247f.mp3",
+    "final_audio": "let-s-visualize-gradient-descent-in-two-dimensions-60d8247f.mp3"
+  },
+  {
+    "input_text": "Welcome to this tutorial on gradient descent, one of the most fundamental optimization algorithms in machine learning.",
+    "input_data": {
+      "input_text": "Welcome to this tutorial on gradient descent, one of the most fundamental optimization algorithms in machine learning.",
+      "service": "gtts"
+    },
+    "original_audio": "welcome-to-this-tutorial-on-gradient-descent-one-04047886.mp3",
+    "final_audio": "welcome-to-this-tutorial-on-gradient-descent-one-04047886.mp3"
+  },
+  {
+    "input_text": "In supervised learning, we often want to find parameters that minimize an objective function.",
+    "input_data": {
+      "input_text": "In supervised learning, we often want to find parameters that minimize an objective function.",
+      "service": "gtts"
+    },
+    "original_audio": "in-supervised-learning-we-often-want-to-find-6b1d9ecd.mp3",
+    "final_audio": "in-supervised-learning-we-often-want-to-find-6b1d9ecd.mp3"
+  },
+  {
+    "input_text": "Intuitively, imagine the objective function as a terrain. Gradient descent starts from an initial point, looks for the steepest downward direction, takes a step, and repeats until reaching a minimum.",
+    "input_data": {
+      "input_text": "Intuitively, imagine the objective function as a terrain. Gradient descent starts from an initial point, looks for the steepest downward direction, takes a step, and repeats until reaching a minimum.",
+      "service": "gtts"
+    },
+    "original_audio": "intuitively-imagine-the-objective-function-as-a-5734eb45.mp3",
+    "final_audio": "intuitively-imagine-the-objective-function-as-a-5734eb45.mp3"
+  },
+  {
+    "input_text": "In this tutorial, we'll cover gradient descent in four stages: One-dimensional gradient descent, extension to many dimensions, application to regression, and stochastic gradient descent for large datasets.",
+    "input_data": {
+      "input_text": "In this tutorial, we'll cover gradient descent in four stages: One-dimensional gradient descent, extension to many dimensions, application to regression, and stochastic gradient descent for large datasets.",
+      "service": "gtts"
+    },
+    "original_audio": "in-this-tutorial-we-ll-cover-gradient-descent-in-baf4c804.mp3",
+    "final_audio": "in-this-tutorial-we-ll-cover-gradient-descent-in-baf4c804.mp3"
+  },
+  {
+    "input_text": "Let's begin with gradient descent in one dimension.",
+    "input_data": {
+      "input_text": "Let's begin with gradient descent in one dimension.",
+      "service": "gtts"
+    },
+    "original_audio": "let-s-begin-with-gradient-descent-in-one-dimension-1f6c2440.mp3",
+    "final_audio": "let-s-begin-with-gradient-descent-in-one-dimension-1f6c2440.mp3"
+  },
+  {
+    "input_text": "In one dimension, we need an objective function f, its derivative, and three hyperparameters: an initial value, a step size or learning rate eta, and an accuracy threshold epsilon.",
+    "input_data": {
+      "input_text": "In one dimension, we need an objective function f, its derivative, and three hyperparameters: an initial value, a step size or learning rate eta, and an accuracy threshold epsilon.",
+      "service": "gtts"
+    },
+    "original_audio": "in-one-dimension-we-need-an-objective-function-f-d30bfaa2.mp3",
+    "final_audio": "in-one-dimension-we-need-an-objective-function-f-d30bfaa2.mp3"
+  },
+  {
+    "input_text": "The gradient descent algorithm starts at the initial point and iteratively updates the parameter by moving in the direction opposite to the derivative, scaled by the learning rate.",
+    "input_data": {
+      "input_text": "The gradient descent algorithm starts at the initial point and iteratively updates the parameter by moving in the direction opposite to the derivative, scaled by the learning rate.",
+      "service": "gtts"
+    },
+    "original_audio": "the-gradient-descent-algorithm-starts-at-the-0ccb5e1e.mp3",
+    "final_audio": "the-gradient-descent-algorithm-starts-at-the-0ccb5e1e.mp3"
+  }
+]

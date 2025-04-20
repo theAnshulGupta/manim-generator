@@ -1,15 +1,1 @@
-Summary of `three_dimensions` module in Manim:
-
-3D Mobject Classes:
-- `Arrow3D`: 3D arrow with cylindrical line and conical tip
-- `Cone`: Circular cone
-- `Cube`: 3D cube
-- `Cylinder`: Defined by height, radius, and direction
-- `Dot3D`: Spherical dot
-- `Line3D`: Cylindrical line for 3D scenes
-- `Prism`: Rectangular cuboid
-- `Sphere`: 3D sphere
-- `Surface`: Parametric surface with checkerboard pattern
-- `Torus`: 3D ring-shaped object
-
-These classes allow creating and manipulating three-dimensional geometric shapes in Manim animations.
+The `three_dimensions` module provides various 3D geometric mobjects for Manim, including `Arrow3D` (a cylindrical arrow), `Cone`, `Cube`, `Cylinder`, `Dot3D`, `Line3D`, `Prism`, `Sphere`, `Surface`, and `Torus`. These classes allow users to create and manipulate three-dimensional shapes and objects in Manim animations, enabling more complex and visually rich 3D visualizations.

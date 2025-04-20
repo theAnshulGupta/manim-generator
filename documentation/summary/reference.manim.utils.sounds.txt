@@ -1,7 +1,1 @@
-The `sounds` module in Manim provides a utility function `get_full_sound_file_path()` which:
-
-- Takes a sound file name as input
-- Returns the full path to that sound file
-- Useful for locating sound files in the Manim library
-
-This function helps in easily retrieving the complete file path for sound files used in Manim animations.
+Module provides utility function `get_full_sound_file_path()` which takes a sound file name as input and returns its full file path, helpful for locating sound files within the Manim library's directory structure.

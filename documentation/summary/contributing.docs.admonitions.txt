@@ -1,1 +1,1 @@
-Not relevant.
+Documentation explains how to use various admonition directives in Sphinx documentation for Manim, including `seealso`, `note`, `tip`, `important`, `warning`, and `attention` blocks. Each admonition helps highlight specific types of information with different semantic meanings. Developers can use these to draw attention to specific details, provide additional context, or warn about potential issues within the documentation.

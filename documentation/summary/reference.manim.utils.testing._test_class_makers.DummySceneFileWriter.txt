@@ -1,1 +1,1 @@
-Not relevant. This is an internal testing utility class used for Manim's development and testing process, not something a typical Manim user would interact with directly.
+A specialized testing utility class that serves as a delegate for SceneFileWriter, designed to test frame-related functionality in Manim. It provides methods to simulate scene file writing processes like adding partial movie files, beginning/ending animations, writing frames, initializing output directories, and combining movie files, with minimal actual file writing operations.

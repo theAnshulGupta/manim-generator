@@ -1,17 +1,1 @@
-This module provides three animation updater classes in Manim:
-
-1. `UpdateFromFunc`: 
-   - Creates an animation that updates a mobject using a custom function
-   - Takes a mobject and an update function as parameters
-   - The update function is called on the mobject during the animation
-
-2. `UpdateFromAlphaFunc`:
-   - Subclass of `UpdateFromFunc`
-   - Similar to `UpdateFromFunc`, but passes an additional alpha value (animation progress) to the update function
-   - Useful for creating more dynamic updates based on animation progress
-
-3. `MaintainPositionRelativeTo`:
-   - Maintains a mobject's position relative to another tracked mobject
-   - Calculates and preserves the initial offset between the two mobjects during animation
-
-Each class overrides the `interpolate_mobject` method to provide custom updating behavior during an animation.
+The module `manim.animation.updaters.update` provides three animation classes for updating mobjects dynamically. `UpdateFromFunc` allows updating a mobject using a custom function, `UpdateFromAlphaFunc` extends this by providing the animation's alpha value to the update function, and `MaintainPositionRelativeTo` ensures a mobject maintains a consistent relative position to another tracked mobject during animation, with each class offering flexible ways to modify mobject properties during animation.

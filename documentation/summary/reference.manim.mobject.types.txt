@@ -1,12 +1,1 @@
-The "types" module in Manim provides specialized base classes for different types of mobjects:
-
-1. image_mobject: Handles raster image representations
-   - Includes classes like AbstractImageMobject, ImageMobject, ImageMobjectFromCamera
-
-2. point_cloud_mobject: Represents collections of points
-   - Contains classes like Point, Mobject1D, Mobject2D, PointCloudDot, PGroup
-
-3. vectorized_mobject: Manages vector graphics-based mobjects
-   - Key classes include VMobject, VGroup, VDict, CurvesAsSubmobjects, DashedVMobject, VectorizedPoint
-
-These modules provide foundational classes for creating different types of graphical elements in Manim, ranging from images and point collections to vector-based graphics.
+The `types` module in Manim provides specialized base classes for different types of mobjects (mathematical objects), organized into three key submodules: `image_mobject` for raster image representations, `point_cloud_mobject` for point cloud-based objects, and `vectorized_mobject` for vector graphics-based mobjects. These submodules offer different approaches to creating and manipulating graphical elements in Manim animations.

@@ -1,1 +1,1 @@
-Not relevant.
+The Manim Community is developing documentation about Manim's internal structure on their wiki, which is a work in progress. While the information may be incomplete or potentially inaccurate, it serves as a good starting point for understanding Manim's internals, and the wiki is open for anyone to contribute or edit.

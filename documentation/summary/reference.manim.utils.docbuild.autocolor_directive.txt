@@ -1,1 +1,1 @@
-Not relevant
+A Sphinx directive for documenting colors in the Manim library, primarily focused on the `ManimColorModuleDocumenter` class, which helps generate documentation for Manim color modules. The `setup()` function is used to integrate this directive into the Sphinx documentation build process, taking a Sphinx application object as a parameter.

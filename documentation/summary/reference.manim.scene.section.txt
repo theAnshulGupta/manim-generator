@@ -1,12 +1,1 @@
-The `section` module provides building blocks for segmenting videos in Manim:
-
-1. `DefaultSectionType`: An enumeration that allows third-party applications to categorize sections of a video.
-
-2. `Section`: A class that enables splitting a `Scene` into multiple sections, which can be useful for:
-   - Organizing video content
-   - Potentially enabling features like skipping or navigating between sections
-   - Providing metadata about different parts of an animation
-
-The primary purpose is to give more structured control over video segments within a Manim scene.
-
-Example usage would likely involve creating sections during scene construction to logically divide the animation into meaningful parts.
+The `section` module in Manim provides building blocks for segmenting videos. It includes two key classes: `DefaultSectionType`, which allows defining types of sections for third-party applications, and `Section`, which enables dividing a `Scene` into multiple segments. This module helps organize and structure video content by providing a flexible way to break down animations into meaningful sections.

@@ -1,1 +1,1 @@
-Not relevant.
+Manim Community v0.3.0 (released Feb 1, 2021) introduced several key features: graph layout methods, IPython magic, version CLI flag, Code mobject improvements, custom font support, graph enhancements, and color additions. Notable bugfixes included Windows CI pipeline resolution, improved typings, WebGL rendering fixes, and various documentation and usability improvements across the library.

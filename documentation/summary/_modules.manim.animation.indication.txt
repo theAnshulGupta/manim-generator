@@ -1,23 +1,12 @@
-This module provides various attention-grabbing animations in Manim for highlighting or drawing focus to mobjects:
+The `manim.animation.indication` module provides various animation classes that draw attention to specific mobjects. Key animations include:
 
-Key Animations:
-1. `FocusOn`: Creates a shrinking spotlight effect on a specific point/mobject
+1. `FocusOn`: Shrinks a spotlight to a specific point
 2. `Indicate`: Temporarily resizes and recolors a mobject
-3. `Flash`: Sends out radiating lines from a point
-4. `ShowPassingFlash`: Shows a moving sliver of a mobject's stroke
-5. `ApplyWave`: Distorts a mobject with a wave-like motion
-6. `Wiggle`: Scales and rotates a mobject to create a wiggling effect
-7. `Circumscribe`: Draws a temporary rectangle or circle around a mobject
-8. `Blink`: Alternates mobject's visibility
+3. `Flash`: Sends out lines in all directions from a point
+4. `ShowPassingFlash`: Shows a sliver of a stroke that passes through
+5. `ApplyWave`: Distorts a mobject with a wave effect
+6. `Wiggle`: Scales and rotates a mobject to create a wiggling motion
+7. `Circumscribe`: Draws a temporary line (rectangle/circle) around a mobject
+8. `Blink`: Makes a mobject blink on and off
 
-Example usage:
-```python
-class AttentionExample(Scene):
-    def construct(self):
-        text = Tex("Highlight Me").scale(2)
-        self.play(Indicate(text))  # Resize and recolor
-        self.play(Circumscribe(text))  # Draw rectangle around text
-        self.play(Flash(text))  # Radiating lines from text
-```
-
-Each animation has customizable parameters like color, amplitude, duration, and other specific properties to control the effect.
+These animations are designed to highlight or draw attention to specific elements in a Manim scene, providing visual emphasis and dynamism.

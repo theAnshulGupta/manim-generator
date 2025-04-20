@@ -1,8 +1,1 @@
-Mobject1D is a basic point cloud mobject in Manim representing a one-dimensional object. It inherits from PMobject and allows creating point-based 1D objects with a configurable point density (default is 10 points). Key features:
-
-- Initializes with a specified density of points
-- Supports animation via the `.animate` attribute
-- Has basic geometric attributes like depth, height, and width
-- Can add lines using the `add_line()` method
-
-Typical usage would involve creating point-based 1D representations in Manim animations, with flexibility in point distribution and subsequent manipulation.
+Mobject1D is a subclass of PMobject in Manim's point cloud mobject module, designed to represent 1-dimensional objects. It is initialized with a density parameter (default 10) and allows for creating point-based 1D representations with configurable point distribution. The class provides standard Mobject attributes like animate, depth, height, and width, and inherits methods from its parent class, with an add_line method for manipulating the object's geometry.

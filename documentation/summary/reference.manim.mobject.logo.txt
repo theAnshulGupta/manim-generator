@@ -1,1 +1,1 @@
-The `logo` module in Manim provides a single class `ManimBanner` for creating Manim's official logo/banner. It's a convenience class that allows users to easily add the Manim logo to their animations or scenes. No additional technical details or complex usage patterns are specified in the documentation.
+The logo module provides a single class `ManimBanner`, which is a convenience class representing Manim's official banner/logo. It allows easy creation and manipulation of the Manim logo within animations and scenes.

@@ -1,3 +1,1 @@
-The documentation for the `Comparable` class seems minimal and lacks substantial content. Without concrete details about its implementation or purpose, I would simply say:
-
-Not relevant
+The `Comparable` class in Manim is a Protocol (type hint interface) that facilitates comparison operations between objects, likely defining standard comparison methods like `__eq__`, `__lt__`, `__gt__`, etc., which allow objects to be compared using comparison operators and sorting methods. It seems to be a utility class in the `manim.utils.simple_functions` module designed to provide a consistent comparison mechanism for various Manim objects.

@@ -1,11 +1,1 @@
-The `shape_matchers` module in Manim provides utility classes for adding visual markers or annotations to other mobjects:
-
-1. `BackgroundRectangle`: Creates a rectangular background behind a mobject.
-
-2. `Cross`: Generates a cross symbol, typically used to mark or highlight something.
-
-3. `SurroundingRectangle`: Draws a rectangle that encloses another mobject.
-
-4. `Underline`: Creates an underline beneath a mobject.
-
-These classes are useful for emphasizing, marking, or providing visual context to other geometric objects in Manim animations.
+Shape matchers in Manim are utility mobjects used for marking and annotating other mobjects, providing visual emphasis and highlighting. The module includes four classes: BackgroundRectangle (adds a background rectangle), Cross (creates a cross symbol), SurroundingRectangle (draws a rectangle around a mobject), and Underline (creates an underline for a mobject).

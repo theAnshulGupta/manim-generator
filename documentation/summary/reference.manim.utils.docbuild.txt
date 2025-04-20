@@ -1,1 +1,1 @@
-Not relevant. This page appears to be about internal documentation building utilities for the Manim library, which is not important for typical users writing Manim animations.
+The docbuild module provides utilities for building Manim's documentation, including specialized Sphinx directives for documenting type aliases (autoaliasattr_directive), Manim colors (autocolor_directive), and embedding Manim videos in documentation (manim_directive), along with a module_parsing utility to extract documentation from Manim modules.

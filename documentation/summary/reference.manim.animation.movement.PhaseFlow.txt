@@ -1,17 +1,1 @@
-PhaseFlow is an Animation subclass in Manim that allows moving objects based on a vector field function with the following key characteristics:
-
-Parameters:
-- `function`: A callable that transforms numpy arrays (vector field)
-- `mobject`: The object to be moved
-- `virtual_time`: Duration of animation (default 1)
-- `rate_func`: Function controlling animation progression (default linear)
-
-Example usage:
-```python
-def vector_field(points):
-    return points + np.array([1, 0, 0])  # Move points right
-
-PhaseFlow(vector_field, some_mobject)
-```
-
-The animation interpolates object positions according to the provided vector field function, creating smooth, physics-like movements. It's particularly useful for simulating flow, particle movement, or complex transformations.
+PhaseFlow is an Animation subclass in Manim that allows for complex phase-based transformations of mobjects using a custom function. It takes a function that maps point coordinates, a mobject, and optional parameters like virtual_time and rate_func to control the animation's behavior. The animation interpolates the mobject's points based on the provided function, enabling sophisticated geometric transformations during the animation process.

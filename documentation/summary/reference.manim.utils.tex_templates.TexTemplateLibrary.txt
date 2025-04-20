@@ -1,16 +1,1 @@
-TexTemplateLibrary is a collection of pre-defined TeX templates for rendering text in Manim. It provides four main templates:
-
-1. `ctex`: Used by 3b1b when `use_ctex` flag is enabled, uses XeLaTeX compiler and includes Chinese language support.
-
-2. `default`: Manim's default TeX template, uses LaTeX compiler with standard mathematical and typographic packages.
-
-3. `simple`: A minimal TeX template with only basic AMS (American Mathematical Society) packages loaded.
-
-4. `threeb1b`: The default TeX template used by 3Blue1Brown, similar to the default template.
-
-Example usage:
-```python
-Tex("My TeX code", tex_template=TexTemplateLibrary.ctex)
-```
-
-These templates can be used to customize text rendering by specifying different LaTeX packages, compilers, and settings when creating Tex or MathTex mobjects.
+TexTemplateLibrary is a collection of predefined TeX templates for rendering text in Manim. It provides four main templates: ctex (for Chinese text with XeLaTeX), default (standard LaTeX template), simple (basic AMS packages), and threeb1b (3Blue1Brown's specific template). These templates can be used when creating Tex() or MathTex() mobjects by specifying the desired template via the tex_template parameter, offering flexibility in text rendering with different configuration options.

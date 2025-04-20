@@ -1,1 +1,1 @@
-Not relevant.
+Manim Community v0.1.1 (Dec 1, 2020) introduced plugin system support, fixed various import and rendering issues, replaced global config dict with ManimConfig, added external asset directory configuration, improved documentation linking, and made several mobject and scene enhancements like Pango text rendering, new dot variations, updater behavior changes, added geometric objects like ArcPolygon and Cutout, and enabled more reliable background color setting.

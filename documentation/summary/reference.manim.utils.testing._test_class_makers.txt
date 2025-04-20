@@ -1,1 +1,1 @@
-Not relevant
+The `_test_class_makers` module contains a single class `DummySceneFileWriter`, which is a delegate of `SceneFileWriter` used specifically for testing frames in the Manim library. It provides a mock implementation of the scene file writing functionality to facilitate frame testing without actually writing files to disk.

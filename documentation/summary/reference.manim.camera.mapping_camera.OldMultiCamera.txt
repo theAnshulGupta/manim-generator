@@ -1,17 +1,1 @@
-OldMultiCamera is a specialized camera class in Manim that allows capturing and managing multiple camera views or pixel arrays. Key features include:
-
-Key Methods:
-- `capture_mobjects()`: Converts Scene contents into an array for rendering
-- `init_background()`: Sets up the initial background, either from an image or default color
-- `set_background()`: Sets a pixel array as the background
-- `set_pixel_array()`: Assigns a pixel array to the camera
-
-Attributes:
-- `background_color`
-- `background_opacity`
-
-Usage requires passing multiple cameras with their starting positions during initialization.
-
-Primarily used for advanced rendering scenarios where you need complex camera manipulations or multiple view management in a single scene.
-
-Note: This is a low-level camera class, typically not used directly by most Manim users, but provides foundational rendering capabilities.
+A camera class for handling multiple camera views in Manim. Inherits from the base Camera class and provides methods to capture mobjects, initialize backgrounds, and set pixel arrays. Key methods include `capture_mobjects()` for converting scene contents to an array, `init_background()` for setting background images or colors, `set_background()` for defining pixel array backgrounds, and `set_pixel_array()` for setting the camera's pixel array. Designed to manage rendering of multiple camera perspectives in a single scene.

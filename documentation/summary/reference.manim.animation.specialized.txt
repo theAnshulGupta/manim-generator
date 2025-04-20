@@ -1,16 +1,1 @@
-The documentation for the "specialized" module contains a single animation class:
-
-Broadcast:
-- Purpose: An animation that expands a mobject from an initial small width to its full size
-- Key characteristics:
-  - Starts from a specified initial width
-  - Gradually grows the mobject to its actual/full size
-  - Useful for creating a "broadcasting" or expanding effect
-
-Example might look like:
-```python
-some_mobject = Circle()
-scene.play(Broadcast(some_mobject))
-```
-
-This would animate the circle growing from a smaller size to its full size in a dynamic manner.
+The `specialized` module in Manim contains a single animation class `Broadcast`, which animates a mobject by expanding it from an initial smaller width to its full size, creating a broadcast or spreading effect.

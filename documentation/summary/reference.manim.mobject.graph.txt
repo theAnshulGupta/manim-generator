@@ -1,14 +1,1 @@
-Summary of Manim's Graph Module:
-
-The graph module provides classes for representing mathematical graphs (network/connection structures):
-
-Key Classes:
-1. Graph: Undirected graph
-2. DiGraph: Directed graph 
-3. GenericGraph: Abstract base class for graphs
-4. LayoutFunction: Protocol for automatic graph layout computation
-
-Type Alias:
-- NxGraph: Represents NetworkX Graph or DiGraph objects
-
-Main Use: Creating and manipulating graph-like structures in mathematical visualizations, supporting both directed and undirected graph representations with flexible layout options.
+The graph module in Manim provides mobjects for representing mathematical graphs in graph theory. It includes three main classes: DiGraph (directed graph), Graph (undirected graph), and GenericGraph (abstract base graph class). The module supports creating and manipulating graph structures with vertices and edges, and includes a LayoutFunction protocol for automatic graph layout computation. The type alias NxGraph references NetworkX graph types.

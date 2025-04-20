@@ -1,0 +1,18 @@
+5.6.3 The Cauchy Distribution
+A random variable is said to have a Cauchy distribution with parameter θ, -∞ < θ < ∞, if its density is given by
+                f(x) = 1/(π 1 + (x - θ)²)     - ∞ < x < ∞
+EXAMPLE 6b
+Suppose that a narrow-beam flashlight is spun around its center, which is located a unit distance from the x-axis. (See Figure 5.7.) Consider the point X at which the beam intersects the x-axis when the flashlight has stopped spinning. (If the beam is not pointing toward the x-axis, repeat the experiment.)
+[THIS IS FIGURE: A diagram showing a flashlight at height 1 above the x-axis, with angle θ between the beam and y-axis, and the beam pointing to position X on the x-axis]
+FIGURE 5.7
+As indicated in Figure 5.7, the point X is determined by the angle θ between the flashlight and the y-axis, which, from the physical situation, appears to be uniformly distributed between -π/2 and π/2. The distribution function of X is thus given by
+F(x) = P{X ≤ x}
+= P{tan θ ≤ x}
+= P{θ ≤ tan⁻¹ x}
+= 1/2 + 1/π tan⁻¹ x
+Continuous Random Variables
+where the last equality follows since θ, being uniform over (-π/2,π/2), has distribution
+P(θ ≤ a) = (a - (-π/2))/π = 1/2 + a/π     - π/2 < a < π/2
+Hence, the density function of X is given by
+f(x) = d/dx F(x) = 1/(π(1 + x²))     - ∞ < x < ∞
+and we see that X has the Cauchy distribution

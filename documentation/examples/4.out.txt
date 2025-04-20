@@ -1,23 +1,6 @@
 from manim import *
 import math
 
-"""
-Markov Chains – Manim Tutorial
-
-This script creates an educational tutorial video about discrete-time Markov chains,
-covering:
-    1) Title and introduction
-    2) Definition of discrete-time Markov chains
-    3) The Markov property
-    4) Transition probability matrices
-    5) A 2-state example (Alice being up-to-date or behind)
-    6) Summary
-
-All of this content is packaged into a single Scene class named FullTutorial,
-so that when rendered with Manim (Community Edition), it produces a cohesive
-video tutorial.
-"""
-
 # ---------------------------------------------------------------------------
 # Utility Helpers
 # ---------------------------------------------------------------------------

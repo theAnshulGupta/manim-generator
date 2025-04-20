@@ -1,1 +1,1 @@
-Not relevant.
+Guidelines for adding references in Manim documentation: Use specific Sphinx roles like :class:, :meth:, and :attr: when referencing types. For standard library types, use direct names. For Manim classes, use full or abbreviated paths with ~. Use Optional[type] for nullable types, Union[type1, type2] for multiple types, Dict[key_type, value_type] for dictionaries. For iterables, prefer Iterable[type] or Sequence[type], and use List[type] only if a list is explicitly required. Specify return types using List[type] or Tuple[type1, type2].

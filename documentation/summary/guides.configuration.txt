@@ -1,47 +1,22 @@
-Here's a concise summary of Manim's configuration system:
+Manim's configuration system allows extensive customization through various methods: command-line arguments, configuration files, and programmatic configuration via the ManimConfig class. Key points include:
 
-Configuration Overview:
-- Manim offers multiple ways to configure settings:
-  1. Command-line arguments
-  2. Config files (folder-wide, user-wide)
-  3. Programmatic configuration via ManimConfig
+Command-line Interface (CLI):
+- Primary rendering command is `manim render [OPTIONS] FILE [SCENE_NAMES]`
+- Common flags include -qm (medium quality), -p (preview), -s (save last frame)
+- Offers flexible rendering options like output format, resolution, frame rate
 
-Command-line Arguments:
-- Basic render command: `manim [OPTIONS] FILE [SCENES]`
-- Common flags:
-  - `-qm`: Medium quality render
-  - `-p`: Preview rendered video
-  - `-o`: Specify output filename
-  - `-n`: Render specific animation range
-  - `-s`: Save only last frame
-  - `-c`: Set background color
+Configuration Methods:
+1. CLI Flags: Direct command-line configuration
+2. Config Files (manim.cfg): 
+   - Folder-wide config in scene's directory
+   - User-wide config in system-specific locations
+3. ManimConfig: Programmatic configuration via `config` object
 
-Config Files:
-- Must be named `manim.cfg`
-- Starts with `[CLI]` section
-- Can set same options as CLI flags
-- Precedence order (lowest to highest):
-  1. Library-wide config
-  2. User-wide config
-  3. Folder-wide config
-  4. CLI flags
+Configuration Precedence (lowest to highest):
+1. Library-wide config file
+2. User-wide config file
+3. Folder-wide config file
+4. CLI flags
+5. Programmatic changes
 
-ManimConfig:
-- Global config object for programmatic configuration
-- Can set properties like:
-  ```python
-  config.background_color = WHITE
-  config["frame_height"] = 10.0
-  ```
-
-Key Config Options:
-- `background_color`
-- `frame_height`, `frame_width`
-- `pixel_height`, `pixel_width`
-- `output_file`
-- `quality`
-- `transparent`
-
-Recommended Configuration Method:
-- Prefer command-line arguments or config files
-- Programmatic configuration as last resort
+The system is designed to be flexible, allowing users to configure Manim's behavior through multiple methods while maintaining a clear hierarchy of configuration options.

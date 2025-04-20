@@ -1,1 +1,1 @@
-Not relevant.
+Version 0.7.0 of Manim Community was released on June 1, 2021, with 45 contributors and 87 merged pull requests. Key highlights include adding PolarPlane, Polygram, and Star classes, introducing project management commands (manim init, manim new project), dropping Python 3.6 support, and significant OpenGL compatibility improvements. Notable changes include deprecating GraphScene, enhancing color modules, improving vector fields, adding new metaclasses for rendering compatibility, and numerous bug fixes and documentation improvements.

@@ -1,17 +1,1 @@
-`GrowFromPoint` is an animation in Manim that introduces a mobject by growing it from a specific point. 
-
-Key Parameters:
-- `mobject`: The object to be introduced
-- `point`: The starting point from which the object will grow
-- `point_color`: Optional initial color of the mobject before growing
-
-Example usage:
-```python
-dot = Dot(3 * UR, color=GREEN)
-square = Square()
-self.play(GrowFromPoint(square, ORIGIN))  # Grow square from origin
-self.play(GrowFromPoint(square, [-2, 2, 0]))  # Grow from specific coordinates
-self.play(GrowFromPoint(square, dot, dot.get_color()))  # Grow from another mobject
-```
-
-The animation smoothly expands the mobject from a point, making it appear to grow from that location. You can specify the starting point as coordinates, the origin, or even another mobject. The color of the growing point can also be customized.
+The `GrowFromPoint` animation class in Manim allows you to introduce a Mobject by growing it from a specified point. It inherits from the `Transform` class and has parameters for the mobject to be introduced, the point of origin for growth, and an optional point color. The animation smoothly expands the mobject from a single point, with optional customization of the starting point's color. The example demonstrates growing squares from different origin points, including using another dot's position and color as the growth point.

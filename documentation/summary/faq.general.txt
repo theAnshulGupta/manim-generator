@@ -1,1 +1,1 @@
-Not relevant.
+Manim's FAQ for general usage covers common issues like scene rendering problems, scene measurements, Mobject arguments, transparent backgrounds, version differences, LaTeX rendering, CONFIG dictionary translation, and PDF to SVG conversion. Key points include: scenes must have a 'construct' method, scene is 8 units high with 16:9 ratio, transparent backgrounds can be rendered with '-t' flag, older tutorial videos may need code adjustments, and resources for learning are available in the Manim Discord server's #beginner-resources channel.

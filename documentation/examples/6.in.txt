@@ -1,0 +1,109 @@
+Chapter X  
+Approximating τ with Archimedes’ Method of Exhaustion
+=====================================================
+
+“In every circle the ratio of the circumference to the diameter is the same.”
+— Euclid, *Elements XII*
+
+
+1 Why work with τ instead of π?
+--------------------------------
+Because the circumference of a circle of radius *r* is **τ r**, the constant
+
+    τ = 2 π ≈ 6.283 185 …
+
+appears whenever a full revolution is more natural than half a revolution.  
+In this chapter we approximate **τ** geometrically, following Archimedes’ classical idea of trapping the circle’s circumference between the perimeters of **inscribed** and **circumscribed** regular polygons.
+
+
+2 Setting the stage
+-------------------
+* Let the circle have **radius 1**.  
+* A regular *n*-gon **inscribed** in the circle has side length
+
+        i_n = 2 sin(π/n),
+
+  so its perimeter is the **lower bound**  n i_n.  
+* A regular *n*-gon **circumscribed** about the circle has side length
+
+        c_n = 2 tan(π/n),
+
+  so its perimeter is the **upper bound**  n c_n.
+
+Hence every *n* satisfies
+
+        n i_n  <  τ  <  n c_n.  (2.1)
+
+
+3 Doubling the number of sides
+------------------------------
+
+### 3.1 Updating the inscribed polygon  
+A right‑triangle calculation (or the chord‑doubling identity) gives
+
+        i_{2n} = √(2 − √(4 − i_n²)).  (3.1)
+
+### 3.2 Updating the circumscribed polygon  
+Similarity of two isosceles triangles yields
+
+        c_{2n} = (c_n · i_n)/(c_n + i_n).  (3.2)
+
+Formulas (3.1) and (3.2) let us iterate from a coarse 6‑gon to ever finer polygons using only square roots and fractions.
+
+
+4 A worked example
+------------------
+
+Start with the regular **hexagon** (n = 6).
+
+| n  | i_n             | c_n               | n i_n  | n c_n  | τ trapped between |
+|----|-----------------|-------------------|--------|--------|-------------------|
+| 6  | 1               | 2√3⁄3 ≈ 1.1547    | 6.0000 | 6.9282 | 6.00 < τ < 6.93   |
+| 12 | from (3.1)      | from (3.2)        | 6.2117 | 6.4300 | 6.21 < τ < 6.43   |
+| 24 | ”               | ”                 | 6.2653 | 6.3601 | 6.27 < τ < 6.36   |
+| 48 | ”               | ”                 | 6.2771 | 6.3314 | 6.28 < τ < 6.33   |
+| 96 | ”               | ”                 | 6.2821 | 6.2920 | 6.28 < τ < 6.29   |
+
+Thus with only four doublings we have
+
+        τ ≈ 6.28
+
+correct to two decimal places.
+
+
+5 Error analysis
+----------------
+Each doubling squares the inscribed error and roughly halves the circumscribed error, so two doublings gain about one extra correct decimal digit.
+
+
+6 Historical note
+-----------------
+Archimedes (ca. 250 BCE) used a 96‑gon and wrote
+
+        3 10⁄71 < π < 3 1⁄7,
+equivalently
+        6.28 < τ < 6.29.
+
+The method remains a paradigm of rigor and ingenuity.
+
+
+7 Algorithmic summary
+---------------------
+Input : tolerance ε n ← 6 i ← 1 # 2 sin(π/6) c ← 2/√3 # 2 tan(π/6) while n·c − n·i > ε: n ← 2n i ← √(2 − √(4 − i²)) # Eq. (3.1) c ← (c·i)/(c + i) # Eq. (3.2) return τ ≈ (n·i + n·c)/2
+Each loop halves the gap n(c−i); the algorithm converges in O(log log 1/ε) iterations.
+
+
+8 Exercises
+-----------
+1. Derive Eq. (3.1) directly from half‑angle formulas.  
+2. Verify that 2 tan(π/2n) satisfies Eq. (3.2).  
+3. How many sides guarantee five correct decimal places of τ?  
+4. Implement the algorithm and compare its speed with evaluating 2π.  
+5. Adapt the method to approximate the circle’s **area** (π = τ⁄2).
+
+
+9 Key takeaways
+---------------
+* **Bounding beats guessing**: trap the unknown between computable quantities.  
+* **Recursive refinement**: doubling sides gives simple recurrences free of heavy trigonometry.  
+* Pure geometry reproduces the first few digits of **τ** in a handful of steps, illustrating the enduring power of Archimedes’ method of exhaustion.

@@ -1,1 +1,1 @@
-Not relevant
+A utility class in Manim's documentation build system that serves as an auxiliary node to skip rendering the Manim directive when the 'skip-manim' tag is present or when generating .pot files. It inherits from Admonition and Element classes, and essentially acts as a placeholder during documentation processing.

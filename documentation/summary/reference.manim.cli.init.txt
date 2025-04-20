@@ -1,1 +1,1 @@
-Not relevant. This appears to be a reference page about the Manim CLI initialization module, which does not contain substantive user-facing documentation for actually creating animations.
+The `init` subcommand in Manim's CLI is used to create a new Manim project by generating a default configuration file (`manim.cfg`) and a sample scene file (`example_scene.py`) in the current directory, providing a quick and easy way for users to start creating animations with Manim.

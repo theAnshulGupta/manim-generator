@@ -1,14 +1,1 @@
-ArrowSquareTip is a square-shaped arrow tip in Manim used when creating arrows. Key details:
-
-Parameters:
-- `fill_opacity`: Transparency of tip (default 0)
-- `stroke_width`: Width of tip outline (default 3)
-- `length`: Size of tip (default 0.35)
-- `start_angle`: Initial orientation angle (default π)
-
-Example usage:
-```python
-Arrow(start_point, end_point, tip_class=ArrowSquareTip)
-```
-
-This creates arrows with square-shaped tips instead of the default triangular tips. The tip can be customized via its parameters to adjust size, opacity, and outline width.
+ArrowSquareTip is a square-shaped arrow tip in Manim, derived from ArrowTip and Square. It allows customization of fill opacity, stroke width, length, and start angle. By default, it has a fill opacity of 0, stroke width of 3, length of 0.35, and a start angle of π. The tip can be used to create arrows with square-shaped tips in Manim animations and graphics.

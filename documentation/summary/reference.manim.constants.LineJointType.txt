@@ -1,15 +1,1 @@
-LineJointType is an enumeration in Manim that defines different styles for joining line segments. It has four types:
-
-1. AUTO: Default automatic joint type
-2. ROUND: Creates rounded line joints
-3. BEVEL: Creates beveled line joints
-4. MITER: Creates mitered line joints
-
-The example code demonstrates how to apply these different joint types to a VMobject. Each type affects how line segments connect, changing the visual appearance of corners or intersections.
-
-Use it by setting the `joint_type` attribute on a VMobject, like:
-```python
-line.joint_type = LineJointType.ROUND
-```
-
-The provided example scene creates a visual comparison of all four joint types, showing their distinct appearance when lines change direction.
+LineJointType is an enumeration in Manim that defines different styles for joining lines, including AUTO, ROUND, BEVEL, and MITER. These joint types determine how lines connect at their vertices, affecting the visual appearance of line intersections. The included example demonstrates each joint type visually, showing how the lines' endpoints are connected with different styles, which can be useful when customizing the appearance of vector graphics or geometric shapes in Manim animations.

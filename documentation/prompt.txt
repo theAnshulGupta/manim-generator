@@ -1,74 +1,254 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{bm}
+\usepackage{algorithm}
+\usepackage[noend]{algpseudocode}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{enumitem}
 
-\\documentclass{article}
-\\usepackage{amsmath}
+\title{Gradient Descent}
+\author{Formatted from MIT 6.390 Intro to Machine Learning notes}
+\date{\today}
 
-\\begin{document}
+% theorem environment
+\newtheorem{theorem}{Theorem}
 
-\\section*{Vector Semantics and Embeddings - Equations and Explanations}
+\begin{document}
 
-\\subsection*{1. Dot Product}
-The dot product is a basic operation in linear algebra, representing a similarity measure between two vectors. It is defined as the sum of the products of corresponding entries of two sequences of numbers. The formula is:
-\\[
-\\text{dot product}(v, w) = v \\cdot w = \\sum_{i=1}^{N} v_i w_i = v_1 w_1 + v_2 w_2 + \\cdots + v_N w_N
-\\]
+\maketitle
+\tableofcontents
+\bigskip
 
-\\subsection*{2. Cosine Similarity}
-Cosine similarity is a metric used to measure how similar two vectors are. It is computed by taking the cosine of the angle between two vectors, which is equivalent to the normalized dot product:
-\\[
-\\text{cosine}(v, w) = \\frac{v \\cdot w}{|v| |w|}
-\\]
-Where the lengths of the vectors, \( |v| \) and \( |w| \), are calculated as:
-\\[
-|v| = \\sqrt{\\sum_{i=1}^{N} v_i^2}
-\\]
-\\[
-|w| = \\sqrt{\\sum_{i=1}^{N} w_i^2}
-\\]
+\section{Gradient Descent}
 
-\\subsection*{3. Term Frequency (tf)}
-Term Frequency is a measure of how frequently a term occurs in a document. It is usually used as part of the TF-IDF model. The formula is:
-\\[
-t_{f,t,d} = \\text{count}(t,d)
-\\]
-A common variation uses logarithmic scaling for term frequency to avoid bias for very frequent terms:
-\\[
-t_{f,t,d} = 
-\\begin{cases} 
-1 + \\log_{10} (\\text{count}(t,d)) & \\text{if } \\text{count}(t,d) > 0 \\\\
-0 & \\text{otherwise}
-\\end{cases}
-\\]
+In supervised learning we often want to find the parameter set
+\(
+\Theta^\star=\arg\min_{\Theta} J(\Theta)
+\)
+for some objective \(J\).
+When \(J\) is too complicated for closed‑form optimisation—or the parameter
+dimension is simply huge—we turn to iterative optimisation.
+The simplest workhorse is \emph{gradient descent} (GD).%
+\footnote{A concise optimisation reference that underlies much of modern ML.}
 
-\\subsection*{4. Inverse Document Frequency (idf)}
-Inverse Document Frequency is a measure that helps to reduce the weight of common terms that appear in many documents and emphasize rare terms that carry more meaning. It is calculated as:
-\\[
-\\text{idf}_t = \\log_{10} \\left( \\frac{N}{dft_t} \\right)
-\\]
-Where \( N \) is the total number of documents and \( dft_t \) is the number of documents that contain term \( t \).
+Intuitively, imagine \(J(\Theta)\) as a terrain.
+GD starts from an initial point, looks for the steepest downward direction, steps a
+little, then repeats until it reaches (a local) minimum.
 
-\\subsection*{5. TF-IDF}
-TF-IDF is the product of Term Frequency and Inverse Document Frequency. It is used to measure the importance of a term within a document relative to a collection of documents. The formula is:
-\\[
-w_{t,d} = t_{f,t,d} \\times \\text{idf}_t
-\\]
+\vspace{.5em}
+The chapter develops GD in four stages:
 
-\\subsection*{6. Pointwise Mutual Information (PMI)}
-PMI is a measure of association between two terms based on their co-occurrence. It compares the observed probability of the terms co-occurring with the expected probability under independence:
-\\[
-PMI(w,c) = \\log_2 \\left( \\frac{P(w,c)}{P(w)P(c)} \\right)
-\\]
-Where \( P(w,c) \) is the joint probability, and \( P(w) \) and \( P(c) \) are the marginal probabilities.
+\begin{enumerate}[leftmargin=*]
+  \item 1‑D gradient descent;
+  \item extension to many dimensions;
+  \item application to linear and ridge regression;
+  \item stochastic gradient descent (SGD) for large data.
+\end{enumerate}
 
-\\subsection*{7. PPMI (Positive PMI)}
-PPMI is a variation of PMI, where negative PMI values are replaced with zero. It is useful when we want to focus on positive associations and discard unlikely or less useful associations:
-\\[
-\\text{PPMI}(w,c) = \\max \\left( \\log_2 \\left( \\frac{P(w,c)}{P(w)P(c)} \\right), 0 \\right)
-\\]
+% ------------------------------------------------------------
+\subsection{Gradient descent in one dimension}\label{sec:1d}
 
-\\subsection*{8. Skip-Gram Loss Function}
-The Skip-Gram model in Word2Vec uses a classifier to predict context words given a target word. The loss function is designed to maximize the probability of context words appearing near the target word, while minimizing the probability of non-context words. The formula for the loss function is:
-\\[
-L = -\\log P(+|w,c_{\\text{pos}}) - \\sum_{i=1}^{k} \\log P(-|w,c_{\\text{neg}_i})
-\\]
+Assume \(\Theta\in\mathbb{R}\) and both the objective
+\(f(\Theta)\) and its derivative \(f'(\Theta)\) are available.
+Besides those, GD needs three hyper‑parameters:
 
-\\end{document}
+\begin{itemize}
+  \item initial value \(\Theta_{\text{init}}\);
+  \item step size (``learning rate'') \(\eta>0\);
+  \item accuracy threshold \(\epsilon>0\).
+\end{itemize}
+
+Even with constant \(\eta\), the update magnitude changes because it is scaled
+by the current derivative.
+
+\begin{algorithm}[h]
+  \caption{1D‑Gradient‑Descent}
+  \begin{algorithmic}[1]
+    \Procedure{1D‑Gradient‑Descent}{$\Theta_{\text{init}},\eta,f,f',\epsilon$}
+      \State $\Theta^{(0)}\gets\Theta_{\text{init}}$, \quad $t\gets0$
+      \Repeat
+        \State $t\gets t+1$
+        \State $\Theta^{(t)}\gets\Theta^{(t-1)}-\eta\,f'(\Theta^{(t-1)})$
+      \Until{$\lvert f'(\Theta^{(t)})\rvert<\epsilon$}
+      \State \Return $\Theta^{(t)}$
+    \EndProcedure
+  \end{algorithmic}
+\end{algorithm}
+
+Common alternative stopping rules:
+
+\begin{enumerate}[label=(\alph*)]
+  \item fixed iteration cap \(t=T\);
+  \item small parameter change
+        \(\lvert\Theta^{(t)}-\Theta^{(t-1)}\rvert<\epsilon\);
+  \item small function change
+        \(\lvert f(\Theta^{(t)})-f(\Theta^{(t-1)})\rvert<\epsilon\).
+\end{enumerate}
+
+\begin{theorem}
+  \label{thm:1d-convex}
+  Fix any \(\tilde\epsilon>0\).  
+  If \(f\) is convex, differentiable, has a global minimum, and \(\eta\) is small
+  enough, then GD reaches a point within \(\tilde\epsilon\) of an
+  optimum.
+\end{theorem}
+
+\noindent
+\emph{Example.}  
+For \(f(x)=(x-2)^2\) starting at \(x_{\text{init}}=4\) with \(\eta=\tfrac12\),
+GD converges quadratically.
+
+% Optional figure; uncomment when you have the file
+% \begin{figure}[ht]
+%   \centering
+%   \includegraphics[width=.8\linewidth]{gd_convex.png}
+%   \caption{Convergence on a convex quadratic.}
+% \end{figure}
+
+If \(f\) is non‑convex, convergence depends on the start point and step size.
+GD can also stall at non‑minimiser stationary points (e.g.\ \(f(x)=x^{3}\))
+or diverge when no minimum exists (e.g.\ \(f(x)=e^{-x}\)).
+
+% ------------------------------------------------------------
+\subsection{Multiple dimensions}
+
+Let \(\Theta\in\mathbb{R}^m\) and \(f:\mathbb{R}^m\to\mathbb{R}\).
+The gradient is
+\[
+\nabla_\Theta f(\Theta)=
+\begin{bmatrix}
+  \partial f/\partial\Theta_1\\
+  \vdots\\
+  \partial f/\partial\Theta_m
+\end{bmatrix}.
+\]
+The update becomes
+\(
+\Theta^{(t)}
+  =\Theta^{(t-1)}-\eta\nabla_\Theta f(\Theta^{(t-1)}).
+\)
+Termination based on function change
+\(\lvert f(\Theta^{(t)})-f(\Theta^{(t-1)})\rvert<\epsilon\)
+works in any dimension.
+
+% ------------------------------------------------------------
+\subsection{Application to regression}
+
+Linear regression with squared‑error loss:
+\[
+J(\bm\theta)=\frac1n\sum_{i=1}^n
+  \bigl(\bm\theta^{\!\top}\!x^{(i)}-y^{(i)}\bigr)^2,\qquad
+\nabla_{\bm\theta}J=\frac{2}{n}X^\top(X\bm\theta-Y).
+\]
+GD update:
+\[
+\bm\theta^{(t)}
+  =\bm\theta^{(t-1)}
+    -\eta\frac{2}{n}\sum_{i=1}^{n}
+        \bigl(\bm\theta^{(t-1)\!\top}x^{(i)}-y^{(i)}\bigr)x^{(i)}.
+\]
+
+\subsubsection{Ridge regression}
+
+Add \(\ell_2\) regularisation:
+\[
+J_{\text{ridge}}(\bm\theta,\theta_0)
+  =\frac1n\sum_{i=1}^n
+     \bigl(\bm\theta^{\!\top}\!x^{(i)}+\theta_0-y^{(i)}\bigr)^2
+   +\lambda\lVert\bm\theta\rVert^2.
+\]
+Gradients
+\begin{align*}
+\nabla_{\bm\theta}J_{\text{ridge}}
+   &=\frac{2}{n}\sum_{i=1}^n
+       \bigl(\bm\theta^{\!\top}\!x^{(i)}+\theta_0-y^{(i)}\bigr)x^{(i)}
+       +2\lambda\bm\theta, \\
+\partial J_{\text{ridge}}/\partial\theta_0
+   &=\frac{2}{n}\sum_{i=1}^n
+       \bigl(\bm\theta^{\!\top}\!x^{(i)}+\theta_0-y^{(i)}\bigr).
+\end{align*}
+
+\begin{algorithm}[h]
+  \caption{RR‑Gradient‑Descent (ridge regression)}
+  \begin{algorithmic}[1]
+    \Procedure{RR‑Gradient‑Descent}{$\bm\theta_{\text{init}},
+            \theta_{0,\text{init}},\eta,\epsilon$}
+      \State $\bm\theta^{(0)}\gets\bm\theta_{\text{init}}$,
+             $\theta_0^{(0)}\gets\theta_{0,\text{init}}$, $t\gets0$
+      \Repeat
+        \State $t\gets t+1$
+        \State $\bm\theta^{(t)}\gets\bm\theta^{(t-1)}
+          -\eta\Bigl[
+            \tfrac1n\sum_{i}
+              (\bm\theta^{(t-1)\!\top}x^{(i)}+\theta_0^{(t-1)}-y^{(i)})x^{(i)}
+            +\lambda\bm\theta^{(t-1)}\Bigr]$
+        \State $\theta_0^{(t)}\gets\theta_0^{(t-1)}
+          -\eta\,\tfrac1n\sum_{i}
+              (\bm\theta^{(t-1)\!\top}x^{(i)}+\theta_0^{(t-1)}-y^{(i)})$
+      \Until{$\lvert
+          J_{\text{ridge}}(\bm\theta^{(t)},\theta_0^{(t)})
+         -J_{\text{ridge}}(\bm\theta^{(t-1)},\theta_0^{(t-1)})
+         \rvert<\epsilon$}
+      \State \Return $(\bm\theta^{(t)},\theta_0^{(t)})$
+    \EndProcedure
+  \end{algorithmic}
+\end{algorithm}
+
+% ------------------------------------------------------------
+\subsection{Stochastic gradient descent (SGD)}
+
+When \(
+f(\Theta)=\tfrac1n\sum_{i=1}^n f_i(\Theta)
+\),
+computing \(\nabla f\) exactly may be costly.
+SGD updates with one randomly chosen term:
+
+\begin{algorithm}[h]
+  \caption{Stochastic‑Gradient‑Descent}
+  \begin{algorithmic}[1]
+    \Procedure{SGD}{$\Theta_{\text{init}},\eta,f,\{\nabla f_i\},T$}
+      \State $\Theta^{(0)}\gets\Theta_{\text{init}}$
+      \For{$t=1$ \textbf{to} $T$}
+        \State choose \(i\sim\text{Uniform}\{1,\dots,n\}\)
+        \State $\Theta^{(t)}\gets\Theta^{(t-1)}
+          -\eta(t)\,\nabla f_i(\Theta^{(t-1)})$
+      \EndFor
+    \EndProcedure
+  \end{algorithmic}
+\end{algorithm}
+
+\begin{theorem}
+  \label{thm:sgd}
+  If \(f\) is convex and the learning‑rate sequence satisfies
+  \(
+    \sum_{t=1}^{\infty}\eta(t)=\infty,\;
+    \sum_{t=1}^{\infty}\eta(t)^2<\infty,
+  \)
+  then SGD converges to the optimum with probability 1.
+\end{theorem}
+
+\paragraph{Why SGD?}
+\begin{itemize}[leftmargin=*]
+  \item \textbf{Efficiency.}  
+        Large data sets: each step touches one (or a small batch of)
+        data point(s), saving time and memory.
+  \item \textbf{Escaping bad minima.}  
+        Noise in the update may jump out of shallow local minima
+        that trap batch GD.
+  \item \textbf{Generalisation.}  
+        Slight under‑optimisation can reduce over‑fitting, often leading
+        to lower test error.
+\end{itemize}
+
+% Optional figure illustrating two SGD trajectories
+% \begin{figure}[ht]
+%   \centering
+%   \includegraphics[width=.8\linewidth]{sgd_paths.png}
+%   \caption{Two different initial points converge to different minima.}
+% \end{figure}
+
+\end{document}
+
+Be creative with the visualizations and keep it short (maybe around 1-2 minutes)!

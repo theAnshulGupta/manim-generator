@@ -1,11 +1,1 @@
-This is a utility function for visualizing differences between generated and expected image frames during testing in Manim. The `show_diff_helper` function does the following:
-
-1. Uses matplotlib to create a 2x2 grid of subplots
-2. Displays:
-   - Generated frame
-   - Expected frame
-   - Difference summary (green = same pixels, red = different pixels)
-
-The function handles cases where interactive matplotlib is not available by saving the diff visualization as a PDF file. It's primarily used for testing and debugging visual rendering in Manim.
-
-Example usage would typically be within Manim's testing framework to visually compare frame differences during test runs.
+A utility function for visually displaying differences between generated and expected frames during testing. It uses matplotlib to create a grid with three subplots: the generated frame, the expected frame, and a difference summary where same pixels are green and different pixels are red. If interactive matplotlib is unavailable, it saves the diff visualization as a PDF file, logging a warning.

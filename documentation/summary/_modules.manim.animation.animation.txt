@@ -1,51 +1,8 @@
-Summary of the `manim.animation.animation` module:
+The `manim.animation.animation` module provides the core `Animation` class and related utilities for creating animations in Manim. The `Animation` class is the base class for all animations, with key features including:
 
-Core Animation Class:
-```python
-class Animation:
-    """Base class for all animations in Manim.
+- Configurable run time, rate function, lag ratio, and other animation parameters
+- Methods to begin, interpolate, and finish animations
+- Support for suspending mobject updates during animation
+- Ability to copy and set default values for animations
 
-    Key Parameters:
-    - mobject: Object to animate
-    - run_time: Duration of animation (default 1 second)
-    - rate_func: Function controlling animation progress
-    - lag_ratio: Delay between submobject animations
-    - remover: Whether to remove mobject after animation
-    """
-
-    def interpolate(self, alpha: float):
-        """Interpolate animation progress from 0 to 1"""
-        pass
-
-    def begin(self):
-        """Initialize animation setup"""
-        pass
-
-    def finish(self):
-        """Complete animation"""
-        pass
-```
-
-Special Animation Classes:
-```python
-class Wait(Animation):
-    """Static "do nothing" animation with optional duration"""
-
-class Add(Animation):
-    """Instantly add mobjects to the scene"""
-```
-
-Key Utility Functions:
-```python
-def prepare_animation(anim):
-    """Convert various inputs to an Animation object"""
-
-def override_animation(animation_class):
-    """Decorator to override default animations for specific mobjects"""
-```
-
-Main Features:
-- Flexible animation creation
-- Customizable timing and progression
-- Support for submobject animations
-- Easy extension through inheritance
+The module includes additional classes like `Wait` (a no-operation animation) and `Add` (for instantly adding mobjects to a scene), and provides a `override_animation` decorator for customizing animation behavior for specific mobject types. The `prepare_animation` function helps convert various animation-like objects into actual `Animation` instances.

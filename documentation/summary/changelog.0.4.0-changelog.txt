@@ -1,1 +1,1 @@
-Not relevant.
+Manim Community v0.4.0 (March 3, 2021) introduced significant improvements, including a reworked SVG engine with better fill and stroke property retention, new 3D mobjects (Cone, Cylinder, Line3D, Arrow3D, Torus), added font registration for macOS, and a generic set() method. Several bugfixes addressed rendering, documentation, and installation issues, such as fixing hot reload for WebGL on Windows, improving MarkupText color handling, enhancing CLI functionality, and resolving various rendering and animation-related problems.

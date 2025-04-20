@@ -1,21 +1,5 @@
-The `debug` module in Manim provides two utility functions for debugging:
+The `debug` module in Manim provides two utility functions for debugging Manim animations:
 
-1. `index_labels(mobject, ...)`:
-   - Returns a VGroup of Integer labels for each submobject
-   - Useful for identifying and working with complex mobjects
-   - Customizable label appearance (height, stroke width, color)
-   - Example shows labeling parts of a MathTex object
+1. `index_labels(mobject, ...)`: A function that returns a VGroup of Integer labels showing the index of each submobject in a given mobject. It helps developers identify and work with specific parts of complex mobjects by adding numerical labels. Parameters include customizing label height, background stroke width, and color. The example demonstrates labeling indices of a MathTex object and color-coding specific submobjects.
 
-Example code:
-```python
-text = MathTex("\\frac{d}{dx}f(x)g(x)=", ...)
-indices = index_labels(text[0])
-self.add(text, indices)
-```
-
-2. `print_family(mobject, n_tabs=0)`:
-   - A debugging function for printing the family hierarchy of a mobject
-   - Helps understand the structure of complex mobjects
-   - Prints with optional indentation
-
-These functions are primarily used during development to understand and debug Manim mobject structures.
+2. `print_family(mobject, n_tabs=0)`: A simple debugging function for printing the family hierarchy of a mobject, useful for understanding the structure and relationships between mobjects during development.

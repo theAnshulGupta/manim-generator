@@ -1,27 +1,3 @@
-This module defines various 3D geometric shapes and objects in Manim:
+Summary of manim.mobject.three_d.three_dimensions module:
 
-Key Classes:
-1. Surface: Base parametric surface that can be customized
-2. Sphere: 3D spherical object
-3. Dot3D: 3D point/dot representation
-4. Cube/Prism: 3D cubic/rectangular shapes
-5. Cone: Conical shape
-6. Cylinder: Cylindrical shape
-7. Line3D: 3D line with thickness
-8. Arrow3D: 3D arrow with cylindrical body and conical tip
-9. Torus: Donut-shaped geometric object
-
-Each class provides:
-- Customizable parameters like radius, height, direction
-- Methods to manipulate shape (rotate, set direction)
-- Ability to set color, opacity, resolution
-- Parametric function generation
-
-Example usage would look like:
-```python
-sphere = Sphere(radius=2, center=(1,2,3))
-cylinder = Cylinder(radius=1, height=3, direction=Z_AXIS)
-arrow = Arrow3D(start=[0,0,0], end=[1,1,1])
-```
-
-These classes are primarily used in 3D scenes to create geometric visualizations.
+This module defines several 3D geometric shapes and primitives for Manim, including ThreeDVMobject (base 3D vectorized object), Surface (parametric surface), Sphere, Dot3D, Cube, Prism, Cone, Cylinder, Line3D, Arrow3D, and Torus. Each class provides methods for generating 3D points, setting colors, applying transformations, and customizing appearance. The shapes can be configured with parameters like radius, height, direction, resolution, and color, enabling flexible creation of three-dimensional objects for mathematical and educational animations.

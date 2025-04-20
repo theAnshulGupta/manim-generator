@@ -1,33 +1,12 @@
-The Angle class in Manim is used to create visual representations of angles between two lines. Here's a concise summary:
+The `Angle` class in Manim is a VMobject representing the angle between two lines. It can create circular arcs or elbow-type angle representations with customizable parameters:
 
-Key Parameters:
-- line1, line2: The two lines defining the angle
-- radius: Size of the angle arc
-- quadrant: Determines which quadrant to draw the angle in
-- other_angle: Toggles between two possible angle interpretations
-- dot: Option to add a dot at the angle's center
-- elbow: Creates an elbow-type angle representation
+- Requires two lines as input
+- Optional parameters include radius, quadrant, dot placement, color, and angle direction
+- Can generate right angles or custom angles
+- Supports adding a dot at the angle's vertex
+- Provides methods to get angle lines, calculate angle value (in degrees or radians)
+- Offers static method `from_three_points()` to create an angle using three points
+- Flexible rendering options like arc size, dot placement, and color customization
+- Useful for mathematical and geometric visualizations in animations
 
-Main Methods:
-1. from_three_points(): Create an angle using three points
-2. get_lines(): Returns the lines forming the angle
-3. get_value(): Returns the angle's numerical value
-
-Example Usages:
-```python
-# Basic right angle with dot
-Angle(line1, line2, dot=True)
-
-# Customized angle
-Angle(line1, line2, 
-    radius=0.5, 
-    quadrant=(-1,1), 
-    color=RED, 
-    other_angle=True
-)
-
-# Angle from three points
-Angle.from_three_points(A, B, C)
-```
-
-The class offers flexible ways to visualize and measure angles with various customization options.
+The class allows precise control over angle representation, making it versatile for educational and visual mathematics content.

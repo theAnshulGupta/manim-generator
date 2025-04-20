@@ -1,1 +1,1 @@
-Not relevant.
+The OpenGL renderer documentation is limited, with base classes and specific OpenGL classes not fully documented online. A user guide by aquabeam exists to help get started. For an interactive scene error with OpenGL, downgrading IPython to version 8.0.1 (via `pip install IPython==8.0.1`) can resolve the sqlite3.ProgrammingError.

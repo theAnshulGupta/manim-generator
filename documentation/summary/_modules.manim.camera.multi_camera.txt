@@ -1,15 +1,1 @@
-The `MultiCamera` class in Manim allows for creating multiple camera perspectives within a single scene. Here's a concise summary:
-
-Key Features:
-- Inherits from `MovingCamera`
-- Supports multiple camera perspectives using `ImageMobject`s
-- Can control whether cameras capture their own display
-
-Main Methods:
-1. `__init__()`: Initialize MultiCamera with optional image mobjects
-2. `add_image_mobject_from_camera()`: Add an `ImageMobject` from a camera
-3. `update_sub_cameras()`: Reshape sub-camera pixel arrays
-4. `reset()`: Reset the MultiCamera and its sub-cameras
-5. `capture_mobjects()`: Capture mobjects across different camera perspectives
-
-Example use case would be creating split-screen or picture-in-picture style animations where multiple camera views can be displayed simultaneously.
+The `MultiCamera` class in Manim extends the `MovingCamera` to support multiple camera perspectives. It allows adding `ImageMobject`s from different cameras, with options to control whether cameras can capture their own display. Key methods include `add_image_mobject_from_camera()` for adding camera-sourced images, `update_sub_cameras()` to reshape pixel arrays, `reset()` to reset camera states, and `capture_mobjects()` to capture scene mobjects across multiple camera perspectives. The class provides flexibility in managing complex multi-perspective rendering scenarios.

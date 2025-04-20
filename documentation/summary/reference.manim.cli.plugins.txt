@@ -1,1 +1,1 @@
-Not relevant. This documentation appears to be a technical page about Manim's plugin system, but contains no substantive information for an average user to understand or use plugins in Manim.
+This documentation page discusses Manim's plugin system, which allows extending Manim's functionality through third-party plugins. Plugins can add custom commands, modify existing behaviors, or introduce new features to Manim, providing a flexible mechanism for developers to enhance the library's capabilities beyond its core functionality.

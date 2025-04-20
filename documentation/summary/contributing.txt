@@ -1,1 +1,1 @@
-Not relevant.
+Not Relevant (This is a general contributing guidelines page that details various ways of contributing to the Manim project, but does not contain specific technical documentation)

@@ -1,9 +1,1 @@
-The `numbers` module in Manim provides three key classes for representing and manipulating numbers in animations:
-
-1. `DecimalNumber`: Represents a decimal number that can be animated and updated dynamically.
-
-2. `Integer`: A class for displaying whole numbers with animation capabilities.
-
-3. `Variable`: A specialized class that displays text in the format "label = value", with the value continuously updated using a `ValueTracker`.
-
-These classes allow for flexible and dynamic numeric representations in Manim animations, enabling users to create visualizations that show changing numerical values.
+A module containing mobjects for representing numerical values. It includes three primary classes: DecimalNumber (for displaying decimal numbers), Integer (for displaying whole numbers), and Variable (for displaying text with a label and continuously updated value from a ValueTracker). These classes help create dynamic and customizable numeric representations in Manim animations.

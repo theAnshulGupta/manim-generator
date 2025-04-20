@@ -1,9 +1,1 @@
-This appears to be a minimal documentation page with very little substantive information. Without additional context, the best summary would be:
-
-`QualityDict` is a `TypedDict` in the Manim library that likely contains predefined video quality settings, with attributes potentially including:
-- `flag`
-- `pixel_height`
-- `pixel_width`
-- `frame_rate`
-
-These attributes suggest it's used to define standard video rendering quality configurations in Manim.
+QualityDict is a TypedDict in Manim that defines video rendering quality settings, containing attributes like flag, pixel_height, pixel_width, and frame_rate which specify parameters for different rendering quality levels in video production.

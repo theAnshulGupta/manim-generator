@@ -1,18 +1,1 @@
-AS2700 is a color standard created in 1985 by Australia that provides a comprehensive color naming and categorization system. Key points:
-
-1. Color Identification:
-- Uses a category code (B = Blue, G = Green, N = Neutrals, P = Purple, R = Red, T = Blue/Green, X = Yellow/Red, Y = Yellow)
-- Each color has a unique code and name (e.g., B23_BRIGHT_BLUE)
-
-2. Usage in Manim:
-```python
-from manim import AS2700
-color = AS2700.B23_BRIGHT_BLUE  # Hex code: '#174F90'
-```
-
-3. Contains over 200 color constants with:
-- Descriptive names (like "Harbour Blue", "Mint Green")
-- Corresponding hex color codes
-- Organized by color categories
-
-The module provides a standardized, comprehensive color palette that can be easily referenced in Manim animations.
+The AS2700 module contains the Australian Independent Color Standard's color palette from 1985, offering 200+ colors identified by a category code (B-Blue, G-Green, N-Neutrals, etc.) and a number. Colors are accessed directly via the module, with each color represented as a ManimColor with a specific hex code. The comprehensive list includes descriptive color names like "BRIGHT_BLUE", "EMERALD", "SALMON_PINK", with approximately unofficial hex values sourced from w3schools to simulate the standard's colors.

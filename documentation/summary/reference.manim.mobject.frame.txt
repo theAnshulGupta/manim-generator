@@ -1,7 +1,1 @@
-The `frame` module in Manim provides two special rectangle classes:
-
-1. `FullScreenRectangle`: A rectangle that covers the entire screen's dimensions.
-
-2. `ScreenRectangle`: A rectangle representing the screen's dimensions.
-
-These classes are useful for creating background elements, defining screen boundaries, or creating visual frames in animations.
+The `frame` module in Manim provides two special rectangle classes: `FullScreenRectangle` and `ScreenRectangle`, which are used to create rectangular shapes that represent screen or full-screen dimensions in animations.
