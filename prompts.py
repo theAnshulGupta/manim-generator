@@ -13,7 +13,7 @@ def encode_image(image_path):
 
 def llm(prompt_chain):
     response = client.chat.completions.create(
-        model="claude-sonnet-3.7",
+        model="claude-3-7-sonnet-20250219",
         messages=prompt_chain
     )
     return response.choices[0].message.content
