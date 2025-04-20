@@ -1,0 +1,14 @@
+4.6  THE BERNOULLI AND BINOMIAL RANDOM VARIABLES
+Suppose that a trial, or an experiment, whose outcome can be classified as either a success or a failure is performed. If we let X = 1 when the outcome is a success and X = 0 when it is a failure, then the probability mass function of X is given by
+p(0) = P{X = 0} = 1 - p
+p(1) = P{X = 1} = p                                       (6.1)
+where p, 0 ≤ p ≤ 1, is the probability that the trial is a success.
+A random variable X is said to be a Bernoulli random variable (after the Swiss mathematician James Bernoulli) if its probability mass function is given by Equations (6.1) for some p ∈ (0, 1).
+Suppose now that n independent trials, each of which results in a success with probability p and in a failure with probability 1 - p, are to be performed. If X represents the number of successes that occur in the n trials, then X is said to be a binomial random variable with parameters (n, p). Thus, a Bernoulli random variable is just a binomial random variable with parameters (1, p).
+The probability mass function of a binomial random variable having parameters (n, p) is given by
+            p(i) = (n choose i)p^i(1 - p)^(n-i)    i = 0, 1, . . . , n    (6.2)
+The validity of Equation (6.2) may be verified by first noting that the probability of any particular sequence of n outcomes containing i successes and n - i failures is, by the assumed independence of trials, p^i(1 - p)^(n-i). Equation (6.2) then follows, since there are (n choose i) different sequences of the n outcomes leading to i successes and n - i failures. This perhaps can most easily be seen by noting that there are (n choose i) different choices of the i trials that result in successes. For instance, if n = 4, i = 2, then there are (4 choose 2) = 6 ways in which the four trials can result in two successes,
+Section 4.6    The Bernoulli and Binomial Random Variables    135
+namely, any of the outcomes (s, s, f, f), (s, f, s, f), (s, f, f, s), (f, s, s, f), (f, s, f, s), and (f, f, s, s), where the outcome (s, s, f, f) means, for instance, that the first two trials are successes and the last two failures. Since each of these outcomes has probability p^2(1 - p)^2 of occurring, the desired probability of two successes in the four trials is (4 choose 2)p^2(1 - p)^2.
+Note that, by the binomial theorem, the probabilities sum to 1; that is,
+∑_{i=0}^∞ p(i) = ∑_{i=0}^n (n choose i)p^i(1 - p)^(n-i) = [p + (1 - p)]^n = 1
