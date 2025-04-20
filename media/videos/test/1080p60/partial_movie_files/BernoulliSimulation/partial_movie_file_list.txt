@@ -1,0 +1,6 @@
+# This file is used internally by FFMPEG.
+file 'file:/Users/Anshul/Documents/hackathons/anthropic/manim-generator/media/videos/test/1080p60/partial_movie_files/BernoulliSimulation/3529212410_500115459_223132457.mp4'
+file 'file:/Users/Anshul/Documents/hackathons/anthropic/manim-generator/media/videos/test/1080p60/partial_movie_files/BernoulliSimulation/3040924799_1662707397_1448089558.mp4'
+file 'file:/Users/Anshul/Documents/hackathons/anthropic/manim-generator/media/videos/test/1080p60/partial_movie_files/BernoulliSimulation/3040924799_1662651212_3967868526.mp4'
+file 'file:/Users/Anshul/Documents/hackathons/anthropic/manim-generator/media/videos/test/1080p60/partial_movie_files/BernoulliSimulation/3040924799_1985742801_171791227.mp4'
+file 'file:/Users/Anshul/Documents/hackathons/anthropic/manim-generator/media/videos/test/1080p60/partial_movie_files/BernoulliSimulation/3040924799_1839128356_762721642.mp4'

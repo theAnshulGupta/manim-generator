@@ -1,0 +1,97 @@
+from manim import *
+from math import tan, pi
+
+# -------------  utility ----------------------------------------------------
+FRAME_W, MARGIN = config.frame_width, 0.8
+def shrink_to_fit(m, margin=MARGIN):
+    if m.width > FRAME_W - margin:
+        m.scale_to_fit_width(FRAME_W - margin)
+    return m
+# ---------------------------------------------------------------------------
+
+def play_title(sc):
+    t = Text("The Cauchy Distribution", font_size=64, weight=BOLD)
+    st = Text("Deriving it from a spinning flashlight", font_size=36, slant=ITALIC)
+    shrink_to_fit(t); shrink_to_fit(st); st.next_to(t, DOWN, buff=0.4)
+    sc.play(Write(t, run_time=2.5)); sc.play(FadeIn(st, shift=UP, run_time=1.8))
+    sc.wait(1); sc.play(FadeOut(VGroup(t, st)))
+
+def play_density_definition(sc):
+    h = Text("1. Density Definition", font_size=48, weight=BOLD); shrink_to_fit(h).to_edge(UP)
+    pdf = MathTex(r"f(x;\theta)=\dfrac{1}{\pi[1+(x-\theta)^2]}", r"\quad(-\infty<x<\infty)",
+                  tex_to_color_map={r"\theta": YELLOW})
+    shrink_to_fit(pdf).next_to(h, DOWN, buff=0.6)
+    note = Text("Heavy-tailed • No mean or variance", font_size=32, color=GRAY_D)
+    shrink_to_fit(note).next_to(pdf, DOWN, buff=0.6)
+    sc.play(Write(h)); sc.play(Write(pdf)); sc.play(FadeIn(note, shift=UP))
+    sc.wait(2); sc.play(FadeOut(VGroup(h, pdf, note)))
+
+def play_flashlight_setup(sc):
+    h = Text("2. Flashlight Experiment", font_size=48, weight=BOLD); shrink_to_fit(h).to_edge(UP)
+    d = Text("Flashlight 1 unit above the x-axis spins ±90°", font_size=32)
+    shrink_to_fit(d).next_to(h, DOWN, buff=0.4)
+    sc.play(Write(h)); sc.play(FadeIn(d, shift=DOWN))
+
+    axes = Axes(x_range=[-6,6,1], y_range=[0,4,1], x_length=12, y_length=3,
+                axis_config={"include_tip": False}).shift(DOWN*1.5)
+    xlab = axes.get_x_axis_label("x")
+    origin = axes.c2p(0,1); lamp = Dot(origin, color=YELLOW)
+    base = Line(axes.c2p(-.25,1), axes.c2p(.25,1), color=GRAY_B)
+    theta = ValueTracker(-PI/3)
+
+    beam = always_redraw(lambda:
+        Line(origin, axes.c2p(tan(theta.get_value()), 0), color=BLUE))
+    dot = always_redraw(lambda:
+        Dot(axes.c2p(tan(theta.get_value()), 0), color=RED))
+    arc = always_redraw(lambda:
+        Arc(radius=.6, start_angle=PI/2, angle=-theta.get_value(),
+            arc_center=origin, color=ORANGE))
+    lab = always_redraw(lambda:
+        MathTex(r"\theta", font_size=28).move_to(origin+.8*RIGHT+.4*UP)
+                                        .rotate(-theta.get_value()))
+    sc.play(Create(axes), FadeIn(VGroup(xlab, lamp, base)))
+    sc.play(Create(beam), Create(dot), Create(arc), FadeIn(lab))
+    sc.play(theta.animate.set_value(PI/3), run_time=5, rate_func=smooth)
+    sc.play(theta.animate.set_value(-PI/6), run_time=3); sc.wait(.5)
+    sc.play(FadeOut(VGroup(axes,xlab,lamp,base,beam,dot,arc,lab,h,d)))
+
+def play_distribution_derivation(sc):
+    h = Text("3. Derivation:  θ ∼ Uniform(−π/2, π/2)", font_size=48, weight=BOLD)
+    shrink_to_fit(h).to_edge(UP)
+    s1 = MathTex(r"X=\tan\theta", font_size=48).next_to(h, DOWN, buff=0.6)
+    s2 = MathTex(r"F_X(x)=P(X\le x)=P(\tan\theta\le x)", font_size=42).next_to(s1, DOWN, buff=0.6)
+    s3 = MathTex(r"=P\!\bigl(\theta\le\tan^{-1}x\bigr)=\frac12+\frac{1}{\pi}\tan^{-1}x",
+                 font_size=42).next_to(s2, DOWN, buff=0.6)
+    pdf = MathTex(r"f_X(x)=\frac{d}{dx}F_X(x)=\frac{1}{\pi(1+x^2)}",
+                  font_size=44).next_to(s3, DOWN, buff=0.6)
+
+    sc.play(Write(h)); sc.play(Write(s1)); sc.play(Write(s2)); sc.play(Write(s3))
+    sc.wait(1.5)
+    sc.play(ReplacementTransform(s3, pdf))      # <-- fixed line
+    sc.wait(2)
+    sc.play(FadeOut(VGroup(h, s1, s2, pdf)))    # pdf now fades out
+
+def play_pdf_plot(sc):
+    h = Text("4. Standard Cauchy PDF", font_size=48, weight=BOLD); shrink_to_fit(h).to_edge(UP)
+    axes = Axes(x_range=[-6,6,1], y_range=[0,0.4,0.1], x_length=12, y_length=4,
+                axis_config={"include_tip": False}).shift(DOWN*0.5)
+    graph = axes.plot(lambda x: 1/(pi*(1+x**2)), x_range=[-6,6], color=GREEN)
+    lab = MathTex(r"f(x)=\dfrac{1}{\pi(1+x^2)}", font_size=36).next_to(graph, UP)
+    sc.play(Write(h)); sc.play(Create(axes)); sc.play(Create(graph), FadeIn(lab))
+    sc.wait(2); sc.play(FadeOut(VGroup(h, axes, graph, lab)))
+
+def play_summary(sc):
+    bullets = BulletedList(
+        r"Uniform angle $\theta\sim\mathcal{U}\!\bigl(-\tfrac{\pi}{2},\tfrac{\pi}{2}\bigr)$",
+        r"Transform $X=\tan\theta$ $\Rightarrow$ Cauchy$(\theta=0)$",
+        r"PDF $\displaystyle f(x)=\frac{1}{\pi(1+x^2)}$",
+        r"Heavy-tailed: mean \& variance undefined",
+        font_size=34,
+    )
+    shrink_to_fit(bullets)
+    sc.play(Write(bullets, run_time=5)); sc.wait(3); sc.play(FadeOut(bullets))
+
+class FullTutorial(Scene):
+    def construct(self):
+        play_title(self); play_density_definition(self); play_flashlight_setup(self)
+        play_distribution_derivation(self); play_pdf_plot(self); play_summary(self)

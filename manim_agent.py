@@ -4,11 +4,11 @@ import re
 import time
 import base64
 from pathlib import Path
-import openai
+import anthropic
 from dotenv import load_dotenv
 
 load_dotenv()
-client = openai.OpenAI(api_key=os.getenv("OAI_KEY"))
+client = anthropic.Anthropic(api_key=os.getenv("ANTHROPIC_KEY"))
 
 def encode_image(image_path):
     with open(image_path, "rb") as image_file:
@@ -16,7 +16,7 @@ def encode_image(image_path):
 
 def llm(prompt_chain):
     response = client.chat.completions.create(
-        model="o1",
+        model="claude-3-7-sonnet-20250219",
         messages=prompt_chain
     )
     return response.choices[0].message.content
@@ -34,7 +34,9 @@ def generate_initial_manim_code():
 
     First, understand the topic at hand. If there are multiple, focus on the first one and then iterate through the rest. Then, understand how the textbook conveys material and equations. If there is a lot of material to cover, break it up into sections, processing each section at a time. Make it such that a beginner new to this field understands it.
 
-    Ensure that your Manim tutorial goes in depth to each of these topics, creating a detailed video of at least a minute explaining the topic, having an example, and ending in a summary. Compile all the events in a term called FullTutorial. Additionally, if you need to include equations, ensure that you write it in LaTeX that can be compiled accurately. It is essential that you write safe LaTeX that only uses valid characters and formatting such that there are no issues with it. Use other materials like graphs, diagrams, or plots as well, don't just write bullet points. When writing the steps of each topic using the Manim Community library in Python, ensuring that your code works correctly. Output a valid solution that can be run, producing a correct video without any errors whatsoever. Ensure that the text all fits in the screen and does not overlap with one another.
+    Ensure that your Manim tutorial goes in depth to each of these topics, creating a detailed video of at least a minute explaining the topic, having an example, and ending in a summary. Compile all the events in a term called FullTutorial. Additionally, if you need to include equations, ensure that you write it in LaTeX that can be compiled accurately. It is essential that you write safe LaTeX that only uses valid characters and formatting such that there are no issues with it. Also, ensure that text disappears when necessary and doesn't stay stuck on the screen. Ensure that the text all fits in the screen and does not overlap with one another. 
+    
+    Make sure to use other materials like graphs, diagrams, or plots as well, don't just write bullet points. When writing the steps of each topic using the Manim Community library in Python, ensuring that your code works correctly. Output a valid solution that can be run, producing a correct video without any errors whatsoever. 
     """
 
     prompt_chain = [{"role": "system", "content": system}]
@@ -54,7 +56,7 @@ def generate_initial_manim_code():
             prompt_chain.append({"role": "user", "content": input_text})
             prompt_chain.append({"role": "assistant", "content": output_text})
 
-    inputs_dir = Path("input")
+    inputs_dir = Path(os.getenv("INPUT_DIR", "input"))
     image_files = sorted([f for f in inputs_dir.glob("*.png")])
     image_contents = []
     
@@ -68,7 +70,7 @@ def generate_initial_manim_code():
                 }
             })
     else:
-        print("No input images found in input/ directory")
+        print("No input images found in input directory")
     
     prompt_chain.append({
         "role": "user",
@@ -89,7 +91,7 @@ def generate_initial_manim_code():
 
 def create_output_dir():
     """Create output directory if it doesn't exist"""
-    output_dir = Path("output")
+    output_dir = Path(os.getenv("OUTPUT_DIR", "output"))
     output_dir.mkdir(exist_ok=True)
     return output_dir
 

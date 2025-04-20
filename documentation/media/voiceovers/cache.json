@@ -871,5 +871,158 @@
     },
     "original_audio": "the-gradient-descent-algorithm-starts-at-the-0ccb5e1e.mp3",
     "final_audio": "the-gradient-descent-algorithm-starts-at-the-0ccb5e1e.mp3"
+  },
+  {
+    "input_text": "Welcome to this tutorial on gradient descent, one of the most fundamental optimization algorithms in machine learning.",
+    "input_data": {
+      "input_text": "Welcome to this tutorial on gradient descent, one of the most fundamental optimization algorithms in machine learning.",
+      "service": "gtts"
+    },
+    "original_audio": "welcome-to-this-tutorial-on-gradient-descent-one-04047886.mp3",
+    "final_audio": "welcome-to-this-tutorial-on-gradient-descent-one-04047886.mp3"
+  },
+  {
+    "input_text": "In supervised learning, we often want to find parameters that minimize an objective function.",
+    "input_data": {
+      "input_text": "In supervised learning, we often want to find parameters that minimize an objective function.",
+      "service": "gtts"
+    },
+    "original_audio": "in-supervised-learning-we-often-want-to-find-6b1d9ecd.mp3",
+    "final_audio": "in-supervised-learning-we-often-want-to-find-6b1d9ecd.mp3"
+  },
+  {
+    "input_text": "Intuitively, imagine the objective function as a terrain. Gradient descent starts from an initial point, looks for the steepest downward direction, takes a step, and repeats until reaching a minimum.",
+    "input_data": {
+      "input_text": "Intuitively, imagine the objective function as a terrain. Gradient descent starts from an initial point, looks for the steepest downward direction, takes a step, and repeats until reaching a minimum.",
+      "service": "gtts"
+    },
+    "original_audio": "intuitively-imagine-the-objective-function-as-a-5734eb45.mp3",
+    "final_audio": "intuitively-imagine-the-objective-function-as-a-5734eb45.mp3"
+  },
+  {
+    "input_text": "In this tutorial, we'll cover gradient descent in four stages: One-dimensional gradient descent, extension to many dimensions, application to regression, and stochastic gradient descent for large datasets.",
+    "input_data": {
+      "input_text": "In this tutorial, we'll cover gradient descent in four stages: One-dimensional gradient descent, extension to many dimensions, application to regression, and stochastic gradient descent for large datasets.",
+      "service": "gtts"
+    },
+    "original_audio": "in-this-tutorial-we-ll-cover-gradient-descent-in-baf4c804.mp3",
+    "final_audio": "in-this-tutorial-we-ll-cover-gradient-descent-in-baf4c804.mp3"
+  },
+  {
+    "input_text": "Let's begin with gradient descent in one dimension.",
+    "input_data": {
+      "input_text": "Let's begin with gradient descent in one dimension.",
+      "service": "gtts"
+    },
+    "original_audio": "let-s-begin-with-gradient-descent-in-one-dimension-1f6c2440.mp3",
+    "final_audio": "let-s-begin-with-gradient-descent-in-one-dimension-1f6c2440.mp3"
+  },
+  {
+    "input_text": "In one dimension, we need an objective function f, its derivative, and three hyperparameters: an initial value, a step size or learning rate eta, and an accuracy threshold epsilon.",
+    "input_data": {
+      "input_text": "In one dimension, we need an objective function f, its derivative, and three hyperparameters: an initial value, a step size or learning rate eta, and an accuracy threshold epsilon.",
+      "service": "gtts"
+    },
+    "original_audio": "in-one-dimension-we-need-an-objective-function-f-d30bfaa2.mp3",
+    "final_audio": "in-one-dimension-we-need-an-objective-function-f-d30bfaa2.mp3"
+  },
+  {
+    "input_text": "The gradient descent algorithm starts at the initial point and iteratively updates the parameter by moving in the direction opposite to the derivative, scaled by the learning rate.",
+    "input_data": {
+      "input_text": "The gradient descent algorithm starts at the initial point and iteratively updates the parameter by moving in the direction opposite to the derivative, scaled by the learning rate.",
+      "service": "gtts"
+    },
+    "original_audio": "the-gradient-descent-algorithm-starts-at-the-0ccb5e1e.mp3",
+    "final_audio": "the-gradient-descent-algorithm-starts-at-the-0ccb5e1e.mp3"
+  },
+  {
+    "input_text": "Let's visualize this with a simple example: minimizing the function f(x) equals (x minus 2) squared.",
+    "input_data": {
+      "input_text": "Let's visualize this with a simple example: minimizing the function f(x) equals (x minus 2) squared.",
+      "service": "gtts"
+    },
+    "original_audio": "let-s-visualize-this-with-a-simple-example-2b191f34.mp3",
+    "final_audio": "let-s-visualize-this-with-a-simple-example-2b191f34.mp3"
+  },
+  {
+    "input_text": "Starting at x equals 4 with a learning rate of 0.5, let's trace the gradient descent steps.",
+    "input_data": {
+      "input_text": "Starting at x equals 4 with a learning rate of 0.5, let's trace the gradient descent steps.",
+      "service": "gtts"
+    },
+    "original_audio": "starting-at-x-equals-4-with-a-learning-rate-of-0-5-3decd13d.mp3",
+    "final_audio": "starting-at-x-equals-4-with-a-learning-rate-of-0-5-3decd13d.mp3"
+  },
+  {
+    "input_text": "Eventually, our algorithm converges to the minimum at x equals 2.",
+    "input_data": {
+      "input_text": "Eventually, our algorithm converges to the minimum at x equals 2.",
+      "service": "gtts"
+    },
+    "original_audio": "eventually-our-algorithm-converges-to-the-minimum-f5c8bca5.mp3",
+    "final_audio": "eventually-our-algorithm-converges-to-the-minimum-f5c8bca5.mp3"
+  },
+  {
+    "input_text": "In convex functions like this one, gradient descent is guaranteed to converge to the global minimum if the learning rate is small enough.",
+    "input_data": {
+      "input_text": "In convex functions like this one, gradient descent is guaranteed to converge to the global minimum if the learning rate is small enough.",
+      "service": "gtts"
+    },
+    "original_audio": "in-convex-functions-like-this-one-gradient-descent-db4afaf4.mp3",
+    "final_audio": "in-convex-functions-like-this-one-gradient-descent-db4afaf4.mp3"
+  },
+  {
+    "input_text": "Now, let's extend gradient descent to multiple dimensions.",
+    "input_data": {
+      "input_text": "Now, let's extend gradient descent to multiple dimensions.",
+      "service": "gtts"
+    },
+    "original_audio": "now-let-s-extend-gradient-descent-to-multiple-6649a374.mp3",
+    "final_audio": "now-let-s-extend-gradient-descent-to-multiple-6649a374.mp3"
+  },
+  {
+    "input_text": "In multiple dimensions, we replace the derivative with the gradient vector, which contains the partial derivatives with respect to each parameter.",
+    "input_data": {
+      "input_text": "In multiple dimensions, we replace the derivative with the gradient vector, which contains the partial derivatives with respect to each parameter.",
+      "service": "gtts"
+    },
+    "original_audio": "in-multiple-dimensions-we-replace-the-derivative-50ccc777.mp3",
+    "final_audio": "in-multiple-dimensions-we-replace-the-derivative-50ccc777.mp3"
+  },
+  {
+    "input_text": "The update rule becomes vector-valued, subtracting the gradient scaled by the learning rate from the current parameter vector.",
+    "input_data": {
+      "input_text": "The update rule becomes vector-valued, subtracting the gradient scaled by the learning rate from the current parameter vector.",
+      "service": "gtts"
+    },
+    "original_audio": "the-update-rule-becomes-vector-valued-subtracting-ef3c2c82.mp3",
+    "final_audio": "the-update-rule-becomes-vector-valued-subtracting-ef3c2c82.mp3"
+  },
+  {
+    "input_text": "Let's visualize gradient descent in two dimensions, where our objective forms a bowl-shaped surface.",
+    "input_data": {
+      "input_text": "Let's visualize gradient descent in two dimensions, where our objective forms a bowl-shaped surface.",
+      "service": "gtts"
+    },
+    "original_audio": "let-s-visualize-gradient-descent-in-two-dimensions-60d8247f.mp3",
+    "final_audio": "let-s-visualize-gradient-descent-in-two-dimensions-60d8247f.mp3"
+  },
+  {
+    "input_text": "Starting from a point away from the minimum, gradient descent will navigate the surface toward the lowest point.",
+    "input_data": {
+      "input_text": "Starting from a point away from the minimum, gradient descent will navigate the surface toward the lowest point.",
+      "service": "gtts"
+    },
+    "original_audio": "starting-from-a-point-away-from-the-minimum-c4bb4fad.mp3",
+    "final_audio": "starting-from-a-point-away-from-the-minimum-c4bb4fad.mp3"
+  },
+  {
+    "input_text": "The termination condition can be based on function change, parameter change, or simply a fixed number of iterations.",
+    "input_data": {
+      "input_text": "The termination condition can be based on function change, parameter change, or simply a fixed number of iterations.",
+      "service": "gtts"
+    },
+    "original_audio": "the-termination-condition-can-be-based-on-function-e8e5a424.mp3",
+    "final_audio": "the-termination-condition-can-be-based-on-function-e8e5a424.mp3"
   }
 ]
